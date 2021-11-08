@@ -11,7 +11,7 @@
 <h1>hello</h1>
 sssssssss
 =======
-<h1>リョウコクユウです！！</h1>
+<h1>リョウコクユウです！！aaa</h1>
 
 >>>>>>> branch 'master' of git@github.com:tomo020120/Egroup_PROJECT.git
 </body>
