@@ -8,5 +8,12 @@
         <welcome-file>/WEB-INF/jsp/topPage.jsp</welcome-file>
     </welcome-file-list>
 
-
+    <servlet>
+    	<servlet-name>FrontServlet</servlet-name>
+    	<servlet-class>FrontServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>FrontServlet</servlet-name>
+    	<url-pattern>/</url-pattern>
+    </servlet-mapping>
 </web-app>
