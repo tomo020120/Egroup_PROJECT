@@ -1,12 +1,14 @@
 import java.io.IOException;
-import javax.servlet.ServletException;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import cmd.*;
-import context.*;
+import context.ApplicationContext;
+import context.ApplicationContextFactory;
+import context.RequestContext;
+import context.ResponseContext;
 
 public class FrontServlet extends HttpServlet{
     protected void doGet(HttpServletRequest req,HttpServletResponse res) throws IOException,ServletException{
@@ -16,7 +18,7 @@ public class FrontServlet extends HttpServlet{
     protected void doPost(HttpServletRequest req,HttpServletResponse res) throws IOException,ServletException{
         req.setCharacterEncoding("utf-8");
 
-        ApplicationContext app = new WebApplicationContext();
+        ApplicationContext app = ApplicationContextFactory.getApplicationContext("Web");
 
         RequestContext reqContext = app.getRequest(req);
 
