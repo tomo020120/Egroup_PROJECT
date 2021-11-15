@@ -1,6 +1,5 @@
 package cmd;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -8,7 +7,7 @@ import java.util.Properties;
 import context.RequestContext;
 
 public abstract class CommandFactory{
-	private static final String COMMAND_PROPERTY_PATH = new File("src\\property\\commands.properties").getAbsolutePath();
+	private static final String COMMAND_PROPERTY_PATH = "c:\\property\\commands.properties";
 
     public static AbstractCommand getCommand(RequestContext reqContext){
         AbstractCommand command = null;

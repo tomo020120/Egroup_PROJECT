@@ -1,12 +1,11 @@
 package context;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
 public abstract class ApplicationContextFactory {
-	private static final String APPLICATIONCONTEXT_PROPERTY_PATH = new File("src\\property\\applicationContextProperties.properties").getAbsolutePath();
+	private static final String APPLICATIONCONTEXT_PROPERTY_PATH = "c:\\property\\applicationContextProperties.properties";
 
 	public static ApplicationContext getApplicationContext(String key) {
 		ApplicationContext app = null;

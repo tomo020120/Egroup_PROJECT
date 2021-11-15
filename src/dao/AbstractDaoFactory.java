@@ -1,12 +1,11 @@
 package dao;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
 public abstract class AbstractDaoFactory{
-	private static final String DAO_PROPERTY_PATH = new File("src\\property\\daoProperties.properties").getAbsolutePath();
+	private static final String DAO_PROPERTY_PATH = "c:\\property\\applicationContextProperties.properties";
 
 	public static AbstractDaoFactory getDaoFactory(String factoryName){
         AbstractDaoFactory absDaoFactory = null;

@@ -13,5 +13,6 @@
 	<a href="artists">アーティスト</a>
 	<a href="cart">カート</a>
 	<a href="login">ログイン</a>
+	<a href="input">テスト</a>
 </body>
 </html>
