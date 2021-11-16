@@ -9,5 +9,6 @@ public class ArtistCommand extends AbstractCommand{
         resContext.setTargetPath("artist");
 
         return resContext;
+
     }
 }
