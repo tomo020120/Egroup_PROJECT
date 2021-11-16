@@ -1,13 +1,14 @@
 package context;
 
-import cmd.CommandFactory;
-import cmd.AbstractCommand;
+import java.io.IOException;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import java.io.IOException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import cmd.AbstractCommand;
+import cmd.CommandFactory;
 
 public class WebApplicationContext implements ApplicationContext{
     public RequestContext getRequest(Object req){
@@ -28,9 +29,10 @@ public class WebApplicationContext implements ApplicationContext{
     public void handleResponse(RequestContext reqContext,ResponseContext resContext){
         HttpServletRequest req = (HttpServletRequest)reqContext.getRequest();
         HttpServletResponse res = (HttpServletResponse)resContext.getResponse();
-
+        
+        System.out.println(resContext.getResult());
         req.setAttribute("result",resContext.getResult());
-
+        
         RequestDispatcher dis = req.getRequestDispatcher(resContext.getTargetPath());
 
         try{
