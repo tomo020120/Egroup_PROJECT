@@ -7,5 +7,5 @@ import bean.Product;
 public interface ProductsDao {
 	public void addProduct(Product p);
 	public Product getProduct(String pid);
-	public List getAllProducts();
+	public List<Product> getAllProducts();
 }
