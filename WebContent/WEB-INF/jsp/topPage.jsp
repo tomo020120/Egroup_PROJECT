@@ -17,6 +17,6 @@
 	<a href="login">ログイン</a>
 
 
-	<img src="<%=request.getContextPath() %>/image/red.jpg">
+
 </body>
 </html>
