@@ -14,7 +14,12 @@ public abstract class CommandFactory{
         Properties prop = new Properties();
         try{
             prop.load(new FileInputStream(COMMAND_PROPERTY_PATH));
+
+            System.out.println("キー値：" + reqContext.getCommandKey());
+
             String name = prop.getProperty(reqContext.getCommandKey());
+
+            System.out.println("取得プロパティ：" + name);
             Class<?> c = Class.forName(name);
             command = (AbstractCommand)c.newInstance();
         }

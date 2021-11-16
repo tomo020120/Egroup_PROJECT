@@ -1,3 +1,4 @@
+
 package dao;
 
 import java.io.FileInputStream;
@@ -5,14 +6,12 @@ import java.io.IOException;
 import java.util.Properties;
 
 public abstract class AbstractDaoFactory{
-	private static final String DAO_PROPERTY_PATH = "c:\\property\\applicationContextProperties.properties";
-
-	public static AbstractDaoFactory getDaoFactory(String factoryName){
+	public static AbstractDaoFactory getDaoFactory(){
         AbstractDaoFactory absDaoFactory = null;
         Properties prop = new Properties();
         try{
-            prop.load(new FileInputStream(DAO_PROPERTY_PATH));
-            String name = prop.getProperty(factoryName);
+            prop.load(new FileInputStream("C:\\property\\daoProperties.properties"));
+            String name = prop.getProperty("MySQLDao");
             Class<?> c = Class.forName(name);
             absDaoFactory = (AbstractDaoFactory)c.newInstance();
         }
@@ -25,5 +24,5 @@ public abstract class AbstractDaoFactory{
         return absDaoFactory;
     }
 
-    //public abstract ProductsDao getProductsDao();
+    public abstract ProductsDao getProductsDao();
 }
