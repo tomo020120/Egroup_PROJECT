@@ -3,10 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-
 <meta charset="UTF-8">
 <title>トップページ</title>
+<%@include file="/CSS/stylesheet.css" %>
 </head>
 <body>
 	<h1>Ibanez</h1>
