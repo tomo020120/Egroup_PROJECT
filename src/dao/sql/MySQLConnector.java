@@ -25,6 +25,7 @@ public abstract class MySQLConnector {
 			e.printStackTrace();
 		}
 		return cn;
+
 	}
 
 	public static void commitTransaction() {
