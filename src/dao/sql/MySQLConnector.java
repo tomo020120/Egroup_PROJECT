@@ -12,7 +12,7 @@ public abstract class MySQLConnector {
 			if(cn == null) {
 				synchronized(MySQLConnector.class) {
 					if(cn == null) {
-						cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nozawa?characterEncoding=UTF-8&serverTimezone=JST","infox","prox");
+						cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Ibanezdb?characterEncoding=UTF-8&serverTimezone=JST","customer","cpass");
 						cn.setAutoCommit(false);
 					}
 				}
@@ -24,8 +24,8 @@ public abstract class MySQLConnector {
 		catch(Exception e) {
 			e.printStackTrace();
 		}
-
 		return cn;
+
 	}
 
 	public static void commitTransaction() {

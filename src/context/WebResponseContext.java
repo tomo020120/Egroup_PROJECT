@@ -4,8 +4,9 @@ import javax.servlet.http.HttpServletResponse;
 
 public class WebResponseContext implements ResponseContext{
     private Object result;
+    private Object result2;
     private String targetPath;
-    private HttpServletResponse response; 
+    private HttpServletResponse response;
 
     public void setResponse(Object response){
         this.response = (HttpServletResponse)response;
@@ -21,6 +22,14 @@ public class WebResponseContext implements ResponseContext{
 
     public Object getResult(){
         return result;
+    }
+
+    public void setResult2(Object result2) {
+    	this.result2 = result2;
+    }
+
+    public Object getResult2() {
+    	return result2;
     }
 
     public void setTargetPath(String targetPath){
