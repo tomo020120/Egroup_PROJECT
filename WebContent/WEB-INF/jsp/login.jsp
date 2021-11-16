@@ -13,6 +13,9 @@
             width: 20px;
             height: 20px;
             background: linear-gradient(blue, red);
+            display: inline-block
+            margin:left:2px;
+            margin:top:2px;
            }
   </style>
 
@@ -26,7 +29,7 @@
 <p>まだ作り途中、基本的な動きだけ</p>
 メールアドレス<input type="text" name="mailAddress"><br>
 パスワード<input type="text" id="passCheck" name="passWord"><div class="square"></div><br>
-パスワード再確認<input type="text" id="rePassCheck" name="rePassWord"><br>
+パスワード再確認<input type="text" id="rePassCheck" name="rePassWord"><div class="square"></div><br>
 				<input type="submit" value="ログイン">
 </form>
 <p>パスワードチェックは行ってるけど、まだ画面上には出してない、コンソールだけ</p>
