@@ -15,7 +15,7 @@
  <c:forEach var="product" items="${result}">
   <tr>
   	<td>${product.itemId}</td>
-  	<!-- ↓hrefまだ作成中 -->
+  	<!-- ↓hrefまだ作成中だよ -->
   	<td><a href="FrontServlet?itemId=${product.itemId}"><img src=${product.pictPath}></a></td>
   	<td>${product.name}</td>
   	<td>${product.price}</td>
