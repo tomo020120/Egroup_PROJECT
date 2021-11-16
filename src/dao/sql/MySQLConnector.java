@@ -24,7 +24,6 @@ public abstract class MySQLConnector {
 		catch(Exception e) {
 			e.printStackTrace();
 		}
-
 		return cn;
 	}
 
