@@ -3,11 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-
 <meta charset="UTF-8">
-<%@include file="/CSS/stylesheet.css" %>
 <title>トップページ</title>
+<%@include file="/CSS/stylesheet.css" %>
 </head>
 <body>
 	<h1>Ibanez</h1>
@@ -18,6 +16,6 @@
 	<a href="login">ログイン</a>
 
 
-	<img src="<%=request.getContextPath() %>/image/red.jpg">
+
 </body>
 </html>

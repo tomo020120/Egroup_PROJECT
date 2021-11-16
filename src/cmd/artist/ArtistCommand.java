@@ -1,13 +1,14 @@
-package cmd.user.login;
+package cmd.artist;
 
 import cmd.AbstractCommand;
 import context.ResponseContext;
 
 
-public class TransferLoginPageCommand extends AbstractCommand{
+public class ArtistCommand extends AbstractCommand{
     public ResponseContext execute(ResponseContext resContext){
-        resContext.setTargetPath("login");
-//わあああ
+        resContext.setTargetPath("artist");
+
         return resContext;
+
     }
 }
