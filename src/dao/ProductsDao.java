@@ -2,10 +2,10 @@ package dao;
 
 import java.util.List;
 
-import bean.Product;
+import bean.ProductBean;
 
 public interface ProductsDao {
-	public void addProduct(Product p);
-	public Product getProduct(String pid);
-	public List<Product> getAllProducts();
+	public void addProduct(ProductBean p);
+	public ProductBean getProduct(String pid);
+	public List<ProductBean> getAllProducts();
 }

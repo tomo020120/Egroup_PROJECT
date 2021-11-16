@@ -22,9 +22,6 @@ public class FrontServlet extends HttpServlet{
 
         RequestContext reqContext = app.getRequest(req);
         
-        String _pictPath=req.getParameter("pictPath");
-        System.out.println(_pictPath);
-        
         ResponseContext resContext = app.handleRequest(reqContext);
 
         resContext.setResponse(res);
