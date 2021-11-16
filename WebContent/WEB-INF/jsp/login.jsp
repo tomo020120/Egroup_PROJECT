@@ -7,17 +7,25 @@
 
 <title>ログインページ</title>
 
+  <style>
+	.square{
+            border-radius:50%;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(blue, red);
+           }
+  </style>
 
 </head>
 <body>
 <h1 id="title">ログイン</h1>
 <a href="registAccount">新規登録画面へ</a>
-
+<div id="div1">div1</div>
 <!-- 認証に飛ばす -->
 <form name="sampleform" method="post" action="LoginCheckCommand">
 <p>まだ作り途中、基本的な動きだけ</p>
 メールアドレス<input type="text" name="mailAddress"><br>
-パスワード<input type="text" id="passCheck" name="passWord"><br>
+パスワード<input type="text" id="passCheck" name="passWord"><div class="square"></div><br>
 パスワード再確認<input type="text" id="rePassCheck" name="rePassWord"><br>
 				<input type="submit" value="ログイン">
 </form>
