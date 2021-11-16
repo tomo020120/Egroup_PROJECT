@@ -1,10 +1,7 @@
 package cmd;
 
-import orcl.DbDummy;
-import java.util.ArrayList;
-import context.RequestContext;
 import context.ResponseContext;
-import context.WebResponseContext;
+import orcl.DbDummy;
 
 public class GetProductsCommand extends AbstractCommand{
     public ResponseContext execute(ResponseContext resContext){

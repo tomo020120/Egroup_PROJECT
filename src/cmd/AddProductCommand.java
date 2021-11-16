@@ -1,11 +1,9 @@
 package cmd;
 
-import java.util.Map;
 import bean.ProductBean;
-import orcl.DbDummy;
 import context.RequestContext;
 import context.ResponseContext;
-import context.WebResponseContext;
+import orcl.DbDummy;
 
 
 public class AddProductCommand extends AbstractCommand{
@@ -15,7 +13,7 @@ public class AddProductCommand extends AbstractCommand{
         String[] itemName = reqContext.getParameter("name");
         String[] price = reqContext.getParameter("price");
 
-        ProductBean product = new ProductBean(); 
+        ProductBean product = new ProductBean();
 
         product.setName(itemName[0]);
         product.setPrice(Integer.parseInt(price[0]));
