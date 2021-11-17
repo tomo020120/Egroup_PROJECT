@@ -6,6 +6,6 @@ import bean.ProductBean;
 
 public interface ProductsDao {
 	public void addProduct(ProductBean p);
-	public ProductBean getProduct(String pid);
-	public List<ProductBean> getAllProducts();
+	public List<ProductBean> getProductsDetails(String itemId);
+	public List<?> getAllProducts();
 }

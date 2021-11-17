@@ -13,9 +13,6 @@ public class ProductBean implements Serializable{
 	private String shapeId;
 	private String artistId;
 	
-	private String pictId;
-	private String pictPath;
-	
 	
 	public String getArtistId() {
 		return artistId;
@@ -71,19 +68,4 @@ public class ProductBean implements Serializable{
 	public void setShapeId(String shapeId) {
 		this.shapeId = shapeId;
 	}
-	
-	
-	public String getPictId() {
-		return pictId;
-	}
-	public void setPictId(String pictId) {
-		this.pictId = pictId;
-	}
-	public String getPictPath() {
-		return pictPath;
-	}
-	public void setPictPath(String pictPath) {
-		this.pictPath = pictPath;
-	}
-
 }
