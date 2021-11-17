@@ -7,7 +7,7 @@ import context.ResponseContext;
 public class TransferLoginPageCommand extends AbstractCommand{
     public ResponseContext execute(ResponseContext resContext){
         resContext.setTargetPath("login");
-//わあああ
+
         return resContext;
     }
 }

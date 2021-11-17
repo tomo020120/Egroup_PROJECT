@@ -8,13 +8,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import bean.Product;
+import bean.ProductBean;
 import exp.ResourceAccessException;
 
 public class MySQLProductsDao implements ProductsDao{
 	
 	//addProductは仮置き
-	public void addProduct(Product p) {
+	public void addProduct(ProductBean p) {
 		Connection cn = null;
 		PreparedStatement st  = null;
 		
@@ -67,7 +67,7 @@ public class MySQLProductsDao implements ProductsDao{
 	}
 	
 	
-	public Product getProduct(String pid) {
+	public ProductBean getProduct(String pid) {
 		return null;
 	}
 	
@@ -93,7 +93,7 @@ public class MySQLProductsDao implements ProductsDao{
 			rs=st.executeQuery();
 			
 			while(rs.next()) {
-				Product p = new Product();
+				ProductBean p = new ProductBean();
 				
 				p.setItemId(rs.getString(1));
 				p.setName(rs.getString(2));
