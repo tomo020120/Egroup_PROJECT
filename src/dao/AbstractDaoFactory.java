@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import dao.products.ProductsDao;
 import dao.user.login.TempRegistDao;
 
 public abstract class AbstractDaoFactory{
