@@ -29,15 +29,13 @@
 <p>まだ作り途中、基本的な動きだけ</p>
 メールアドレス<input type="text" name="mailAddress"><br>
 パスワード<input type="text" id="passCheck" name="passWord"><div class="square"></div><br>
-パスワード再確認<input type="text" id="rePassCheck" name="rePassWord"><div class="square"></div><br>
 				<input type="submit" value="ログイン">
 </form>
 <p>パスワードチェックは行ってるけど、まだ画面上には出してない、コンソールだけ</p>
 
 <script type="text/javascript">
 	var input_pass=document.getElementById("passCheck");
-	var input_rePass=document.getElementById("rePassCheck");
-	const regex=/^([a-zA-Z0-9]{8,20})$/;
+	const regex=/^[A-Z]([a-zA-Z0-9]){7,19}$/;
 
 	//パスワード書式チェック
 	input_pass.addEventListener("input",function(){
@@ -45,6 +43,8 @@
 		console.log(this.value);
 		console.log(result);
 		  });
+
+	/*
 	//パスワード一致チェック
 	input_rePass.addEventListener("input",function(){
 		console.log(this.value);
@@ -52,7 +52,7 @@
 		console.log(passWord);
 		var result=passWord==this.value;
 		console.log(result);
-	});
+	}); */
 </script>
 
 
