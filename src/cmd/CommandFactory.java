@@ -8,6 +8,7 @@ import context.RequestContext;
 
 public abstract class CommandFactory{
 	private static final String COMMAND_PROPERTY_PATH = "c:\\property\\commands.properties";
+	//private static final String COMMAND_PROPERTY_PATH = new File("..\\workspace\\Egroup_PROJECT\\src\\property\\commands.properties").getAbsolutePath();
 
     public static AbstractCommand getCommand(RequestContext reqContext){
         AbstractCommand command = null;

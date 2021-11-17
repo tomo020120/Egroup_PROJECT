@@ -21,7 +21,7 @@ public class FrontServlet extends HttpServlet{
         ApplicationContext app = ApplicationContextFactory.getApplicationContext("Web");
 
         RequestContext reqContext = app.getRequest(req);
-        
+
         ResponseContext resContext = app.handleRequest(reqContext);
 
         resContext.setResponse(res);

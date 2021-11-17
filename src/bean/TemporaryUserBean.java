@@ -6,6 +6,7 @@ public class TemporaryUserBean implements Serializable{
 	private String userName;
 	private String userPassword;
 	private String mailAddress;
+	private String UUID;
 	private String date;
 	public String getUserName() {
 		return userName;
@@ -34,8 +35,7 @@ public class TemporaryUserBean implements Serializable{
 	public String getUUID() {
 		return UUID;
 	}
-	public void setUUID(String uUID) {
-		UUID = uUID;
+	public void setUUID(String UUID) {
+		this.UUID = UUID;
 	}
-	private String UUID;
 }
