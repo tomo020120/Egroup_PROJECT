@@ -39,8 +39,10 @@ public abstract class MySQLConnector {
 
 	public static void closeTransaction() {
 		try {
-			cn.close();
-			cn = null;
+			if(cn !=null) {
+				cn.close();
+				cn = null;
+			}
 		}
 		catch(SQLException e) {
 			e.printStackTrace();

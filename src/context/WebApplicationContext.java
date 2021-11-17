@@ -29,10 +29,11 @@ public class WebApplicationContext implements ApplicationContext{
     public void handleResponse(RequestContext reqContext,ResponseContext resContext){
         HttpServletRequest req = (HttpServletRequest)reqContext.getRequest();
         HttpServletResponse res = (HttpServletResponse)resContext.getResponse();
-        
+
         System.out.println(resContext.getResult());
         req.setAttribute("result",resContext.getResult());
-        
+        req.setAttribute("result2",resContext.getResult2());
+
         RequestDispatcher dis = req.getRequestDispatcher(resContext.getTargetPath());
 
         try{

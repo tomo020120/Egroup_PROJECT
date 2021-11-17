@@ -6,6 +6,7 @@ import java.util.Properties;
 
 public abstract class ApplicationContextFactory {
 	private static final String APPLICATIONCONTEXT_PROPERTY_PATH = "c:\\property\\applicationContextProperties.properties";
+//	private static final String APPLICATIONCONTEXT_PROPERTY_PATH = new File("..\\workspace\\Egroup_PROJECT\\src\\property\\applicationContextProperties.properties").getAbsolutePath();
 
 	public static ApplicationContext getApplicationContext(String key) {
 		ApplicationContext app = null;
