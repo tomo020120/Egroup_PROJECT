@@ -8,14 +8,23 @@
 <title>ログインページ</title>
 
   <style>
-	.square{
+	.circle{
             border-radius:50%;
             width: 20px;
             height: 20px;
-            background: linear-gradient(blue, red);
+            background-color:#00FF00;
             display: inline-block;
             margin:5px 0px -6px 5px;
            }
+    .circle2{
+            border-radius:50%;
+            width: 20px;
+            height: 20px;
+            background-color:#FF0000;
+            display: inline-block;
+            margin:5px 0px -6px 5px;
+           }
+
   </style>
 
 </head>
@@ -26,8 +35,8 @@
 <!-- 認証に飛ばす -->
 <form name="sampleform" method="post" action="LoginCheckCommand">
 <p>まだ作り途中、基本的な動きだけ</p>
-メールアドレス<input type="text" name="mailAddress"><div class="square"></div><br>
-パスワード<input type="text" id="passCheck" name="passWord"><div class="square"></div><br>
+メールアドレス<input type="text" name="mailAddress"><div class="circle"></div><br>
+パスワード<input type="text" id="passCheck" name="passWord"><div class="circle" id="circle"></div><div class="circle2" id="circle2"></div><br>
 				<input type="submit" value="ログイン">
 </form>
 <p>パスワードチェックは行ってるけど、まだ画面上には出してない、コンソールだけ</p>
@@ -35,12 +44,25 @@
 <script type="text/javascript">
 	var input_pass=document.getElementById("passCheck");
 	const regex=/^[A-Z]([a-zA-Z0-9]){7,19}$/;
+	const circle=document.getElementById("circle");
+	const circle2=document.getElementById("circle2");
+
+	circle.style.display="none";
+	circle2.style.display="none";
 
 	//パスワード書式チェック
 	input_pass.addEventListener("input",function(){
 		var result=regex.test(this.value);
-		console.log(this.value);
-		console.log(result);
+		if(result==true){
+			console.log("ok");
+			circle2.style.display="none";
+			circle.style.display ="block";
+		}else{
+			console.log("no");
+			circle.style.display="none";
+			circle2.style.display ="block";
+		}
+
 		  });
 
 	/*
