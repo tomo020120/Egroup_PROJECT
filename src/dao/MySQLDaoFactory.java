@@ -1,5 +1,7 @@
 package dao;
 
+import dao.products.MySQLProductsDao;
+import dao.products.ProductsDao;
 import dao.user.login.MySQLTempRegistDao;
 import dao.user.login.TempRegistDao;
 

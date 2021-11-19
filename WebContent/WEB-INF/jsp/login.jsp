@@ -13,9 +13,8 @@
             width: 20px;
             height: 20px;
             background: linear-gradient(blue, red);
-            display: inline-block
-            margin:left:2px;
-            margin:top:2px;
+            display: inline-block;
+            margin:5px 0px -6px 5px;
            }
   </style>
 
@@ -27,7 +26,7 @@
 <!-- 認証に飛ばす -->
 <form name="sampleform" method="post" action="LoginCheckCommand">
 <p>まだ作り途中、基本的な動きだけ</p>
-メールアドレス<input type="text" name="mailAddress"><br>
+メールアドレス<input type="text" name="mailAddress"><div class="square"></div><br>
 パスワード<input type="text" id="passCheck" name="passWord"><div class="square"></div><br>
 				<input type="submit" value="ログイン">
 </form>

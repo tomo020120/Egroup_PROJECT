@@ -8,7 +8,7 @@ import cmd.AbstractCommand;
 import context.ResponseContext;
 import context.WebResponseContext;
 import dao.AbstractDaoFactory;
-import dao.ProductsDao;
+import dao.products.ProductsDao;
 
 public class ProductsCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
