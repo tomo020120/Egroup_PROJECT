@@ -19,5 +19,6 @@
     <input type="button" value="登録"  />
     </form>
 
+
 </body>
 </html>
