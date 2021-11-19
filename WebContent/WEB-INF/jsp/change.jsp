@@ -17,7 +17,6 @@
     郵便番号<input type='text' name='postalCode'/><br>
     電話番号<input type='text' name='tel'/><br>
     <input type="button" value="登録"  />
-
     </form>
 
 
