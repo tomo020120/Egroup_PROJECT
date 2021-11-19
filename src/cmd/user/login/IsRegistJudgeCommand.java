@@ -1,5 +1,7 @@
 package cmd.user.login;
 
+import java.util.List;
+
 import bean.TemporaryUserBean;
 import cmd.AbstractCommand;
 import cmd.UUID.UUIDCreator;
@@ -15,11 +17,19 @@ public class IsRegistJudgeCommand extends AbstractCommand {
 		AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
 		TempRegistDao tempRegist = factory.getTempRegistDao();
 
-		String userName = reqContext.getParameter("name")[0];
 		String mailAddress = reqContext.getParameter("mail")[0];
+
+		List<String> mailAddressList = tempRegist.getUserMailAddress();
+
+		if(mailAddressList.contains(mailAddress)) { // メールアドレスが既に存在してれば処理をやめてエラーメッセージ格納
+			resContext.setResult2("そのメールアドレスは既に使用されているため登録できません。");
+			resContext.setTargetPath("regist");
+
+			return resContext;
+		}
+
+		String userName = reqContext.getParameter("name")[0];
 		String userPass = reqContext.getParameter("pass")[0];
-
-
 
 		TemporaryUserBean tempUserBean = new TemporaryUserBean();
 

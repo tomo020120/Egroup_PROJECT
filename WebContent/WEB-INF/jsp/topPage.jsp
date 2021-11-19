@@ -14,6 +14,7 @@
 	<a href="artist">アーティスト</a>
 	<a href="cart">カート</a>
 	<a href="login">ログイン</a>
+	<a href="userInfoEdit">ユーザー情報編集</a>
 
 
 
