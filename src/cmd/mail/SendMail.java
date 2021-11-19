@@ -27,7 +27,7 @@ public abstract class SendMail{
 		property.put("mail.smtp.debug", "true");
 	}
 
-	public static void send(String userMailAddress , String messageBody) {
+	public static void send(String userMailAddress,String messageBody) {
 		try {
 			Session session = Session.getDefaultInstance(property, new javax.mail.Authenticator() {
 				protected PasswordAuthentication getPasswordAuthentication() {
@@ -40,7 +40,30 @@ public abstract class SendMail{
 			mimeMessage.setRecipient(Message.RecipientType.TO, toAddress);
 			InternetAddress fromAddress = new InternetAddress("ibanezttc@gmail.com", "Ibanez");
 			mimeMessage.setFrom(fromAddress);
-			mimeMessage.setSubject("", "ISO-2022-JP");
+			mimeMessage.setSubject("【Ibanez】お買い上げ頂きありがとうございます。", "ISO-2022-JP");
+			mimeMessage.setText(messageBody, "ISO-2022-JP");
+			Transport.send(mimeMessage);
+			System.out.println("メール送信が完了しました。");
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new MailSendException(e.getMessage(),e);
+		}
+	}
+
+	public static void send(String userMailAddress,String messageBody,String title) { // タイトルを変更したいとき用のオーバーロード
+		try {
+			Session session = Session.getDefaultInstance(property, new javax.mail.Authenticator() {
+				protected PasswordAuthentication getPasswordAuthentication() {
+					return new PasswordAuthentication(ORNER_MAILADDRESS, ORNER_MAILADDRESS_PASS);
+				}
+			});
+
+			MimeMessage mimeMessage = new MimeMessage(session);
+			InternetAddress toAddress = new InternetAddress(userMailAddress, "お客様");
+			mimeMessage.setRecipient(Message.RecipientType.TO, toAddress);
+			InternetAddress fromAddress = new InternetAddress("ibanezttc@gmail.com", "Ibanez");
+			mimeMessage.setFrom(fromAddress);
+			mimeMessage.setSubject(title, "ISO-2022-JP");
 			mimeMessage.setText(messageBody, "ISO-2022-JP");
 			Transport.send(mimeMessage);
 			System.out.println("メール送信が完了しました。");

@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -8,8 +7,10 @@
 <head>
 <meta charset="UTF-8">
 <title>商品詳細</title>
+<%@include file="/CSS/productsDetailsStyle.css" %>
 </head>
 <body>
+	<header><%@include file="header.jsp" %></header>
 	<table border="1">
 		<tr>
 		<th>商品ID</th>
@@ -29,7 +30,7 @@
 	</c:forEach>
 	</table>
 </body>
-<!-- 
+<!--
 <body>
 	<table border="1">
 	<tr>
@@ -54,7 +55,7 @@
 		<td>${product.aritstName}</td>
 		<td><img src="${product.pictPath}"></td>
 	</tr>
-	
+
 	</table>
 </body>
 -->

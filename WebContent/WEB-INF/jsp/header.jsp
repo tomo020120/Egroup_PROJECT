@@ -5,16 +5,18 @@
 <head>
 <meta charset="UTF-8">
 <title>トップページ</title>
-<%@include file="/CSS/stylesheet.css" %>
+<%@include file="/CSS/headerStyle.css" %>
 </head>
 <body>
 	<h1>Ibanez</h1>
-	<a href="news">ニュース</a>
-	<a href="products">商品一覧</a>
-	<a href="artist">アーティスト</a>
-	<a href="cart">カート</a>
-	<a href="login">ログイン</a>
-	<a href="userInfoEdit?userId = "${userId}>ユーザー情報編集</a>
+	<div id="nav">
+		<a href="news">ニュース</a>
+		<a href="products">商品一覧</a>
+		<a href="artist">アーティスト</a>
+		<a href="cart">カート</a>
+		<a href="login">ログイン</a>
+		<a href="userInfoEdit?userId = "${userId}>ユーザー情報編集</a>
+	</div>
 
 
 

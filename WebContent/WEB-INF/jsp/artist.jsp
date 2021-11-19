@@ -5,18 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>トップページ</title>
-<%@include file="/CSS/stylesheet.css" %>
+<%@include file="/CSS/artistStyle.css" %>
 </head>
 <body>
-	<h1>Ibanez</h1>
-	<a href="news">ニュース</a>
-	<a href="products">商品一覧</a>
-	<a href="artist">アーティスト</a>
-	<a href="cart">カート</a>
-	<a href="login">ログイン</a>
-	<a href="userInfoEdit">ユーザー情報編集</a>
-
-
-
+	<header><%@include file="header.jsp" %></header>
+	<h1>artist</h1>
 </body>
 </html>

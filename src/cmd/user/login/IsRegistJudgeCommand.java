@@ -5,6 +5,7 @@ import java.util.List;
 import bean.TemporaryUserBean;
 import cmd.AbstractCommand;
 import cmd.UUID.UUIDCreator;
+import cmd.mail.SendMail;
 import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
@@ -40,7 +41,7 @@ public class IsRegistJudgeCommand extends AbstractCommand {
 		tempUserBean.setUUID(UUIDCreator.getUUID());
 
 		if(tempRegist.addTempUserLoginInfo(tempUserBean)) {
-
+			SendMail.send(mailAddress,"http://localhost:9090/Egroup_Project/registResult?UUID=" + tempUserBean.getUUID(),"新規会員登録");
 		}
 
 		return resContext;
