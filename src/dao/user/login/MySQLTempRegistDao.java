@@ -16,13 +16,13 @@ public class MySQLTempRegistDao implements TempRegistDao {
 	private ResultSet rs = null;
 
 	@Override
-	public List<String> getTempUserMailAddress(){
+	public List<String> getUserMailAddress(){
 		List<String> mailAddressList = new ArrayList<String>();
 
 		try {
 			cn = MySQLConnector.getConnection();
 
-			String sql = "select mailAddress from temporary_user_data";
+			String sql = "select mailAddress from user_table";
 
 			st = cn.prepareStatement(sql);
 

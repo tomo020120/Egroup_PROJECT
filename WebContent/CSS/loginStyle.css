@@ -1,0 +1,29 @@
+<style>
+body {
+
+}
+
+.circle {
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	background-color: #00FF00;
+	display: inline-block;
+	margin: 5px 0px -6px 5px;
+}
+
+.circle2 {
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	background-color: #FF0000;
+	display: inline-block;
+	margin: 5px 0px -6px 5px;
+}
+
+h1 {
+	margin: 8px 10px;
+	/* color: rgb(78, 93, 109); */
+	font-size: 100px;
+}
+</style>

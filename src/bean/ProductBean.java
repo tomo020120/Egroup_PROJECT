@@ -12,6 +12,7 @@ public class ProductBean implements Serializable{
 	private String colorId;
 	private String shapeId;
 	private String artistId;
+	private String pictId;
 	
 	
 	public String getArtistId() {
