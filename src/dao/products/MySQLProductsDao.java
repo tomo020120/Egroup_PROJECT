@@ -131,4 +131,45 @@ public class MySQLProductsDao implements ProductsDao{
 		}
 		return products;
 	}
+	
+	public List<ProductPictBean> getProductsSearchResult(String productName) {
+		ArrayList<ProductPictBean> products= new ArrayList<ProductPictBean>();
+
+		try {
+			cn = MySQLConnector.getConnection();
+
+			String sql = "SELECT a.itemId,name,price,releaseDate,orderCount,categoryId,colorId,shapeId,artistId,pictId,pictPath FROM Ibanezdb.item_pict_table AS a JOIN Ibanezdb.product_table AS b ON a.itemId = b.itemId where name LIKE '%"+ productName +"%';";
+
+			st=cn.prepareStatement(sql);
+
+			rs=st.executeQuery();
+
+			while(rs.next()) {
+				ProductPictBean p = new ProductPictBean();
+
+				p.setItemId(rs.getString(1));
+				p.setName(rs.getString(2));
+				p.setPrice(rs.getString(3));
+				p.setReleaseDate(rs.getString(4));
+				p.setOrderCount(rs.getString(5));
+				p.setCategoryId(rs.getString(6));
+				p.setColorId(rs.getString(7));
+				p.setShapeId(rs.getString(8));
+				p.setArtistId(rs.getString(9));
+
+				p.setPictId(rs.getString(10));
+				p.setPictPath(rs.getString(11));
+
+				products.add(p);
+			}
+			MySQLConnector.commitTransaction();
+
+
+		}catch(SQLException e) {
+			MySQLConnector.rollbackTransaction();
+		}finally {
+			MySQLConnector.closeTransaction();
+		}
+		return products;
+	}
 }

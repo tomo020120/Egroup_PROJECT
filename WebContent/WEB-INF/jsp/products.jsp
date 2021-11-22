@@ -11,6 +11,12 @@
 </head>
 <body>
 <header><%@include file="header.jsp" %></header>
+
+<form action="productsSearch" method="POST">
+製品名検索(仮)：<input type="search" name="productName" required>
+<input type="submit" value="検索">
+</form>
+
 <h1>商品一覧</h1>
 <table border="1">
  <tr><th>商品ID</th><th>画像</th><th>商品名</th><th>価格</th></tr>
