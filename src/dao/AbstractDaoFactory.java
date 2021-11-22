@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import dao.artists.ArtistsDao;
 import dao.products.ProductsDao;
 import dao.user.login.TempRegistDao;
 
@@ -32,4 +33,6 @@ public abstract class AbstractDaoFactory{
     public abstract ProductsDao getProductsDao(); // 商品テーブル用のDao生成
 
     public abstract TempRegistDao getTempRegistDao(); // 一時ユーザーテーブルのDao生成
+
+    public abstract ArtistsDao getArtistsDao(); // アーティストテーブルのDao生成
 }

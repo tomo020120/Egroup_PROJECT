@@ -1,5 +1,7 @@
 package dao;
 
+import dao.artists.ArtistsDao;
+import dao.artists.MySQLArtistsDao;
 import dao.products.MySQLProductsDao;
 import dao.products.ProductsDao;
 import dao.user.login.MySQLTempRegistDao;
@@ -12,5 +14,9 @@ public class MySQLDaoFactory extends AbstractDaoFactory{
 
     public TempRegistDao getTempRegistDao() {
     	return new MySQLTempRegistDao();
+    }
+
+    public ArtistsDao getArtistsDao() {
+    	return new MySQLArtistsDao();
     }
 }
