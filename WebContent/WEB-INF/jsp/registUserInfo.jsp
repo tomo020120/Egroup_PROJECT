@@ -10,7 +10,7 @@
 </head>
 <body>
     <h1 id="title">ユーザー登録</h1>
-	<div id="div1">div1</div>
+
     <form method='post'>
     ユーザー名<input type='text' name='name'><br>
     メールアドレス<input id='mailAddress' type='text' name='mail'><div class="circle" id="mailCircleID"></div><div class="circle2" id="mailCircle2ID"></div><br>
@@ -31,18 +31,20 @@
 	const mailCircle=document.getElementById("mailCircleID");
 	const mailCircle2=document.getElementById("mailCircle2ID");
 
+	mailCircle.style.display="none";
+	mailCircle2.style.display="none";
 	circle.style.display="none";
 	circle2.style.display="none";
 //正規表現をメールアドレスに設定
 	mail.addEventListener("input",function(){
 	if(reg.test(mail.value)){
 		console.log("ok");
-		circle2.style.display="none";
-		circle.style.display ="inline-block";
+		mailCircle2.style.display="none";
+		mailCircle.style.display ="inline-block";
 	}else{
 		console.log("no");
-		circle2.style.display="none";
-		circle.style.display ="inline-block";
+		mailCircle2.style.display="none";
+		mailCircle.style.display ="inline-block";
 	}
 	});
 //正規表現をパスワードに設定
