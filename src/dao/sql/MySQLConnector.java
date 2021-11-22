@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 public abstract class MySQLConnector {
 	private static Connection cn = null;
+	private static final String DBNAME = "Ibanezdb";
 
 	public static Connection getConnection() {
 		try {
@@ -14,6 +15,7 @@ public abstract class MySQLConnector {
 					if(cn == null) {
 						cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Ibanezdb?characterEncoding=UTF-8&serverTimezone=JST","customer","cpass");
 						cn.setAutoCommit(false);
+						cn.setCatalog(DBNAME);
 					}
 				}
 			}
