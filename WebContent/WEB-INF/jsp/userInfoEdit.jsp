@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>アカウント変更</h1>
-    <form method='post'>
+   <header><%@include file="header.jsp" %></header>
     ユーザー名<input type='text' name='name'/><br/>
     メールアドレス<input type='text' id="emailAddress"/><br />
     パスワード<input type='text' name='pass'/><br/>
@@ -17,7 +17,7 @@
     郵便番号<input type='text' name='postalCode'/><br>
     電話番号<input type='text' name='tel'/><br>
     <input type="button" value="登録"  />
-    </form>
+
 
 
 </body>
