@@ -15,7 +15,7 @@
     ユーザー名<input type='text' name='name'><br>
     メールアドレス<input id='mailAddress' type='text' name='mail'><div class="circle" id="mailCircleID"></div><div class="circle2" id="mailCircle2ID"></div><br>
     パスワード<input type='text' id='inputpass' name='pass' maxlength="20"><div class="circle" id="circleID"></div><div class="circle2" id="circle2ID"></div><br>
-    パスワード(再入力)<input type='text' id='inputagainpass' name='againpass'><br>
+    パスワード(再入力)<input type='text' id='inputagainpass' name='againpass'><div class="circle" id="reEnterCircleID"></div><div class="circle2" id="reEnterCircle2ID"></div><br>
     <button onclick="fun1();">登録</button>
     </form>
 <script type="text/javascript">
@@ -30,11 +30,15 @@
 	const circle2=document.getElementById("circle2ID");
 	const mailCircle=document.getElementById("mailCircleID");
 	const mailCircle2=document.getElementById("mailCircle2ID");
+	const reEnterCircle=document.getElementById("reEnterCircleID");
+	const reEnterCircle2=document.getElementById("reEnterCircle2ID");
 
 	mailCircle.style.display="none";
 	mailCircle2.style.display="none";
 	circle.style.display="none";
 	circle2.style.display="none";
+	reEnterCircle.style.display="none";
+	reEnterCircle2.style.display="none";
 //正規表現をメールアドレスに設定
 	mail.addEventListener("input",function(){
 	if(reg.test(mail.value)){
@@ -43,8 +47,8 @@
 		mailCircle.style.display ="inline-block";
 	}else{
 		console.log("no");
-		mailCircle2.style.display="none";
-		mailCircle.style.display ="inline-block";
+		mailCircle.style.display="none";
+		mailCircle2.style.display ="inline-block";
 	}
 	});
 //正規表現をパスワードに設定
@@ -55,16 +59,20 @@
 		circle.style.display ="inline-block";
 	}else{
 		console.log("no");
-		circle2.style.display="none";
-		circle.style.display ="inline-block";
+		circle.style.display="none";
+		circle2.style.display ="inline-block";
 	}
 	});
 //passwordのチーク
 	passagain.addEventListener("input",function(){
 		if(passagain.value === pass.value){
 			console.log("ok");
+			reEnterCircle.style.display="inline-block";
+			reEnterCircle2.style.display="none";
 		}else{
 			console.log("no");
+			reEnterCircle2.style.display="inline-block";
+			reEnterCircle.style.display="none";
 		}
 	});
 
