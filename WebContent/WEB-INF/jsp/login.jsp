@@ -11,6 +11,7 @@
 
 </head>
 <body>
+<header><%@include file="header.jsp" %></header>
 <h1 id="title">ログイン</h1>
 <a href="registAccount">新規登録画面へ</a>
 
