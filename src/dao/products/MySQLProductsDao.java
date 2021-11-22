@@ -123,6 +123,7 @@ public class MySQLProductsDao implements ProductsDao{
 			}
 			MySQLConnector.commitTransaction();
 
+
 		}catch(SQLException e) {
 			MySQLConnector.rollbackTransaction();
 		}finally {

@@ -40,9 +40,7 @@
 
 	//パスワード書式チェック
 	input_pass.addEventListener("input",function(){
-		var result=regex.test(this.value);
-
-		if(result==true){
+		if(regex.test(this.value)){
 			console.log("ok");
 			circle2.style.display="none";
 			circle.style.display ="inline-block";
