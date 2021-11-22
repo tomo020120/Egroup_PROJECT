@@ -13,15 +13,15 @@
 <body>
 <h1 id="title">ログイン</h1>
 <a href="registAccount">新規登録画面へ</a>
-<div id="div1">div1</div>
+
 <!-- 認証に飛ばす -->
 <form name="sampleform" method="post" action="LoginCheckCommand">
-<p>まだ作り途中、基本的な動きだけ</p>
+
 メールアドレス<input type="text" id="mailCheck" name="mailAddress"><div class="circle" id="mailCircleID"></div><div class="circle2" id="mailCircle2ID"></div><br>
 パスワード<input type="text" id="passCheck" name="passWord" maxlength="20"><div class="circle" id="circleID"></div><div class="circle2" id="circle2ID"></div><br>
 				<input type="submit" value="ログイン">
 </form>
-<p>パスワードチェックは行ってるけど、まだ画面上には出してない、コンソールだけ</p>
+
 
 <script type="text/javascript">
 	var input_pass=document.getElementById("passCheck");
