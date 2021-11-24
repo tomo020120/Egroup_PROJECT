@@ -10,7 +10,7 @@ import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
 import dao.user.login.TempRegistDao;
-import ex.RegistException;
+import ex.IntegrationException;
 
 public class IsRegistJudgeCommand extends AbstractCommand {
 	public ResponseContext execute(ResponseContext resContext) {
@@ -44,7 +44,7 @@ public class IsRegistJudgeCommand extends AbstractCommand {
 		if(tempRegist.addTempUserLoginInfo(tempUserBean)) {
 			SendMail.send(mailAddress,"http://localhost:9090/Egroup_Project/registResult?UUID=" + tempUserBean.getUUID(),"新規会員登録");
 		}else {
-			throw new RegistException(null,null);
+			throw new IntegrationException(null,null);
 		}
 
 		return resContext;
