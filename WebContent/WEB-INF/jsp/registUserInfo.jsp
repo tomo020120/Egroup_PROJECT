@@ -1,45 +1,41 @@
-<%@ page pageEncoding="Windows-31J"
-    contentType="text/html;charset=Windows-31J" %>
+<%@ page pageEncoding="UTF-8"
+    contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
-<title>ƒ†[ƒU[“o˜^</title>
-
+<title>ãƒ¦ãƒ¼ã‚¶ãƒ¼ç™»éŒ²</title>
 <%@include file="/CSS/RegistStyle.css"%>
-
 </head>
 <body>
-    <h1 id="title">ƒ†[ƒU[“o˜^</h1>
-
+    <h1 id="title">ãƒ¦ãƒ¼ã‚¶ãƒ¼ç™»éŒ²</h1>
     <form method='post'>
-    ƒ†[ƒU[–¼<input type='text' name='name'><br>
-    ƒ[ƒ‹ƒAƒhƒŒƒX<input id='mailAddress' type='text' name='mail'><div class="circle" id="mailCircleID"></div><div class="circle2" id="mailCircle2ID"></div><br>
-    ƒpƒXƒ[ƒh<input type='text' id='inputpass' name='pass' maxlength="20"><div class="circle" id="circleID"></div><div class="circle2" id="circle2ID"></div><br>
-    ƒpƒXƒ[ƒh(Ä“ü—Í)<input type='text' id='inputagainpass' name='againpass'><div class="circle" id="reEnterCircleID"></div><div class="circle2" id="reEnterCircle2ID"></div><br>
-    <button onclick="fun1();">“o˜^</button>
+    ãƒ¦ãƒ¼ã‚¶ãƒ¼å<input type='text' name='name'><br>
+    ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹<input id='mailAddress' type='text' name='mail'><div class="circle" id="mailCircleID"></div><div class="circle2" id="mailCircle2ID"></div><br>
+    ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰<input type='text' id='inputpass' name='pass' maxlength="20"><div class="circle" id="circleID"></div><div class="circle2" id="circle2ID"></div><br>
+    ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰(å†å…¥åŠ›)<input type='text' id='inputagainpass' name='againpass'><div class="circle" id="reEnterCircleID"></div><div class="circle2" id="reEnterCircle2ID"></div><br>
+    <button onclick="fun1();">ç™»éŒ²</button>
     </form>
 <script type="text/javascript">
 	var mail = document.getElementById("mailAddress");
 	var pass = document.getElementById("inputpass");
 	var passagain = document.getElementById("inputagainpass");
-//³‹K•\Œ»
+//æ­£è¦è¡¨ç¾
 	const regis =/^[A-Z]([a-zA-Z0-9]){7,19}$/;
 	const reg =/^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}.[A-Za-z0-9]{1,}$/;
-//CSS‚ğæ‚é
+//CSSã‚’å–ã‚‹
 	const circle=document.getElementById("circleID");
 	const circle2=document.getElementById("circle2ID");
 	const mailCircle=document.getElementById("mailCircleID");
 	const mailCircle2=document.getElementById("mailCircle2ID");
 	const reEnterCircle=document.getElementById("reEnterCircleID");
 	const reEnterCircle2=document.getElementById("reEnterCircle2ID");
-
 	mailCircle.style.display="none";
 	mailCircle2.style.display="none";
 	circle.style.display="none";
 	circle2.style.display="none";
 	reEnterCircle.style.display="none";
 	reEnterCircle2.style.display="none";
-//³‹K•\Œ»‚ğƒ[ƒ‹ƒAƒhƒŒƒX‚Éİ’è
+//æ­£è¦è¡¨ç¾ã‚’ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹ã«è¨­å®š
 	mail.addEventListener("input",function(){
 	if(reg.test(mail.value)){
 		console.log("ok");
@@ -51,7 +47,7 @@
 		mailCircle2.style.display ="inline-block";
 	}
 	});
-//³‹K•\Œ»‚ğƒpƒXƒ[ƒh‚Éİ’è
+//æ­£è¦è¡¨ç¾ã‚’ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã«è¨­å®š
 	pass.addEventListener("input",function(){
 	if(regis.test(pass.value)){
 		console.log("ok");
@@ -63,7 +59,7 @@
 		circle2.style.display ="inline-block";
 	}
 	});
-//password‚Ìƒ`[ƒN
+//passwordã®ãƒãƒ¼ã‚¯
 	passagain.addEventListener("input",function(){
 		if(passagain.value === pass.value){
 			console.log("ok");
@@ -75,8 +71,6 @@
 			reEnterCircle.style.display="none";
 		}
 	});
-
 </script>
-
 </body>
 </html>
