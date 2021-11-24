@@ -10,7 +10,7 @@ import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
 import dao.user.login.TempRegistDao;
-import ex.RegistException;
+import ex.IntegrationException;
 
 public class IsRegistJudgeCommand extends AbstractCommand {
 	public ResponseContext execute(ResponseContext resContext) {
@@ -21,11 +21,14 @@ public class IsRegistJudgeCommand extends AbstractCommand {
 
 		String mailAddress = reqContext.getParameter("mail")[0];
 
+		System.out.println("入力メアド:" + mailAddress);
+
 		List<String> mailAddressList = tempRegist.getUserMailAddress();
 
 		if(mailAddressList.contains(mailAddress)) { // メールアドレスが既に存在してれば処理をやめてエラーメッセージ格納
+			System.out.println("すでに登録されてた！");
 			resContext.setResult2("そのメールアドレスは既に使用されているため登録できません。");
-			resContext.setTargetPath("regist");
+			resContext.setTargetPath("registUserInfo");
 
 			return resContext;
 		}
@@ -38,13 +41,15 @@ public class IsRegistJudgeCommand extends AbstractCommand {
 		tempUserBean.setUserName(userName);
 		tempUserBean.setMailAddress(mailAddress);
 		tempUserBean.setUserPassword(userPass);
-
 		tempUserBean.setUUID(UUIDCreator.getUUID());
+
 
 		if(tempRegist.addTempUserLoginInfo(tempUserBean)) {
 			SendMail.send(mailAddress,"http://localhost:9090/Egroup_Project/registResult?UUID=" + tempUserBean.getUUID(),"新規会員登録");
+			resContext.setResult(tempUserBean);
+			resContext.setTargetPath("sendComplete");
 		}else {
-			throw new RegistException(null,null);
+			throw new IntegrationException(null,null);
 		}
 
 		return resContext;

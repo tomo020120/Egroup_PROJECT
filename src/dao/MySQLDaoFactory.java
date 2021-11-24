@@ -4,7 +4,9 @@ import dao.artists.ArtistsDao;
 import dao.artists.MySQLArtistsDao;
 import dao.products.MySQLProductsDao;
 import dao.products.ProductsDao;
+import dao.user.login.MySQLRegistUserInfoDao;
 import dao.user.login.MySQLTempRegistDao;
+import dao.user.login.RegistUserInfoDao;
 import dao.user.login.TempRegistDao;
 
 public class MySQLDaoFactory extends AbstractDaoFactory{
@@ -18,5 +20,9 @@ public class MySQLDaoFactory extends AbstractDaoFactory{
 
     public ArtistsDao getArtistsDao() {
     	return new MySQLArtistsDao();
+    }
+
+    public RegistUserInfoDao getRegistUserInfoDao() {
+    	return new MySQLRegistUserInfoDao();
     }
 }

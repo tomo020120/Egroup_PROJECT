@@ -1,11 +1,12 @@
 package context;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 
 public class WebRequestContext implements RequestContext{
     private HttpServletRequest request;
-    private Map parametersMap;
+    private Map<String,String[]> parametersMap;
 
     public void setRequest(Object request){
         this.request = (HttpServletRequest)request;
