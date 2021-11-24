@@ -14,18 +14,13 @@ public class RegistResultCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resContext) {
 		RequestContext reqContext = getRequestContext();
 
-		String name = reqContext.getParameter("name")[0];
-		String pass = reqContext.getParameter("pass")[0];
-		String mail = reqContext.getParameter("mail")[0];
-
-		UserBean userBean = new UserBean();
-
-		userBean.setUserName(name);
-		userBean.setUserPassword(pass);
-		userBean.setMailAddress(mail);
-
 		AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
 		RegistUserInfoDao regist = factory.getRegistUserInfoDao();
+
+		String UUID = reqContext.getParameter("UUID")[0];
+
+		UserBean userBean = regist.getTempUserInfo(UUID);
+
 
 		if(regist.addUserInfo(userBean)) {
 			resContext.setTargetPath("topPage");
