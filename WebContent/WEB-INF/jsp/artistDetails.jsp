@@ -27,7 +27,7 @@
 		<td>${detail.coutory}</td>
 		<td>${detail.group}</td>
 		<td>${detail.name}</td>
-		<td><img src="${detail.pictPath}"></td>
+		<td><a href="productsDetails?itemId=${detail.itemId}"><img src="${detail.pictPath}"></a></td>
 	</tr>
 	</c:forEach>
 	</table>

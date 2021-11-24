@@ -53,7 +53,7 @@ public class MySQLProductsDao implements ProductsDao{
 			//int _testItemId =Integer.parseInt(testItemId);
 
 			//itemIdが一致する商品詳の詳細を取ってくる
-			String sql = "SELECT  a.itemId,name,price,releaseDate,pictPath,categoryName,shapeName,colorName,artistName,a.categoryId,a.colorId,a.shapeId,a.artistId\n" +
+			String sql = "SELECT  a.itemId,name,price,CAST(`releaseDate` AS DATE),pictPath,categoryName,shapeName,colorName,artistName,a.categoryId,a.colorId,a.shapeId,a.artistId\n" +
 					"FROM Ibanezdb.product_table AS a LEFT OUTER JOIN Ibanezdb.item_pict_table AS b ON a.itemId = b.itemId\n" +
 					"LEFT OUTER JOIN Ibanezdb.category_table AS c ON a.categoryId=c.categoryId\n" +
 					"LEFT OUTER JOIN Ibanezdb.color_table AS d ON a.colorId=d.colorId\n" +
@@ -131,7 +131,7 @@ public class MySQLProductsDao implements ProductsDao{
 		}
 		return products;
 	}
-	
+
 	public List<ProductPictBean> getProductsSearchResult(String productName) {
 		ArrayList<ProductPictBean> products= new ArrayList<ProductPictBean>();
 

@@ -84,6 +84,7 @@ public class MySQLArtistsDao implements ArtistsDao{
 					}
 					all.setName(rs.getString(5));
 					all.setPictPath(rs.getString(6));
+					all.setItemId(rs.getString(8));
 
 
 
