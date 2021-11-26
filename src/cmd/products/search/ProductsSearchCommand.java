@@ -17,5 +17,6 @@ public class ProductsSearchCommand extends AbstractCommand{
 		resc.setResult(dao.getProductsSearchResult(productName));
 		resc.setTargetPath("products");
 		return resc;
+		//アヒージョ
 	}
 }
