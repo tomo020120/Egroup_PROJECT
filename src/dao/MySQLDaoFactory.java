@@ -6,8 +6,10 @@ import dao.products.MySQLProductsDao;
 import dao.products.ProductsDao;
 import dao.user.login.MySQLRegistUserInfoDao;
 import dao.user.login.MySQLTempRegistDao;
+import dao.user.login.MySQLUserSelectDao;
 import dao.user.login.RegistUserInfoDao;
 import dao.user.login.TempRegistDao;
+import dao.user.login.UserSelectDao;
 
 public class MySQLDaoFactory extends AbstractDaoFactory{
     public ProductsDao getProductsDao(){
@@ -24,5 +26,9 @@ public class MySQLDaoFactory extends AbstractDaoFactory{
 
     public RegistUserInfoDao getRegistUserInfoDao() {
     	return new MySQLRegistUserInfoDao();
+    }
+
+    public UserSelectDao getUserSelectDao() {
+    	return new MySQLUserSelectDao();
     }
 }

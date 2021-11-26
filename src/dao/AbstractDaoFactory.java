@@ -9,6 +9,7 @@ import dao.artists.ArtistsDao;
 import dao.products.ProductsDao;
 import dao.user.login.RegistUserInfoDao;
 import dao.user.login.TempRegistDao;
+import dao.user.login.UserSelectDao;
 
 public abstract class AbstractDaoFactory{
 	//private static final String DAO_PROPERTY_PATH = new File("..\\workspace\\Egroup_PROJECT\\src\\property\\daoProperties.properties").getAbsolutePath();
@@ -38,4 +39,6 @@ public abstract class AbstractDaoFactory{
     public abstract ArtistsDao getArtistsDao(); // アーティストテーブル用のDao生成
 
 	public abstract RegistUserInfoDao getRegistUserInfoDao(); // 新規ユーザー登録用のDao生成
+
+	public abstract UserSelectDao getUserSelectDao();
 }
