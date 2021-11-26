@@ -13,6 +13,11 @@
     	<location>/WEB-INF/jsp/error/sendMailError.jsp</location>
     </error-page>
 
+    <error-page>
+    	<exception-type>ex.IntegrationException</exception-type>
+    	<location>/WEB-INF/jsp/error/integrationError.jsp</location>
+    </error-page>
+
     <servlet>
     	<servlet-name>FrontServlet</servlet-name>
     	<servlet-class>FrontServlet</servlet-class>

@@ -53,7 +53,7 @@ public class MySQLProductsDao implements ProductsDao{
 			//int _testItemId =Integer.parseInt(testItemId);
 
 			//itemIdが一致する商品詳の詳細を取ってくる
-			String sql = "SELECT  a.itemId,name,price,releaseDate,pictPath,categoryName,shapeName,colorName,artistName,a.categoryId,a.colorId,a.shapeId,a.artistId\n" +
+			String sql = "SELECT  a.itemId,name,price,CAST(`releaseDate` AS DATE),pictPath,categoryName,shapeName,colorName,artistName,a.categoryId,a.colorId,a.shapeId,a.artistId\n" +
 					"FROM Ibanezdb.product_table AS a LEFT OUTER JOIN Ibanezdb.item_pict_table AS b ON a.itemId = b.itemId\n" +
 					"LEFT OUTER JOIN Ibanezdb.category_table AS c ON a.categoryId=c.categoryId\n" +
 					"LEFT OUTER JOIN Ibanezdb.color_table AS d ON a.colorId=d.colorId\n" +
@@ -131,14 +131,14 @@ public class MySQLProductsDao implements ProductsDao{
 		}
 		return products;
 	}
-	
-	public List<ProductPictBean> getProductsSearchResult(String productName) {
+
+	public List<ProductPictBean> getProductsSearchResult(String productName,String sortCode) {
 		ArrayList<ProductPictBean> products= new ArrayList<ProductPictBean>();
 
 		try {
 			cn = MySQLConnector.getConnection();
 
-			String sql = "SELECT a.itemId,name,price,releaseDate,orderCount,categoryId,colorId,shapeId,artistId,pictId,pictPath FROM Ibanezdb.item_pict_table AS a JOIN Ibanezdb.product_table AS b ON a.itemId = b.itemId where name LIKE '%"+ productName +"%';";
+			String sql = "SELECT a.itemId,name,price,releaseDate,orderCount,categoryId,colorId,shapeId,artistId,pictId,pictPath FROM Ibanezdb.item_pict_table AS a JOIN Ibanezdb.product_table AS b ON a.itemId = b.itemId where name LIKE '%"+ productName +"%' "+ sortCode +";";
 
 			st=cn.prepareStatement(sql);
 

@@ -17,6 +17,8 @@ public class ProductsCommand extends AbstractCommand{
 		ProductsDao dao = factory.getProductsDao();
 		resc.setResult(dao.getAllProducts());
 		resc.setTargetPath("products");
+		
+		System.out.println("aaaaaaaaaaaaaa");
 		return resc;
 	}
 }

@@ -30,7 +30,9 @@ public class WebApplicationContext implements ApplicationContext{
         HttpServletRequest req = (HttpServletRequest)reqContext.getRequest();
         HttpServletResponse res = (HttpServletResponse)resContext.getResponse();
 
-        System.out.println(resContext.getResult());
+        System.out.println("result1" + resContext.getResult());
+        System.out.println("result2" + resContext.getResult2());
+
         req.setAttribute("result",resContext.getResult());
         req.setAttribute("result2",resContext.getResult2());
 

@@ -14,8 +14,25 @@ public class ProductsSearchCommand extends AbstractCommand{
 		AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
 		ProductsDao dao = factory.getProductsDao();
 		String productName=reqc.getParameter("productName")[0];
-		resc.setResult(dao.getProductsSearchResult(productName));
+		String sortNo=reqc.getParameter("sort")[0];
+		
+		
+		switch(sortNo) {
+			case "1" :
+				sortNo="ORDER BY a.itemId ASC";
+				break;
+			case "2" :
+				sortNo="ORDER BY price ASC";
+				break;
+			case "3" :
+				sortNo="ORDER BY price DESC";
+				break;
+				
+		}
+		
+		resc.setResult(dao.getProductsSearchResult(productName,sortNo));
 		resc.setTargetPath("products");
 		return resc;
+		//アヒージョ
 	}
 }
