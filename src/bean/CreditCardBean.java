@@ -8,6 +8,14 @@ public class CreditCardBean implements Serializable{
 	private String cardCompany;
 	private String expirationDate;
 	private String securityCode;
+	private String cardNo;
+
+	public String getCardNo() {
+		return cardNo;
+	}
+	public void setCardNo(String cardNo) {
+		this.cardNo = cardNo;
+	}
 	public String getCardId() {
 		return cardId;
 	}
@@ -38,5 +46,5 @@ public class CreditCardBean implements Serializable{
 	public void setSecurityCode(String securityCode) {
 		this.securityCode = securityCode;
 	}
-	
+
 }

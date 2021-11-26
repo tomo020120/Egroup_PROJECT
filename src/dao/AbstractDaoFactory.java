@@ -7,6 +7,7 @@ import java.util.Properties;
 
 import dao.artists.ArtistsDao;
 import dao.products.ProductsDao;
+import dao.user.EditUserInfoDao;
 import dao.user.login.TempRegistDao;
 
 public abstract class AbstractDaoFactory{
@@ -35,4 +36,6 @@ public abstract class AbstractDaoFactory{
     public abstract TempRegistDao getTempRegistDao(); // 一時ユーザーテーブルのDao生成
 
     public abstract ArtistsDao getArtistsDao(); // アーティストテーブルのDao生成
+
+    public abstract EditUserInfoDao getEditUserInfoDao(); // ユーザー情報編集用のDao生成
 }
