@@ -132,13 +132,13 @@ public class MySQLProductsDao implements ProductsDao{
 		return products;
 	}
 
-	public List<ProductPictBean> getProductsSearchResult(String productName) {
+	public List<ProductPictBean> getProductsSearchResult(String productName,String sortCode) {
 		ArrayList<ProductPictBean> products= new ArrayList<ProductPictBean>();
 
 		try {
 			cn = MySQLConnector.getConnection();
 
-			String sql = "SELECT a.itemId,name,price,releaseDate,orderCount,categoryId,colorId,shapeId,artistId,pictId,pictPath FROM Ibanezdb.item_pict_table AS a JOIN Ibanezdb.product_table AS b ON a.itemId = b.itemId where name LIKE '%"+ productName +"%';";
+			String sql = "SELECT a.itemId,name,price,releaseDate,orderCount,categoryId,colorId,shapeId,artistId,pictId,pictPath FROM Ibanezdb.item_pict_table AS a JOIN Ibanezdb.product_table AS b ON a.itemId = b.itemId where name LIKE '%"+ productName +"%' "+ sortCode +";";
 
 			st=cn.prepareStatement(sql);
 
