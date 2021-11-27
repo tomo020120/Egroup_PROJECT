@@ -22,6 +22,9 @@
 パスワード<input type="text" id="passCheck" name="passWord" maxlength="20"><div class="circle" id="circleID"></div><div class="circle2" id="circle2ID"></div><br>
 				<input type="submit" value="ログイン">
 </form>
+<!-- 認証エラーメッセージ取得 -->
+<p>${message}</p>
+
 
 
 <script type="text/javascript">

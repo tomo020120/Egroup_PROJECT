@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 public class WebRequestContext implements RequestContext{
     private HttpServletRequest request;
     private Map<String,String[]> parametersMap;
-    private Object token;
 
     public void setRequest(Object request){
         this.request = (HttpServletRequest)request;
@@ -32,10 +31,49 @@ public class WebRequestContext implements RequestContext{
     }
 
     public void setToken(Object token) {
-    	this.token = token;
+    	request.getSession().setAttribute("token", token);
     }
 
     public Object getToken() {
-    	return token;
+		System.out.println("セッション登録値(token) :" + request.getSession().getAttribute("token"));
+
+    	return request.getSession().getAttribute("token");
     }
+
+	public void setSessionAttribute(String attrName, Object value) {
+		request.getSession().setAttribute(attrName, value);
+
+	}
+
+	public Object getSessionAttribute(String attrName) {
+		System.out.println("セッション登録値 :" + request.getSession().getAttribute(attrName));
+
+		return request.getSession().getAttribute(attrName);
+	}
+
+	public void removeSessionAttribute(String attrName) {
+		request.getSession().removeAttribute(attrName);
+	}
+
+	public void setPastLocation(String location) {
+		request.getSession().setAttribute("pastLocation", location);
+	}
+
+	public String getPastLocation() {
+		return (String)request.getSession().getAttribute("pastLocation");
+	}
+
+	public String getOneBeforeLocation() {
+		String referer = request.getHeader("referer");
+		String trimLocation = referer.substring(37); // refererからコンテキストパスなどを取り除く
+
+		System.out.println("referer :" + referer);
+		System.out.println("referer(トリミング済み) :" + trimLocation);
+
+		if(trimLocation.isEmpty()) {
+			trimLocation = "topPage";
+		}
+
+		return trimLocation;
+	}
 }

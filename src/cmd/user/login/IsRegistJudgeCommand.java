@@ -27,7 +27,7 @@ public class IsRegistJudgeCommand extends AbstractCommand {
 
 		if(mailAddressList.contains(mailAddress)) { // メールアドレスが既に存在してれば処理をやめてエラーメッセージ格納
 			System.out.println("すでに登録されてた！");
-			resContext.setResult2("そのメールアドレスは既に使用されているため登録できません。");
+			resContext.setMessage("そのメールアドレスは既に使用されているため登録できません。");
 			resContext.setTargetPath("registUserInfo");
 
 			return resContext;

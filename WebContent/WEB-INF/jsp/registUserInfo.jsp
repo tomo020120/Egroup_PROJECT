@@ -14,6 +14,10 @@
     パスワード<input type='text' id='inputpass' name='pass' maxlength="20"><div class="circle" id="circleID"></div><div class="circle2" id="circle2ID"></div><br>
     パスワード(再入力)<input type='text' id='inputagainpass' name='againpass'><div class="circle" id="reEnterCircleID"></div><div class="circle2" id="reEnterCircle2ID"></div><br>
     <input type="submit" value="登録">
+
+<!-- ログインできなかったときのエラーメッセージ -->
+    <p>${message}</p>
+
     </form>
 <script type="text/javascript">
 	var mail = document.getElementById("mailAddress");

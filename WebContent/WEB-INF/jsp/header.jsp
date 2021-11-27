@@ -17,6 +17,7 @@
 		<a href="cart"><img src=file:///../../image/cart.png alt="カート" width="40"></a>
 		<a href="login"><img src=file:///../../image/people.png alt="ログイン" width="40"></a>
 	</div>
+	<p>${session.token.name}</p>
 
 
 
