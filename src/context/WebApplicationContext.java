@@ -6,6 +6,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import cmd.AbstractCommand;
 import cmd.CommandFactory;
@@ -30,8 +31,14 @@ public class WebApplicationContext implements ApplicationContext{
         HttpServletRequest req = (HttpServletRequest)reqContext.getRequest();
         HttpServletResponse res = (HttpServletResponse)resContext.getResponse();
 
-        System.out.println("result1" + resContext.getResult());
-        System.out.println("result2" + resContext.getResult2());
+        System.out.println("result1 : " + resContext.getResult());
+        System.out.println("result2 : " + resContext.getResult2());
+
+        HttpSession session = req.getSession(false);
+
+        if(session != null) {
+        	session.setAttribute("token", reqContext.getToken());
+        }
 
         req.setAttribute("result",resContext.getResult());
         req.setAttribute("result2",resContext.getResult2());

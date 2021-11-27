@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 public class WebResponseContext implements ResponseContext{
     private Object result;
     private Object result2;
+    private Object token;
     private String targetPath;
     private HttpServletResponse response;
 
@@ -39,4 +40,12 @@ public class WebResponseContext implements ResponseContext{
     public String getTargetPath(){
         return targetPath;
     }
+
+	public void setSessionToken(Object token) {
+		this.token = token;
+	}
+
+	public Object getSessionToken() {
+		return token;
+	}
 }

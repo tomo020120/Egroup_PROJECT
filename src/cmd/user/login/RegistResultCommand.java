@@ -19,11 +19,14 @@ public class RegistResultCommand extends AbstractCommand{
 
 		String UUID = reqContext.getParameter("UUID")[0];
 
+		System.out.println("取得UUID :" + UUID);
+
 		UserBean userBean = regist.getTempUserInfo(UUID);
 
 
+		System.out.println(userBean.getMailAddress());
 		if(regist.addUserInfo(userBean)) {
-			resContext.setTargetPath("topPage");
+			resContext.setTargetPath("registComplete");
 		}
 		else {
 			throw new IntegrationException(null,null);

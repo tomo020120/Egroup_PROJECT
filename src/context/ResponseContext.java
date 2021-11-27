@@ -9,4 +9,6 @@ public interface ResponseContext{
     public abstract Object getResult2();
     public abstract void setTargetPath(String targetPath);
     public abstract String getTargetPath();
+    public abstract void setSessionToken(Object token);
+    public abstract Object getSessionToken();
 }

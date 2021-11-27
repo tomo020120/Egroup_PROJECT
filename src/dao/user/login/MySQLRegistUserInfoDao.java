@@ -55,7 +55,9 @@ public class MySQLRegistUserInfoDao implements RegistUserInfoDao {
 		try {
 			cn = MySQLConnector.getConnection();
 
-			String sql = "select userName,userPassword,mailAddress where UUID = " + UUID;
+			String sql = "select userName,userPassword,mailAddress from temporary_user_data where UUID = ?";
+
+			st.setString(1, UUID);
 
 			st = cn.prepareStatement(sql);
 
