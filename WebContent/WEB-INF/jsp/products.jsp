@@ -12,7 +12,7 @@
 <body>
 <header><%@include file="header.jsp" %></header>
 
-<form action="productsSearch" method="POST">
+<form action="productsSearch" method="GET">
 製品名検索(仮)：<input type="search" name="productName">
 <select name="sort">
 	<option value="1">商品ID順</option>
