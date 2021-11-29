@@ -22,7 +22,11 @@ public class MySQLUserSelectDao implements UserSelectDao{
 
 			st = cn.prepareStatement(sql);
 
+			st.setString(1, _mail);
+			st.setString(2, _pass);
+
 			rs = st.executeQuery();
+
 
 			while(rs.next()) {
 				userBean.setUserId(rs.getString(1));

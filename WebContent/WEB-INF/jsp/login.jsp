@@ -16,7 +16,7 @@
 <a href="registAccount">新規登録画面へ</a>
 
 <!-- 認証に飛ばす -->
-<form name="sampleform" method="post" action="LoginCheckCommand">
+<form name="sampleform" method="post" action="loginCheck">
 
 メールアドレス<input type="text" id="mailCheck" name="mailAddress"><div class="circle" id="mailCircleID"></div><div class="circle2" id="mailCircle2ID"></div><br>
 パスワード<input type="text" id="passCheck" name="passWord" maxlength="20"><div class="circle" id="circleID"></div><div class="circle2" id="circle2ID"></div><br>
