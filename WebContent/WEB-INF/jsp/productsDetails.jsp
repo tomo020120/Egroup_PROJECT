@@ -26,6 +26,7 @@
 		<td>${detail.price}</td>
 		<td>${detail.releaseDate}</td>
 		<td><img src="${detail.pictPath}"></td>
+		<td><a href="cart?itemId=${detail.itemId}">カートへ</a></td>
 	</tr>
 	</c:forEach>
 	</table>

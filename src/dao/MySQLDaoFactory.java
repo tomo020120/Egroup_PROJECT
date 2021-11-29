@@ -2,6 +2,8 @@ package dao;
 
 import dao.artists.ArtistsDao;
 import dao.artists.MySQLArtistsDao;
+import dao.cart.CartDao;
+import dao.cart.MySQLCartDao;
 import dao.products.MySQLProductsDao;
 import dao.products.ProductsDao;
 import dao.user.EditUserInfoDao;
@@ -36,5 +38,8 @@ public class MySQLDaoFactory extends AbstractDaoFactory{
 
     public UserSelectDao getUserSelectDao() {
     	return new MySQLUserSelectDao();
+    }
+    public CartDao getCartDao() {
+    	return new MySQLCartDao();
     }
 }

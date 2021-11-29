@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 import dao.artists.ArtistsDao;
+import dao.cart.CartDao;
 import dao.products.ProductsDao;
 import dao.user.EditUserInfoDao;
 import dao.user.login.RegistUserInfoDao;
@@ -38,5 +39,6 @@ public abstract class AbstractDaoFactory{
     public abstract ArtistsDao getArtistsDao(); // アーティストテーブルのDao生成
     public abstract EditUserInfoDao getEditUserInfoDao(); // ユーザー情報編集用のDao生成
 	public abstract RegistUserInfoDao getRegistUserInfoDao(); // 新規ユーザー登録用のDao生成
+	public abstract CartDao getCartDao(); // カートのDao生成
 	public abstract UserSelectDao getUserSelectDao();
 }
