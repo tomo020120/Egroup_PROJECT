@@ -12,7 +12,6 @@
 <body>
 	<header><%@include file="header.jsp" %></header>
 	<h1>カート</h1>
-	<h1>カート</h1>
 	<table border="1">
 	<tr>
 		<th>名前</th>

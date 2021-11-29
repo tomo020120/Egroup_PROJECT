@@ -1,4 +1,4 @@
-package bean.joinBean;//
+package bean.joinBean;
 
 import java.io.Serializable;
 
