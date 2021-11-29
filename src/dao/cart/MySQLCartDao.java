@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import bean.ArtistBean;
+import bean.joinBean.AllCartBean;
 import dao.sql.MySQLConnector;
 
 public class MySQLCartDao implements CartDao{
@@ -47,38 +47,44 @@ public class MySQLCartDao implements CartDao{
 
 		return flag;
 	}
-	
 
-	
-	
-	
-	
-		ArrayList<ArtistBean> artists= new ArrayList<ArtistBean>();
 
-	public List<ArtistBean> getCart() {
+
+
+
+
+
+	public List<AllCartBean> getCart(String userId) {
+
+	List<AllCartBean> carts= new ArrayList<AllCartBean>();
 
 	try {
 		cn = MySQLConnector.getConnection();
 
-		String sql = "SELECT * FROM artist_table";
+
+		String sql = "SELECT name,cart_inside_table.orderCount,subTotal,product_table.itemId,cart_table.cartId,pictPath,total FROM cart_table join cart_inside_table ON cart_table.cartId = cart_inside_table.cartId JOIN product_table ON product_table.itemId=cart_inside_table.itemId JOIN item_pict_table ON item_pict_table.itemId = product_table.itemId Where cart_table.userId = ?";
 
 		st=cn.prepareStatement(sql);
 
+		st.setString(1, userId);
+
 		rs=st.executeQuery();
 
-		while(rs.next()) {
-			ArtistBean p = new ArtistBean();
+		AllCartBean p = new AllCartBean();
 
-			p.setArtistId(rs.getString(1));
-			p.setArtistName(rs.getString(2));
-			p.setCoutory(rs.getString(3));
-			p.setGroup(rs.getString(4));
-			p.setArtistPict(rs.getString(5));
+		while(rs.next()){
+			System.out.println("ru-pu");
 
+			p.setName(rs.getString(1));
+			p.setOrderCount(rs.getString(2));
+			p.setSubTotal(rs.getString(3));
+			p.setItemId(rs.getString(4));
+			p.setPictPath(rs.getString(6));
+			p.setTotal(rs.getString(7));
 
-
-			artists.add(p);
+			carts.add(p);
 		}
+
 		MySQLConnector.commitTransaction();
 
 
@@ -87,9 +93,9 @@ public class MySQLCartDao implements CartDao{
 	}finally {
 		MySQLConnector.closeTransaction();
 	}
-	return artists;
-}
 
-}
+	return carts;
 
+	}
+}
 

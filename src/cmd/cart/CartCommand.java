@@ -11,7 +11,11 @@ public class CartCommand extends AbstractCommand{
 		resc = new WebResponseContext();
     	AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
     	CartDao dao = factory.getCartDao();
-    	resc.setResult(dao.getCart());
+    	String userId="1";
+
+    	System.out.print("要素数：" + dao.getCart(userId).size());
+
+    	resc.setResult(dao.getCart(userId));
 		resc.setTargetPath("cart");
 		return resc;
 	}
