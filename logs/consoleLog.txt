@@ -1,114 +1,113 @@
-11 28, 2021 11:01:13 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
+11 29, 2021 11:20:02 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
 警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:threader' did not find a matching property.
-11 28, 2021 11:01:13 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
+11 29, 2021 11:20:02 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
 警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:rjp' did not find a matching property.
-11 28, 2021 11:01:13 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
+11 29, 2021 11:20:02 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
 警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:oop' did not find a matching property.
-11 28, 2021 11:01:13 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
+11 29, 2021 11:20:02 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
 警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:j2ee4' did not find a matching property.
-11 28, 2021 11:01:13 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
+11 29, 2021 11:20:02 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
 警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:Egroup_PROJECT' did not find a matching property.
-11 28, 2021 11:01:13 午前 org.apache.catalina.startup.VersionLoggerListener log
+11 29, 2021 11:20:02 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Server version:        Apache Tomcat/8.0.36
-11 28, 2021 11:01:13 午前 org.apache.catalina.startup.VersionLoggerListener log
+11 29, 2021 11:20:02 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Server built:          Jun 9 2016 13:55:50 UTC
-11 28, 2021 11:01:13 午前 org.apache.catalina.startup.VersionLoggerListener log
+11 29, 2021 11:20:02 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Server number:         8.0.36.0
-11 28, 2021 11:01:13 午前 org.apache.catalina.startup.VersionLoggerListener log
+11 29, 2021 11:20:02 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: OS Name:               Windows 10
-11 28, 2021 11:01:13 午前 org.apache.catalina.startup.VersionLoggerListener log
+11 29, 2021 11:20:02 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: OS Version:            10.0
-11 28, 2021 11:01:13 午前 org.apache.catalina.startup.VersionLoggerListener log
+11 29, 2021 11:20:02 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Architecture:          amd64
-11 28, 2021 11:01:13 午前 org.apache.catalina.startup.VersionLoggerListener log
+11 29, 2021 11:20:02 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Java Home:             C:\Program Files\Java\jdk1.8.0_202\jre
-11 28, 2021 11:01:13 午前 org.apache.catalina.startup.VersionLoggerListener log
+11 29, 2021 11:20:02 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: JVM Version:           1.8.0_202-b08
-11 28, 2021 11:01:13 午前 org.apache.catalina.startup.VersionLoggerListener log
+11 29, 2021 11:20:02 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: JVM Vendor:            Oracle Corporation
-11 28, 2021 11:01:13 午前 org.apache.catalina.startup.VersionLoggerListener log
+11 29, 2021 11:20:02 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: CATALINA_BASE:         C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0
-11 28, 2021 11:01:13 午前 org.apache.catalina.startup.VersionLoggerListener log
+11 29, 2021 11:20:02 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: CATALINA_HOME:         C:\pleiades\tomcat\8
-11 28, 2021 11:01:13 午前 org.apache.catalina.startup.VersionLoggerListener log
+11 29, 2021 11:20:02 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Dcatalina.base=C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0
-11 28, 2021 11:01:13 午前 org.apache.catalina.startup.VersionLoggerListener log
+11 29, 2021 11:20:02 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Dcatalina.home=C:\pleiades\tomcat\8
-11 28, 2021 11:01:13 午前 org.apache.catalina.startup.VersionLoggerListener log
+11 29, 2021 11:20:02 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Dwtp.deploy=C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps
-11 28, 2021 11:01:13 午前 org.apache.catalina.startup.VersionLoggerListener log
+11 29, 2021 11:20:02 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Djava.endorsed.dirs=C:\pleiades\tomcat\8\endorsed
-11 28, 2021 11:01:13 午前 org.apache.catalina.startup.VersionLoggerListener log
+11 29, 2021 11:20:02 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Dfile.encoding=UTF-8
-11 28, 2021 11:01:13 午前 org.apache.catalina.startup.VersionLoggerListener log
+11 29, 2021 11:20:02 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Xbootclasspath/a:C:\pleiades\tomcat\8\lib\mysql-connector-java-8.0.22.jar
-11 28, 2021 11:01:13 午前 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+11 29, 2021 11:20:02 午前 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
 情報: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.8.0_202\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/pleiades/eclipse//jre/bin/server;C:/pleiades/eclipse//jre/bin;C:\app\oracle\product\19.1.0\dbhome_1\bin;C:\app\oracle\product\12.1.0\dbhome_1\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Common Files\Roxio Shared\DLLShared\;C:\Program Files (x86)\Common Files\Roxio Shared\OEM\12.0\DLLShared\;C:\Program Files (x86)\Roxio 2010\OEM\AudioCore\;c:\Borland\Bcc55\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\koyama\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk1.8.0_202\bin;C:\Users\koyama\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\pleiades\eclipse;;.
-11 28, 2021 11:01:14 午前 org.apache.coyote.AbstractProtocol init
+11 29, 2021 11:20:02 午前 org.apache.coyote.AbstractProtocol init
 情報: Initializing ProtocolHandler ["http-nio-9090"]
-11 28, 2021 11:01:14 午前 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
+11 29, 2021 11:20:02 午前 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
 情報: Using a shared selector for servlet write/read
-11 28, 2021 11:01:14 午前 org.apache.coyote.AbstractProtocol init
+11 29, 2021 11:20:02 午前 org.apache.coyote.AbstractProtocol init
 情報: Initializing ProtocolHandler ["ajp-nio-9009"]
-11 28, 2021 11:01:14 午前 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
+11 29, 2021 11:20:02 午前 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
 情報: Using a shared selector for servlet write/read
-11 28, 2021 11:01:14 午前 org.apache.catalina.startup.Catalina load
-情報: Initialization processed in 904 ms
-11 28, 2021 11:01:14 午前 org.apache.catalina.core.StandardService startInternal
+11 29, 2021 11:20:02 午前 org.apache.catalina.startup.Catalina load
+情報: Initialization processed in 944 ms
+11 29, 2021 11:20:02 午前 org.apache.catalina.core.StandardService startInternal
 情報: サービス Catalina を起動します
-11 28, 2021 11:01:14 午前 org.apache.catalina.core.StandardEngine startInternal
+11 29, 2021 11:20:02 午前 org.apache.catalina.core.StandardEngine startInternal
 情報: Starting Servlet Engine: Apache Tomcat/8.0.36
-11 28, 2021 11:01:15 午前 org.apache.jasper.servlet.TldScanner scanJars
+11 29, 2021 11:20:03 午前 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-11 28, 2021 11:01:15 午前 org.apache.jasper.servlet.TldScanner scanJars
+11 29, 2021 11:20:04 午前 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-11 28, 2021 11:01:16 午前 org.apache.jasper.servlet.TldScanner scanJars
+11 29, 2021 11:20:04 午前 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-11 28, 2021 11:01:17 午前 org.apache.jasper.servlet.TldScanner scanJars
+11 29, 2021 11:20:05 午前 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-11 28, 2021 11:01:18 午前 org.apache.jasper.servlet.TldScanner scanJars
+11 29, 2021 11:20:06 午前 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-11 28, 2021 11:01:18 午前 org.apache.jasper.servlet.TldScanner scanJars
+11 29, 2021 11:20:07 午前 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-11 28, 2021 11:01:18 午前 org.apache.coyote.AbstractProtocol start
+11 29, 2021 11:20:07 午前 org.apache.coyote.AbstractProtocol start
 情報: Starting ProtocolHandler ["http-nio-9090"]
-11 28, 2021 11:01:18 午前 org.apache.coyote.AbstractProtocol start
+11 29, 2021 11:20:07 午前 org.apache.coyote.AbstractProtocol start
 情報: Starting ProtocolHandler ["ajp-nio-9009"]
-11 28, 2021 11:01:18 午前 org.apache.catalina.startup.Catalina start
-情報: Server startup in 4601 ms
-キー値：news
-取得プロパティ：cmd.news.NewsCommand
-result1 : null
-message : null
+11 29, 2021 11:20:07 午前 org.apache.catalina.startup.Catalina start
+情報: Server startup in 4735 ms
 キー値：products
 取得プロパティ：cmd.products.ProductsCommand
 aaaaaaaaaaaaaa
-result1 : [bean.joinBean.ProductPictBean@7a597819, bean.joinBean.ProductPictBean@3a9e155a, bean.joinBean.ProductPictBean@3ac4ce40, bean.joinBean.ProductPictBean@7c728d2, bean.joinBean.ProductPictBean@366f1183, bean.joinBean.ProductPictBean@7c11f6d1, bean.joinBean.ProductPictBean@60bb91dd, bean.joinBean.ProductPictBean@5e84b4a0, bean.joinBean.ProductPictBean@10a955fa, bean.joinBean.ProductPictBean@637d9e40, bean.joinBean.ProductPictBean@5f74ce8b, bean.joinBean.ProductPictBean@242e4071, bean.joinBean.ProductPictBean@7ef2d78b, bean.joinBean.ProductPictBean@7172c98b, bean.joinBean.ProductPictBean@80b51b8, bean.joinBean.ProductPictBean@5ef0b500, bean.joinBean.ProductPictBean@36566fda, bean.joinBean.ProductPictBean@518fc60a, bean.joinBean.ProductPictBean@35bcb12, bean.joinBean.ProductPictBean@585836cc, bean.joinBean.ProductPictBean@5df5baa2, bean.joinBean.ProductPictBean@72e59880, bean.joinBean.ProductPictBean@2fbbde95, bean.joinBean.ProductPictBean@364c73f8, bean.joinBean.ProductPictBean@469cef39, bean.joinBean.ProductPictBean@18635ef2, bean.joinBean.ProductPictBean@695d741d, bean.joinBean.ProductPictBean@3c5b097d, bean.joinBean.ProductPictBean@1d1fcce8, bean.joinBean.ProductPictBean@1f098577, bean.joinBean.ProductPictBean@1df6e717, bean.joinBean.ProductPictBean@79021535, bean.joinBean.ProductPictBean@1a19fe71, bean.joinBean.ProductPictBean@4968f278, bean.joinBean.ProductPictBean@630c7a1d]
+result1 : [bean.joinBean.ProductPictBean@5d7740dc, bean.joinBean.ProductPictBean@7370426b, bean.joinBean.ProductPictBean@324bb86a, bean.joinBean.ProductPictBean@3d2446be, bean.joinBean.ProductPictBean@5ab29066, bean.joinBean.ProductPictBean@2ba0f241, bean.joinBean.ProductPictBean@444787b7, bean.joinBean.ProductPictBean@5b493837, bean.joinBean.ProductPictBean@1536b298, bean.joinBean.ProductPictBean@39a86885, bean.joinBean.ProductPictBean@412a2a38, bean.joinBean.ProductPictBean@53303aaa, bean.joinBean.ProductPictBean@73b2e026, bean.joinBean.ProductPictBean@9244295, bean.joinBean.ProductPictBean@19cfd263, bean.joinBean.ProductPictBean@4bf84e9a, bean.joinBean.ProductPictBean@2faf2413, bean.joinBean.ProductPictBean@4b4eb99, bean.joinBean.ProductPictBean@630f6da6, bean.joinBean.ProductPictBean@6a0a73c3, bean.joinBean.ProductPictBean@3c535d2d, bean.joinBean.ProductPictBean@1f98911d, bean.joinBean.ProductPictBean@7e2ad15, bean.joinBean.ProductPictBean@3ecf5241, bean.joinBean.ProductPictBean@18d3ca80, bean.joinBean.ProductPictBean@4318a0fe, bean.joinBean.ProductPictBean@5180378d, bean.joinBean.ProductPictBean@15192aa6, bean.joinBean.ProductPictBean@1318654f, bean.joinBean.ProductPictBean@15013882, bean.joinBean.ProductPictBean@45ed49f0, bean.joinBean.ProductPictBean@197d17f1, bean.joinBean.ProductPictBean@491f2b8c, bean.joinBean.ProductPictBean@5546df05, bean.joinBean.ProductPictBean@7acbbe94]
 message : null
-キー値：artist
-取得プロパティ：cmd.artist.ArtistCommand
-result1 : [bean.ArtistBean@14bb5cf6, bean.ArtistBean@42b21abf, bean.ArtistBean@25650c1a, bean.ArtistBean@3a8614f3, bean.ArtistBean@7494a3b9, bean.ArtistBean@26a12876, bean.ArtistBean@2ba9f564, bean.ArtistBean@21825d6e, bean.ArtistBean@70dabb8c, bean.ArtistBean@5f17df79, bean.ArtistBean@3b71132a, bean.ArtistBean@82b4007, bean.ArtistBean@2d088c55, bean.ArtistBean@4c85629a, bean.ArtistBean@7f5ed063, bean.ArtistBean@2da79cf7, bean.ArtistBean@4424d732, bean.ArtistBean@2352ec9e, bean.ArtistBean@2a86fd5f, bean.ArtistBean@3bd79cdc, bean.ArtistBean@59a841d3, bean.ArtistBean@6d2a7064, bean.ArtistBean@705b149b, bean.ArtistBean@77ed5730, bean.ArtistBean@6cd036c7, bean.ArtistBean@5247c269, bean.ArtistBean@7a10fb76, bean.ArtistBean@67d967d3, bean.ArtistBean@a5203e1, bean.ArtistBean@666acc48, bean.ArtistBean@1bdc50b8, bean.ArtistBean@37975bef]
-message : null
-キー値：news
-取得プロパティ：cmd.news.NewsCommand
-result1 : null
-message : null
-キー値：products
-取得プロパティ：cmd.products.ProductsCommand
-aaaaaaaaaaaaaa
-result1 : [bean.joinBean.ProductPictBean@14b37d02, bean.joinBean.ProductPictBean@1f359ed4, bean.joinBean.ProductPictBean@6c3d2b66, bean.joinBean.ProductPictBean@4e7e6948, bean.joinBean.ProductPictBean@412a46e8, bean.joinBean.ProductPictBean@72daa327, bean.joinBean.ProductPictBean@7739c001, bean.joinBean.ProductPictBean@4a30d387, bean.joinBean.ProductPictBean@59bec12f, bean.joinBean.ProductPictBean@7e5a82a4, bean.joinBean.ProductPictBean@47da6ca6, bean.joinBean.ProductPictBean@bba2331, bean.joinBean.ProductPictBean@24223cd0, bean.joinBean.ProductPictBean@e47c552, bean.joinBean.ProductPictBean@1a6c3760, bean.joinBean.ProductPictBean@40953cb7, bean.joinBean.ProductPictBean@75e44cc9, bean.joinBean.ProductPictBean@45396a72, bean.joinBean.ProductPictBean@3e958282, bean.joinBean.ProductPictBean@570c7163, bean.joinBean.ProductPictBean@59ed4f, bean.joinBean.ProductPictBean@ebd7dcc, bean.joinBean.ProductPictBean@1cae7f0b, bean.joinBean.ProductPictBean@289d9294, bean.joinBean.ProductPictBean@6761215d, bean.joinBean.ProductPictBean@2576360, bean.joinBean.ProductPictBean@6d6e1206, bean.joinBean.ProductPictBean@2923240d, bean.joinBean.ProductPictBean@472683bd, bean.joinBean.ProductPictBean@7ed3a45a, bean.joinBean.ProductPictBean@633067a4, bean.joinBean.ProductPictBean@53033483, bean.joinBean.ProductPictBean@204b7e35, bean.joinBean.ProductPictBean@43d9ef12, bean.joinBean.ProductPictBean@23b4bd8a]
-message : null
-キー値：productsDetails
-取得プロパティ：cmd.products.details.ProductsDetailsCommand
-result1 : [bean.joinBean.AllProductDetailBean@29a80df5]
-message : null
+セッション登録値(token) :null
+sessionInfo : null
+セッション登録値(token) :null
 キー値：login
 取得プロパティ：cmd.user.login.TransferLoginPageCommand
-referer :http://localhost:9090/Egroup_PROJECT/productsDetails?itemId=1
-referer(トリミング済み) :productsDetails?itemId=1
+referer :http://localhost:9090/Egroup_PROJECT/products
+referer(トリミング済み) :products
 result1 : null
 message : null
-キー値：registAccount
-取得プロパティ：cmd.user.TransferRegistUserInfoCommand
+セッション登録値(token) :null
+sessionInfo : null
+セッション登録値(token) :null
+キー値：loginCheck
+取得プロパティ：cmd.user.login.LoginCheckCommand
+入力メアド:tomoiw0120@gmail.com
+入力メアド:Tomo0120
+転送先 : /products
 result1 : null
 message : null
+セッション登録値(token) :bean.UserBean@1e6d481b
+sessionInfo : bean.UserBean@1e6d481b
+セッション登録値(token) :bean.UserBean@1e6d481b
+キー値：products
+取得プロパティ：cmd.products.ProductsCommand
+aaaaaaaaaaaaaa
+result1 : [bean.joinBean.ProductPictBean@1e27bece, bean.joinBean.ProductPictBean@3b402afd, bean.joinBean.ProductPictBean@3c45ec19, bean.joinBean.ProductPictBean@2651ab55, bean.joinBean.ProductPictBean@523b09f, bean.joinBean.ProductPictBean@3f0e7504, bean.joinBean.ProductPictBean@2cb863d8, bean.joinBean.ProductPictBean@7186e19, bean.joinBean.ProductPictBean@1f27912d, bean.joinBean.ProductPictBean@534d6198, bean.joinBean.ProductPictBean@3c047e8a, bean.joinBean.ProductPictBean@7828b7b5, bean.joinBean.ProductPictBean@5ba5ef64, bean.joinBean.ProductPictBean@635c0429, bean.joinBean.ProductPictBean@7cb3c6e6, bean.joinBean.ProductPictBean@411b53da, bean.joinBean.ProductPictBean@35b15a52, bean.joinBean.ProductPictBean@36cf7d81, bean.joinBean.ProductPictBean@54291948, bean.joinBean.ProductPictBean@4fb70594, bean.joinBean.ProductPictBean@70ebb5fa, bean.joinBean.ProductPictBean@3d05fd13, bean.joinBean.ProductPictBean@217a40a2, bean.joinBean.ProductPictBean@56966abc, bean.joinBean.ProductPictBean@7b7f51f1, bean.joinBean.ProductPictBean@6980d6e8, bean.joinBean.ProductPictBean@1a8cf42a, bean.joinBean.ProductPictBean@7f2abe4d, bean.joinBean.ProductPictBean@7e5b9880, bean.joinBean.ProductPictBean@11032635, bean.joinBean.ProductPictBean@6c53bd9b, bean.joinBean.ProductPictBean@46a1ae8a, bean.joinBean.ProductPictBean@641cb146, bean.joinBean.ProductPictBean@6ca6117e, bean.joinBean.ProductPictBean@1d68c614]
+message : null
+セッション登録値(token) :bean.UserBean@1e6d481b
+sessionInfo : bean.UserBean@1e6d481b
+セッション登録値(token) :bean.UserBean@1e6d481b

@@ -32,7 +32,9 @@ public class WebApplicationContext implements ApplicationContext{
 
         System.out.println("result1 : " + resContext.getResult());
         System.out.println("message : " + resContext.getMessage());
+        System.out.println("sessionInfo : " + reqContext.getToken());
 
+        req.setAttribute("sessionInfo", reqContext.getToken());
         req.setAttribute("result",resContext.getResult());
         req.setAttribute("message",resContext.getMessage());
 

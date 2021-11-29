@@ -23,7 +23,7 @@ public class LoginCheckCommand extends AbstractCommand{
 		if(userBean != null) { // 認証できてればセッションに登録し、ログインする前にいたところに飛ばす。認証できなければログインページにメッセージを返す。
 			reqContext.setToken(userBean);
 
-			resContext.setTargetPath(reqContext.getPastLocation());
+			resContext.setTargetCommandPath(reqContext.getPastLocation());
 			System.out.println("転送先 : " + resContext.getTargetPath());
 		}else {
 			resContext.setMessage("メールアドレスまたはパスワードが間違っています。");

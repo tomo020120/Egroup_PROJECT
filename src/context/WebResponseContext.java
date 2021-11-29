@@ -33,14 +33,16 @@ public class WebResponseContext implements ResponseContext{
     }
 
     public void setTargetPath(String targetPath){
-    	if(targetPath.contains("?")) { // URLパラメータがあるときは付け足さずにset
-    		this.targetPath = "/" + targetPath;
-    	}else {
-    		this.targetPath = "/WEB-INF/jsp/" + targetPath + ".jsp";
-    	}
+    	this.targetPath = "/WEB-INF/jsp/" + targetPath + ".jsp";
     }
 
     public String getTargetPath(){
         return targetPath;
     }
+
+	public String setTargetCommandPath(String commandPath) {
+		this.targetPath = "/" + commandPath;
+
+		return targetPath;
+	}
 }

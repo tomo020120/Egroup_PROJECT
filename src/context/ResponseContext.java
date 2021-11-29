@@ -8,5 +8,6 @@ public interface ResponseContext{
     public abstract void setMessage(Object message);
     public abstract Object getMessage();
     public abstract void setTargetPath(String targetPath);
+    public abstract String setTargetCommandPath(String commandPath);
     public abstract String getTargetPath();
 }
