@@ -11,7 +11,13 @@ public class TransferLoginPageCommand extends AbstractCommand{
 
     	reqContext.setPastLocation(reqContext.getOneBeforeLocation()); // ログイン画面に行く前の情報取得
 
-        resContext.setTargetPath("login");
+
+		if(reqContext.getToken() != null) { // そもそもログイン済みであればページを戻す
+			resContext.setTargetCommandPath(reqContext.getPastLocation());
+		}else {
+			resContext.setTargetPath("login");
+		}
+
 
         return resContext;
     }

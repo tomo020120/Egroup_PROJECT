@@ -57,14 +57,15 @@ public class MySQLRegistUserInfoDao implements RegistUserInfoDao {
 
 			String sql = "select userName,userPassword,mailAddress from temporary_user_data where UUID = ?";
 
-			st.setString(1, UUID);
-
 			st = cn.prepareStatement(sql);
+
+			st.setString(1, UUID);
 
 			rs = st.executeQuery();
 
 
 			while(rs.next()) {
+				System.out.print("kaisi");
 				userBean.setUserName(rs.getString(1));
 				userBean.setUserPassword(rs.getString(2));
 				userBean.setMailAddress(rs.getString(3));
@@ -81,7 +82,6 @@ public class MySQLRegistUserInfoDao implements RegistUserInfoDao {
 		finally {
 			MySQLConnector.closeTransaction();
 		}
-
 
 		return userBean;
 	}

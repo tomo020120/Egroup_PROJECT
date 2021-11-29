@@ -14,7 +14,7 @@ public class MySQLUserSelectDao implements UserSelectDao{
 	private ResultSet rs = null;
 
 	public UserBean getUserInfo(String _mail,String _pass) {
-		UserBean userBean = new UserBean();
+		UserBean userBean = null;
 		try {
 			cn = MySQLConnector.getConnection();
 
@@ -29,6 +29,8 @@ public class MySQLUserSelectDao implements UserSelectDao{
 
 
 			while(rs.next()) {
+				userBean = new UserBean();
+
 				userBean.setUserId(rs.getString(1));
 				userBean.setUserName(rs.getString(2));
 				userBean.setUserPassword(rs.getString(3));

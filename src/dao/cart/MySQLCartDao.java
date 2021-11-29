@@ -16,6 +16,40 @@ public class MySQLCartDao implements CartDao{
 	private PreparedStatement st = null;
 	private ResultSet rs = null;
 
+	public boolean createCart(String userId) {
+		boolean flag = false;
+		try {
+			cn = MySQLConnector.getConnection();
+
+			String sql = "insert into cart_table(userId) values(?)";
+
+			st = cn.prepareStatement(sql);
+
+			st.setString(1, userId);
+
+			int result = st.executeUpdate();
+
+			if(result > 0) {
+				flag = true;
+				MySQLConnector.commitTransaction();
+			}
+		}
+		catch(SQLException e) {
+		MySQLConnector.rollbackTransaction();
+			e.printStackTrace();
+		}
+		catch(Exception e) {
+			MySQLConnector.rollbackTransaction();
+			e.printStackTrace();
+		}
+		finally {
+			MySQLConnector.closeTransaction();
+		}
+
+		return flag;
+	}
+
+
 	public boolean addCart() {
 		boolean flag = false; // insert結果flag
 
@@ -97,5 +131,12 @@ public class MySQLCartDao implements CartDao{
 	return carts;
 
 	}
+
+
+
+
+
+
+
 }
 
