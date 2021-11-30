@@ -1,6 +1,8 @@
 package cmd.cart;
 
+import bean.UserBean;
 import cmd.AbstractCommand;
+import context.RequestContext;
 import context.ResponseContext;
 import context.WebResponseContext;
 import dao.AbstractDaoFactory;
@@ -8,14 +10,13 @@ import dao.cart.CartDao;
 
 public class CartCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
+		RequestContext reqContext = getRequestContext();
 		resc = new WebResponseContext();
     	AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
     	CartDao dao = factory.getCartDao();
-    	String userId="1";
 
-    	System.out.print("要素数：" + dao.getCart(userId).size());
-
-    	resc.setResult(dao.getCart(userId));
+    	UserBean user=(UserBean)reqContext.getToken();
+    	resc.setResult(dao.getCart(user.getUserId()));
 		resc.setTargetPath("cart");
 		return resc;
 	}
