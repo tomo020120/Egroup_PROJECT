@@ -133,6 +133,66 @@ public class MySQLCartDao implements CartDao{
 	}
 
 
+	public boolean addCartProduct(String itemId,String orderCount,String subTotal,String cartId) {
+		boolean flag = false; // insert結果flag
+
+				try {
+					cn = MySQLConnector.getConnection();
+
+					String sql = "insert into cart_inside_table values("+itemId+","+orderCount+","+subTotal+","+cartId+");";
+
+					st = cn.prepareStatement(sql);
+
+					int result = st.executeUpdate();
+
+					if(result > 0) {
+						flag = true;
+						MySQLConnector.commitTransaction();
+					}
+				}
+				catch(SQLException e) {
+					MySQLConnector.rollbackTransaction();
+					e.printStackTrace();
+				}
+				catch(Exception e) {
+					MySQLConnector.rollbackTransaction();
+					e.printStackTrace();
+				}
+				finally {
+					MySQLConnector.closeTransaction();
+				}
+
+				return flag;
+			}
+
+
+	public boolean updateCartTotal(String total,String userId) {
+		boolean flag = false; // update結果flag
+try {
+			cn = MySQLConnector.getConnection();
+String sql = "update cart_table SET total = " + total + " WHERE userId = " + userId + ";";
+st = cn.prepareStatement(sql);
+int result = st.executeUpdate();
+if(result > 0) {
+				flag = true;
+				MySQLConnector.commitTransaction();
+			}
+}
+catch(SQLException e) {
+			MySQLConnector.rollbackTransaction();
+			e.printStackTrace();
+		}
+		catch(Exception e) {
+			MySQLConnector.rollbackTransaction();
+			e.printStackTrace();
+		}
+		finally {
+			MySQLConnector.closeTransaction();
+		}
+		return flag;
+}
+
+
 
 
 
