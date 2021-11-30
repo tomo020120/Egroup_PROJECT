@@ -16,6 +16,7 @@
 		<a href="userInfoEdit?userId = "${userId}>ユーザー情報編集</a>
 		<a href="cart"><img src=file:///../../image/cart.png alt="カート" width="40"></a>
 		<a href="login"><img src=file:///../../image/people.png alt="ログイン" width="40"></a>
+		<a href="logout">ログアウト</a>
 	</div>
 	<p>${sessionInfo.userName}</p>
 

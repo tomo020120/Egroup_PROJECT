@@ -12,6 +12,7 @@ public class MySQLConnectionManager extends ConnectionManager{
 		System.out.println("接続");
 
 		if(cn == null) {
+			System.out.println("新規接続");
 			try {
 				cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Ibanezdb?characterEncoding=UTF-8&serverTimezone=JST","customer","cpass");
 				cn.setAutoCommit(false);
@@ -63,6 +64,7 @@ public class MySQLConnectionManager extends ConnectionManager{
 		try {
 			if(cn != null) {
 				cn.close();
+				cn = null;
 			}
 		}
 		catch(SQLException e) {

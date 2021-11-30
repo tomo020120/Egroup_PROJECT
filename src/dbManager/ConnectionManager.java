@@ -22,6 +22,7 @@ public abstract class ConnectionManager{
 						String name = prop.getProperty("MySQL");
 						Class<?> c = Class.forName(name);
 						manager = (ConnectionManager)c.newInstance();
+						System.out.println("新規コネクション生成");
 					}
 					catch(Exception e) {
 						e.printStackTrace();

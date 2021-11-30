@@ -8,9 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bean.joinBean.AllCartBean;
-import dao.sql.ConnectionManager.getInstance
 import dbManager.ConnectionManager;
-import ex.DaoOperationException;();
+import ex.DaoOperationException;
 
 public class MySQLCartDao implements CartDao{
 
@@ -158,67 +157,84 @@ public class MySQLCartDao implements CartDao{
 	public boolean addCartProduct(String itemId,String orderCount,String subTotal,String cartId) {
 		boolean flag = false; // insert結果flag
 
-				try {
-					cn = ConnectionManager.getInstance().getConnection();
+			try {
+				cn = ConnectionManager.getInstance().getConnection();
 
-					String sql = "insert into cart_inside_table values("+itemId+","+orderCount+","+subTotal+","+cartId+");";
+				String sql = "insert into cart_inside_table values(?,?,?,?)";
 
-					st = cn.prepareStatement(sql);
+				st = cn.prepareStatement(sql);
 
-					int result = st.executeUpdate();
+				st.setString(1, itemId);
+				st.setString(2, orderCount);
+				st.setString(3, subTotal);
+				st.setString(4, cartId);
 
-					if(result > 0) {
-						flag = true;
-						ConnectionManager.getInstance().commitTransaction();
+				int result = st.executeUpdate();
+
+				if(result > 0) {
+					flag = true;
+				}
+			}catch(SQLException e) {
+				e.printStackTrace();
+				ConnectionManager.getInstance().rollback();
+				throw new DaoOperationException(e.getMessage(), e);
+			}catch(Exception e) {
+				e.printStackTrace();
+				ConnectionManager.getInstance().rollback();
+				throw new DaoOperationException(e.getMessage(), e);
+			}finally {
+				if(st != null) {
+					try {
+						st.close();
+					}
+					catch(SQLException e) {
+						e.printStackTrace();
+						throw new DaoOperationException(e.getMessage(), e);
 					}
 				}
-				catch(SQLException e) {
-					ConnectionManager.getInstance().rollbackTransaction();
-					e.printStackTrace();
-				}
-				catch(Exception e) {
-					ConnectionManager.getInstance().rollbackTransaction();
-					e.printStackTrace();
-				}
-				finally {
-					ConnectionManager.getInstance().closeTransaction();
-				}
-
-				return flag;
 			}
+		return flag;
+	}
 
 
 	public boolean updateCartTotal(String total,String userId) {
 		boolean flag = false; // update結果flag
-try {
+		try {
 			cn = ConnectionManager.getInstance().getConnection();
-String sql = "update cart_table SET total = " + total + " WHERE userId = " + userId + ";";
-st = cn.prepareStatement(sql);
-int result = st.executeUpdate();
-if(result > 0) {
+
+			String sql = "update cart_table SET total = ? WHERE userId = ?";
+			st = cn.prepareStatement(sql);
+
+			st.setString(1, total);
+			st.setString(2, userId);
+
+			int result = st.executeUpdate();
+
+			if(result > 0) {
 				flag = true;
-				ConnectionManager.getInstance().commitTransaction();
 			}
-}
-catch(SQLException e) {
-			ConnectionManager.getInstance().rollbackTransaction();
+
+		}catch(SQLException e) {
 			e.printStackTrace();
-		}
-		catch(Exception e) {
-			ConnectionManager.getInstance().rollbackTransaction();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}catch(Exception e) {
 			e.printStackTrace();
-		}
-		finally {
-			ConnectionManager.getInstance().closeTransaction();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}finally {
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
 		}
 		return flag;
-}
-
-
-
-
-
-
+	}
 
 }
 

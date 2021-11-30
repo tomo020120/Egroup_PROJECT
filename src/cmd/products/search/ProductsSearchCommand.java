@@ -19,15 +19,20 @@ public class ProductsSearchCommand extends AbstractCommand{
 		switch(sortNo) {
 			case "1" :
 				sortNo="a.itemId ASC";
+				System.out.println("番号でソート");
 				break;
 			case "2" :
 				sortNo="price ASC";
+				System.out.println("安い順でソート");
 				break;
 			case "3" :
 				sortNo="price DESC";
+				System.out.println("高い順でソート");
 				break;
 
 		}
+
+		System.out.println(sortNo);
 
 		ConnectionManager.getInstance().beginTransaction();
 

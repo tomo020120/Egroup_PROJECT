@@ -61,7 +61,6 @@ public class MySQLProductsDao implements ProductsDao{
 
 		try {
 			cn = ConnectionManager.getInstance().getConnection();
-			//int _testItemId =Integer.parseInt(testItemId);
 
 			//itemIdが一致する商品詳の詳細を取ってくる
 			String sql = "SELECT  a.itemId,name,price,CAST(`releaseDate` AS DATE),pictPath,categoryName,shapeName,colorName,artistName,a.categoryId,a.colorId,a.shapeId,a.artistId\n" +
@@ -78,21 +77,21 @@ public class MySQLProductsDao implements ProductsDao{
 
 			rs=st.executeQuery();
 
-				AllProductDetailBean all = new AllProductDetailBean();
-				while(rs.next()) {
-					all.setItemId(rs.getString(1));
-					all.setName(rs.getString(2));
-					all.setPrice(rs.getString(3));
-					all.setReleaseDate(rs.getString(4));
-					all.setPictPath(rs.getString(5));
+			AllProductDetailBean all = new AllProductDetailBean();
+			while(rs.next()) {
+				all.setItemId(rs.getString(1));
+				all.setName(rs.getString(2));
+				all.setPrice(rs.getString(3));
+				all.setReleaseDate(rs.getString(4));
+				all.setPictPath(rs.getString(5));
 
-					all.setCategoryName(rs.getString(6));
-					all.setShapeName(rs.getString(7));
-					all.setColorName(rs.getString(8));
-					all.setArtistName(rs.getString(9));
+				all.setCategoryName(rs.getString(6));
+				all.setShapeName(rs.getString(7));
+				all.setColorName(rs.getString(8));
+				all.setArtistName(rs.getString(9));
 
-					product.add(all);
-				}
+				product.add(all);
+			}
 		}catch(SQLException e) {
 			e.printStackTrace();
 			ConnectionManager.getInstance().rollback();
@@ -174,12 +173,13 @@ public class MySQLProductsDao implements ProductsDao{
 		try {
 			cn = ConnectionManager.getInstance().getConnection();
 
-			String sql = "SELECT a.itemId,name,price,releaseDate,orderCount,categoryId,colorId,shapeId,artistId,pictId,pictPath FROM Ibanezdb.item_pict_table AS a JOIN Ibanezdb.product_table AS b ON a.itemId = b.itemId where name LIKE '%?%' order by ?";
+			String sql = "SELECT a.itemId,name,price,releaseDate,orderCount,categoryId,colorId,shapeId,artistId,pictId,pictPath FROM Ibanezdb.item_pict_table AS a JOIN Ibanezdb.product_table AS b ON a.itemId = b.itemId where name LIKE ? order by " + sortCode;
 
 			st=cn.prepareStatement(sql);
 
-			st.setString(1, productName);
-			st.setString(2, sortCode);
+			st.setString(1, "%" + productName + "%");
+
+			System.out.println("実行SQL :" + st.toString());
 
 			rs=st.executeQuery();
 
