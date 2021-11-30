@@ -16,6 +16,10 @@ public class CartCommand extends AbstractCommand{
     	CartDao dao = factory.getCartDao();
 
     	UserBean user=(UserBean)reqContext.getToken();
+    	if(user==null) {
+    		resc.setTargetPath("login");
+    		return resc;
+    	}
     	resc.setResult(dao.getCart(user.getUserId()));
 		resc.setTargetPath("cart");
 		return resc;
