@@ -7,6 +7,7 @@ import context.ResponseContext;
 import context.WebResponseContext;
 import dao.AbstractDaoFactory;
 import dao.cart.CartDao;
+import dbManager.ConnectionManager;
 
 public class CartCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
@@ -20,7 +21,13 @@ public class CartCommand extends AbstractCommand{
     		resc.setTargetPath("login");
     		return resc;
     	}
+    	ConnectionManager.getInstance().beginTransaction();
+
     	resc.setResult(dao.getCart(user.getUserId()));
+
+		ConnectionManager.getInstance().commit();
+		ConnectionManager.getInstance().closeTransaction();
+
 		resc.setTargetPath("cart");
 		return resc;
 	}

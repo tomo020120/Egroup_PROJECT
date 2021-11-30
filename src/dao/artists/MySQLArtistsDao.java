@@ -9,18 +9,19 @@ import java.util.List;
 
 import bean.ArtistBean;
 import bean.joinBean.AllArtistDetailBean;
-import dao.sql.MySQLConnector;
+import dbManager.ConnectionManager;
+import ex.DaoOperationException;
 
 public class MySQLArtistsDao implements ArtistsDao{
 	private Connection cn = null;
 	private PreparedStatement st = null;
 	private ResultSet rs = null;
-	ArrayList<ArtistBean> artists= new ArrayList<ArtistBean>();
+	List<ArtistBean> artists= new ArrayList<ArtistBean>();
 
 	public List<ArtistBean> getAllArtists() {
 
 		try {
-			cn = MySQLConnector.getConnection();
+			cn = ConnectionManager.getInstance().getConnection();
 
 			String sql = "SELECT * FROM artist_table";
 
@@ -41,13 +42,24 @@ public class MySQLArtistsDao implements ArtistsDao{
 
 				artists.add(p);
 			}
-			MySQLConnector.commitTransaction();
-
-
 		}catch(SQLException e) {
-			MySQLConnector.rollbackTransaction();
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}catch(Exception e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
 		}finally {
-			MySQLConnector.closeTransaction();
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
 		}
 		return artists;
 	}
@@ -58,17 +70,18 @@ public class MySQLArtistsDao implements ArtistsDao{
 		List<AllArtistDetailBean> artists= new ArrayList<AllArtistDetailBean>();
 		System.out.println(artistId);
 		try {
-			cn = MySQLConnector.getConnection();
-			//int _testItemId =Integer.parseInt(testItemId);
+			cn = ConnectionManager.getInstance().getConnection();
 
 			//itemIdが一致する商品詳の詳細を取ってくる
 			String sql = "SELECT artistName,artistPict,countory,groupName,name,pictPath,artist_table.artistId,product_table.itemId " +
 					"FROM artist_table join product_table ON artist_table.artistId = product_table.artistId " +
 					"JOIN item_pict_table ON item_pict_table.itemId = product_table.itemId " +
-					"Where artist_table.artistId="+artistId;
+					"Where artist_table.artistId = ?";
 
 
 			st=cn.prepareStatement(sql);
+
+			st.setString(1, artistId);
 
 			rs=st.executeQuery();
 
@@ -86,21 +99,28 @@ public class MySQLArtistsDao implements ArtistsDao{
 					all.setPictPath(rs.getString(6));
 					all.setItemId(rs.getString(8));
 
-
-
-
-
 					artists.add(all);
 				}
 
 				System.out.println("要素数：" + artists.size());
-				MySQLConnector.commitTransaction();
 		}catch(SQLException e) {
-			MySQLConnector.rollbackTransaction();
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
 		}catch(Exception e) {
-			MySQLConnector.rollbackTransaction();
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
 		}finally {
-			MySQLConnector.closeTransaction();
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
 		}
 		return artists;
 	}

@@ -8,6 +8,7 @@ import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
 import dao.user.login.TempRegistDao;
+import dbManager.ConnectionManager;
 
 public class UserInfoJudgeCommand extends AbstractCommand{
 
@@ -22,9 +23,14 @@ public class UserInfoJudgeCommand extends AbstractCommand{
 
 		String mailAddress = reqContext.getParameter("mail")[0];
 
+		ConnectionManager.getInstance().beginTransaction();
+
 		List<String> mailAddressList = tempRegist.getUserMailAddress();
 
 		if(mailAddressList.contains(mailAddress)) { // メールアドレスが既に存在してれば処理をやめてエラーメッセージ格納
+			ConnectionManager.getInstance().commit();
+			ConnectionManager.getInstance().closeTransaction();
+
 			resContext.setMessage("そのメールアドレスは既に使用されているため登録できません。");
 			resContext.setTargetPath("regist");
 

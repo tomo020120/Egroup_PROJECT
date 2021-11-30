@@ -7,7 +7,8 @@ import java.sql.SQLException;
 import bean.AddressBean;
 import bean.CreditCardBean;
 import bean.UserBean;
-import dao.sql.MySQLConnector;
+import dbManager.ConnectionManager;
+import ex.DaoOperationException;
 
 public class MySQLEditUserInfoDao implements EditUserInfoDao {
 	private Connection cn = null;
@@ -19,9 +20,9 @@ public class MySQLEditUserInfoDao implements EditUserInfoDao {
 		boolean flag = false; // update結果flag
 
 		try {
-			cn = MySQLConnector.getConnection();
+			cn = ConnectionManager.getInstance().getConnection();
 
-			String sql = "update user_table SET UserName= ?, UserPassword= ?, mailAdress= ? WHERE UserId = ?";//temporary_user_data(userName,userPassword,mailAddress,) values(?,?,?,?)
+			String sql = "update user_table SET UserName= ?, UserPassword= ?, mailAdress= ? WHERE UserId = ?";
 
 			st = cn.prepareStatement(sql);
 
@@ -34,30 +35,36 @@ public class MySQLEditUserInfoDao implements EditUserInfoDao {
 
 			if(result > 0) {
 				flag = true;
-				MySQLConnector.commitTransaction();
 			}
-		}
-		catch(SQLException e) {
-			MySQLConnector.rollbackTransaction();
+		}catch(SQLException e) {
 			e.printStackTrace();
-		}
-		catch(Exception e) {
-			MySQLConnector.rollbackTransaction();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}catch(Exception e) {
 			e.printStackTrace();
-		}
-		finally {
-			MySQLConnector.closeTransaction();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}finally {
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
 		}
 
 		return flag;
 	}
 
 	@Override
-	public boolean addCreditCard(CreditCardBean creditCardBean,String userId) { //show tables;可以查看所有的table.
-		boolean flag = false; // update結果flag
+	public boolean addCreditCard(CreditCardBean creditCardBean,String userId) {
+		boolean flag = false; // insert結果flag
 
 		try {
-			cn = MySQLConnector.getConnection();
+			cn = ConnectionManager.getInstance().getConnection();
 
 			String sql = "update credit_card_table SET cardOwnerName= ?, cardNo= ?, cardCompany= ?, expirationDate= ?, securityCode= ? WHERE UserId = ?";//temporary_user_data(userName,userPassword,mailAddress,) values(?,?,?,?)
 
@@ -74,19 +81,25 @@ public class MySQLEditUserInfoDao implements EditUserInfoDao {
 
 			if(result > 0) {
 				flag = true;
-				MySQLConnector.commitTransaction();
 			}
-		}
-		catch(SQLException e) {
-			MySQLConnector.rollbackTransaction();
+		}catch(SQLException e) {
 			e.printStackTrace();
-		}
-		catch(Exception e) {
-			MySQLConnector.rollbackTransaction();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}catch(Exception e) {
 			e.printStackTrace();
-		}
-		finally {
-			MySQLConnector.closeTransaction();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}finally {
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
 		}
 
 		return flag;
@@ -100,7 +113,7 @@ public class MySQLEditUserInfoDao implements EditUserInfoDao {
 			boolean flag = false; // update結果flag
 
 			try {
-				cn = MySQLConnector.getConnection();
+				cn = ConnectionManager.getInstance().getConnection();
 
 				String sql = "update address_table SET deliveryInfoId= ?, postalCode= ?, address= ?, TEL = ?  WHERE UserId = ?";//temporary_user_data(userName,userPassword,mailAddress,) values(?,?,?,?)
 
@@ -116,19 +129,25 @@ public class MySQLEditUserInfoDao implements EditUserInfoDao {
 
 				if(result > 0) {
 					flag = true;
-					MySQLConnector.commitTransaction();
 				}
-			}
-			catch(SQLException e) {
-				MySQLConnector.rollbackTransaction();
+			}catch(SQLException e) {
 				e.printStackTrace();
-			}
-			catch(Exception e) {
-				MySQLConnector.rollbackTransaction();
+				ConnectionManager.getInstance().rollback();
+				throw new DaoOperationException(e.getMessage(), e);
+			}catch(Exception e) {
 				e.printStackTrace();
-			}
-			finally {
-				MySQLConnector.closeTransaction();
+				ConnectionManager.getInstance().rollback();
+				throw new DaoOperationException(e.getMessage(), e);
+			}finally {
+				if(st != null) {
+					try {
+						st.close();
+					}
+					catch(SQLException e) {
+						e.printStackTrace();
+						throw new DaoOperationException(e.getMessage(), e);
+					}
+				}
 			}
 
 			return flag;
@@ -136,13 +155,12 @@ public class MySQLEditUserInfoDao implements EditUserInfoDao {
 
 	@Override
 	public boolean deleteCreditCard(String creditcardId) {
-		boolean flag = false; // update結果flag
+		boolean flag = false; // delete結果flag
 
 		try {
-			cn = MySQLConnector.getConnection();
+			cn = ConnectionManager.getInstance().getConnection();
 
-			String sql = "DELETE from credit_card_table WHERE cardId= ?";//temporary_user_data(userName,userPassword,mailAddress,) values(?,?,?,?)
-
+			String sql = "DELETE from credit_card_table WHERE cardId= ?";
 			st = cn.prepareStatement(sql);
 
 			st.setString(1, creditcardId);
@@ -151,19 +169,25 @@ public class MySQLEditUserInfoDao implements EditUserInfoDao {
 
 			if(result > 0) {
 				flag = true;
-				MySQLConnector.commitTransaction();
 			}
-		}
-		catch(SQLException e) {
-			MySQLConnector.rollbackTransaction();
+		}catch(SQLException e) {
 			e.printStackTrace();
-		}
-		catch(Exception e) {
-			MySQLConnector.rollbackTransaction();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}catch(Exception e) {
 			e.printStackTrace();
-		}
-		finally {
-			MySQLConnector.closeTransaction();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}finally {
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
 		}
 
 		return flag;
@@ -172,12 +196,12 @@ public class MySQLEditUserInfoDao implements EditUserInfoDao {
 
 	@Override
 	public boolean deleteAddress(String addressId) {
-		boolean flag = false; // update結果flag
+		boolean flag = false; // delete結果flag
 
 		try {
-			cn = MySQLConnector.getConnection();
+			cn = ConnectionManager.getInstance().getConnection();
 
-			String sql = "DELETE from address_table WHERE deliveryInfoId = ?";//temporary_user_data(userName,userPassword,mailAddress,) values(?,?,?,?)
+			String sql = "DELETE from address_table WHERE deliveryInfoId = ?";
 
 			st = cn.prepareStatement(sql);
 
@@ -187,19 +211,25 @@ public class MySQLEditUserInfoDao implements EditUserInfoDao {
 
 			if(result > 0) {
 				flag = true;
-				MySQLConnector.commitTransaction();
 			}
-		}
-		catch(SQLException e) {
-			MySQLConnector.rollbackTransaction();
+		}catch(SQLException e) {
 			e.printStackTrace();
-		}
-		catch(Exception e) {
-			MySQLConnector.rollbackTransaction();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}catch(Exception e) {
 			e.printStackTrace();
-		}
-		finally {
-			MySQLConnector.closeTransaction();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}finally {
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
 		}
 
 		return flag;

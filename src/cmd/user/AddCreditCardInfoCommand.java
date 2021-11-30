@@ -6,6 +6,7 @@ import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
 import dao.user.EditUserInfoDao;
+import dbManager.ConnectionManager;
 
 public class AddCreditCardInfoCommand extends AbstractCommand {
 
@@ -30,8 +31,12 @@ public class AddCreditCardInfoCommand extends AbstractCommand {
 		creditCardBean.setExpirationDate(expirationDate);
 		creditCardBean.setSecurityCode(securityCode);
 
+		ConnectionManager.getInstance().beginTransaction();
+
 		edit.addCreditCard(creditCardBean, userId);
 
+		ConnectionManager.getInstance().commit();
+		ConnectionManager.getInstance().closeTransaction();
 
 		return resContext;
 	}

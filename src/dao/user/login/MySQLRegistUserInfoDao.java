@@ -6,7 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import bean.UserBean;
-import dao.sql.MySQLConnector;
+import dbManager.ConnectionManager;
+import ex.DaoOperationException;
 
 public class MySQLRegistUserInfoDao implements RegistUserInfoDao {
 	private Connection cn = null;
@@ -18,7 +19,7 @@ public class MySQLRegistUserInfoDao implements RegistUserInfoDao {
 		boolean flag = false;
 
 		try {
-			cn = MySQLConnector.getConnection();
+			cn = ConnectionManager.getInstance().getConnection();
 
 			String sql = "insert into user_table(userName,userPassword,mailAddress) values(?,?,?)";
 
@@ -32,17 +33,25 @@ public class MySQLRegistUserInfoDao implements RegistUserInfoDao {
 
 			if(result > 0) {
 				flag = true;
-				MySQLConnector.commitTransaction();
 			}
-		}
-		catch(SQLException e) {
-			MySQLConnector.rollbackTransaction();
-		}
-		catch(Exception e) {
-			MySQLConnector.rollbackTransaction();
-		}
-		finally {
-			MySQLConnector.closeTransaction();
+		}catch(SQLException e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}catch(Exception e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}finally {
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
 		}
 
 		return flag;
@@ -53,7 +62,7 @@ public class MySQLRegistUserInfoDao implements RegistUserInfoDao {
 		UserBean userBean = new UserBean();
 
 		try {
-			cn = MySQLConnector.getConnection();
+			cn = ConnectionManager.getInstance().getConnection();
 
 			String sql = "select userName,userPassword,mailAddress from temporary_user_data where UUID = ?";
 
@@ -65,24 +74,29 @@ public class MySQLRegistUserInfoDao implements RegistUserInfoDao {
 
 
 			while(rs.next()) {
-				System.out.print("kaisi");
 				userBean.setUserName(rs.getString(1));
 				userBean.setUserPassword(rs.getString(2));
 				userBean.setMailAddress(rs.getString(3));
 			}
-
-			MySQLConnector.commitTransaction();
+		}catch(SQLException e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}catch(Exception e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}finally {
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
 		}
-		catch(SQLException e) {
-			MySQLConnector.rollbackTransaction();
-		}
-		catch(Exception e) {
-			MySQLConnector.rollbackTransaction();
-		}
-		finally {
-			MySQLConnector.closeTransaction();
-		}
-
 		return userBean;
 	}
 

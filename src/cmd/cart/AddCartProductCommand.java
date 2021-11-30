@@ -7,6 +7,7 @@ import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
 import dao.cart.CartDao;
+import dbManager.ConnectionManager;
 
 public class AddCartProductCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
@@ -21,24 +22,32 @@ public class AddCartProductCommand extends AbstractCommand{
 		String total="0";//subtotakを加える
 		UserBean userbean = (UserBean)reqc.getToken();
 		String userId=userbean.getUserId();
-		
+
 		//以下一文は一時的な採用
 		userId="1";
 		System.out.println(userId);
-		
+
 		CartInsideBean cartInsideBean = new CartInsideBean();
 		cartInsideBean.setOrderCount(orderCount);
 		cartInsideBean.setSubTotal(subTotal);
-		
-		
-		if(dao.addCartProduct(itemId, orderCount, subTotal, cartId)==true) {
+
+		ConnectionManager.getInstance().beginTransaction();
+
+		if(dao.addCartProduct(itemId, orderCount, subTotal, cartId)) {
 			System.out.println("cartinside追加");
-			if(dao.updateCartTotal(total,userId)==true) {
+			if(dao.updateCartTotal(total,userId)) {
+
+				ConnectionManager.getInstance().commit();
+				ConnectionManager.getInstance().closeTransaction();
+
 				resc.setTargetPath("CartAddComplete");
 				System.out.println("cart追加");
 				return resc;
 			}
 		}
+		ConnectionManager.getInstance().rollback();
+		ConnectionManager.getInstance().closeTransaction();
+
 		System.out.println("cartinside失敗");
 		resc.setTargetPath("error/integrationError");
 		return resc;

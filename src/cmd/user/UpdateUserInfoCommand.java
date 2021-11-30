@@ -6,6 +6,7 @@ import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
 import dao.user.EditUserInfoDao;
+import dbManager.ConnectionManager;
 
 public class UpdateUserInfoCommand extends AbstractCommand {
 
@@ -22,7 +23,12 @@ public class UpdateUserInfoCommand extends AbstractCommand {
 
 		UIB.setUserName(newName);
 
+		ConnectionManager.getInstance().beginTransaction();
+
 		edit.updateUserInfo(UIB);
+
+		ConnectionManager.getInstance().commit();
+		ConnectionManager.getInstance().closeTransaction();
 
 		return null;
 	}
