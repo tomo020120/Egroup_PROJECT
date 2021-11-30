@@ -10,8 +10,8 @@
 	<h1>アカウント変更</h1>
    <header><%@include file="header.jsp" %></header>
     ユーザー名<input type='text' name='name'/><br/>
-    メールアドレス<input type='text' id="emailAddress"/><br />
-    パスワード<input type='text' name='pass'/><br/>
+    パスワード<input type='text' id="emailAddress"/><br />
+   メールアドレス<input type='text' name='pass'/><br/>
     カード番号<input type='text' name='cartCode'/><br>
     住所<input type='text' name='address'/><br>
     郵便番号<input type='text' name='postalCode'/><br>
