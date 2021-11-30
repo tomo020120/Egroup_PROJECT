@@ -4,7 +4,6 @@ import bean.UserBean;
 import cmd.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
-import context.WebResponseContext;
 import dao.AbstractDaoFactory;
 import dao.cart.CartDao;
 import dbManager.ConnectionManager;
@@ -12,7 +11,6 @@ import dbManager.ConnectionManager;
 public class CartCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
 		RequestContext reqContext = getRequestContext();
-		resc = new WebResponseContext();
     	AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
     	CartDao dao = factory.getCartDao();
 
