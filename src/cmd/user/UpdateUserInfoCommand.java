@@ -1,11 +1,11 @@
 package cmd.user;
 
-import bean.joinBean.UesrInfoBean;
+import bean.joinBean.AllUserInfoBean;
 import cmd.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
-import dao.user.EditUserInfoDao;
+import dao.user.UserInfoEditDao;
 import dbManager.ConnectionManager;
 
 public class UpdateUserInfoCommand extends AbstractCommand {
@@ -15,11 +15,11 @@ public class UpdateUserInfoCommand extends AbstractCommand {
 		RequestContext reqContext = getRequestContext();
 
 		AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
-		EditUserInfoDao edit = factory.getEditUserInfoDao();
+		UserInfoEditDao edit = factory.getEditUserInfoDao();
 
 		String newName = reqContext.getParameter("newName")[0];
 
-		UesrInfoBean UIB = new UesrInfoBean();
+		AllUserInfoBean UIB = new AllUserInfoBean();
 
 		UIB.setUserName(newName);
 

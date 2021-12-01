@@ -2,7 +2,7 @@ package cmd.user;
 
 import java.util.List;
 
-import bean.joinBean.UesrInfoBean;
+import bean.joinBean.AllUserInfoBean;
 import cmd.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
@@ -45,7 +45,7 @@ public class UserInfoJudgeCommand extends AbstractCommand{
 		String tel = reqContext.getParameter("tel")[0];
 		String postalCode = reqContext.getParameter("postalCode")[0];
 
-		UesrInfoBean UIB = new UesrInfoBean();
+		AllUserInfoBean UIB = new AllUserInfoBean();
 
 		UIB.setUserName(userName);
 		UIB.setEmailAddress(emailAddress);

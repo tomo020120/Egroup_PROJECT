@@ -1,32 +1,29 @@
 package cmd.user;
 
-import bean.joinBean.UesrInfoBean;
+import bean.UserBean;
 import cmd.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
+import dao.AbstractDaoFactory;
+import dao.user.UserInfoEditDao;
+import dbManager.ConnectionManager;
 
 public class TransferUserInfoEditCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resContext) {
 
 		RequestContext reqContext = getRequestContext();
 
-		String userName = reqContext.getParameter("name")[0];
-		String emailAddress = reqContext.getParameter("emailAddress")[0];
-		String userPass = reqContext.getParameter("pass")[0];
-		String cardCode = reqContext.getParameter("cardCode")[0];
-		String address = reqContext.getParameter("address")[0];
-		String tel = reqContext.getParameter("tel")[0];
-		String postalCode = reqContext.getParameter("postalCode")[0];
+		AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
+		UserInfoEditDao edit = factory.getEditUserInfoDao();
 
-		UesrInfoBean UIB = new UesrInfoBean();
+		UserBean userBean = (UserBean)reqContext.getToken();
 
-		UIB.setUserName(userName);
-		UIB.setEmailAddress(emailAddress);
-		UIB.setUserPassword(userPass);
-		UIB.setCartCode(cardCode);
-		UIB.setAddress(address);
-		UIB.setTel(tel);
-		UIB.setPostalCode(postalCode);
+		ConnectionManager.getInstance().beginTransaction();
+
+		resContext.setResult(edit.getTargetUserInfo(userBean.getUserId()));
+
+		ConnectionManager.getInstance().commit();
+		ConnectionManager.getInstance().closeTransaction();
 
 		resContext.setTargetPath("userInfoEdit");
 		return resContext;

@@ -5,7 +5,7 @@ import cmd.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
-import dao.user.EditUserInfoDao;
+import dao.user.UserInfoEditDao;
 import dbManager.ConnectionManager;
 
 public class AddCreditCardInfoCommand extends AbstractCommand {
@@ -14,7 +14,7 @@ public class AddCreditCardInfoCommand extends AbstractCommand {
 	public ResponseContext execute(ResponseContext resContext) {
 		RequestContext reqContext = getRequestContext();
 		AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
-		EditUserInfoDao edit = factory.getEditUserInfoDao();//daoを
+		UserInfoEditDao edit = factory.getEditUserInfoDao();//daoを
 
 		String cardOwnerName = reqContext.getParameter("CardOwnerName")[0];
 		String cardNo = reqContext.getParameter("CardNo")[0];
