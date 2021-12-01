@@ -26,7 +26,7 @@
 		<td><img src="${result.pictPath}"></td>
 	</tr>
 	</table>
-	<form method="get" action="addCartProduct">
+	<form method="post" action="addCartProduct?itemId=${result.itemId}&price=${result.price} ">
 		<select name="orderCount">
 			<option value="1">1</option>
 			<option value="2">2</option>

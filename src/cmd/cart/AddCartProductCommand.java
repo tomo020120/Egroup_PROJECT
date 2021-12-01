@@ -1,6 +1,6 @@
 package cmd.cart;
 
-import bean.CartInsideBean;
+import bean.CartBean;
 import bean.UserBean;
 import cmd.AbstractCommand;
 import context.RequestContext;
@@ -16,30 +16,36 @@ public class AddCartProductCommand extends AbstractCommand{
 		CartDao dao = factory.getCartDao();
 		String itemId=reqc.getParameter("itemId")[0];
 		String orderCount=reqc.getParameter("orderCount")[0];
+		String price=reqc.getParameter("price")[0];
+		
 		//外部キーのcartIDとってくる
 		String cartId="1";
-		String subTotal = "0";
-		String total="0";//subtotakを加える
-
-		System.out.println("orderCount ; " + orderCount);
-
+		String subTotal = Integer.toString(Integer.parseInt(price) * Integer.parseInt(orderCount));
+		
 		UserBean user=(UserBean)reqc.getToken();
     	if(user==null) {
     		resc.setTargetPath("login");
     		return resc;
     	}
-
+    	
 		String userId=user.getUserId();
-		System.out.println(userId);
+		
+		CartBean cartbean = dao.getCartTotal(userId,cartId);
+		String total = cartbean.getTotal();
+		total+=Integer.parseInt(subTotal);//subTotalを加える
+
+		System.out.println("orderCount ; " + orderCount);
+
 		//以下一文は一時的な採用
 
-
+		/*
 		CartInsideBean cartInsideBean = new CartInsideBean();
 		cartInsideBean.setOrderCount(orderCount);
 		cartInsideBean.setSubTotal(subTotal);
+		*/
 
 		ConnectionManager.getInstance().beginTransaction();
-
+		
 		if(dao.addCartProduct(itemId, orderCount, subTotal, cartId)) {
 			System.out.println("cartinside追加");
 			if(dao.updateCartTotal(total,userId)) {

@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import bean.CartBean;
 import bean.joinBean.AllCartBean;
 import dbManager.ConnectionManager;
 import ex.DaoOperationException;
@@ -55,48 +56,6 @@ public class MySQLCartDao implements CartDao{
 
 		return flag;
 	}
-
-
-	public boolean addCart() {
-		boolean flag = false; // insert結果flag
-
-		try {
-			cn = ConnectionManager.getInstance().getConnection();
-
-			String sql = "insert into cart_inside_table(itemId,orderCount,subTotal,cartId) values(?,?,?,?)";
-
-			st = cn.prepareStatement(sql);
-
-			st.setString(parameterIndex, x);
-
-			int result = st.executeUpdate();
-
-			if(result > 0) {
-				flag = true;
-			}
-		}catch(SQLException e) {
-			e.printStackTrace();
-			ConnectionManager.getInstance().rollback();
-			throw new DaoOperationException(e.getMessage(), e);
-		}catch(Exception e) {
-			e.printStackTrace();
-			ConnectionManager.getInstance().rollback();
-			throw new DaoOperationException(e.getMessage(), e);
-		}finally {
-			if(st != null) {
-				try {
-					st.close();
-				}
-				catch(SQLException e) {
-					e.printStackTrace();
-					throw new DaoOperationException(e.getMessage(), e);
-				}
-			}
-		}
-
-		return flag;
-	}
-
 
 
 
@@ -238,6 +197,50 @@ public class MySQLCartDao implements CartDao{
 			}
 		}
 		return flag;
+	}
+	
+	public CartBean getCartTotal(String cartId, String userId) {
+
+		CartBean cart= new CartBean();
+
+		try {
+			cn = ConnectionManager.getInstance().getConnection();
+
+
+			String sql = "SELECT total FROM cart_table Where cartId = ? and userId = ?";
+
+			st=cn.prepareStatement(sql);
+
+			st.setString(1, cartId);
+			st.setString(2, userId);
+
+			rs=st.executeQuery();
+
+			while(rs.next()){
+				cart.setTotal(rs.getString(1));
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}catch(Exception e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}finally {
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
+		}
+
+	return cart;
+
 	}
 
 }
