@@ -67,6 +67,8 @@ public class MySQLCartDao implements CartDao{
 
 			st = cn.prepareStatement(sql);
 
+			st.setString(parameterIndex, x);
+
 			int result = st.executeUpdate();
 
 			if(result > 0) {
@@ -168,6 +170,8 @@ public class MySQLCartDao implements CartDao{
 				st.setString(2, orderCount);
 				st.setString(3, subTotal);
 				st.setString(4, cartId);
+
+				System.out.println("実行SQL : " + st.toString());
 
 				int result = st.executeUpdate();
 

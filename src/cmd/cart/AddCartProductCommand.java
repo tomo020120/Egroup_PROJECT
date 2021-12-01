@@ -20,12 +20,19 @@ public class AddCartProductCommand extends AbstractCommand{
 		String cartId="1";
 		String subTotal = "0";
 		String total="0";//subtotakを加える
-		UserBean userbean = (UserBean)reqc.getToken();
-		String userId=userbean.getUserId();
 
-		//以下一文は一時的な採用
-		userId="1";
+		System.out.println("orderCount ; " + orderCount);
+
+		UserBean user=(UserBean)reqc.getToken();
+    	if(user==null) {
+    		resc.setTargetPath("login");
+    		return resc;
+    	}
+
+		String userId=user.getUserId();
 		System.out.println(userId);
+		//以下一文は一時的な採用
+
 
 		CartInsideBean cartInsideBean = new CartInsideBean();
 		cartInsideBean.setOrderCount(orderCount);
