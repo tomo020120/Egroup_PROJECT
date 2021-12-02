@@ -17,14 +17,13 @@
 		<th>名前</th>
 		<th>個数</th>
 		<th>小計</th>
-		<th>合計</th>
 		<th>商品の写真</th>
 	</tr>
 
 	 <c:forEach var="cart" items="${result}">
 	<tr>
 		<td>${cart.name}</td>
-<td>${cart.orderCount}</td>
+		<td>${cart.orderCount}</td>
 		<td>${cart.subTotal}</td>
 		<td>${cart.total}</td>
 		<td><img src="${cart.pictPath}"></td>

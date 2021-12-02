@@ -7,36 +7,45 @@
 <head>
 <meta charset="UTF-8">
 <title>アカウント変更</title>
+<%@ include file="/CSS/userInfoEditStyle.css" %>
 </head>
 <body>
 	<h1>アカウント変更</h1>
    <header><%@include file="header.jsp" %></header>
    <input type="button" value="編集"  /><br/>
-    ユーザー名<input type='text' name='name' value="${result.userName}"/>
-    メールアドレス<input type='text' id="emailAddress" value="${result.emailAddress}"/>
-    パスワード<input type='text' name='pass' value="${result.userPassword}"/>
+    ユーザー名<input type='text' name='name' value="${sessionInfo.userName}"/><br>
+    メールアドレス<input type='text' id="emailAddress" value="${sessionInfo.mailAddress}"/><br>
+    パスワード<input type='password' name='pass' value="${sessionInfo.userPassword}"/>
     <div>
-	    <input type="button" value="追加"  /><input type="button" value="削除"  /><br><br>
+	    <input type="button" value="追加"  /><input type="button" value="削除"  /><br>
 	</div>
 	<div>
-		<c:forEach var="card" items="${result}">
-
+		<c:forEach var="card" items="${sessionScope.userCardInfo}">
+			<div id="cardBox" class="box-design">
+				カード番号<input type="text" name="cardNo" value="${card.cardNo}"><br>
+				会社<input type="text" name="cardCompany" value="${card.cardCompany}"><br>
+				カード名義<input type="text" name="cardOwnerName" value="${card.cardOwnerName}"><br>
+				有効期限<input type="text" name="expirationDate" value="${card.expirationDate}"><br>
+			</div>
 		</c:forEach>
 	</div>
 
 	<div>
-
-		電話番号<select><option >aaa</option><option >bbb</option><option >ccc</option></select><br>
-	    郵便番号<select><option >aaa</option><option >bbb</option><option >ccc</option></select><br>
-	    住所<br><select><option >aaa</option><option >bbb</option><option >ccc</option></select><br>
-	    <input type="button" value="追加"  /><input type="button" value="削除"  /><br><br><br><br>
-	     <form name="form" method="post" action="/Egroup_PROJECT/">
-
-            <input type="submit" value="完成">
-
-        </form>
-
+	    <input type="button" value="追加"  /><input type="button" value="削除"  />
 	</div>
+	<div>
+		<c:forEach var="address" items="${sessionScope.userAddressInfo}">
+			<div id="addressBox" class="box-design">
+				郵便番号<input type="text" name="postalCode" value="${address.postalCode}"><br>
+				住所<input type="text" name="address" value="${address.address}"><br>
+				電話番号<input type="text" name="tel" value="${address.tel}"><br>
+			</div>
+		</c:forEach>
+	</div>
+
+	<form method="post" action="userInfoEditComfirm">
+		<input type="submit" value="決定">
+	</form>
 
 </body>
 </html>

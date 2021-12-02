@@ -4,14 +4,14 @@ import java.io.Serializable;
 
 public class CartBean implements Serializable{
 	private String cartId;
-	private String Total;
-	
-	public String getTotal() {
-		return Total;
+	private int total;
+
+	public int getTotal() {
+		return total;
 	}
 
-	public void setTotal(String total) {
-		Total = total;
+	public void setTotal(int total) {
+		this.total = total;
 	}
 
 	public String getCartId() {
@@ -21,6 +21,6 @@ public class CartBean implements Serializable{
 	public void setCartId(String cartId) {
 		this.cartId = cartId;
 	}
-	
-	
+
+
 }

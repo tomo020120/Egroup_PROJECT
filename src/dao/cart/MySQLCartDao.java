@@ -115,7 +115,7 @@ public class MySQLCartDao implements CartDao{
 	}
 
 
-	public boolean addCartProduct(String itemId,String orderCount,String subTotal,String cartId) {
+	public boolean addCartProduct(String itemId,String orderCount,int subTotal,String cartId) {
 		boolean flag = false; // insert結果flag
 
 			try {
@@ -127,7 +127,7 @@ public class MySQLCartDao implements CartDao{
 
 				st.setString(1, itemId);
 				st.setString(2, orderCount);
-				st.setString(3, subTotal);
+				st.setInt(3, subTotal);
 				st.setString(4, cartId);
 
 				System.out.println("実行SQL : " + st.toString());
@@ -160,7 +160,7 @@ public class MySQLCartDao implements CartDao{
 	}
 
 
-	public boolean updateCartTotal(String total,String userId) {
+	public boolean updateCartTotal(int total,String userId) {
 		boolean flag = false; // update結果flag
 		try {
 			cn = ConnectionManager.getInstance().getConnection();
@@ -168,7 +168,7 @@ public class MySQLCartDao implements CartDao{
 			String sql = "update cart_table SET total = ? WHERE userId = ?";
 			st = cn.prepareStatement(sql);
 
-			st.setString(1, total);
+			st.setInt(1, total);
 			st.setString(2, userId);
 
 			int result = st.executeUpdate();
@@ -198,7 +198,7 @@ public class MySQLCartDao implements CartDao{
 		}
 		return flag;
 	}
-	
+
 	public CartBean getCartTotal(String cartId, String userId) {
 
 		CartBean cart= new CartBean();
@@ -217,7 +217,7 @@ public class MySQLCartDao implements CartDao{
 			rs=st.executeQuery();
 
 			while(rs.next()){
-				cart.setTotal(rs.getString(1));
+				cart.setTotal(rs.getInt(1));
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();

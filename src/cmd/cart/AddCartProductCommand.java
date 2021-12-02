@@ -8,6 +8,7 @@ import context.ResponseContext;
 import dao.AbstractDaoFactory;
 import dao.cart.CartDao;
 import dbManager.ConnectionManager;
+import ex.IntegrationException;
 
 public class AddCartProductCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
@@ -17,24 +18,27 @@ public class AddCartProductCommand extends AbstractCommand{
 		String itemId=reqc.getParameter("itemId")[0];
 		String orderCount=reqc.getParameter("orderCount")[0];
 		String price=reqc.getParameter("price")[0];
-		
+
 		//外部キーのcartIDとってくる
-		String cartId="1";
-		String subTotal = Integer.toString(Integer.parseInt(price) * Integer.parseInt(orderCount));
-		
+		String cartId="895";
+		int subTotal = (Integer.parseInt(price) * Integer.parseInt(orderCount)); // 小計計算
+
 		UserBean user=(UserBean)reqc.getToken();
     	if(user==null) {
     		resc.setTargetPath("login");
     		return resc;
     	}
-    	
-		String userId=user.getUserId();
-		
-		CartBean cartbean = dao.getCartTotal(userId,cartId);
-		String total = cartbean.getTotal();
-		total+=Integer.parseInt(subTotal);//subTotalを加える
 
-		System.out.println("orderCount ; " + orderCount);
+		String userId=user.getUserId();
+
+		CartBean cartbean = dao.getCartTotal(userId,cartId);
+		int total = cartbean.getTotal();
+
+		System.out.println("合計" + total);
+
+		total += subTotal ;//subTotalを加える
+		System.out.println("新合計" + total);
+		System.out.println("orderCount : " + orderCount);
 
 		//以下一文は一時的な採用
 
@@ -45,7 +49,7 @@ public class AddCartProductCommand extends AbstractCommand{
 		*/
 
 		ConnectionManager.getInstance().beginTransaction();
-		
+
 		if(dao.addCartProduct(itemId, orderCount, subTotal, cartId)) {
 			System.out.println("cartinside追加");
 			if(dao.updateCartTotal(total,userId)) {
@@ -62,7 +66,6 @@ public class AddCartProductCommand extends AbstractCommand{
 		ConnectionManager.getInstance().closeTransaction();
 
 		System.out.println("cartinside失敗");
-		resc.setTargetPath("error/integrationError");
-		return resc;
+		throw new IntegrationException(null, null);
     }
 }
