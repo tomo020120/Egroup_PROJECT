@@ -1,12 +1,15 @@
 package dao.user;
 
+import java.util.List;
+
 import bean.AddressBean;
 import bean.CreditCardBean;
 import bean.UserBean;
-import bean.joinBean.AllUserInfoBean;
 
 public interface UserInfoEditDao {
-	public abstract AllUserInfoBean getTargetUserInfo(String userId);
+	public abstract List<CreditCardBean> getCreditCardInfo(String userId);
+
+	public abstract List<AddressBean> getAddressInfo(String userId);
 
 	public abstract boolean updateUserInfo(UserBean userBean);
 

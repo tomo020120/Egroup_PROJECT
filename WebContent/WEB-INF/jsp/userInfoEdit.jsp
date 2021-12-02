@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,13 +11,20 @@
 <body>
 	<h1>アカウント変更</h1>
    <header><%@include file="header.jsp" %></header>
-    ユーザー名<input type='text' name='name'/><input type="button" value="編集"  /><br/>
-    メールアドレス<input type='text' id="emailAddress"/><input type="button" value="編集"  /><br />
-    パスワード<input type='text' name='pass'/><input type="button" value="編集"  /><br/></br>
+   <input type="button" value="編集"  /><br/>
+    ユーザー名<input type='text' name='name' value="${result.userName}"/>
+    メールアドレス<input type='text' id="emailAddress" value="${result.emailAddress}"/>
+    パスワード<input type='text' name='pass' value="${result.userPassword}"/>
     <div>
-
-	    カード番号<select><option >aaa</option><option >bbb</option><option >ccc</option></select>
 	    <input type="button" value="追加"  /><input type="button" value="削除"  /><br><br>
+	</div>
+	<div>
+		<c:forEach var="card" items="${result}">
+
+		</c:forEach>
+	</div>
+
+	<div>
 
 		電話番号<select><option >aaa</option><option >bbb</option><option >ccc</option></select><br>
 	    郵便番号<select><option >aaa</option><option >bbb</option><option >ccc</option></select><br>

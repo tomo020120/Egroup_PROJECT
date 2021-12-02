@@ -4,11 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import bean.AddressBean;
 import bean.CreditCardBean;
 import bean.UserBean;
-import bean.joinBean.AllUserInfoBean;
 import dbManager.ConnectionManager;
 import ex.DaoOperationException;
 
@@ -239,12 +240,12 @@ public class MySQLUserInfoEditDao implements UserInfoEditDao {
 	}
 
 	@Override
-	public AllUserInfoBean getTargetUserInfo(String userId) {
-		AllUserInfoBean allUserInfoBean = new AllUserInfoBean();
+	public List<CreditCardBean> getCreditCardInfo(String userId) {
+		List<CreditCardBean> cardList = new ArrayList<CreditCardBean>();
 		try {
 			cn = ConnectionManager.getInstance().getConnection();
 
-			String sql = "select u.userId,userName,userPassword,mailAddress,deliveryInfoId,postalCode,address,tel,cardId,cardOwnerName,cardNo,cardCompany,expirationDate,securityCode from user_table u left outer join address_table a on u.userId = a.userId left outer join credit_card_table c on u.userId = c.userId where u.userId = ?";
+			String sql = "select * from credit_card_table where userId = ?";
 
 			st = cn.prepareStatement(sql);
 
@@ -253,22 +254,17 @@ public class MySQLUserInfoEditDao implements UserInfoEditDao {
 			rs = st.executeQuery();
 
 			while(rs.next()) {
-				allUserInfoBean.setUserId(rs.getString(1));
-				allUserInfoBean.setUserName(rs.getString(2));
-				allUserInfoBean.setUserPassword(rs.getString(3));
-				allUserInfoBean.setEmailAddress(rs.getString(4));
-				allUserInfoBean.setDeliveryInfoId(rs.getString(5));
-				allUserInfoBean.setPostalCode(rs.getString(6));
-				allUserInfoBean.setAddress(rs.getString(7));
-				allUserInfoBean.setTel(rs.getString(8));
-				allUserInfoBean.setCardId(rs.getString(9));
-				allUserInfoBean.setCardOwnerName(rs.getString(10));
-				allUserInfoBean.setCardNo(rs.getString(11));
-				allUserInfoBean.setCardCompany(rs.getString(12));
-				allUserInfoBean.setExpirationDate(rs.getString(13));
-				allUserInfoBean.setSecurityCode(rs.getString(14));
-			}
+				CreditCardBean creditCardBean = new CreditCardBean();
 
+				creditCardBean.setCardId(rs.getString(1));
+				creditCardBean.setCardOwnerName(rs.getString(2));
+				creditCardBean.setCardNo(rs.getString(3));
+				creditCardBean.setCardCompany(rs.getString(4));
+				creditCardBean.setExpirationDate(rs.getString(5));
+				creditCardBean.setSecurityCode(rs.getString(6));
+
+				cardList.add(creditCardBean);
+			}
 		}catch(SQLException e) {
 			e.printStackTrace();
 			ConnectionManager.getInstance().rollback();
@@ -288,6 +284,52 @@ public class MySQLUserInfoEditDao implements UserInfoEditDao {
 				}
 			}
 		}
-		return allUserInfoBean;
+		return cardList;
+	}
+
+	@Override
+	public List<AddressBean> getAddressInfo(String userId) {
+		List<AddressBean> addressList = new ArrayList<AddressBean>();
+		try {
+			cn = ConnectionManager.getInstance().getConnection();
+
+			String sql = "select * from address_table where userId = ?";
+
+			st = cn.prepareStatement(sql);
+
+			st.setString(1, userId);
+
+			rs = st.executeQuery();
+
+			while(rs.next()) {
+				AddressBean addressBean = new AddressBean();
+
+				addressBean.setDeliveryInfoId(rs.getString(1));
+				addressBean.setPostalCode(rs.getString(2));
+				addressBean.setAddress(rs.getString(3));
+				addressBean.setTel(rs.getString(4));
+
+				addressList.add(addressBean);
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}catch(Exception e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}finally {
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
+		}
+		return addressList;
 	}
 }
