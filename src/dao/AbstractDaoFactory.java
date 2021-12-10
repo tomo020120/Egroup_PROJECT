@@ -1,7 +1,6 @@
 
 package dao;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -15,12 +14,15 @@ import dao.user.login.UserSelectDao;
 
 public abstract class AbstractDaoFactory{
 	//private static final String DAO_PROPERTY_PATH = new File("..\\workspace\\Egroup_PROJECT\\src\\property\\daoProperties.properties").getAbsolutePath();
-	private static final String DAO_PROPERTY_PATH = "c:\\property\\daoProperties.properties";
+	//private static final String DAO_PROPERTY_PATH = "c:\\property\\daoProperties.properties";
 	public static AbstractDaoFactory getDaoFactory(){
         AbstractDaoFactory absDaoFactory = null;
         Properties prop = new Properties();
         try{
-            prop.load(new FileInputStream(DAO_PROPERTY_PATH));
+            //prop.load(new FileInputStream(DAO_PROPERTY_PATH));
+        	prop.load(AbstractDaoFactory.class.getClassLoader().getResourceAsStream("property/daoProperties.properties"));
+
+
             String name = prop.getProperty("MySQLDao");
             Class<?> c = Class.forName(name);
             absDaoFactory = (AbstractDaoFactory)c.newInstance();

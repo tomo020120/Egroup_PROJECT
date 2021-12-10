@@ -1,6 +1,5 @@
 package dbManager;
 
-import java.io.FileInputStream;
 import java.sql.Connection;
 import java.util.Properties;
 
@@ -18,7 +17,8 @@ public abstract class ConnectionManager{
 				if(manager == null) {
 					try {
 						Properties prop = new Properties();
-						prop.load(new FileInputStream("C:\\property\\dbManagers.properties"));
+						//prop.load(new FileInputStream("C:\\property\\dbManagers.properties"));
+						prop.load(ConnectionManager.class.getClassLoader().getResourceAsStream("property/dbManagers.properties"));
 						String name = prop.getProperty("MySQL");
 						Class<?> c = Class.forName(name);
 						manager = (ConnectionManager)c.newInstance();
