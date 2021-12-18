@@ -8,7 +8,7 @@
         <welcome-file>/WEB-INF/jsp/topPage.jsp</welcome-file>
     </welcome-file-list>
 
-    <error-page>
+   <error-page>
     	<exception-type>ex.MailSendException</exception-type>
     	<location>/WEB-INF/jsp/error/sendMailError.jsp</location>
     </error-page>
@@ -22,8 +22,14 @@
     	<servlet-name>FrontServlet</servlet-name>
     	<servlet-class>FrontServlet</servlet-class>
     </servlet>
+
     <servlet-mapping>
     	<servlet-name>FrontServlet</servlet-name>
     	<url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+    	<servlet-name>default</servlet-name>
+    	<url-pattern>/images/*</url-pattern>
     </servlet-mapping>
 </web-app>

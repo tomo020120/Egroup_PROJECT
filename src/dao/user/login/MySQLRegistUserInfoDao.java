@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import bean.UserBean;
+import bean.TemporaryUserBean;
 import dbManager.ConnectionManager;
 import ex.DaoOperationException;
 
@@ -15,7 +15,7 @@ public class MySQLRegistUserInfoDao implements RegistUserInfoDao {
 	private ResultSet rs = null;
 
 	@Override
-	public boolean addUserInfo(UserBean userBean) {
+	public boolean addUserInfo(TemporaryUserBean tempUserBean) {
 		boolean flag = false;
 
 		try {
@@ -25,9 +25,9 @@ public class MySQLRegistUserInfoDao implements RegistUserInfoDao {
 
 			st = cn.prepareStatement(sql);
 
-			st.setString(1, userBean.getUserName());
-			st.setString(2, userBean.getUserPassword());
-			st.setString(3, userBean.getMailAddress());
+			st.setString(1, tempUserBean.getUserName());
+			st.setString(2, tempUserBean.getUserPassword());
+			st.setString(3, tempUserBean.getMailAddress());
 
 			int result = st.executeUpdate();
 
@@ -58,8 +58,8 @@ public class MySQLRegistUserInfoDao implements RegistUserInfoDao {
 	}
 
 	@Override
-	public UserBean getTempUserInfo(String UUID) {
-		UserBean userBean = new UserBean();
+	public TemporaryUserBean getTempUserInfo(String UUID) {
+		TemporaryUserBean tempUserBean = null;
 
 		try {
 			cn = ConnectionManager.getInstance().getConnection();
@@ -74,9 +74,11 @@ public class MySQLRegistUserInfoDao implements RegistUserInfoDao {
 
 
 			while(rs.next()) {
-				userBean.setUserName(rs.getString(1));
-				userBean.setUserPassword(rs.getString(2));
-				userBean.setMailAddress(rs.getString(3));
+				tempUserBean = new TemporaryUserBean();
+
+				tempUserBean.setUserName(rs.getString(1));
+				tempUserBean.setUserPassword(rs.getString(2));
+				tempUserBean.setMailAddress(rs.getString(3));
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -97,7 +99,7 @@ public class MySQLRegistUserInfoDao implements RegistUserInfoDao {
 				}
 			}
 		}
-		return userBean;
+		return tempUserBean;
 	}
 
 }

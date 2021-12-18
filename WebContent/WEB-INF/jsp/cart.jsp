@@ -24,12 +24,20 @@
 	<tr>
 		<td>${cart.name}</td>
 		<td>${cart.orderCount}</td>
-		<td>${cart.subTotal}</td>
-		<td>${cart.total}</td>
+		<td>${cart.subTotal}円</td>
 		<td><img src="${cart.pictPath}"></td>
 		<td><a href="cartde?itemId=${cart.itemId}">削除</a></td>
 	</tr>
 	</c:forEach>
+
+	<tr>
+		<td colspan="5">合計金額:<c:choose><c:when test="${result.size() != 0 }">${result.get(0).total}</c:when><c:otherwise>0</c:otherwise></c:choose>円</td>
+	</tr>
+
 	</table>
+
+	<div>
+		<p><a href="">購入へ進む(仮)</a></p>
+	</div>
 </body>
 </html>

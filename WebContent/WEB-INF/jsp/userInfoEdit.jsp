@@ -17,7 +17,7 @@
     メールアドレス<input type='text' id="emailAddress" value="${sessionInfo.mailAddress}"/><br>
     パスワード<input type='password' name='pass' value="${sessionInfo.userPassword}"/>
     <div>
-	    <input type="button" value="追加"  /><input type="button" value="削除"  /><br>
+	    支払いクレジットカード情報:<input type="button" value="追加"  /><input type="button" value="削除"  /><br>
 	</div>
 	<div>
 		<c:forEach var="card" items="${sessionScope.userCardInfo}">
@@ -31,7 +31,7 @@
 	</div>
 
 	<div>
-	    <input type="button" value="追加"  /><input type="button" value="削除"  />
+	    配送先情報:<input type="button" value="追加"  /><input type="button" value="削除"  />
 	</div>
 	<div>
 		<c:forEach var="address" items="${sessionScope.userAddressInfo}">
@@ -43,8 +43,8 @@
 		</c:forEach>
 	</div>
 
-	<form method="post" action="userInfoEditComfirm">
-		<input type="submit" value="決定">
+	<form method="post" action="userInfoEditConfirm">
+		<input type="submit" value="編集完了">
 	</form>
 
 </body>

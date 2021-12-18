@@ -2,7 +2,7 @@ package bean;
 
 import java.io.Serializable;
 
-public class CartInsideBean implements Serializable{
+public class InsideCartBean implements Serializable{
 	private String orderCount;
 	private int subTotal;
 	public String getOrderCount() {

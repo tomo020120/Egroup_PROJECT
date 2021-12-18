@@ -21,7 +21,7 @@
 	<tr>
 		<td>${result.itemId}</td>
 		<td>${result.name}</td>
-		<td>${result.price}</td>
+		<td>${result.price}円</td>
 		<td>${result.releaseDate}</td>
 		<td><img src="${result.pictPath}"></td>
 	</tr>

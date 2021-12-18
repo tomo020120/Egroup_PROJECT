@@ -1,6 +1,8 @@
 package cmd.user.login;
 
+import bean.TemporaryUserBean;
 import bean.UserBean;
+import bean.joinBean.UserAndCartBean;
 import cmd.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
@@ -16,26 +18,45 @@ public class LoginCheckCommand extends AbstractCommand{
 		AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
 		UserSelectDao userSelect = factory.getUserSelectDao();
 
-		String mailAddress = reqContext.getParameter("mailAddress")[0];
-		System.out.println("入力メアド:" + mailAddress);
-		String password = reqContext.getParameter("passWord")[0];
-		System.out.println("入力パスワード:" + password);
+		TemporaryUserBean tempUserBean = (TemporaryUserBean)reqContext.getToken(); // 新規登録時のトークンを取得
+
+		String mailAddress = null;
+		String password = null;
+
+		if(tempUserBean != null) { // 新規登録の場合はフォーム入力値ではなくセッションから値を取得
+			mailAddress = tempUserBean.getMailAddress();
+			password = tempUserBean.getUserPassword();
+		}else {
+			mailAddress = reqContext.getParameter("mailAddress")[0];
+			password = reqContext.getParameter("passWord")[0];
+		}
+
+		System.out.println("メアド:" + mailAddress);
+		System.out.println("パスワード:" + password);
+
 
 		ConnectionManager.getInstance().beginTransaction();
 
 		UserBean userBean = userSelect.getUserInfo(mailAddress,password);
 
 		if(userBean != null) { // 認証できてればセッションに登録し、ログインする前にいたところに飛ばす。認証できなければログインページにメッセージを返す。
-			reqContext.setToken(userBean);
+			String userId = userBean.getUserId();
 
 			CartDao cart = factory.getCartDao();
 
-			if(!cart.createCart(userBean.getUserId())) { // ログインと同時にカートの生成
-				ConnectionManager.getInstance().rollback();
-				ConnectionManager.getInstance().closeTransaction();
+			if(!cart.isExistenceCart(userId)) { // もしカートがまだ存在してなければ新規カート生成
+				System.out.println("カートがまだ存在してないので新規作成");
+				if(!cart.createCart(userId)) {
+					ConnectionManager.getInstance().rollback();
+					ConnectionManager.getInstance().closeTransaction();
 
-				throw new IntegrationException(null, null);
+					throw new IntegrationException(null, null);
+				}
 			}
+
+			UserAndCartBean userAndCartBean = userSelect.getUserAndCartInfo(userId);
+
+			reqContext.setToken(userAndCartBean);
 
 			ConnectionManager.getInstance().commit();
 			ConnectionManager.getInstance().closeTransaction();

@@ -10,6 +10,7 @@ public interface RequestContext{
     public abstract void setSessionAttribute(String attrName,Object value);
     public abstract Object getSessionAttribute(String attrName);
     public abstract void removeSessionAttribute(String attrName);
+    public abstract void sessionInvalidate();
     public abstract void setPastLocation(String location);
     public abstract String getPastLocation();
     public abstract String getOneBeforeLocation();

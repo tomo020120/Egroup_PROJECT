@@ -7,6 +7,7 @@
 <title>ログアウト</title>
 </head>
 <body>
+<header><%@include file="header.jsp" %></header>
 <h1>ログアウトしますか？</h1>
 <input type="button" onclick="history.back()" value="戻る">
 <input type="button" onclick="location.href='executeLogout'" value="ログアウトする">

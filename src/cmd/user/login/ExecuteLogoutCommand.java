@@ -9,8 +9,11 @@ public class ExecuteLogoutCommand extends AbstractCommand {
 	public ResponseContext execute(ResponseContext resContext) {
 		RequestContext reqContext = getRequestContext();
 
+		reqContext.sessionInvalidate();
 
-		return null;
+		resContext.setTargetPath("logoutComplete");
+
+		return resContext;
 	}
 
 }

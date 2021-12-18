@@ -1,6 +1,6 @@
 package cmd.user.login;
 
-import bean.UserBean;
+import bean.TemporaryUserBean;
 import cmd.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
@@ -24,12 +24,14 @@ public class RegistResultCommand extends AbstractCommand{
 
 		ConnectionManager.getInstance().beginTransaction();
 
-		UserBean userBean = regist.getTempUserInfo(UUID);
+		TemporaryUserBean tempUserBean = regist.getTempUserInfo(UUID);
 
-		System.out.println("登録メアド :" + userBean.getMailAddress());
-		if(regist.addUserInfo(userBean)) {
+		System.out.println("登録メアド :" + tempUserBean.getMailAddress());
+		if(regist.addUserInfo(tempUserBean)) {
 			ConnectionManager.getInstance().commit();
 			ConnectionManager.getInstance().closeTransaction();
+
+			reqContext.setToken(tempUserBean); // 登録後に即ログインをするためにセッションに登録しておく
 
 			resContext.setTargetPath("registComplete");
 		}

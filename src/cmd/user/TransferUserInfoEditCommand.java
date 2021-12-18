@@ -4,7 +4,7 @@ import java.util.List;
 
 import bean.AddressBean;
 import bean.CreditCardBean;
-import bean.UserBean;
+import bean.joinBean.UserAndCartBean;
 import cmd.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
@@ -20,9 +20,9 @@ public class TransferUserInfoEditCommand extends AbstractCommand{
 		AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
 		UserInfoEditDao edit = factory.getEditUserInfoDao();
 
-		UserBean userBean = (UserBean)reqContext.getToken();
+		UserAndCartBean userAndCartBean = (UserAndCartBean)reqContext.getToken();
 
-		String userId = userBean.getUserId();
+		String userId = userAndCartBean.getUserId();
 
 		ConnectionManager.getInstance().beginTransaction();
 

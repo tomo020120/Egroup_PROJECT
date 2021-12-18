@@ -14,5 +14,6 @@
 <!-- 下部userIdに未変更であります -->
 <a href="cart">カートに進む</a>
 <a href="">レジに進む(link先未作成)</a>
+<a href="products">買い物を続ける</a>
 </body>
 </html>

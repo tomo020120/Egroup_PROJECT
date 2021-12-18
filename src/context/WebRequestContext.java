@@ -55,6 +55,11 @@ public class WebRequestContext implements RequestContext{
 		request.getSession().removeAttribute(attrName);
 	}
 
+	public void sessionInvalidate() {
+		System.out.println("セッションの破棄");
+		request.getSession().invalidate();
+	}
+
 	public void setPastLocation(String location) {
 		request.getSession().setAttribute("pastLocation", location);
 	}

@@ -1,7 +1,6 @@
 package cmd.cart;
 
-import bean.CartBean;
-import bean.UserBean;
+import bean.joinBean.UserAndCartBean;
 import cmd.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
@@ -14,50 +13,33 @@ public class AddCartProductCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
 		RequestContext reqc=getRequestContext();
 		AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
-		CartDao dao = factory.getCartDao();
+		CartDao cartDao = factory.getCartDao();
 		String itemId=reqc.getParameter("itemId")[0];
 		String orderCount=reqc.getParameter("orderCount")[0];
 		String price=reqc.getParameter("price")[0];
 
-		//外部キーのcartIDとってくる
-		String cartId="895";
 		int subTotal = (Integer.parseInt(price) * Integer.parseInt(orderCount)); // 小計計算
 
-		UserBean user=(UserBean)reqc.getToken();
+		UserAndCartBean user=(UserAndCartBean)reqc.getToken();
+
     	if(user==null) {
-    		resc.setTargetPath("login");
+    		resc.setTargetCommandPath("login"); // 「TransferLoginCommand」へ転送
     		return resc;
     	}
 
-		String userId=user.getUserId();
-
-		CartBean cartbean = dao.getCartTotal(userId,cartId);
-		int total = cartbean.getTotal();
-
-		System.out.println("合計" + total);
-
-		total += subTotal ;//subTotalを加える
-		System.out.println("新合計" + total);
-		System.out.println("orderCount : " + orderCount);
-
-		//以下一文は一時的な採用
-
-		/*
-		CartInsideBean cartInsideBean = new CartInsideBean();
-		cartInsideBean.setOrderCount(orderCount);
-		cartInsideBean.setSubTotal(subTotal);
-		*/
+    	// cartIdをセッションから取得
+    	String cartId = user.getCartId();
 
 		ConnectionManager.getInstance().beginTransaction();
 
-		if(dao.addCartProduct(itemId, orderCount, subTotal, cartId)) {
+		if(cartDao.addCartProduct(itemId, orderCount, subTotal, cartId)) {
 			System.out.println("cartinside追加");
-			if(dao.updateCartTotal(total,userId)) {
+			if(cartDao.updateCartTotal(cartId)) {
 
 				ConnectionManager.getInstance().commit();
 				ConnectionManager.getInstance().closeTransaction();
 
-				resc.setTargetPath("CartAddComplete");
+				resc.setTargetPath("addCartComplete");
 				System.out.println("cart追加");
 				return resc;
 			}

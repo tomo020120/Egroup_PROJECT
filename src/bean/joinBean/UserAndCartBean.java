@@ -1,12 +1,12 @@
-package bean;
+package bean.joinBean;
 
-import java.io.Serializable;
-
-public class UserBean implements Serializable{
+public class UserAndCartBean {
 	private String userId;
 	private String userName;
 	private String userPassword;
 	private String mailAddress;
+	private String cartId;
+	private int total;
 
 	public String getUserId() {
 		return userId;
@@ -31,5 +31,17 @@ public class UserBean implements Serializable{
 	}
 	public void setMailAddress(String mailAddress) {
 		this.mailAddress = mailAddress;
+	}
+	public String getCartId() {
+		return cartId;
+	}
+	public void setCartId(String cartId) {
+		this.cartId = cartId;
+	}
+	public int getTotal() {
+		return total;
+	}
+	public void setTotal(int total) {
+		this.total = total;
 	}
 }

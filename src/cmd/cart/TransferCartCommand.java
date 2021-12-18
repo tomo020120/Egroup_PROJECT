@@ -1,6 +1,6 @@
 package cmd.cart;
 
-import bean.UserBean;
+import bean.joinBean.UserAndCartBean;
 import cmd.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
@@ -8,20 +8,21 @@ import dao.AbstractDaoFactory;
 import dao.cart.CartDao;
 import dbManager.ConnectionManager;
 
-public class CartCommand extends AbstractCommand{
+public class TransferCartCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
 		RequestContext reqContext = getRequestContext();
     	AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
     	CartDao dao = factory.getCartDao();
 
-    	UserBean user=(UserBean)reqContext.getToken();
+    	UserAndCartBean user=(UserAndCartBean)reqContext.getToken();
+
     	if(user==null) {
-    		resc.setTargetPath("login");
+    		resc.setTargetCommandPath("login");
     		return resc;
     	}
     	ConnectionManager.getInstance().beginTransaction();
 
-    	resc.setResult(dao.getCart(user.getUserId()));
+    	resc.setResult(dao.getInsideCart(user.getUserId()));
 
 		ConnectionManager.getInstance().commit();
 		ConnectionManager.getInstance().closeTransaction();
