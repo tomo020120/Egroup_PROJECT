@@ -9,8 +9,8 @@
 <body>
     <h1 id="title">ユーザー登録</h1>
     <form method='post' action="judge">
-    ユーザー名<input type='text' name='name'><br>
-    メールアドレス<input id='mailAddress' type='text' name='mail'><div class="circle" id="mailCircleID"></div><div class="circle2" id="mailCircle2ID"></div><br>
+    ユーザー名<input type='text' name='name' maxLength="25"><br>
+    メールアドレス<input id='mailAddress' type='text' name='mail' maxlength="256"><div class="circle" id="mailCircleID"></div><div class="circle2" id="mailCircle2ID"></div><br>
     パスワード<input type='text' id='inputpass' name='pass' maxlength="20"><div class="circle" id="circleID"></div><div class="circle2" id="circle2ID"></div><br>
     パスワード(再入力)<input type='text' id='inputagainpass' name='againpass'><div class="circle" id="reEnterCircleID"></div><div class="circle2" id="reEnterCircle2ID"></div><br>
     <input type="submit" value="登録">

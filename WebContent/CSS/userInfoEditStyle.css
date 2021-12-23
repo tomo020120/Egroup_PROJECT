@@ -1,9 +1,9 @@
-<style>
-	@charset "UTF-8";
+.box-design{
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 5px double #333333;
+}
 
-	.box-design{
-		padding: 10px;
-		margin-bottom: 10px;
-		border: 5px double #333333;
-	}
-</style>
+#registDeliveryInfoForm{
+	display:none;
+}

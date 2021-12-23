@@ -1,72 +1,72 @@
-12 18, 2021 12:00:45 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
+12 23, 2021 3:10:35 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
 警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:Egroup_PROJECT' did not find a matching property.
-12 18, 2021 12:00:45 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
+12 23, 2021 3:10:35 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
 警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:test' did not find a matching property.
-12 18, 2021 12:00:45 午前 org.apache.catalina.startup.VersionLoggerListener log
+12 23, 2021 3:10:35 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Server version:        Apache Tomcat/8.0.36
-12 18, 2021 12:00:45 午前 org.apache.catalina.startup.VersionLoggerListener log
+12 23, 2021 3:10:35 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Server built:          Jun 9 2016 13:55:50 UTC
-12 18, 2021 12:00:45 午前 org.apache.catalina.startup.VersionLoggerListener log
+12 23, 2021 3:10:35 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Server number:         8.0.36.0
-12 18, 2021 12:00:45 午前 org.apache.catalina.startup.VersionLoggerListener log
+12 23, 2021 3:10:35 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: OS Name:               Windows 10
-12 18, 2021 12:00:45 午前 org.apache.catalina.startup.VersionLoggerListener log
+12 23, 2021 3:10:35 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: OS Version:            10.0
-12 18, 2021 12:00:45 午前 org.apache.catalina.startup.VersionLoggerListener log
+12 23, 2021 3:10:35 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Architecture:          amd64
-12 18, 2021 12:00:45 午前 org.apache.catalina.startup.VersionLoggerListener log
+12 23, 2021 3:10:35 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Java Home:             C:\Program Files\Java\jdk1.8.0_202\jre
-12 18, 2021 12:00:45 午前 org.apache.catalina.startup.VersionLoggerListener log
+12 23, 2021 3:10:35 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: JVM Version:           1.8.0_202-b08
-12 18, 2021 12:00:45 午前 org.apache.catalina.startup.VersionLoggerListener log
+12 23, 2021 3:10:35 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: JVM Vendor:            Oracle Corporation
-12 18, 2021 12:00:45 午前 org.apache.catalina.startup.VersionLoggerListener log
+12 23, 2021 3:10:35 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: CATALINA_BASE:         C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1
-12 18, 2021 12:00:45 午前 org.apache.catalina.startup.VersionLoggerListener log
+12 23, 2021 3:10:35 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: CATALINA_HOME:         C:\pleiades\tomcat\8
-12 18, 2021 12:00:45 午前 org.apache.catalina.startup.VersionLoggerListener log
+12 23, 2021 3:10:35 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Dcatalina.base=C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1
-12 18, 2021 12:00:45 午前 org.apache.catalina.startup.VersionLoggerListener log
+12 23, 2021 3:10:35 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Dcatalina.home=C:\pleiades\tomcat\8
-12 18, 2021 12:00:45 午前 org.apache.catalina.startup.VersionLoggerListener log
+12 23, 2021 3:10:35 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Dwtp.deploy=C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps
-12 18, 2021 12:00:45 午前 org.apache.catalina.startup.VersionLoggerListener log
+12 23, 2021 3:10:35 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Djava.endorsed.dirs=C:\pleiades\tomcat\8\endorsed
-12 18, 2021 12:00:45 午前 org.apache.catalina.startup.VersionLoggerListener log
+12 23, 2021 3:10:35 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Dfile.encoding=UTF-8
-12 18, 2021 12:00:45 午前 org.apache.catalina.startup.VersionLoggerListener log
+12 23, 2021 3:10:35 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Xbootclasspath/a:C:\pleiades\tomcat\8\lib\activation.jar;C:\pleiades\tomcat\8\lib\mail.jar;C:\pleiades\tomcat\8\lib\mysql-connector-java-8.0.22.jar
-12 18, 2021 12:00:45 午前 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+12 23, 2021 3:10:35 午前 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
 情報: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.8.0_202\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/pleiades/eclipse//jre/bin/server;C:/pleiades/eclipse//jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk-17.0.1\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\tomo\AppData\Local\Microsoft\WindowsApps;C:\Users\tomo\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;;C:\pleiades\eclipse;;.
-12 18, 2021 12:00:45 午前 org.apache.coyote.AbstractProtocol init
+12 23, 2021 3:10:36 午前 org.apache.coyote.AbstractProtocol init
 情報: Initializing ProtocolHandler ["http-nio-9090"]
-12 18, 2021 12:00:45 午前 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
+12 23, 2021 3:10:36 午前 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
 情報: Using a shared selector for servlet write/read
-12 18, 2021 12:00:45 午前 org.apache.coyote.AbstractProtocol init
+12 23, 2021 3:10:36 午前 org.apache.coyote.AbstractProtocol init
 情報: Initializing ProtocolHandler ["ajp-nio-9009"]
-12 18, 2021 12:00:45 午前 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
+12 23, 2021 3:10:36 午前 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
 情報: Using a shared selector for servlet write/read
-12 18, 2021 12:00:45 午前 org.apache.catalina.startup.Catalina load
-情報: Initialization processed in 466 ms
-12 18, 2021 12:00:45 午前 org.apache.catalina.core.StandardService startInternal
+12 23, 2021 3:10:36 午前 org.apache.catalina.startup.Catalina load
+情報: Initialization processed in 460 ms
+12 23, 2021 3:10:36 午前 org.apache.catalina.core.StandardService startInternal
 情報: サービス Catalina を起動します
-12 18, 2021 12:00:45 午前 org.apache.catalina.core.StandardEngine startInternal
+12 23, 2021 3:10:36 午前 org.apache.catalina.core.StandardEngine startInternal
 情報: Starting Servlet Engine: Apache Tomcat/8.0.36
-12 18, 2021 12:00:46 午前 org.apache.jasper.servlet.TldScanner scanJars
+12 23, 2021 3:10:36 午前 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-12 18, 2021 12:00:46 午前 org.apache.jasper.servlet.TldScanner scanJars
+12 23, 2021 3:10:37 午前 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-12 18, 2021 12:00:47 午前 org.apache.jasper.servlet.TldScanner scanJars
+12 23, 2021 3:10:37 午前 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-12 18, 2021 12:00:47 午前 org.apache.coyote.AbstractProtocol start
+12 23, 2021 3:10:37 午前 org.apache.coyote.AbstractProtocol start
 情報: Starting ProtocolHandler ["http-nio-9090"]
-12 18, 2021 12:00:47 午前 org.apache.coyote.AbstractProtocol start
+12 23, 2021 3:10:37 午前 org.apache.coyote.AbstractProtocol start
 情報: Starting ProtocolHandler ["ajp-nio-9009"]
-12 18, 2021 12:00:47 午前 org.apache.catalina.startup.Catalina start
-情報: Server startup in 1863 ms
-キー値：executeLogout
-取得プロパティ：cmd.user.login.ExecuteLogoutCommand
-セッションの破棄
+12 23, 2021 3:10:37 午前 org.apache.catalina.startup.Catalina start
+情報: Server startup in 1695 ms
+キー値：userInfoEdit
+取得プロパティ：cmd.user.TransferUserInfoEditCommand
+セッション登録値(token) :null
 result1 : null
 message : null
 セッション登録値(token) :null
@@ -99,198 +99,166 @@ sessionInfo : null
 転送先 : /topPage
 result1 : null
 message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@788eb26c
-sessionInfo : bean.joinBean.UserAndCartBean@788eb26c
-セッション登録値(token) :bean.joinBean.UserAndCartBean@788eb26c
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+sessionInfo : bean.joinBean.UserAndCartBean@20ae7c7b
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
 キー値：topPage
 取得プロパティ：cmd.top.TransferTopPageCommand
 result1 : null
 message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@788eb26c
-sessionInfo : bean.joinBean.UserAndCartBean@788eb26c
-セッション登録値(token) :bean.joinBean.UserAndCartBean@788eb26c
-キー値：logout
-取得プロパティ：cmd.user.login.TransferLogoutConfirmCommand
-result1 : null
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@788eb26c
-sessionInfo : bean.joinBean.UserAndCartBean@788eb26c
-セッション登録値(token) :bean.joinBean.UserAndCartBean@788eb26c
-キー値：executeLogout
-取得プロパティ：cmd.user.login.ExecuteLogoutCommand
-セッションの破棄
-result1 : null
-message : null
-セッション登録値(token) :null
-sessionInfo : null
-セッション登録値(token) :null
-キー値：logout
-取得プロパティ：cmd.user.login.TransferLogoutConfirmCommand
-result1 : null
-message : null
-セッション登録値(token) :null
-sessionInfo : null
-セッション登録値(token) :null
-キー値：executeLogout
-取得プロパティ：cmd.user.login.ExecuteLogoutCommand
-セッションの破棄
-result1 : null
-message : null
-セッション登録値(token) :null
-sessionInfo : null
-セッション登録値(token) :null
-キー値：products
-取得プロパティ：cmd.products.ProductsCommand
-トランザクション開始
-接続
-新規接続
-接続
-コミットします。
-クローズしました。
-result1 : [bean.joinBean.ProductPictBean@4c6c8ac3, bean.joinBean.ProductPictBean@96e0d2a, bean.joinBean.ProductPictBean@6896eccd, bean.joinBean.ProductPictBean@382d0541, bean.joinBean.ProductPictBean@103fba15, bean.joinBean.ProductPictBean@6941f265, bean.joinBean.ProductPictBean@366e9b04, bean.joinBean.ProductPictBean@66b99785, bean.joinBean.ProductPictBean@b3b7655, bean.joinBean.ProductPictBean@6d0f6f8d, bean.joinBean.ProductPictBean@2ffb6f93, bean.joinBean.ProductPictBean@5d4d056, bean.joinBean.ProductPictBean@550d8767, bean.joinBean.ProductPictBean@4368f94c, bean.joinBean.ProductPictBean@371b8145, bean.joinBean.ProductPictBean@14eea190, bean.joinBean.ProductPictBean@2de12ad5, bean.joinBean.ProductPictBean@294714bc, bean.joinBean.ProductPictBean@423da978, bean.joinBean.ProductPictBean@23be628e, bean.joinBean.ProductPictBean@72d53ae, bean.joinBean.ProductPictBean@16de4503, bean.joinBean.ProductPictBean@390758c9, bean.joinBean.ProductPictBean@697df775, bean.joinBean.ProductPictBean@4a069d7, bean.joinBean.ProductPictBean@60b2c21d, bean.joinBean.ProductPictBean@63f00fd2, bean.joinBean.ProductPictBean@65b09a86, bean.joinBean.ProductPictBean@6259b936, bean.joinBean.ProductPictBean@148d2d4a, bean.joinBean.ProductPictBean@77e02e96, bean.joinBean.ProductPictBean@16e5ee46, bean.joinBean.ProductPictBean@395a75a5, bean.joinBean.ProductPictBean@4440e8b9, bean.joinBean.ProductPictBean@32a2fa39]
-message : null
-セッション登録値(token) :null
-sessionInfo : null
-セッション登録値(token) :null
-キー値：news
-取得プロパティ：cmd.news.NewsCommand
-result1 : null
-message : null
-セッション登録値(token) :null
-sessionInfo : null
-セッション登録値(token) :null
-キー値：products
-取得プロパティ：cmd.products.ProductsCommand
-トランザクション開始
-接続
-新規接続
-接続
-コミットします。
-クローズしました。
-result1 : [bean.joinBean.ProductPictBean@7d667e77, bean.joinBean.ProductPictBean@2b4f6a40, bean.joinBean.ProductPictBean@4cd18271, bean.joinBean.ProductPictBean@5312c8eb, bean.joinBean.ProductPictBean@1d498138, bean.joinBean.ProductPictBean@4d04f5bb, bean.joinBean.ProductPictBean@d063460, bean.joinBean.ProductPictBean@4816e0bb, bean.joinBean.ProductPictBean@1907f8c0, bean.joinBean.ProductPictBean@73c46f76, bean.joinBean.ProductPictBean@4fdde05a, bean.joinBean.ProductPictBean@30b1c222, bean.joinBean.ProductPictBean@16d6fd0c, bean.joinBean.ProductPictBean@46b98f7f, bean.joinBean.ProductPictBean@66c668c2, bean.joinBean.ProductPictBean@58d806ea, bean.joinBean.ProductPictBean@79c7ae60, bean.joinBean.ProductPictBean@738f1450, bean.joinBean.ProductPictBean@26daf29b, bean.joinBean.ProductPictBean@3ead4ffc, bean.joinBean.ProductPictBean@7a5d42e7, bean.joinBean.ProductPictBean@71fbe468, bean.joinBean.ProductPictBean@448ee6, bean.joinBean.ProductPictBean@5442e3bd, bean.joinBean.ProductPictBean@4418d9a8, bean.joinBean.ProductPictBean@6a6eade7, bean.joinBean.ProductPictBean@4ef93df2, bean.joinBean.ProductPictBean@de5609b, bean.joinBean.ProductPictBean@fb22d16, bean.joinBean.ProductPictBean@102ca892, bean.joinBean.ProductPictBean@17bd11c8, bean.joinBean.ProductPictBean@317a5a1c, bean.joinBean.ProductPictBean@2fbe0bb8, bean.joinBean.ProductPictBean@5aa34ee5, bean.joinBean.ProductPictBean@25ef3728]
-message : null
-セッション登録値(token) :null
-sessionInfo : null
-セッション登録値(token) :null
-キー値：artist
-取得プロパティ：cmd.artist.ArtistCommand
-トランザクション開始
-接続
-新規接続
-接続
-コミットします。
-クローズしました。
-result1 : [bean.ArtistBean@2cab702f, bean.ArtistBean@477ee5f2, bean.ArtistBean@1292dd19, bean.ArtistBean@6a2bd167, bean.ArtistBean@1df6ee05, bean.ArtistBean@2d17c93c, bean.ArtistBean@29e9b392, bean.ArtistBean@1dfdff21, bean.ArtistBean@37d1ac5d, bean.ArtistBean@249cddb2, bean.ArtistBean@408d8f90, bean.ArtistBean@32fb7457, bean.ArtistBean@8f28511, bean.ArtistBean@4a41a8f0, bean.ArtistBean@669c5f27, bean.ArtistBean@f2cc66f, bean.ArtistBean@13ea0096, bean.ArtistBean@54ab3c33, bean.ArtistBean@504a24e6, bean.ArtistBean@39bc8f3e, bean.ArtistBean@7a91c62f, bean.ArtistBean@775627ea, bean.ArtistBean@763a40f2, bean.ArtistBean@2ba2e474, bean.ArtistBean@5ff6ef91, bean.ArtistBean@19d9faf2, bean.ArtistBean@3dc014eb, bean.ArtistBean@1fdd663, bean.ArtistBean@699f2baa, bean.ArtistBean@3f474201, bean.ArtistBean@21d7e4e, bean.ArtistBean@6d3ceea0]
-message : null
-セッション登録値(token) :null
-sessionInfo : null
-セッション登録値(token) :null
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+sessionInfo : bean.joinBean.UserAndCartBean@20ae7c7b
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
 キー値：userInfoEdit
 取得プロパティ：cmd.user.TransferUserInfoEditCommand
-12 18, 2021 12:01:32 午前 org.apache.catalina.core.StandardWrapperValve invoke
-重大: サーブレット FrontServlet のServlet.service()が例外を投げました
-java.lang.NullPointerException
-	at cmd.user.TransferUserInfoEditCommand.execute(TransferUserInfoEditCommand.java:25)
-	at context.WebApplicationContext.handleRequest(WebApplicationContext.java:24)
-	at FrontServlet.doPost(FrontServlet.java:25)
-	at FrontServlet.doGet(FrontServlet.java:15)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
-	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:616)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:528)
-	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1099)
-	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:670)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1520)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1476)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-
-セッション登録値(token) :null
-キー値：cart
-取得プロパティ：cmd.cart.TransferCartCommand
-セッション登録値(token) :null
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
 result1 : null
 message : null
-セッション登録値(token) :null
-sessionInfo : null
-セッション登録値(token) :null
-キー値：login
-取得プロパティ：cmd.user.login.TransferLoginPageCommand
-referer :http://localhost:9090/Egroup_PROJECT/artist
-referer(トリミング済み) :artist
-セッション登録値(token) :null
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+sessionInfo : bean.joinBean.UserAndCartBean@20ae7c7b
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+キー値：accountInfoEdit
+取得プロパティ：cmd.user.TransferAccountInfoEditCommand
 result1 : null
 message : null
-セッション登録値(token) :null
-sessionInfo : null
-セッション登録値(token) :null
-キー値：login
-取得プロパティ：cmd.user.login.TransferLoginPageCommand
-referer :http://localhost:9090/Egroup_PROJECT/artist
-referer(トリミング済み) :artist
-セッション登録値(token) :null
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+sessionInfo : bean.joinBean.UserAndCartBean@20ae7c7b
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+キー値：editUserMailAddressForm
+取得プロパティ：cmd.user.TransferUserMailAddressEditFormCommand
 result1 : null
 message : null
-セッション登録値(token) :null
-sessionInfo : null
-セッション登録値(token) :null
-キー値：loginCheck
-取得プロパティ：cmd.user.login.LoginCheckCommand
-セッション登録値(token) :null
-メアド:tomoiw0120@gmail.com
-パスワード:Tomo0120
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+sessionInfo : bean.joinBean.UserAndCartBean@20ae7c7b
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+キー値：judgeCorrectUserMailAddress
+取得プロパティ：cmd.user.JudgeCorrectMailAddressCommand
 トランザクション開始
 接続
 新規接続
 接続
-接続
-接続
-コミットします。
 クローズしました。
-転送先 : /artist
+メール送信が完了しました。
 result1 : null
 message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@1cf0cb3e
-sessionInfo : bean.joinBean.UserAndCartBean@1cf0cb3e
-セッション登録値(token) :bean.joinBean.UserAndCartBean@1cf0cb3e
-キー値：artist
-取得プロパティ：cmd.artist.ArtistCommand
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+sessionInfo : bean.joinBean.UserAndCartBean@20ae7c7b
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+キー値：updateUserMailAddress
+取得プロパティ：cmd.user.UpdateUserMailAddressCommand
+セッション登録値 :779784
+入力されたコード: 779784
+正しいコード: 779784
+セッション登録値 :ti20304007@ga.tera-house.ac.jp
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
 トランザクション開始
 接続
 新規接続
 接続
 コミットします。
 クローズしました。
-result1 : [bean.ArtistBean@28d2133, bean.ArtistBean@18beb367, bean.ArtistBean@f8892db, bean.ArtistBean@43b3c005, bean.ArtistBean@285ce5f9, bean.ArtistBean@45145e1e, bean.ArtistBean@e41122d, bean.ArtistBean@53af5808, bean.ArtistBean@1c931ca9, bean.ArtistBean@7b10458b, bean.ArtistBean@7d46f0be, bean.ArtistBean@54808806, bean.ArtistBean@50f2b06b, bean.ArtistBean@29b78be3, bean.ArtistBean@633e5d6b, bean.ArtistBean@332e39b2, bean.ArtistBean@761aa654, bean.ArtistBean@63e7d3e7, bean.ArtistBean@72230ff5, bean.ArtistBean@30824baa, bean.ArtistBean@130963e8, bean.ArtistBean@4e2ce285, bean.ArtistBean@241a0012, bean.ArtistBean@6e7d020, bean.ArtistBean@5e29f537, bean.ArtistBean@77b80cbd, bean.ArtistBean@3d698c8, bean.ArtistBean@3b083e42, bean.ArtistBean@2a99f459, bean.ArtistBean@1d73c853, bean.ArtistBean@2a5403ed, bean.ArtistBean@50d4d2cb]
+result1 : null
 message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@1cf0cb3e
-sessionInfo : bean.joinBean.UserAndCartBean@1cf0cb3e
-セッション登録値(token) :bean.joinBean.UserAndCartBean@1cf0cb3e
-キー値：userInfoEdit
-取得プロパティ：cmd.user.TransferUserInfoEditCommand
-セッション登録値(token) :bean.joinBean.UserAndCartBean@1cf0cb3e
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+sessionInfo : bean.joinBean.UserAndCartBean@20ae7c7b
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+キー値：accountInfoEdit
+取得プロパティ：cmd.user.TransferAccountInfoEditCommand
+result1 : null
+message : null
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+sessionInfo : bean.joinBean.UserAndCartBean@20ae7c7b
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+キー値：editUserMailAddressForm
+取得プロパティ：cmd.user.TransferUserMailAddressEditFormCommand
+result1 : null
+message : null
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+sessionInfo : bean.joinBean.UserAndCartBean@20ae7c7b
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+キー値：judgeCorrectUserMailAddress
+取得プロパティ：cmd.user.JudgeCorrectMailAddressCommand
 トランザクション開始
 接続
 新規接続
 接続
+クローズしました。
+メール送信が完了しました。
+result1 : null
+message : null
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+sessionInfo : bean.joinBean.UserAndCartBean@20ae7c7b
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+キー値：updateUserMailAddress
+取得プロパティ：cmd.user.UpdateUserMailAddressCommand
+セッション登録値 :860522
+入力されたコード: 111111
+正しいコード: 860522
+result1 : null
+message : そのコードは正しくありません
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+sessionInfo : bean.joinBean.UserAndCartBean@20ae7c7b
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+キー値：updateUserMailAddress
+取得プロパティ：cmd.user.UpdateUserMailAddressCommand
+セッション登録値 :860522
+入力されたコード: 336261
+正しいコード: 860522
+result1 : null
+message : そのコードは正しくありません
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+sessionInfo : bean.joinBean.UserAndCartBean@20ae7c7b
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+キー値：updateUserMailAddress
+取得プロパティ：cmd.user.UpdateUserMailAddressCommand
+セッション登録値 :860522
+入力されたコード: 860522
+正しいコード: 860522
+セッション登録値 :tomoiw0120@gmail.com
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+トランザクション開始
 接続
-0
+新規接続
+接続
 コミットします。
 クローズしました。
 result1 : null
 message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@1cf0cb3e
-sessionInfo : bean.joinBean.UserAndCartBean@1cf0cb3e
-セッション登録値(token) :bean.joinBean.UserAndCartBean@1cf0cb3e
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+sessionInfo : bean.joinBean.UserAndCartBean@20ae7c7b
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+キー値：accountInfoEdit
+取得プロパティ：cmd.user.TransferAccountInfoEditCommand
+result1 : null
+message : null
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+sessionInfo : bean.joinBean.UserAndCartBean@20ae7c7b
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+キー値：editUserNameForm
+取得プロパティ：cmd.user.TransferUserNameEditFormCommand
+result1 : null
+message : null
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+sessionInfo : bean.joinBean.UserAndCartBean@20ae7c7b
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+キー値：updateUserName
+取得プロパティ：cmd.user.UpdateUserNameCommand
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+トランザクション開始
+接続
+新規接続
+接続
+コミットします。
+クローズしました。
+result1 : null
+message : null
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+sessionInfo : bean.joinBean.UserAndCartBean@20ae7c7b
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+キー値：accountInfoEdit
+取得プロパティ：cmd.user.TransferAccountInfoEditCommand
+result1 : null
+message : null
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
+sessionInfo : bean.joinBean.UserAndCartBean@20ae7c7b
+セッション登録値(token) :bean.joinBean.UserAndCartBean@20ae7c7b
