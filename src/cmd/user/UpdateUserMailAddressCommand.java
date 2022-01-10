@@ -2,6 +2,7 @@ package cmd.user;
 
 import bean.joinBean.UserAndCartBean;
 import cmd.AbstractCommand;
+import cmd.mail.SendMail;
 import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
@@ -30,12 +31,17 @@ public class UpdateUserMailAddressCommand extends AbstractCommand {
 
 			ConnectionManager.getInstance().beginTransaction();
 			if(edit.updateUserMailAddress(newUserMailAddress, userAndCartBean.getUserId())) { // 更新処理実行。
+
+				String messageBody = "お客様のリクエストに基づき、メールアドレスを変更いたしました。";
+				SendMail.send(newUserMailAddress,messageBody,"Ibanezアカウントの変更");
+
 				ConnectionManager.getInstance().commit();
 				ConnectionManager.getInstance().closeTransaction();
 
 				userAndCartBean.setMailAddress(newUserMailAddress);
 
 				reqContext.setToken(userAndCartBean);
+				reqContext.setSessionAttribute("completeMessage", "お客様のアカウント情報は無事更新されました。");
 				reqContext.removeSessionAttribute("newUserMailAddress"); // 不要のため消去
 				reqContext.removeSessionAttribute("authenticationCode");
 

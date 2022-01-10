@@ -6,6 +6,8 @@ import dao.cart.CartDao;
 import dao.cart.MySQLCartDao;
 import dao.products.MySQLProductsDao;
 import dao.products.ProductsDao;
+import dao.user.DeliveryInfoEditDao;
+import dao.user.MySQLDeliveryInfoEditDao;
 import dao.user.MySQLUserAccountInfoEditDao;
 import dao.user.MySQLUserInfoEditDao;
 import dao.user.UserAccountInfoEditDao;
@@ -49,4 +51,9 @@ public class MySQLDaoFactory extends AbstractDaoFactory{
     public UserAccountInfoEditDao getUserAccountInfoEditDao() {
     	return new MySQLUserAccountInfoEditDao();
     }
+
+	@Override
+	public DeliveryInfoEditDao getDeliveryInfoEditDao() {
+		return new MySQLDeliveryInfoEditDao();
+	}
 }

@@ -3,11 +3,11 @@ package cmd.user;
 import cmd.AbstractCommand;
 import context.ResponseContext;
 
-public class TransferPasswordEditFormCommand extends AbstractCommand{
+public class TransferAddDeliveryInfoFormCommand extends AbstractCommand {
 
 	@Override
 	public ResponseContext execute(ResponseContext resContext) {
-		resContext.setTargetPath("passwordEditForm");
+		resContext.setTargetPath("addDeliveryInfoForm");
 
 		return resContext;
 	}

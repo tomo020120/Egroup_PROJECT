@@ -20,7 +20,7 @@ public class MySQLUserSelectDao implements UserSelectDao{
 		try {
 			cn = ConnectionManager.getInstance().getConnection();
 
-			String sql = "select * from user_table where mailAddress = ? AND userPassword = ?";
+			String sql = "select * from user_table where binary mailAddress = ? AND binary userPassword = ?"; // 大文字小文字を判定するため、Binary句を付ける
 
 			st = cn.prepareStatement(sql);
 

@@ -7,6 +7,7 @@ import java.util.Properties;
 import dao.artists.ArtistsDao;
 import dao.cart.CartDao;
 import dao.products.ProductsDao;
+import dao.user.DeliveryInfoEditDao;
 import dao.user.UserAccountInfoEditDao;
 import dao.user.login.RegistUserInfoDao;
 import dao.user.login.TempRegistDao;
@@ -43,4 +44,5 @@ public abstract class AbstractDaoFactory{
 	public abstract CartDao getCartDao(); // カートのDao生成
 	public abstract UserSelectDao getUserSelectDao(); // ログインチェック用のDao生成
 	public abstract UserAccountInfoEditDao getUserAccountInfoEditDao(); // ユーザーアカウント情報編集用のDao生成
+	public abstract DeliveryInfoEditDao getDeliveryInfoEditDao(); // 配送先情報編集用のDao生成
 }
