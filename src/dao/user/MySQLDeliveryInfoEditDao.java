@@ -107,6 +107,45 @@ public class MySQLDeliveryInfoEditDao implements DeliveryInfoEditDao {
 	}
 
 	@Override
+	public int getSameAddressQuantity(String address, String userId) {
+		int result = 0;
+		try {
+			cn = ConnectionManager.getInstance().getConnection();
+
+			String sql = "select count(address) from address_table where address = ? and userId = ?";
+
+			st = cn.prepareStatement(sql);
+
+			st.setString(1, address);
+			st.setString(2, userId);
+
+			rs = st.executeQuery();
+
+			while(rs.next()) {
+				result = rs.getInt(1);
+			}
+		}catch (SQLException e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		} catch (Exception e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		} finally {
+			if (st != null) {
+				try {
+					st.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
+		}
+		return result;
+	}
+
+	@Override
 	public boolean addDeliveryInfo(AddressBean addressBean) {
 		boolean flag = false;
 		try {
@@ -197,5 +236,6 @@ public class MySQLDeliveryInfoEditDao implements DeliveryInfoEditDao {
 		// TODO 自動生成されたメソッド・スタブ
 		return false;
 	}
+
 
 }

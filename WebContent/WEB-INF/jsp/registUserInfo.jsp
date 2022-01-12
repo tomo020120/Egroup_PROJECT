@@ -63,7 +63,7 @@
 		circle2.style.display ="inline-block";
 	}
 	});
-//passwordのチーク
+//passwordのチェック
 	passagain.addEventListener("input",function(){
 		if(passagain.value === pass.value){
 			console.log("ok");

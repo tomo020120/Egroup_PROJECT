@@ -51,7 +51,7 @@ public class AddDeliveryInfoCommand extends AbstractCommand {
 			System.out.println("入力住所: " + fullAddress);
 			System.out.println("判定: " + addressBean.getAddress().equals(fullAddress));
 			if(addressBean.getAddress().equals(fullAddress)) {
-				resContext.setMessage("入力された住所は登録済みです");
+				resContext.setMessage("入力された住所は登録済みです。");
 				resContext.setTargetPath("addDeliveryInfoForm");
 
 				ConnectionManager.getInstance().closeTransaction();

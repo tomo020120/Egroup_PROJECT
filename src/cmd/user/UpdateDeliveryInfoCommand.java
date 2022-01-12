@@ -1,6 +1,7 @@
 package cmd.user;
 
 import bean.AddressBean;
+import bean.joinBean.UserAndCartBean;
 import cmd.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
@@ -29,6 +30,7 @@ public class UpdateDeliveryInfoCommand extends AbstractCommand{
 		String fullTelephoneNumber = (firstTelephoneNumber + "-" + secondTelephoneNumber + "-" + thirdTelephoneNumber);
 		String fullAddress = (address + "/" + houseNumber + "/" + buildingName);
 
+		String userId = ((UserAndCartBean)(reqContext.getToken())).getUserId();
 
 		AddressBean addressBean = new AddressBean();
 
@@ -43,11 +45,22 @@ public class UpdateDeliveryInfoCommand extends AbstractCommand{
 		addressBean.setPostalCode(postalCode);
 		addressBean.setAddress(fullAddress);
 
-		if(edit.updateDeliveryInfo(addressBean)) {
-			resContext.setTargetCommandPath("deliveryInfoEdit");
 
-			ConnectionManager.getInstance().commit();
-			ConnectionManager.getInstance().closeTransaction();
+		if(edit.updateDeliveryInfo(addressBean)) {
+			int result = edit.getSameAddressQuantity(fullAddress, userId);
+			System.out.println("住所チェック  " + result);
+			if(result <= 1) {
+				resContext.setTargetCommandPath("deliveryInfoEdit");
+
+				ConnectionManager.getInstance().commit();
+				ConnectionManager.getInstance().closeTransaction();
+			}else {
+				reqContext.setSessionAttribute("errorFlag", true); // TargetCommandPathのためメッセージをリクエストスコープで格納するとJSPでは表示できないため、セッションでFlagの登録
+				resContext.setTargetCommandPath("updateDeliveryInfoForm");
+
+				ConnectionManager.getInstance().rollback();
+				ConnectionManager.getInstance().closeTransaction();
+			}
 		}else {
 			ConnectionManager.getInstance().rollback();
 			ConnectionManager.getInstance().closeTransaction();

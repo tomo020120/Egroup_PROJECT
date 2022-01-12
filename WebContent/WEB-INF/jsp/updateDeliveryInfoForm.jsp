@@ -25,7 +25,7 @@
 	<p>${message}</p>
 	<script>
 		setTelNumber('080-3333-3333');
-		setAddress('東京都多摩市貝取/貝取/常盤マンション1-309')
+		setAddress('東京都多摩市貝取/貝取/常盤マンション1-309');
 	</script>
 </body>
 </html>
