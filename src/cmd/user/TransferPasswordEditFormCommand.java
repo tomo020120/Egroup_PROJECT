@@ -11,5 +11,4 @@ public class TransferPasswordEditFormCommand extends AbstractCommand{
 
 		return resContext;
 	}
-
 }

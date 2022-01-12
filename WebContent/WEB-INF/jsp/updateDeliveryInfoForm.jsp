@@ -11,7 +11,7 @@
 <body>
 	<header><%@include file="header.jsp"%></header>
 	<div id="deliveryFormArea">
-		<form id="updateDeliveryInfoForm" class="h-adr" method="post" action="updateDeliveryInfo" >
+		<form id="updateDeliveryInfoForm" class="h-adr" method="post" action="updateDeliveryInfo?deliveryInfoId=${result.deliveryInfoId}">
 			<span class="p-country-name" style="display:none;">Japan</span> <!--日本内に検索設定  -->
 			【必須】氏名:<input type="text" name="deliveryName" maxlength="25" value="${result.deliveryName}"><br>
 			【必須】電話番号(000-0000-0000):<input type="text" id="firstTelephoneNumber" name="firstTelephoneNumber" maxlength="3">-<input type="text" id="secondTelephoneNumber" name="secondTelephoneNumber" maxlength="4">-<input type="text" id="thirdTelephoneNumber" name="thirdTelephoneNumber" maxlength="4"><br>

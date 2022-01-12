@@ -30,7 +30,7 @@ public class MySQLDeliveryInfoEditDao implements DeliveryInfoEditDao {
 
 			rs = st.executeQuery();
 
-			while(rs.next()) {
+			while (rs.next()) {
 				AddressBean addressBean = new AddressBean();
 
 				addressBean.setDeliveryInfoId(rs.getString(1));
@@ -42,20 +42,19 @@ public class MySQLDeliveryInfoEditDao implements DeliveryInfoEditDao {
 
 				addressList.add(addressBean);
 			}
-		}catch(SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 			ConnectionManager.getInstance().rollback();
 			throw new DaoOperationException(e.getMessage(), e);
-		}catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			ConnectionManager.getInstance().rollback();
 			throw new DaoOperationException(e.getMessage(), e);
-		}finally {
-			if(st != null) {
+		} finally {
+			if (st != null) {
 				try {
 					st.close();
-				}
-				catch(SQLException e) {
+				} catch (SQLException e) {
 					e.printStackTrace();
 					throw new DaoOperationException(e.getMessage(), e);
 				}
@@ -78,7 +77,7 @@ public class MySQLDeliveryInfoEditDao implements DeliveryInfoEditDao {
 
 			rs = st.executeQuery();
 
-			while(rs.next()) {
+			while (rs.next()) {
 				addressBean.setDeliveryInfoId(rs.getString(1));
 				addressBean.setDeliveryName(rs.getString(2));
 				addressBean.setPostalCode(rs.getString(3));
@@ -86,20 +85,19 @@ public class MySQLDeliveryInfoEditDao implements DeliveryInfoEditDao {
 				addressBean.setTel(rs.getString(5));
 				addressBean.setUserId(rs.getString(6));
 			}
-		}catch(SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 			ConnectionManager.getInstance().rollback();
 			throw new DaoOperationException(e.getMessage(), e);
-		}catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			ConnectionManager.getInstance().rollback();
 			throw new DaoOperationException(e.getMessage(), e);
-		}finally {
-			if(st != null) {
+		} finally {
+			if (st != null) {
 				try {
 					st.close();
-				}
-				catch(SQLException e) {
+				} catch (SQLException e) {
 					e.printStackTrace();
 					throw new DaoOperationException(e.getMessage(), e);
 				}
@@ -126,24 +124,66 @@ public class MySQLDeliveryInfoEditDao implements DeliveryInfoEditDao {
 
 			int result = st.executeUpdate();
 
-			if(result > 0) {
+			if (result > 0) {
 				flag = true;
 			}
 
-		}catch(SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 			ConnectionManager.getInstance().rollback();
 			throw new DaoOperationException(e.getMessage(), e);
-		}catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			ConnectionManager.getInstance().rollback();
 			throw new DaoOperationException(e.getMessage(), e);
-		}finally {
-			if(st != null) {
+		} finally {
+			if (st != null) {
 				try {
 					st.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
 				}
-				catch(SQLException e) {
+			}
+		}
+		return flag;
+	}
+
+	@Override
+	public boolean updateDeliveryInfo(AddressBean addressBean) {
+		boolean flag = false;
+		try {
+			cn = ConnectionManager.getInstance().getConnection();
+
+			String sql = "update address_table set deliveryName = ?,postalCode = ?,address = ?,tel = ? where deliveryInfoId = ?";
+
+			st = cn.prepareStatement(sql);
+
+			st.setString(1, addressBean.getDeliveryName());
+			st.setString(2, addressBean.getPostalCode());
+			st.setString(3, addressBean.getAddress());
+			st.setString(4, addressBean.getTel());
+			st.setString(5, addressBean.getDeliveryInfoId());
+
+			int result = st.executeUpdate();
+
+			if (result > 0) {
+				flag = true;
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		} catch (Exception e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		} finally {
+			if (st != null) {
+				try {
+					st.close();
+				} catch (SQLException e) {
 					e.printStackTrace();
 					throw new DaoOperationException(e.getMessage(), e);
 				}
@@ -157,6 +197,5 @@ public class MySQLDeliveryInfoEditDao implements DeliveryInfoEditDao {
 		// TODO 自動生成されたメソッド・スタブ
 		return false;
 	}
-
 
 }
