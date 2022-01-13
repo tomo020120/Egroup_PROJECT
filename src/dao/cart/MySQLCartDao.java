@@ -230,5 +230,44 @@ public class MySQLCartDao implements CartDao{
 		}
 		return flag;
 	}
+
+	public boolean deleteCartProduct(String itemId,String cartId) {
+		boolean flag = false; // insert結果flag
+
+			try {
+				cn = ConnectionManager.getInstance().getConnection();
+
+				String sql ="delete FROM  inside_cart_table WHERE itemId=? AND cartId=?";
+				st = cn.prepareStatement(sql);
+
+				st.setString(1, itemId);
+				st.setString(2, cartId);
+
+				int result = st.executeUpdate();
+
+				if(result > 0) {
+					flag = true;
+				}
+			}catch(SQLException e) {
+				e.printStackTrace();
+				ConnectionManager.getInstance().rollback();
+				throw new DaoOperationException(e.getMessage(), e);
+			}catch(Exception e) {
+				e.printStackTrace();
+				ConnectionManager.getInstance().rollback();
+				throw new DaoOperationException(e.getMessage(), e);
+			}finally {
+				if(st != null) {
+					try {
+						st.close();
+					}
+					catch(SQLException e) {
+						e.printStackTrace();
+						throw new DaoOperationException(e.getMessage(), e);
+					}
+				}
+			}
+		return flag;
+	}
 }
 

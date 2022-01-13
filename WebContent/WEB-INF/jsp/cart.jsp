@@ -26,7 +26,7 @@
 		<td>${cart.orderCount}</td>
 		<td>${cart.subTotal}円</td>
 		<td><img src="${cart.pictPath}"></td>
-		<td><a href="cartde?itemId=${cart.itemId}">削除</a></td>
+		<td><a href="deleteCartProduct?itemId=${cart.itemId}">削除</a></td>
 	</tr>
 	</c:forEach>
 
