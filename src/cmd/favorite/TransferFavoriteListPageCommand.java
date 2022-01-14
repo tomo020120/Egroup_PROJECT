@@ -7,8 +7,8 @@ public class TransferFavoriteListPageCommand extends AbstractCommand {
 
 	@Override
 	public ResponseContext execute(ResponseContext resContext) {
-
-		return null;
+		resContext.setTargetPath("favoriteListPage");
+		return resContext;
 	}
 
 }
