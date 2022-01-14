@@ -6,7 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import bean.UserBean;
-import dao.sql.MySQLConnector;
+import dbManager.ConnectionManager;
+import ex.DaoOperationException;
 
 public class MySQLUserSelectDao implements UserSelectDao{
 	private Connection cn = null;
@@ -16,7 +17,7 @@ public class MySQLUserSelectDao implements UserSelectDao{
 	public UserBean getUserInfo(String _mail,String _pass) {
 		UserBean userBean = null;
 		try {
-			cn = MySQLConnector.getConnection();
+			cn = ConnectionManager.getInstance().getConnection();
 
 			String sql = "select * from user_table where mailAddress = ? AND userPassword = ?";
 
@@ -36,17 +37,24 @@ public class MySQLUserSelectDao implements UserSelectDao{
 				userBean.setUserPassword(rs.getString(3));
 				userBean.setMailAddress(rs.getString(4));
 			}
-		}
-		catch(SQLException e) {
-			MySQLConnector.rollbackTransaction();
+		}catch(SQLException e) {
 			e.printStackTrace();
-		}
-		catch(Exception e) {
-			MySQLConnector.rollbackTransaction();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}catch(Exception e) {
 			e.printStackTrace();
-		}
-		finally {
-			MySQLConnector.closeTransaction();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}finally {
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
 		}
 		return userBean;
 	}

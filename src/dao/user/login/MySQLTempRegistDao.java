@@ -8,7 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bean.TemporaryUserBean;
-import dao.sql.MySQLConnector;
+import dbManager.ConnectionManager;
+import ex.DaoOperationException;
 
 public class MySQLTempRegistDao implements TempRegistDao {
 	private Connection cn = null;
@@ -20,7 +21,7 @@ public class MySQLTempRegistDao implements TempRegistDao {
 		List<String> mailAddressList = new ArrayList<String>();
 
 		try {
-			cn = MySQLConnector.getConnection();
+			cn = ConnectionManager.getInstance().getConnection();
 
 			String sql = "select mailAddress from user_table";
 
@@ -31,19 +32,24 @@ public class MySQLTempRegistDao implements TempRegistDao {
 			while(rs.next()) {
 				mailAddressList.add(rs.getString("mailAddress"));
 			}
-
-			MySQLConnector.commitTransaction();
-		}
-		catch(SQLException e) {
-			MySQLConnector.rollbackTransaction();
+		}catch(SQLException e) {
 			e.printStackTrace();
-		}
-		catch(Exception e) {
-			MySQLConnector.rollbackTransaction();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}catch(Exception e) {
 			e.printStackTrace();
-		}
-		finally {
-			MySQLConnector.closeTransaction();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}finally {
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
 		}
 
 		return mailAddressList;
@@ -54,7 +60,7 @@ public class MySQLTempRegistDao implements TempRegistDao {
 		boolean flag = false; // insert結果flag
 
 		try {
-			cn = MySQLConnector.getConnection();
+			cn = ConnectionManager.getInstance().getConnection();
 
 			String sql = "insert into temporary_user_data(userName,userPassword,mailAddress,UUID) values(?,?,?,?)";
 
@@ -69,19 +75,25 @@ public class MySQLTempRegistDao implements TempRegistDao {
 
 			if(result > 0) {
 				flag = true;
-				MySQLConnector.commitTransaction();
 			}
-		}
-		catch(SQLException e) {
-			MySQLConnector.rollbackTransaction();
+		}catch(SQLException e) {
 			e.printStackTrace();
-		}
-		catch(Exception e) {
-			MySQLConnector.rollbackTransaction();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}catch(Exception e) {
 			e.printStackTrace();
-		}
-		finally {
-			MySQLConnector.closeTransaction();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}finally {
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
 		}
 
 		return flag;

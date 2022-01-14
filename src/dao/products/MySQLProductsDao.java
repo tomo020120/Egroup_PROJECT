@@ -10,7 +10,8 @@ import java.util.List;
 import bean.ProductBean;
 import bean.joinBean.AllProductDetailBean;
 import bean.joinBean.ProductPictBean;
-import dao.sql.MySQLConnector;
+import dbManager.ConnectionManager;
+import ex.DaoOperationException;
 
 public class MySQLProductsDao implements ProductsDao{
 	private Connection cn = null;
@@ -21,7 +22,7 @@ public class MySQLProductsDao implements ProductsDao{
 	public void addProduct(ProductBean p) {
 
 		try {
-			cn = MySQLConnector.getConnection();
+			cn = ConnectionManager.getInstance().getConnection();
 
 			String sql = "insert into t_products (pid,name,price) " + "values(?,?,?)";
 
@@ -33,14 +34,24 @@ public class MySQLProductsDao implements ProductsDao{
 
 			st.executeUpdate();
 
-			MySQLConnector.commitTransaction();
-
 		}catch(SQLException e) {
-			MySQLConnector.rollbackTransaction();
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
 		}catch(Exception e) {
-			MySQLConnector.rollbackTransaction();
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
 		}finally {
-			MySQLConnector.closeTransaction();
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
 		}
 	}
 
@@ -49,8 +60,7 @@ public class MySQLProductsDao implements ProductsDao{
 		List<AllProductDetailBean> product= new ArrayList<AllProductDetailBean>();
 
 		try {
-			cn = MySQLConnector.getConnection();
-			//int _testItemId =Integer.parseInt(testItemId);
+			cn = ConnectionManager.getInstance().getConnection();
 
 			//itemIdが一致する商品詳の詳細を取ってくる
 			String sql = "SELECT  a.itemId,name,price,CAST(`releaseDate` AS DATE),pictPath,categoryName,shapeName,colorName,artistName,a.categoryId,a.colorId,a.shapeId,a.artistId\n" +
@@ -58,35 +68,48 @@ public class MySQLProductsDao implements ProductsDao{
 					"LEFT OUTER JOIN Ibanezdb.category_table AS c ON a.categoryId=c.categoryId\n" +
 					"LEFT OUTER JOIN Ibanezdb.color_table AS d ON a.colorId=d.colorId\n" +
 					"LEFT OUTER JOIN Ibanezdb.shape_table AS e ON a.shapeId=e.shapeId\n" +
-					"LEFT OUTER JOIN Ibanezdb.artist_table AS f ON a.artistId=f.artistId WHERE a.itemId="+itemId+";";
+					"LEFT OUTER JOIN Ibanezdb.artist_table AS f ON a.artistId=f.artistId WHERE a.itemId = ?";
 
 
 			st=cn.prepareStatement(sql);
 
+			st.setString(1, itemId);
+
 			rs=st.executeQuery();
 
-				AllProductDetailBean all = new AllProductDetailBean();
-				while(rs.next()) {
-					all.setItemId(rs.getString(1));
-					all.setName(rs.getString(2));
-					all.setPrice(rs.getString(3));
-					all.setReleaseDate(rs.getString(4));
-					all.setPictPath(rs.getString(5));
+			AllProductDetailBean all = new AllProductDetailBean();
+			while(rs.next()) {
+				all.setItemId(rs.getString(1));
+				all.setName(rs.getString(2));
+				all.setPrice(rs.getString(3));
+				all.setReleaseDate(rs.getString(4));
+				all.setPictPath(rs.getString(5));
 
-					all.setCategoryName(rs.getString(6));
-					all.setShapeName(rs.getString(7));
-					all.setColorName(rs.getString(8));
-					all.setArtistName(rs.getString(9));
+				all.setCategoryName(rs.getString(6));
+				all.setShapeName(rs.getString(7));
+				all.setColorName(rs.getString(8));
+				all.setArtistName(rs.getString(9));
 
 				product.add(all);
-				}
-				MySQLConnector.commitTransaction();
+			}
 		}catch(SQLException e) {
-			MySQLConnector.rollbackTransaction();
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
 		}catch(Exception e) {
-			MySQLConnector.rollbackTransaction();
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
 		}finally {
-			MySQLConnector.closeTransaction();
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
 		}
 		return product;
 	}
@@ -95,7 +118,7 @@ public class MySQLProductsDao implements ProductsDao{
 		ArrayList<ProductPictBean> products= new ArrayList<ProductPictBean>();
 
 		try {
-			cn = MySQLConnector.getConnection();
+			cn = ConnectionManager.getInstance().getConnection();
 
 			String sql = "SELECT a.itemId,name,price,releaseDate,orderCount,categoryId,colorId,shapeId,artistId,pictId,pictPath FROM Ibanezdb.item_pict_table AS a JOIN Ibanezdb.product_table AS b ON a.itemId = b.itemId;";
 
@@ -121,13 +144,25 @@ public class MySQLProductsDao implements ProductsDao{
 
 				products.add(p);
 			}
-			MySQLConnector.commitTransaction();
-
 
 		}catch(SQLException e) {
-			MySQLConnector.rollbackTransaction();
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}catch(Exception e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
 		}finally {
-			MySQLConnector.closeTransaction();
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
 		}
 		return products;
 	}
@@ -136,11 +171,15 @@ public class MySQLProductsDao implements ProductsDao{
 		ArrayList<ProductPictBean> products= new ArrayList<ProductPictBean>();
 
 		try {
-			cn = MySQLConnector.getConnection();
+			cn = ConnectionManager.getInstance().getConnection();
 
-			String sql = "SELECT a.itemId,name,price,releaseDate,orderCount,categoryId,colorId,shapeId,artistId,pictId,pictPath FROM Ibanezdb.item_pict_table AS a JOIN Ibanezdb.product_table AS b ON a.itemId = b.itemId where name LIKE '%"+ productName +"%' "+ sortCode +";";
+			String sql = "SELECT a.itemId,name,price,releaseDate,orderCount,categoryId,colorId,shapeId,artistId,pictId,pictPath FROM Ibanezdb.item_pict_table AS a JOIN Ibanezdb.product_table AS b ON a.itemId = b.itemId where name LIKE ? order by " + sortCode;
 
 			st=cn.prepareStatement(sql);
+
+			st.setString(1, "%" + productName + "%");
+
+			System.out.println("実行SQL :" + st.toString());
 
 			rs=st.executeQuery();
 
@@ -162,13 +201,25 @@ public class MySQLProductsDao implements ProductsDao{
 
 				products.add(p);
 			}
-			MySQLConnector.commitTransaction();
-
 
 		}catch(SQLException e) {
-			MySQLConnector.rollbackTransaction();
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}catch(Exception e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
 		}finally {
-			MySQLConnector.closeTransaction();
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
 		}
 		return products;
 	}

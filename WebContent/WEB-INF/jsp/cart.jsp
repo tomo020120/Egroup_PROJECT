@@ -28,6 +28,7 @@
 		<td>${cart.subTotal}</td>
 		<td>${cart.total}</td>
 		<td><img src="${cart.pictPath}"></td>
+		<td><a href="cartde?itemId=${cart.itemId}">削除</a></td>
 	</tr>
 	</c:forEach>
 	</table>

@@ -26,38 +26,21 @@
 		<td>${detail.price}</td>
 		<td>${detail.releaseDate}</td>
 		<td><img src="${detail.pictPath}"></td>
-		<td><a href="cart?itemId=${detail.itemId}">カートへ</a></td>
+		<td>
+		<select name="orderCount">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</select>
+		</td>
+		
+		
+		<!-- 以下のdetail.itemIdのところはセッション保持されてるUserIdに書き換える -->
+		<td><a href="addCartProduct?itemId=${detail.itemId}&orderCount=orderCount">カートに入れる</a></td>
+		<td><a href="favoriteProduct?itemId=${detail.itemId}">お気に入りに入れる</a></td>
+		
 	</tr>
 	</c:forEach>
 	</table>
 </body>
-<!--
-<body>
-	<table border="1">
-	<tr>
-		<th>商品ID</th>
-		<th>商品名</th>
-		<th>値段</th>
-		<th>発売日</th>
-		<th>カテゴリー名</th>
-		<th>カラー名</th>
-		<th>形</th>
-		<th>アーティスト名</th>
-		<th>商品写真</th>
-	</tr>
-	<tr>
-		<td>${product.itemId}</td>
-		<td>${product.name}</td>
-		<td>${product.price}</td>
-		<td>${product.releaseDate}</td>
-		<td>${product.categoryName}</td>
-		<td>${product.colorName}</td>
-		<td>${product.shapeName}</td>
-		<td>${product.aritstName}</td>
-		<td><img src="${product.pictPath}"></td>
-	</tr>
-
-	</table>
-</body>
--->
 </html>

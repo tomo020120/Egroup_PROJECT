@@ -8,7 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bean.joinBean.UserInfoEditBean;
-import dao.sql.MySQLConnector;
+import dbManager.ConnectionManager;
+import ex.DaoOperationException;
 
 public class MySQLUserInfoEditDao {
 	private Connection cn = null;
@@ -19,8 +20,7 @@ public class MySQLUserInfoEditDao {
 		List<UserInfoEditBean> userInfoList = new ArrayList<UserInfoEditBean>();
 
 		try {
-			cn = MySQLConnector.getConnection();
-
+			cn = ConnectionManager.getInstance().getConnection();
 			String sql = "select userName,userPassword,mailAddress,cardId,cardOwnerName,cardNo,cardCompany,expirationDate,securityCode,deliveryInfoId,address, postalcode,TEL from user_table u join credit_card_table c on u.userId = c.userId join address_table a on u.userId = a.userId where userid = 1";
 
 			st = cn.prepareStatement(sql);
@@ -49,19 +49,24 @@ public class MySQLUserInfoEditDao {
 
 				userInfoList.add(editBean);
 			}
-
-			MySQLConnector.commitTransaction();
-		}
-		catch(SQLException e) {
-			MySQLConnector.rollbackTransaction();
+		}catch(SQLException e) {
 			e.printStackTrace();
-		}
-		catch(Exception e) {
-			MySQLConnector.rollbackTransaction();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}catch(Exception e) {
 			e.printStackTrace();
-		}
-		finally {
-			MySQLConnector.closeTransaction();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}finally {
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
 		}
 
 		return userInfoList;
