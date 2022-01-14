@@ -16,7 +16,7 @@
 			【必須】氏名:<input type="text" name="deliveryName" maxlength="25" value="${result.deliveryName}"><br>
 			【必須】電話番号(000-0000-0000):<input type="text" id="firstTelephoneNumber" name="firstTelephoneNumber" maxlength="3">-<input type="text" id="secondTelephoneNumber" name="secondTelephoneNumber" maxlength="4">-<input type="text" id="thirdTelephoneNumber" name="thirdTelephoneNumber" maxlength="4"><br>
 			【必須】郵便番号(ハイフンなし):<input type="text" class="p-postal-code" name="postalCode" size="7" maxlength="7" value="${result.postalCode}"><br>
-			【必須】住所:<input type="text" id="address" class="p-region p-locality p-street-address p-extended-address" name="address" readOnly/><br>
+			【必須】住所:<input type="text" id="address" class="p-region p-locality p-street-address p-extended-address" name="address"/><br>
 			【必須】丁目・番地・号(例:1-2-3):<input type="text" id="houseNumber" name="houseNumber"><br>
 			【必須】建物名・部屋番号(例:〇〇マンション〇〇号室)<input type="text" id="buildingName" name="buildingName"><br>
 			<input type="submit" value="変更">
