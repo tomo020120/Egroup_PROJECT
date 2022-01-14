@@ -35,7 +35,8 @@ public class DeleteCartProductsCommand extends AbstractCommand{
 				ConnectionManager.getInstance().commit();
 				ConnectionManager.getInstance().closeTransaction();
 
-				resc.setTargetPath("addCartComplete");
+				//resc.setTargetPath("addCartComplete");
+				resc.setTargetCommandPath("cart");
 				System.out.println("cart追加");
 				return resc;
 			}

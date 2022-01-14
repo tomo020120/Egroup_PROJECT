@@ -197,7 +197,7 @@ public class MySQLCartDao implements CartDao{
 		try {
 			cn = ConnectionManager.getInstance().getConnection();
 
-			String sql = "update cart_table SET total = (select sum(subTotal) from inside_cart_table where cartId = ?) WHERE cartId = ?";
+			String sql = "update cart_table SET total = (select ifNull(sum(subTotal),0) from inside_cart_table where cartId = ?) WHERE cartId = ?";
 			st = cn.prepareStatement(sql);
 
 			st.setString(1, cartId);
@@ -237,7 +237,7 @@ public class MySQLCartDao implements CartDao{
 			try {
 				cn = ConnectionManager.getInstance().getConnection();
 
-				String sql ="delete FROM  inside_cart_table WHERE itemId=? AND cartId=?";
+				String sql ="delete FROM inside_cart_table WHERE itemId=? AND cartId=?";
 				st = cn.prepareStatement(sql);
 
 				st.setString(1, itemId);

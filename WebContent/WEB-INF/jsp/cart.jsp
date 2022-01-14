@@ -37,7 +37,7 @@
 	</table>
 
 	<div>
-		<p><a href="">購入へ進む(仮)</a></p>
+		<p><a href="purchase">購入へ進む(仮)</a></p>
 	</div>
 </body>
 </html>
