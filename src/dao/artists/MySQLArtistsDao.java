@@ -73,10 +73,7 @@ public class MySQLArtistsDao implements ArtistsDao{
 			cn = ConnectionManager.getInstance().getConnection();
 
 			//itemIdが一致する商品詳の詳細を取ってくる
-			String sql = "SELECT artistName,artistPict,countory,groupName,name,pictPath,artist_table.artistId,product_table.itemId " +
-					"FROM artist_table join product_table ON artist_table.artistId = product_table.artistId " +
-					"JOIN item_pict_table ON item_pict_table.itemId = product_table.itemId " +
-					"Where artist_table.artistId = ?";
+			String sql = "select * from artist_detail_view where artistId = ?"; // Viewへの問い合わせ
 
 
 			st=cn.prepareStatement(sql);
@@ -90,14 +87,17 @@ public class MySQLArtistsDao implements ArtistsDao{
 					all.setArtistName(rs.getString(1));
 					all.setArtistPict(rs.getString(2));
 					all.setCoutory(rs.getString(3));
-					if(rs.getString(4)!=null) {
+
+					if(rs.getString(4) != null) {
+						System.out.println("nullじゃない");
 						all.setGroup(rs.getString(4));
 					}else {
+						System.out.println("nullだったよ");
 						all.setGroup("SOLO");
 					}
 					all.setName(rs.getString(5));
 					all.setPictPath(rs.getString(6));
-					all.setItemId(rs.getString(8));
+					all.setItemId(rs.getString(7));
 
 					artists.add(all);
 				}

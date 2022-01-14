@@ -1,0 +1,9 @@
+.box-design{
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 5px double #333333;
+}
+
+#registDeliveryInfoForm{
+	display:none;
+}

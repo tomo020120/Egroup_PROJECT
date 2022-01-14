@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package dbManager;
 
 import java.io.FileInputStream;
@@ -40,3 +41,47 @@ public abstract class ConnectionManager{
 	public abstract void rollback();
 	public abstract void closeTransaction();
 }
+=======
+package dbManager;
+
+import java.sql.Connection;
+import java.util.Properties;
+
+import ex.InstantiateExceptoin;
+
+public abstract class ConnectionManager{
+	protected static Connection cn = null;
+	private static ConnectionManager manager = null;
+
+	protected ConnectionManager() {}
+
+	public static ConnectionManager getInstance() {
+		if(manager == null) {
+			synchronized(ConnectionManager.class) {
+				if(manager == null) {
+					try {
+						Properties prop = new Properties();
+						//prop.load(new FileInputStream("C:\\property\\dbManagers.properties"));
+						prop.load(ConnectionManager.class.getClassLoader().getResourceAsStream("property/dbManagers.properties"));
+						String name = prop.getProperty("MySQL");
+						Class<?> c = Class.forName(name);
+						manager = (ConnectionManager)c.newInstance();
+						System.out.println("新規コネクション生成");
+					}
+					catch(Exception e) {
+						e.printStackTrace();
+						throw new InstantiateExceptoin(e.getMessage(),e);
+					}
+				}
+			}
+		}
+		return manager;
+	}
+
+	public abstract Connection getConnection();
+	public abstract void beginTransaction();
+	public abstract void commit();
+	public abstract void rollback();
+	public abstract void closeTransaction();
+}
+>>>>>>> branch 'master' of git@github.com:tomo020120/Egroup_PROJECT.git

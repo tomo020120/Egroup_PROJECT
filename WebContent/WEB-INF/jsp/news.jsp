@@ -5,10 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>news</title>
-<%@include file="/CSS/newsStyle.css" %>
+<link rel="stylesheet" href="CSS/newsStyle.css">
 </head>
 <body>
 	<header><%@include file="header.jsp" %></header>
-	<h1>news</h1>
+	<h1 class="title">news</h1>
 </body>
 </html>

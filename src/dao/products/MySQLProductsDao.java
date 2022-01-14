@@ -56,9 +56,8 @@ public class MySQLProductsDao implements ProductsDao{
 	}
 
 
-	public List<AllProductDetailBean> getProductsDetails(String itemId) {
-		List<AllProductDetailBean> product= new ArrayList<AllProductDetailBean>();
-
+	public AllProductDetailBean getProductsDetails(String itemId) {
+		AllProductDetailBean all = new AllProductDetailBean();
 		try {
 			cn = ConnectionManager.getInstance().getConnection();
 
@@ -77,7 +76,6 @@ public class MySQLProductsDao implements ProductsDao{
 
 			rs=st.executeQuery();
 
-			AllProductDetailBean all = new AllProductDetailBean();
 			while(rs.next()) {
 				all.setItemId(rs.getString(1));
 				all.setName(rs.getString(2));
@@ -89,8 +87,6 @@ public class MySQLProductsDao implements ProductsDao{
 				all.setShapeName(rs.getString(7));
 				all.setColorName(rs.getString(8));
 				all.setArtistName(rs.getString(9));
-
-				product.add(all);
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -111,7 +107,7 @@ public class MySQLProductsDao implements ProductsDao{
 				}
 			}
 		}
-		return product;
+		return all;
 	}
 
 	public List<ProductPictBean> getAllProducts() {

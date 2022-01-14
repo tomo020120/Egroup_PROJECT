@@ -4,15 +4,23 @@ import java.io.Serializable;
 
 public class AddressBean implements Serializable{
 	private String deliveryInfoId;
+	private String deliveryName;
 	private String postalCode;
 	private String address;
 	private String tel;
-	
+	private String userId;
+
 	public String getDeliveryInfoId() {
 		return deliveryInfoId;
 	}
 	public void setDeliveryInfoId(String deliveryInfoId) {
 		this.deliveryInfoId = deliveryInfoId;
+	}
+	public String getDeliveryName() {
+		return deliveryName;
+	}
+	public void setDeliveryName(String deliveryName) {
+		this.deliveryName = deliveryName;
 	}
 	public String getPostalCode() {
 		return postalCode;
@@ -32,5 +40,10 @@ public class AddressBean implements Serializable{
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
-	
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 }

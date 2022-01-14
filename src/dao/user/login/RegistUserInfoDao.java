@@ -1,9 +1,9 @@
 package dao.user.login;
 
-import bean.UserBean;
+import bean.TemporaryUserBean;
 
 public interface RegistUserInfoDao {
-	public abstract boolean addUserInfo(UserBean userBean);
+	public abstract boolean addUserInfo(TemporaryUserBean userBean);
 
-	public abstract UserBean getTempUserInfo(String UUID);
+	public abstract TemporaryUserBean getTempUserInfo(String UUID);
 }

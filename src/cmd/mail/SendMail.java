@@ -15,7 +15,8 @@ public abstract class SendMail{
 	private static Properties property = null;
 	private static final String ORNER_MAILADDRESS = "ibanezttc@gmail.com"; // 運営メールアドレス
 	private static final String ORNER_MAILADDRESS_PASS = "ibanez0120";
-
+	private static Session session = null;
+	private static MimeMessage mimeMessage = null;
 
 	static { // 一度だけ初期化
 		property = new Properties();
@@ -25,17 +26,16 @@ public abstract class SendMail{
 		property.put("mail.smtp.host", "smtp.gmail.com");
 		property.put("mail.smtp.port", "587");
 		property.put("mail.smtp.debug", "true");
+		session = Session.getDefaultInstance(property, new javax.mail.Authenticator() { // sessionに設定情報とSMTP認証を行う
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(ORNER_MAILADDRESS, ORNER_MAILADDRESS_PASS);
+			}
+		});
+		mimeMessage = new MimeMessage(session);
 	}
 
 	public static void send(String userMailAddress,String messageBody) {
 		try {
-			Session session = Session.getDefaultInstance(property, new javax.mail.Authenticator() {
-				protected PasswordAuthentication getPasswordAuthentication() {
-					return new PasswordAuthentication(ORNER_MAILADDRESS, ORNER_MAILADDRESS_PASS);
-				}
-			});
-
-			MimeMessage mimeMessage = new MimeMessage(session);
 			InternetAddress toAddress = new InternetAddress(userMailAddress, "お客様");
 			mimeMessage.setRecipient(Message.RecipientType.TO, toAddress);
 			InternetAddress fromAddress = new InternetAddress("ibanezttc@gmail.com", "Ibanez");
@@ -52,13 +52,6 @@ public abstract class SendMail{
 
 	public static void send(String userMailAddress,String messageBody,String title) { // タイトルを変更したいとき用のオーバーロード
 		try {
-			Session session = Session.getDefaultInstance(property, new javax.mail.Authenticator() {
-				protected PasswordAuthentication getPasswordAuthentication() {
-					return new PasswordAuthentication(ORNER_MAILADDRESS, ORNER_MAILADDRESS_PASS);
-				}
-			});
-
-			MimeMessage mimeMessage = new MimeMessage(session);
 			InternetAddress toAddress = new InternetAddress(userMailAddress, "お客様");
 			mimeMessage.setRecipient(Message.RecipientType.TO, toAddress);
 			InternetAddress fromAddress = new InternetAddress("ibanezttc@gmail.com", "Ibanez");

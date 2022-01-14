@@ -12,7 +12,7 @@ import context.ResponseContext;
 
 public class FrontServlet extends HttpServlet{
     protected void doGet(HttpServletRequest req,HttpServletResponse res) throws IOException,ServletException{
-        doPost(req,res);
+    	doPost(req,res);
     }
 
     protected void doPost(HttpServletRequest req,HttpServletResponse res) throws IOException,ServletException{

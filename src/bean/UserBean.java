@@ -7,6 +7,7 @@ public class UserBean implements Serializable{
 	private String userName;
 	private String userPassword;
 	private String mailAddress;
+
 	public String getUserId() {
 		return userId;
 	}
@@ -31,6 +32,4 @@ public class UserBean implements Serializable{
 	public void setMailAddress(String mailAddress) {
 		this.mailAddress = mailAddress;
 	}
-	
-	
 }

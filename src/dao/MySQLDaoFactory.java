@@ -6,8 +6,14 @@ import dao.cart.CartDao;
 import dao.cart.MySQLCartDao;
 import dao.products.MySQLProductsDao;
 import dao.products.ProductsDao;
-import dao.user.EditUserInfoDao;
-import dao.user.MySQLEditUserInfoDao;
+import dao.purchase.MySQLPurchaseDao;
+import dao.purchase.PurchaseDao;
+import dao.user.DeliveryInfoEditDao;
+import dao.user.MySQLDeliveryInfoEditDao;
+import dao.user.MySQLUserAccountInfoEditDao;
+import dao.user.MySQLUserInfoEditDao;
+import dao.user.UserAccountInfoEditDao;
+import dao.user.UserInfoEditDao;
 import dao.user.login.MySQLRegistUserInfoDao;
 import dao.user.login.MySQLTempRegistDao;
 import dao.user.login.MySQLUserSelectDao;
@@ -28,8 +34,8 @@ public class MySQLDaoFactory extends AbstractDaoFactory{
     	return new MySQLArtistsDao();
     }
 
-    public EditUserInfoDao getEditUserInfoDao() {
-    	return new MySQLEditUserInfoDao();
+    public UserInfoEditDao getEditUserInfoDao() {
+    	return new MySQLUserInfoEditDao();
     }
 
     public RegistUserInfoDao getRegistUserInfoDao() {
@@ -39,7 +45,21 @@ public class MySQLDaoFactory extends AbstractDaoFactory{
     public UserSelectDao getUserSelectDao() {
     	return new MySQLUserSelectDao();
     }
+
     public CartDao getCartDao() {
     	return new MySQLCartDao();
     }
+
+    public UserAccountInfoEditDao getUserAccountInfoEditDao() {
+    	return new MySQLUserAccountInfoEditDao();
+    }
+
+	@Override
+	public DeliveryInfoEditDao getDeliveryInfoEditDao() {
+		return new MySQLDeliveryInfoEditDao();
+	}
+
+	public  PurchaseDao getPurchaseDao() {
+		return new MySQLPurchaseDao();
+	}
 }

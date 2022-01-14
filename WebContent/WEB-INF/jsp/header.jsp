@@ -13,14 +13,11 @@
 		<a href="news">ニュース</a>
 		<a href="products">商品一覧</a>
 		<a href="artist">アーティスト</a>
-		<a href="userInfoEdit?userId = "${userId}>ユーザー情報編集</a>
-		<a href="cart"><img src=file:///../../image/cart.png alt="カート" width="40"></a>
-		<a href="login"><img src=file:///../../image/people.png alt="ログイン" width="40"></a>
+		<a href="userInfoEdit?userId = "${sessionInfo.userId}>ユーザー情報編集</a>
+		<a href="cart"><img src="images/cart.png" alt="カート" width="40" ></a>
+		<a href="login"><img src="images/people.png" alt="ログイン" width="40" ></a>
 		<a href="logout">ログアウト</a>
 	</div>
 	<p>${sessionInfo.userName}</p>
-
-
-
 </body>
 </html>
