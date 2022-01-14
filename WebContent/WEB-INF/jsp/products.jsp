@@ -24,13 +24,14 @@
 
 <h1>商品一覧</h1>
 <table border="1">
- <tr><th>商品ID</th><th>商品名</th><th>画像</th><th>価格</th></tr>
+ <tr><th>商品ID</th><th>商品名</th><th>画像</th><th>価格</th><th>お気に入り</th></tr>
  <c:forEach var="product" items="${result}">
   <tr>
   	<td>${product.itemId}</td>
   	<td><a href="productsDetails?itemId=${product.itemId}">${product.name}</a></td>
   	<td><a href="productsDetails?itemId=${product.itemId}"><img src="${product.pictPath}"></a></td>
   	<td>${product.price}円</td>
+  	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button>❤</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
   </tr>
  </c:forEach>
  </table>

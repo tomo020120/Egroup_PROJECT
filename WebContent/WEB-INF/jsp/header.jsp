@@ -15,6 +15,7 @@
 		<a href="artist">アーティスト</a>
 		<a href="userInfoEdit?userId = "${sessionInfo.userId}>ユーザー情報編集</a>
 		<a href="cart"><img src="images/cart.png" alt="カート" width="40" ></a>
+		<a href="favorite">お気に入りリスト</a>
 		<a href="login"><img src="images/people.png" alt="ログイン" width="40" ></a>
 		<a href="logout">ログアウト</a>
 	</div>
