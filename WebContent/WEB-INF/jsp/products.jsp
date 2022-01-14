@@ -31,7 +31,7 @@
   	<td><a href="productsDetails?itemId=${product.itemId}">${product.name}</a></td>
   	<td><a href="productsDetails?itemId=${product.itemId}"><img src="${product.pictPath}"></a></td>
   	<td>${product.price}円</td>
-  	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button>❤</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+  	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="location.href='addFavorite'">❤</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
   </tr>
  </c:forEach>
  </table>

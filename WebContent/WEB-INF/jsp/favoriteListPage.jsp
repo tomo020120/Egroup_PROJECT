@@ -8,6 +8,5 @@
 </head>
 <body>
 <header><%@include file="header.jsp" %></header>
-
 </body>
 </html>
