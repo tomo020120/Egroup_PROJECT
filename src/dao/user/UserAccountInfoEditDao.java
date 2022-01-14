@@ -10,4 +10,6 @@ public interface UserAccountInfoEditDao {
 	public abstract boolean updateUserMailAddress(String newUserMailAddress,String userId); // メアド更新
 
 	public abstract boolean updatePassword(String newPassword,String userId); // パスワード更新
+
+	public abstract boolean deleteAccount(String userId); //アカウント削除
 }

@@ -82,7 +82,6 @@ public class MySQLUserSelectDao implements UserSelectDao{
 				userAndCartBean.setUserPassword(rs.getString(3));
 				userAndCartBean.setMailAddress(rs.getString(4));
 				userAndCartBean.setCartId(rs.getString(5));
-				userAndCartBean.setTotal(rs.getInt(6));
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();

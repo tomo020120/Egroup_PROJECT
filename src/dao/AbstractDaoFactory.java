@@ -10,6 +10,7 @@ import dao.products.ProductsDao;
 import dao.purchase.PurchaseDao;
 import dao.user.DeliveryInfoEditDao;
 import dao.user.UserAccountInfoEditDao;
+import dao.user.UserInfoEditDao;
 import dao.user.login.RegistUserInfoDao;
 import dao.user.login.TempRegistDao;
 import dao.user.login.UserSelectDao;
@@ -47,4 +48,6 @@ public abstract class AbstractDaoFactory{
 	public abstract UserAccountInfoEditDao getUserAccountInfoEditDao(); // ユーザーアカウント情報編集用のDao生成
 	public abstract DeliveryInfoEditDao getDeliveryInfoEditDao(); // 配送先情報編集用のDao生成
 	public abstract PurchaseDao getPurchaseDao(); // 購入画面のDao生成
+
+	public abstract UserInfoEditDao getEditUserInfoDao();
 }
