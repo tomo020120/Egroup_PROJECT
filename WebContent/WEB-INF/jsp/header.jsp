@@ -6,19 +6,38 @@
 <meta charset="UTF-8">
 <title>トップページ</title>
 <%@include file="/CSS/headerStyle.css" %>
+
 </head>
 <body>
-	<h1>Ibanez</h1>
-	<div id="nav">
-		<a href="news">ニュース</a>
-		<a href="products">商品一覧</a>
-		<a href="artist">アーティスト</a>
-		<a href="userInfoEdit?userId = "${sessionInfo.userId}>ユーザー情報編集</a>
-		<a href="cart"><img src="images/cart.png" alt="カート" width="40" ></a>
-		<a href="favorite">お気に入りリスト</a>
-		<a href="login"><img src="images/people.png" alt="ログイン" width="40" ></a>
+
+
+<header>
+  <div class="h-menu">
+      <input id="h-menu_checkbox" class="h-menuCheckbox" type="checkbox">
+      <label class="h-menu_icon" for="h-menu_checkbox"><span class="hamburger-icon"></span></label>
+      <label id="h-menu_black" class="h-menuCheckbox" for="h-menu_checkbox"></label>
+      <div id="h-menu_content">
+        <ul>
+          <li><a href="news">ニュース</a></li>
+          <li><a href="products">商品一覧</a></li>
+          <li><a href="artist">アーティスト</a></li>
+         </ul>
+      </div>
+      <div class=logo>
+      	<a href="topPage"><img src="images/logo.png" alt="ロゴ" width="180" ></a>
+      </div>
+      <a href="userInfoEdit?userId = "${sessionInfo.userId}>ユーザー情報編集</a>
+
+
+	<a href="favorite">お気に入りリスト</a>
 		<a href="logout">ログアウト</a>
-	</div>
-	<p>${sessionInfo.userName}</p>
+	 <div class=position>
+      <a href="cart"><img src="images/cart-removebg-preview.png" alt="カート" width="40" ></a>
+	  <a href="login"><img src="images/people-removebg-preview.png" alt="ログイン" width="40" ></a>
+	   </div>
+	  <p>${sessionInfo.userName}</p>
+  </div>
+</header>
 </body>
 </html>
+
