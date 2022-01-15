@@ -19,11 +19,20 @@
 <form name="sampleform" method="post" action="loginCheck">
 
 メールアドレス<input type="text" id="mailCheck" name="mailAddress"><div class="circle" id="mailCircleID"></div><div class="circle2" id="mailCircle2ID"></div><br>
-パスワード<input type="text" id="passCheck" name="passWord" maxlength="20"><div class="circle" id="circleID"></div><div class="circle2" id="circle2ID"></div><br>
+<div class="toggle">
+パスワード<input type="password"class="field js-password" id="passCheck" name="passWord" maxlength="20"><div class="circle" id="circleID"></div><div class="circle2" id="circle2ID"></div><br>
+<div class="btn">
+    <input class="btn-input js-password-toggle" id="eye" type="checkbox">
+    <label class="btn-label js-password-label" for="eye"><i class="fas fa-eye"></i></label>
+    パスワードを表示する
+ </div>
+</div>
 				<input type="submit" value="ログイン">
 </form>
 <!-- 認証エラーメッセージ取得 -->
 <p>${message}</p>
+
+
 
 
 
@@ -84,7 +93,25 @@
 		var result=passWord==this.value;
 		console.log(result);
 	}); */
-</script>
+
+	</script>
+	<script>
+	//パスワード表示js
+	  const passwordToggle = document.querySelector('.js-password-toggle');
+	  passwordToggle.addEventListener('change', function () {
+	    const password = document.querySelector('.js-password'),
+	          passwordLabel = document.querySelector('.js-password-label');
+	    if (password.type === 'password') {
+	      password.type = 'text';
+	      passwordLabel.innerHTML = '<i class="fas fa-eye-slash"></i>';
+	    } else {
+	      password.type = 'password';
+	      passwordLabel.innerHTML = '<i class="fas fa-eye"></i>';
+	    }
+	    password.focus();
+	  });
+	</script>
+
 
 
 </body>
