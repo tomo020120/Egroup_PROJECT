@@ -9,6 +9,7 @@ import dao.cart.CartDao;
 import dao.favorite.FavoriteDao;
 import dao.products.ProductsDao;
 import dao.purchase.PurchaseDao;
+import dao.user.CreditCardInfoEditDao;
 import dao.user.DeliveryInfoEditDao;
 import dao.user.UserAccountInfoEditDao;
 import dao.user.UserInfoEditDao;
@@ -48,6 +49,7 @@ public abstract class AbstractDaoFactory{
 	public abstract UserSelectDao getUserSelectDao(); // ログインチェック用のDao生成
 	public abstract UserAccountInfoEditDao getUserAccountInfoEditDao(); // ユーザーアカウント情報編集用のDao生成
 	public abstract DeliveryInfoEditDao getDeliveryInfoEditDao(); // 配送先情報編集用のDao生成
+	public abstract CreditCardInfoEditDao getCreditCardInfoEditDao(); // クレジットード編集用のDao生成
 	public abstract PurchaseDao getPurchaseDao(); // 購入画面のDao生成
 	public abstract FavoriteDao getFavoriteDao(); // お気に入り用のDao生成
 

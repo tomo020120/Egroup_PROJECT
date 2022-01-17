@@ -10,7 +10,9 @@ import dao.products.MySQLProductsDao;
 import dao.products.ProductsDao;
 import dao.purchase.MySQLPurchaseDao;
 import dao.purchase.PurchaseDao;
+import dao.user.CreditCardInfoEditDao;
 import dao.user.DeliveryInfoEditDao;
+import dao.user.MySQLCreditCardInfoEditDao;
 import dao.user.MySQLDeliveryInfoEditDao;
 import dao.user.MySQLUserAccountInfoEditDao;
 import dao.user.MySQLUserInfoEditDao;
@@ -59,6 +61,10 @@ public class MySQLDaoFactory extends AbstractDaoFactory{
 	@Override
 	public DeliveryInfoEditDao getDeliveryInfoEditDao() {
 		return new MySQLDeliveryInfoEditDao();
+	}
+
+	public CreditCardInfoEditDao getCreditCardInfoEditDao() {
+		return new MySQLCreditCardInfoEditDao();
 	}
 
 	public  PurchaseDao getPurchaseDao() {

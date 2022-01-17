@@ -1,5 +1,6 @@
 package cmd.user;
 
+import bean.joinBean.UserAndCartBean;
 import cmd.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
@@ -13,6 +14,8 @@ public class ExecuteDeleteDeliveryInfoCommand extends AbstractCommand {
 	public ResponseContext execute(ResponseContext resContext) {
 		RequestContext reqContext = getRequestContext();
 
+		String userId = ((UserAndCartBean)reqContext.getToken()).getUserId();
+
 		String deliveryInfoId = reqContext.getParameter("deliveryInfoId")[0];
 
 		AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
@@ -20,7 +23,7 @@ public class ExecuteDeleteDeliveryInfoCommand extends AbstractCommand {
 
 		ConnectionManager.getInstance().beginTransaction();
 
-		if(edit.deleteDeliveryInfo(deliveryInfoId)) {
+		if(edit.deleteDeliveryInfo(userId,deliveryInfoId)) {
 			resContext.setTargetCommandPath("deliveryInfoEdit");
 			reqContext.setSessionAttribute("deleteFlag",true);
 
