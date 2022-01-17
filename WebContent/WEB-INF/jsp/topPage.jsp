@@ -8,7 +8,15 @@
 <%@include file="/CSS/topPageStyle.css" %>
 </head>
 <body>
-	<header><%@include file="header.jsp" %></header>
-	<h1>Ibanezトップページ</h1>
+	<%@include file="header.jsp" %>
+
+
+	<div class="container">
+	<img class="image" src="images/top_premium2022.jpg" />
+	<img class="image" src="images/top_BTBjp.jpg" />
+	<img class="image" src="images/top_AZpremium2022.png" />
+	</div>
+
+
 </body>
 </html>

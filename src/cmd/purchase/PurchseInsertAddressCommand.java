@@ -9,6 +9,7 @@ import cmd.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
+import dao.purchase.PurchaseDao;
 import dao.user.DeliveryInfoEditDao;
 import dbManager.ConnectionManager;
 import ex.IntegrationException;
@@ -50,8 +51,8 @@ public ResponseContext execute(ResponseContext resContext) {
 		System.out.println("入力住所: " + fullAddress);
 		System.out.println("判定: " + addressBean.getAddress().equals(fullAddress));
 		if(addressBean.getAddress().equals(fullAddress)) {
-			resContext.setMessage("入力された住所は登録済みです。");
-			resContext.setTargetPath("addDeliveryInfoForm");
+			reqContext.setSessionAttribute("errorFlag", true);
+			resContext.setTargetCommandPath("purchase");
 
 			ConnectionManager.getInstance().closeTransaction();
 
@@ -66,8 +67,18 @@ public ResponseContext execute(ResponseContext resContext) {
 	addressBean.setUserId(userId);
 
 	if(edit.addDeliveryInfo(addressBean)) {
-		resContext.setTargetCommandPath("cart");
 
+		ConnectionManager.getInstance().beginTransaction();
+    	PurchaseDao dao = factory.getPurchaseDao();
+
+    	//UserAndCartBean user=(UserAndCartBean)reqContext.getToken();
+    	resContext.setResult(dao.getdeliveryInfoId(userId,fullAddress));
+
+    	Object obj=addressBean.getDeliveryInfoId();
+    	System.out.println("obj内容"+obj);
+		reqContext.setSessionAttribute("address",obj);
+
+		resContext.setTargetCommandPath("purchase");
 		ConnectionManager.getInstance().commit();
 		ConnectionManager.getInstance().closeTransaction();
 	}else {
@@ -80,3 +91,5 @@ public ResponseContext execute(ResponseContext resContext) {
 	return resContext;
 }
 }
+
+
