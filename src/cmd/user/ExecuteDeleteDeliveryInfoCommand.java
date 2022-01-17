@@ -7,6 +7,7 @@ import context.ResponseContext;
 import dao.AbstractDaoFactory;
 import dao.user.DeliveryInfoEditDao;
 import dbManager.ConnectionManager;
+import ex.IntegrationException;
 
 public class ExecuteDeleteDeliveryInfoCommand extends AbstractCommand {
 
@@ -32,6 +33,8 @@ public class ExecuteDeleteDeliveryInfoCommand extends AbstractCommand {
 		}else {
 			ConnectionManager.getInstance().rollback();
 			ConnectionManager.getInstance().closeTransaction();
+
+			throw new IntegrationException("配送先情報消去時エラー", null);
 		}
 
 		return resContext;

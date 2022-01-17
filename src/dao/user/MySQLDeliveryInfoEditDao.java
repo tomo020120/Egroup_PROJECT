@@ -233,8 +233,41 @@ public class MySQLDeliveryInfoEditDao implements DeliveryInfoEditDao {
 
 	@Override
 	public boolean deleteDeliveryInfo(String userId, String deliveryInfoId) {
-		// TODO 自動生成されたメソッド・スタブ
-		return false;
+		boolean flag = false;
+		try {
+			cn = ConnectionManager.getInstance().getConnection();
+
+			String sql = "delete from address_table where userId = ? and deliveryInfoId = ?";
+			st = cn.prepareStatement(sql);
+
+			st.setString(1, userId);
+			st.setString(2, deliveryInfoId);
+
+			int result = st.executeUpdate();
+
+			if (result > 0) {
+				flag = true;
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		} catch (Exception e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		} finally {
+			if (st != null) {
+				try {
+					st.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
+		}
+		return flag;
 	}
 
 

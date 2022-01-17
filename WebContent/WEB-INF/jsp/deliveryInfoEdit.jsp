@@ -19,8 +19,9 @@
 			<p>電話番号:${deliveryInfo.tel}</p>
 			<p>郵便番号:${deliveryInfo.postalCode}</p>
 			<p>住所:${deliveryInfo.address}</p>
-			<a href="updateDeliveryInfoForm?deliveryInfoId=${deliveryInfo.deliveryInfoId}">変更</a> | <a href="deleteDeliveryInfoForm?deliveryInfoId=${deliveryInfo.deliveryInfoId}">消去</a>
+			<a href="updateDeliveryInfoForm?deliveryInfoId=${deliveryInfo.deliveryInfoId}">変更</a> | <a href="deleteDeliveryInfoComfirm?deliveryInfoId=${deliveryInfo.deliveryInfoId}">消去</a>
 		</div>
 	</c:forEach>
+	<p>${message}</p>
 </body>
 </html>
