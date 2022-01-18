@@ -12,12 +12,12 @@
 	<header><%@include file="header.jsp" %></header>
 	<h1>artist</h1>
 	<table border="1">
-	<tr><th>写真</th><th>名前</th></tr>
+
 	<c:forEach var="artists" items="${result}">
 	<tr>
 	  	<td><a href="artistsDetails?artistId=${artists.artistId}"><img src="${artists.artistPict}"></a></td>
 
-  	<td>${artists.artistName}</td>
+  	<td><p>${artists.artistName}</p></td>
 
   </tr>
  </c:forEach>

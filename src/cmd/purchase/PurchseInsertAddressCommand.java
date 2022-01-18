@@ -74,9 +74,9 @@ public ResponseContext execute(ResponseContext resContext) {
     	//UserAndCartBean user=(UserAndCartBean)reqContext.getToken();
     	resContext.setResult(dao.getdeliveryInfoId(userId,fullAddress));
 
-    	Object obj=addressBean.getDeliveryInfoId();
-    	System.out.println("obj内容"+obj);
-		reqContext.setSessionAttribute("address",obj);
+    	Object deliveryInfoId=addressBean.getDeliveryInfoId();
+    	System.out.println("obj内容"+deliveryInfoId);
+		reqContext.setSessionAttribute("address",deliveryInfoId);
 
 		resContext.setTargetCommandPath("purchase");
 		ConnectionManager.getInstance().commit();

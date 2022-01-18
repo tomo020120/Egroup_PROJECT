@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>トップページ</title>
-<%@include file="/CSS/headerStyle.css" %>
+<link rel="stylesheet" href="CSS/headerStyle.css">
 
 </head>
 <body>
