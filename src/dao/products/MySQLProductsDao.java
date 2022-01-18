@@ -163,17 +163,55 @@ public class MySQLProductsDao implements ProductsDao{
 		return products;
 	}
 
-	public List<ProductPictBean> getProductsSearchResult(String productName,String sortCode) {
+	public List<ProductPictBean> getProductsSearchResult(String productName,String sortCode,String[] colorsNo) {
 		ArrayList<ProductPictBean> products= new ArrayList<ProductPictBean>();
 
 		try {
 			cn = ConnectionManager.getInstance().getConnection();
-
-			String sql = "SELECT a.itemId,name,price,releaseDate,orderCount,categoryId,colorId,shapeId,artistId,pictId,pictPath FROM Ibanezdb.item_pict_table AS a JOIN Ibanezdb.product_table AS b ON a.itemId = b.itemId where name LIKE ? order by " + sortCode;
-
+			int length = colorsNo.length-1;
+			int questionCount=0;
+			String sql = "SELECT a.itemId,name,price,releaseDate,orderCount,categoryId,colorId,shapeId,artistId,pictId,pictPath FROM Ibanezdb.item_pict_table AS a JOIN Ibanezdb.product_table AS b ON a.itemId = b.itemId where name LIKE ?";
+			//まずsqlを完成させる
+			
+			if(length!=0) {
+				sql+=" and colorId IN (";
+				for(int count =1;count <=length;count++) {
+					//0の分の?は抜いてある
+					sql+=" ? ";
+					questionCount++;
+					if(1<length && count<length) {
+						sql+=", ";
+					}
+				}
+				sql+=" ) ";
+			}else {
+				sql+=" ? ";
+				questionCount=1;
+			}
+			
+			sql+=" order by "+sortCode;
+			System.out.println("仮SQL:"+sql);
+			
+			//set
 			st=cn.prepareStatement(sql);
-
 			st.setString(1, "%" + productName + "%");
+			
+			//0 1,2,3 No.length=4 ,yes 
+			//0 1,2 No.length=3 ,yes
+			//0 1 length = 2 ,NO
+			//カラー条件コード構築
+			int j=2;
+			if(length!=0) {
+				for(int i=1;i <= questionCount;i++) {					
+					st.setInt(j, Integer.parseInt(colorsNo[i]));
+					j++;
+				}
+			}else {
+				st.setString(j, "");
+				j++;
+			}
+			
+			//st.setString(j, sortCode);
 
 			System.out.println("実行SQL :" + st.toString());
 

@@ -1,11 +1,13 @@
 package cmd.products.search;
 
+import bean.HoldWordBean;
 import cmd.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
 import dao.products.ProductsDao;
 import dbManager.ConnectionManager;
+
 
 public class ProductsSearchCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
@@ -14,18 +16,34 @@ public class ProductsSearchCommand extends AbstractCommand{
 		ProductsDao dao = factory.getProductsDao();
 		String productName=reqc.getParameter("productName")[0];
 		String sortNo=reqc.getParameter("sort")[0];
-
-
+		//String colorNo=reqc.getParameter("color")[0];
+		
+		//colorが複数の場合も登録
+		String[] colorsNo=reqc.getParameter("color");
+		
+		HoldWordBean hwb = new HoldWordBean();
+		
+		reqc.setSessionAttribute("holdSearchWord", productName);
+		reqc.setSessionAttribute("holdsortNo", sortNo);
+		
+		hwb.setHoldWord((String)reqc.getSessionAttribute("holdSearchWord"));
+		hwb.setHoldSortNo((String)reqc.getSessionAttribute("holdsortNo"));
+		
+		
+		System.out.println("ホールド値１："+reqc.getSessionAttribute("holdSearchWord"));
+		System.out.println("ホールド値２："+reqc.getSessionAttribute("holdSortNo"));
+		
+		
 		switch(sortNo) {
-			case "1" :
+			case "0" :
 				sortNo="a.itemId ASC";
 				System.out.println("番号でソート");
 				break;
-			case "2" :
+			case "1" :
 				sortNo="price ASC";
 				System.out.println("安い順でソート");
 				break;
-			case "3" :
+			case "2" :
 				sortNo="price DESC";
 				System.out.println("高い順でソート");
 				break;
@@ -35,8 +53,9 @@ public class ProductsSearchCommand extends AbstractCommand{
 		System.out.println(sortNo);
 
 		ConnectionManager.getInstance().beginTransaction();
-
-		resc.setResult(dao.getProductsSearchResult(productName,sortNo));
+		
+		//検索実行＋結果取得
+		resc.setResult(dao.getProductsSearchResult(productName,sortNo,colorsNo));
 
 		ConnectionManager.getInstance().commit();
 		ConnectionManager.getInstance().closeTransaction();

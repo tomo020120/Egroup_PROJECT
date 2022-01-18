@@ -84,4 +84,6 @@ public class ProductPictBean implements Serializable{
 	public void setPictPath(String pictPath) {
 		this.pictPath = pictPath;
 	}
+	
+	
 }
