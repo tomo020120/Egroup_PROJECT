@@ -7,7 +7,7 @@
 <title>メールアドレス変更</title>
 </head>
 <body>
-	<header><%@include file="header.jsp" %></header>
+	<%@include file="header.jsp"%>
 	<h1>メールアドレス変更</h1>
 	<form method="post" action="judgeCorrectUserMailAddress">
 		新しいメールアドレス:<input type="text" name="newUserMailAddress" maxLength="256">

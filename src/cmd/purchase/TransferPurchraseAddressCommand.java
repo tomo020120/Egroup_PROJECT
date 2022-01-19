@@ -8,7 +8,7 @@ import dao.AbstractDaoFactory;
 import dao.user.DeliveryInfoEditDao;
 import dbManager.ConnectionManager;
 
-public class PurchaseProductsCommand extends AbstractCommand{
+public class TransferPurchraseAddressCommand extends AbstractCommand{
 
 		public ResponseContext execute(ResponseContext resc) {
 			RequestContext reqContext = getRequestContext();

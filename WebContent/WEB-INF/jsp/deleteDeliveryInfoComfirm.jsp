@@ -7,7 +7,7 @@
 <title>配送先情報消去</title>
 </head>
 <body>
-	<header><%@include file="header.jsp"%></header>
+	<%@include file="header.jsp"%>
 	<h1>配送先情報消去</h1>
 	<input type="button" onclick="history.back()" value="戻る">
 	<input type="button" onclick="location.href='deleteDeliveryInfo?deliveryInfoId=${result}'" value="消去します。">

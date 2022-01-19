@@ -9,7 +9,7 @@
 <title>カート追加完了</title>
 </head>
 <body>
-<header><%@include file="header.jsp" %></header>
+<%@include file="header.jsp"%>
 <!-- 上部カートに入れた商品情報未記載であります -->
 <!-- 下部userIdに未変更であります -->
 <a href="cart">カートに進む</a>

@@ -7,7 +7,7 @@
 <title>パスワード編集画面</title>
 </head>
 <body>
-	<header><%@include file="header.jsp" %></header>
+<%@include file="header.jsp"%>
 	<h1>パスワード編集画面</h1>
 	<form method="post" action="updatePassword">
 		現在のパスワード:<input type="password" name="currentPassword" maxLength="20"><br>

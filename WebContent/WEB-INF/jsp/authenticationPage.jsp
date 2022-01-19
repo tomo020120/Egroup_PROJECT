@@ -7,7 +7,7 @@
 <title>認証コード入力</title>
 </head>
 <body>
-<header><%@include file="header.jsp"%></header>
+<%@include file="header.jsp"%>
 <form method="post" action="updateUserMailAddress">
 	認証コード:<input type="text" name="authenticaionCode" maxLength="6">
 	<input type="submit" value="OK">

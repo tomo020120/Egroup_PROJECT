@@ -9,7 +9,7 @@
 <script src="js/updateDeliveryInfoFormScript.js"></script>
 </head>
 <body>
-	<header><%@include file="header.jsp"%></header>
+	<%@include file="header.jsp"%>
 	<div id="deliveryFormArea">
 		<form id="updateDeliveryInfoForm" class="h-adr" method="post" action="updateDeliveryInfo?deliveryInfoId=${result.deliveryInfoId}">
 			<span class="p-country-name" style="display:none;">Japan</span> <!--日本内に検索設定  -->

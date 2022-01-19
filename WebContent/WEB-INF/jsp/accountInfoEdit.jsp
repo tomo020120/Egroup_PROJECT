@@ -7,7 +7,7 @@
 <title>アカウント情報編集</title>
 </head>
 <body>
-	<header><%@include file="header.jsp" %></header>
+	<%@include file="header.jsp" %>
 	<p>${message}</p>
 	<div>
 		ユーザー名<input type='text' name='name' value="${sessionInfo.userName}" readOnly><span><button onclick="location.href='editUserNameForm'">編集</button></span><br>

@@ -7,7 +7,7 @@
 <title>アカウント退会</title>
 </head>
 <body>
-<header><%@include file="header.jsp" %></header>
+<%@include file="header.jsp"%>
 <h1>アカウント退会しますか？</h1>
 <input type="button" onclick="history.back()" value="戻る">
 <input type="button" onclick="location.href='executeDeleteAccount'" value="アカウント退会する">

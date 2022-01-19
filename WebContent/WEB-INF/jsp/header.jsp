@@ -38,6 +38,10 @@
 	  <p>${sessionInfo.userName}</p>
   </div>
 </header>
+<div class=kara>　　
+　　
+　　
+　　</div>
 </body>
 </html>
 

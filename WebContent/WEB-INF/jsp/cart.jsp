@@ -10,7 +10,7 @@
 <%@include file="/CSS/cartStyle.css" %>
 </head>
 <body>
-	<header><%@include file="header.jsp" %></header>
+	<%@include file="header.jsp"%>
 	<h1>カート</h1>
 	<table border="1">
 	<tr>

@@ -9,7 +9,7 @@
 <%@include file="/CSS/artistStyle.css" %>
 </head>
 <body>
-	<header><%@include file="header.jsp" %></header>
+	<%@include file="header.jsp" %>
 	<h1>artist</h1>
 	<table border="1">
 

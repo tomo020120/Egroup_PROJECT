@@ -8,7 +8,7 @@
 <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script> <!-- 郵便番号による自動住所入力のライブラリ読み込み -->
 </head>
 <body>
-	<header><%@include file="header.jsp"%></header>
+<%@include file="header.jsp"%>
 	<h1>新規配送先登録</h1>
 	<div id="deliveryFormArea">
 		<form id="registDeliveryInfoForm" class="h-adr" method="post" action="addDeliveryInfo" >

@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="CSS/deliveryInfoEditStyle.css">
 </head>
 <body>
-	<header><%@include file="header.jsp"%></header>
+	<%@include file="header.jsp"%>
 	<h1>配送先情報編集</h1>
 	<a href="addDeliveryInfoForm">新しい住所を追加</a>
 
