@@ -15,9 +15,7 @@ import dao.user.DeliveryInfoEditDao;
 import dao.user.MySQLCreditCardInfoEditDao;
 import dao.user.MySQLDeliveryInfoEditDao;
 import dao.user.MySQLUserAccountInfoEditDao;
-import dao.user.MySQLUserInfoEditDao;
 import dao.user.UserAccountInfoEditDao;
-import dao.user.UserInfoEditDao;
 import dao.user.login.MySQLRegistUserInfoDao;
 import dao.user.login.MySQLTempRegistDao;
 import dao.user.login.MySQLUserSelectDao;
@@ -36,10 +34,6 @@ public class MySQLDaoFactory extends AbstractDaoFactory{
 
     public ArtistsDao getArtistsDao() {
     	return new MySQLArtistsDao();
-    }
-
-    public UserInfoEditDao getEditUserInfoDao() {
-    	return new MySQLUserInfoEditDao();
     }
 
     public RegistUserInfoDao getRegistUserInfoDao() {

@@ -12,7 +12,6 @@ import dao.purchase.PurchaseDao;
 import dao.user.CreditCardInfoEditDao;
 import dao.user.DeliveryInfoEditDao;
 import dao.user.UserAccountInfoEditDao;
-import dao.user.UserInfoEditDao;
 import dao.user.login.RegistUserInfoDao;
 import dao.user.login.TempRegistDao;
 import dao.user.login.UserSelectDao;
@@ -52,6 +51,4 @@ public abstract class AbstractDaoFactory{
 	public abstract CreditCardInfoEditDao getCreditCardInfoEditDao(); // クレジットード編集用のDao生成
 	public abstract PurchaseDao getPurchaseDao(); // 購入画面のDao生成
 	public abstract FavoriteDao getFavoriteDao(); // お気に入り用のDao生成
-
-	public abstract UserInfoEditDao getEditUserInfoDao();
 }

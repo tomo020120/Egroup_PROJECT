@@ -13,7 +13,6 @@ public class TransferUpdateDeliveryInfoFormCommand extends AbstractCommand {
 	public ResponseContext execute(ResponseContext resContext) {
 		RequestContext reqContext = getRequestContext();
 
-
 		String deliveryInfoId = reqContext.getParameter("deliveryInfoId")[0];
 
 		AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
@@ -40,5 +39,4 @@ public class TransferUpdateDeliveryInfoFormCommand extends AbstractCommand {
 
 		return resContext;
 	}
-
 }

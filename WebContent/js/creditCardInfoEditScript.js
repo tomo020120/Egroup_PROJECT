@@ -4,6 +4,8 @@ $(function(){
 		$("#addCreditCardFormArea").fadeIn(1100); /*1100ミリ秒かけてフェードイン*/
 
 		$("body").css('background-color','#BBBBBB');
+
+		$("body").find("#addCreditCardButton , .openUpdateFormButton").attr("disabled",true);
 	});
 
 	/*追加をキャンセルボタンクリック示時、追加用フォームを非表示にする*/
@@ -11,6 +13,8 @@ $(function(){
 		$("#addCreditCardFormArea").fadeOut();
 
 		$("body").css('background-color','#ffffff');
+
+		$("body").find("#addCreditCardButton , .openUpdateFormButton").attr("disabled",false);
 	});
 
 	/*クレジットカード番号入力中動的に、カード会社判定を行う。*/
@@ -41,6 +45,55 @@ $(function(){
 	/*カード入力後の追加ボタンクリック時フォームをSubmitする。*/
 	$("#executeAddButton").on('click',function(){
 		$("#addCreditCardForm").submit();
+	});
+
+	/*クレジットカード情報一覧の変更ボタンクリック時値のセットとフォームの表示*/
+	$(".creditCardInfo").each(function(){
+		$(".openUpdateFormButton").on('click',function(){
+			var targetCreditCardInfo = $(this).parent();
+
+			var cardNo = targetCreditCardInfo.find(".lastFourDisits").html();
+			var cardCompany = targetCreditCardInfo.find(".cardCompany").html();
+			var cardOwnerName = targetCreditCardInfo.find(".cardOwnerName").html();
+			var expirationDate = targetCreditCardInfo.find(".expirationDate").html();
+			var cardId = targetCreditCardInfo.find(".openUpdateFormButton").val();
+
+			var updateForm = $("#updateCreditCardInfoForm");
+
+			updateForm.find("#lastFourDisitsCreditCardNo").val(cardNo);
+			updateForm.find("#cardCompany").val(cardCompany);
+			updateForm.find("#cardOwnerName").val(cardOwnerName);
+
+			var separationDate = expirationDate.split("/");
+
+			updateForm.find("#year").val(separationDate[0]);
+			updateForm.find("#month").val(separationDate[1]);
+
+			updateForm.find("#executeUpdateButton").on('click',function(){
+				var url = "updateCreditCardInfo?cardId=" + cardId;
+				updateForm.attr('action',url);
+			});
+
+			$("#updateCardFormArea").fadeIn(1100); /*1100ミリ秒かけてフェードイン*/
+
+			$("body").css('background-color','#BBBBBB');
+
+			$("body").find("#addCreditCardButton , .openUpdateFormButton").attr("disabled",true); /*ボタンの無効化*/
+		});
+	});
+
+	/*編集完了ボタンクリック時のsubmit処理*/
+	$("executeUpdateButton").on('click',function(){
+		$("#updateCreditCardInfoForm").submit();
+	});
+
+	/*編集キャンセルボタン処理*/
+	$("#updateCansel").on('click',function(){
+		$("#updateCardFormArea").fadeOut();
+
+		$("body").css('background-color','#ffffff');
+
+		$("body").find("#addCreditCardButton , .openUpdateFormButton").attr("disabled",false); /*ボタンの有効化*/
 	});
 });
 

@@ -1,8 +1,5 @@
 package cmd.user;
 
-import java.util.Iterator;
-import java.util.List;
-
 import bean.AddressBean;
 import bean.joinBean.UserAndCartBean;
 import cmd.AbstractCommand;
@@ -42,22 +39,13 @@ public class AddDeliveryInfoCommand extends AbstractCommand {
 
 		ConnectionManager.getInstance().beginTransaction();
 
-		List<AddressBean> addressList = edit.getDeliveryInfo(userId); // ユーザーが登録してる配送先情報を取得
-		Iterator<AddressBean> it = addressList.iterator();
+		if(edit.getSameAddressQuantity(fullAddress, userId) != 0) {
+			resContext.setMessage("入力された住所は登録済みです。");
+			resContext.setTargetPath("addDeliveryInfoForm");
 
-		while(it.hasNext()) { // 登録済みの住所がないかチェック
-			addressBean = (AddressBean)it.next();
-			System.out.println("ループ住所: " + addressBean.getAddress());
-			System.out.println("入力住所: " + fullAddress);
-			System.out.println("判定: " + addressBean.getAddress().equals(fullAddress));
-			if(addressBean.getAddress().equals(fullAddress)) {
-				resContext.setMessage("入力された住所は登録済みです。");
-				resContext.setTargetPath("addDeliveryInfoForm");
+			ConnectionManager.getInstance().closeTransaction();
 
-				ConnectionManager.getInstance().closeTransaction();
-
-				return resContext;
-			}
+			return resContext;
 		}
 
 		addressBean.setDeliveryName(deliveryName);

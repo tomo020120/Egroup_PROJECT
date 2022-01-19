@@ -5,7 +5,7 @@ body{
 }
 
 /* クレジットカード追加エリア */
-#addCreditCardFormArea{
+.animFormArea{
 	display:none; /* デフォルトは非表示に */
 	top:20%; /* top,leftで位置指定 */
 	left:36%;
@@ -28,8 +28,14 @@ body{
 }
 
 /* カード一覧デザイン */
-.creditCardInfo{
+#creditCardList{
 	margin:20px 25% 0 25%;
 	border:5px double #333333;
 	background-color:#2070b27a;
+}
+
+textarea{
+	resize: none; /* サイズ変更禁止 */
+  	width:100px;
+  	height:25px;
 }
