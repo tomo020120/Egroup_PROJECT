@@ -5,7 +5,7 @@ $(function(){
 
 		$("body").css('background-color','#BBBBBB');
 
-		$("body").find("#addCreditCardButton , .openUpdateFormButton").attr("disabled",true);
+		$("body").find("#addCreditCardButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",true);
 	});
 
 	/*追加をキャンセルボタンクリック示時、追加用フォームを非表示にする*/
@@ -14,7 +14,7 @@ $(function(){
 
 		$("body").css('background-color','#ffffff');
 
-		$("body").find("#addCreditCardButton , .openUpdateFormButton").attr("disabled",false);
+		$("body").find("#addCreditCardButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",false);
 	});
 
 	/*クレジットカード番号入力中動的に、カード会社判定を行う。*/
@@ -78,7 +78,7 @@ $(function(){
 
 			$("body").css('background-color','#BBBBBB');
 
-			$("body").find("#addCreditCardButton , .openUpdateFormButton").attr("disabled",true); /*ボタンの無効化*/
+			$("body").find("#addCreditCardButton , .openUpdateFormButton , /openDeleteComfirmButton").attr("disabled",true); /*ボタンの無効化*/
 		});
 	});
 
@@ -93,7 +93,48 @@ $(function(){
 
 		$("body").css('background-color','#ffffff');
 
-		$("body").find("#addCreditCardButton , .openUpdateFormButton").attr("disabled",false); /*ボタンの有効化*/
+		$("body").find("#addCreditCardButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",false); /*ボタンの有効化*/
+	});
+
+
+	/*クレジットカード情報一覧の消去ボタンクリック時値のセットとフォームの表示*/
+	$(".creditCardInfo").each(function(){
+		$(".openDeleteComfirmButton").on('click',function(){
+			var targetCreditCardInfo = $(this).parent();
+
+			var cardNo = targetCreditCardInfo.find(".lastFourDisits").html();
+			var cardCompany = targetCreditCardInfo.find(".cardCompany").html();
+			var cardOwnerName = targetCreditCardInfo.find(".cardOwnerName").html();
+			var expirationDate = targetCreditCardInfo.find(".expirationDate").html();
+			var cardId = targetCreditCardInfo.find(".openUpdateFormButton").val();
+
+			var deletePage = $("#deleteCreditCardComfirmPageArea");
+
+			deletePage.find(".lastFourDisits").html(cardNo);
+			deletePage.find(".cardCompany").html(cardCompany);
+			deletePage.find(".cardOwnerName").html(cardOwnerName);
+			deletePage.find(".expirationDate").html(expirationDate);
+
+			deletePage.find("#executeDeleteButton").on('click',function(){
+				var url = "deleteCreditCardInfo?cardId=" + cardId;
+				window.location.href = url;
+			});
+
+			$("#deleteCreditCardComfirmPageArea").fadeIn(1100); /*1100ミリ秒かけてフェードイン*/
+
+			$("body").css('background-color','#BBBBBB');
+
+			$("body").find("#addCreditCardButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",true); /*ボタンの無効化*/
+		});
+	});
+
+	/*消去キャンセルボタン処理*/
+	$("#deleteCansel").on('click',function(){
+		$("#deleteCreditCardComfirmPageArea").fadeOut();
+
+		$("body").css('background-color','#ffffff');
+
+		$("body").find("#addCreditCardButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",false); /*ボタンの有効化*/
 	});
 });
 

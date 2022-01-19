@@ -4,7 +4,7 @@ body{
 	transition:background-color 1.1s; /* 1秒間で変化する */
 }
 
-/* クレジットカード追加エリア */
+/* アニメーションページエリア */
 .animFormArea{
 	display:none; /* デフォルトは非表示に */
 	top:20%; /* top,leftで位置指定 */

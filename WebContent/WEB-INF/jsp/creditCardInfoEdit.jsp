@@ -22,8 +22,7 @@
 				種類:<span class="cardCompany">${creditCardInfo.cardCompany}</span><br>
 				クレジットカード名義人:<span class="cardOwnerName">${creditCardInfo.cardOwnerName}</span><br>
 				有効期限:<span class="expirationDate">${creditCardInfo.expirationDate}</span><br>
-				<button class="openUpdateFormButton" type="button" value="${creditCardInfo.cardId}">編集</button>
-				<%-- <a href="updateCreditCardInfoForm?creditCardInfoId=${creditCardInfo.cardId}">変更</a> | <a href="deleteCreditCardInfoForm?creditCardInfoId=${creditCardInfo.cardId}">消去</a> --%>
+				<button class="openUpdateFormButton" type="button" value="${creditCardInfo.cardId}">編集</button><button class="openDeleteComfirmButton" type="button" value="${creditCardInfo.cardId}">消去</button>
 			</div>
 		</c:forEach>
 	</div>
@@ -140,6 +139,15 @@
 				<button id="updateCansel" type="button">キャンセル</button>	<button id="executeUpdateButton">編集完了</button>
 			</form>
 		</div>
+	</div>
+
+	<div id="deleteCreditCardComfirmPageArea" class = "animFormArea">
+		<h1>こちらのクレジットカードを消去してよろしいでしょうか</h1>
+		カード番号(下四桁):<span class="lastFourDisits">${creditCardInfo.cardNo}</span><br>
+		種類:<span class="cardCompany">${creditCardInfo.cardCompany}</span><br>
+		クレジットカード名義人:<span class="cardOwnerName">${creditCardInfo.cardOwnerName}</span><br>
+		有効期限:<span class="expirationDate">${creditCardInfo.expirationDate}</span><br>
+		<button id="deleteCansel" type="button">キャンセル</button>	<button id="executeDeleteButton">消去する</button>
 	</div>
 	<p>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br></p>
 </body>
