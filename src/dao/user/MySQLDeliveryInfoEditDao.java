@@ -238,6 +238,7 @@ public class MySQLDeliveryInfoEditDao implements DeliveryInfoEditDao {
 			cn = ConnectionManager.getInstance().getConnection();
 
 			String sql = "delete from address_table where userId = ? and deliveryInfoId = ?";
+
 			st = cn.prepareStatement(sql);
 
 			st.setString(1, userId);
@@ -269,6 +270,4 @@ public class MySQLDeliveryInfoEditDao implements DeliveryInfoEditDao {
 		}
 		return flag;
 	}
-
-
 }
