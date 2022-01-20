@@ -10,5 +10,4 @@ public class TransferFavoriteListPageCommand extends AbstractCommand {
 		resContext.setTargetPath("favoriteListPage");
 		return resContext;
 	}
-
 }

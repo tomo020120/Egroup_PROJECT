@@ -8,5 +8,12 @@
 </head>
 <body>
 <header><%@include file="header.jsp" %></header>
+<br/><br/><br/><br/><br/>
+<h1>お気に入れ一覧</h1>
+<h2>写真　商品名　値段　お気に入れ</h2>
 </body>
 </html>
+
+
+
+

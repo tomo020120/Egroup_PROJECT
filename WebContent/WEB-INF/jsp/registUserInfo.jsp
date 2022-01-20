@@ -1,12 +1,14 @@
 <%@ page pageEncoding="UTF-8"
-    contentType="text/html;charset=UTF-8" %>
+    contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
 <title>ユーザー登録</title>
 <%@include file="/CSS/RegistStyle.css"%>
+
 </head>
 <body>
+	<header><%@include file="header.jsp" %></header>
     <h1 id="title">ユーザー登録</h1>
     <form method='post' action="judge">
     ユーザー名<input type='text' name='name' maxLength="25"><br>

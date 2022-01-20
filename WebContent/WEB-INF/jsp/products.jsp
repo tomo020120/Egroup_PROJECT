@@ -8,11 +8,10 @@
 <meta charset="UTF-8">
 <title>商品一覧</title>
 <%@include file="/CSS/productsStyle.css" %>
+<script type="text/javascript" src="js/productsScript.js"></script>
 </head>
 <body>
-<!-- <header><%@include file="header.jsp" %></header> -->
-
-
+<header><%@include file="header.jsp" %></header>
 <form action="productsSearch" method="GET" name="form1">
 製品名検索(仮)：<input type="search" name="productName" value="${sessionScope.holdSearchWord}">
 <select name="sort" id = "SORT">
@@ -21,7 +20,7 @@
 	<option value="2">価格の高い順</option>
 </select>
 <input type="submit" value="検索"/>
-
+<header><%@include file="header.jsp" %></header>
 <fieldset>
 	  <legend>色</legend>
 	  <input type="hidden" name="color" value="0">
@@ -85,9 +84,14 @@
   	<td><a href="productsDetails?itemId=${product.itemId}">${product.name}</a></td>
   	<td><a href="productsDetails?itemId=${product.itemId}"><img src="${product.pictPath}"></a></td>
   	<td>${product.price}円</td>
-  	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="location.href='addFavorite'">❤</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="bt(this)"style="border: 4px solid #0F0;">❤︎</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
   </tr>
+
  </c:forEach>
+
+
+
  </table>
 
 <script>
@@ -98,49 +102,49 @@
 	if(queryString){
 	  queryString = queryString.substring(1);
 	  var parameters = queryString.split('&');
-	
+
 	  for (var i = 0; i < parameters.length; i++) {
 	    var element = parameters[i].split('=');
-	
+
 	    var paramName = decodeURIComponent(element[0]);
 	    var paramValue = decodeURIComponent(element[1]);
 		//queryObject.パラメータ名で値取得化
 	    queryObject[paramName] = paramValue;
 	  }
 	}
-	
+
 	console.log("検索文字:"+queryObject.productName);
 	console.log("ソート順:"+queryObject.sort);
 	console.log("色:"+queryObject.color);
-	
-	
-	
+
+
+
 	//正規表現導入　asz→ASZ　ｓｚ→sz
-	
-	
+
+
 	//全てのcheckboxの状態を取得
 	function submitColor(){
 		var colors = new Array();
 		//配列0－12番にId1-13のcheckedを入力
 		for(let i=1;i<13;i++){
-			
+
 			colors.push(document.getElementById(i).checked);
 			if(document.getElementById(i).checked==true){
 				flag=true;
 			}
-			
+
 		}
 		console.log(colors);
 		sessionStorage.setItem("key",colors);
 	}
-	
-	
-	
+
+
+
 	window.addEventListener('DOMContentLoaded', function(){
 		//ソートプルダウン
 		document.form1.sort.selectedIndex = parseInt(queryObject.sort);
-		
-		
+
+
 		var ckstate = sessionStorage.getItem("key").split(",");
 		console.log("読み込み後のkeyget結果:"+ckstate);
 		var j=0;
@@ -149,11 +153,15 @@
 			document.getElementById(i).checked = (ckstate[j]==="true")?true:false;
 			j++;
 		}
-		
+
 	});
-	
-	
+
+
 </script>
+
+
+
+
 
 
 </body>

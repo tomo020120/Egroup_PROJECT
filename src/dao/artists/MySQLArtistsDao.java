@@ -16,9 +16,9 @@ public class MySQLArtistsDao implements ArtistsDao{
 	private Connection cn = null;
 	private PreparedStatement st = null;
 	private ResultSet rs = null;
-	List<ArtistBean> artists= new ArrayList<ArtistBean>();
 
 	public List<ArtistBean> getAllArtists() {
+		List<ArtistBean> artists= new ArrayList<ArtistBean>();
 
 		try {
 			cn = ConnectionManager.getInstance().getConnection();
