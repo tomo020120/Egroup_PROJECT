@@ -1,15 +1,15 @@
 $(function(){
-	const beforeReplaceAddressMap = new Map(); /*変換前住所を格納するMap*/
+	var addressObj = []; /*住所格納用配列(内部にオブジェクトを持つ)*/
 
 	/*配送先情報一覧で住所のスラッシュを消去*/
 	$(".deliveryInfo").each(function(){
 		var beforeReplaceAddress = $(this).find(".address").html(); /*変換前住所*/
 
-		var afterReplaceAddress = beforeReplaceAddress.replace(/\//,""); /*変換後住所*/
+		var afterReplaceAddress = beforeReplaceAddress.replace(/\//g,""); /*変換後住所*/
 
-		beforReplaceAddressMap.set(afterReplaceAddress,beforeReplaceAddress); /*key:変換後住所 value:変換前住所をセット*/
+		$(this).find(".address").html(afterReplaceAddress);
 
-
+		addressObj.push({key:afterReplaceAddress,value:beforeReplaceAddress}); /*key:変換後住所 value:変換前住所をセット*/
 	});
 
 	/*配送先情報追加ボタンクリック時、追加用フォームを表示*/
@@ -43,8 +43,14 @@ $(function(){
 			var deliveryName = targetDeliveryInfo.find(".deliveryName").html();
 			var tel = targetDeliveryInfo.find(".tel").html();
 			var postalCode = targetDeliveryInfo.find(".postalCode").html();
-			var address = targetDeliveryInof.find(".address").html();
+			var address = targetDeliveryInfo.find(".address").html();
 			var deliveryInfoId = targetDeliveryInfo.find(".openUpdateFormButton").val();
+
+			var beforeAddress = $.map(addressObj,function(value,index){
+				if(value['key'] == address){
+					return value['value'];
+				}
+			});
 
 			var updateForm = $("#updateDeliveryInfoForm");
 
@@ -58,15 +64,19 @@ $(function(){
 
 			updateForm.find("#postalCode").val(postalCode);
 
-			var separationAddress = beforeReplaceAddress.split("/");
+			var separationAddress = beforeAddress.toString().split("/");
 
 			updateForm.find("#address").val(separationAddress[0]);
 			updateForm.find("#houseNumber").val(separationAddress[1]);
 			updateForm.find("#buildingName").val(separationAddress[2]);
 
+			console.log(deliveryInfoId);
+
 			updateForm.find("#executeUpdateButton").on('click',function(){
 				var url = "updateDeliveryInfo?deliveryInfoId=" + deliveryInfoId;
+				console.log(url);
 				updateForm.attr('action',url);
+				updateForm.submit();
 			});
 
 			$("#updateDeliveryFormArea").fadeIn(1100); /*1100ミリ秒かけてフェードイン*/
@@ -75,11 +85,6 @@ $(function(){
 
 			$("body").find("#addDeliveryInfoButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",true); /*ボタンの無効化*/
 		});
-	});
-
-	/*編集完了ボタンクリック時のsubmit処理*/
-	$("executeUpdateButton").on('click',function(){
-		$("#updateCreditCardInfoForm").submit();
 	});
 
 	/*編集キャンセルボタン処理*/

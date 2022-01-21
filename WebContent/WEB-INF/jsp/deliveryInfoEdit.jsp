@@ -52,7 +52,7 @@
 			【必須】住所:<input type="text" id="address" class="p-region p-locality p-street-address p-extended-address" name="address"/><br>
 			【必須】丁目・番地・号(例:1-2-3):<input type="text" id="houseNumber" name="houseNumber"><br>
 			【必須】建物名・部屋番号(例:〇〇マンション〇〇号室)<input type="text" id="buildingName" name="buildingName"><br>
-			<button id="updateCansel" type="button">キャンセル</button>	<button id="executeUpdateButton" type="button">編集完了</button>
+			<button id="updateCansel" type="button">キャンセル</button><button id="executeUpdateButton" type="button">編集完了</button>
 		</form>
 	</div>
 
