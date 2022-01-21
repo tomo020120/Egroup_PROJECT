@@ -33,7 +33,7 @@ public class MySQLPurchaseDao implements PurchaseDao{
 
 			while(rs.next()) {
 				AddressBean p = new AddressBean();
-			p.setDeliveryInfoId(rs.getString(1));
+				p.setDeliveryInfoId(rs.getString(1));
 			}
 			existFlag = rs.next();
 		}catch(SQLException e) {
@@ -77,8 +77,8 @@ public class MySQLPurchaseDao implements PurchaseDao{
 
 			rs = st.executeQuery();
 
-
 			while(rs.next()) {
+
 				AllOrderConfirmationBean p = new AllOrderConfirmationBean();
 				p.setUserId(rs.getString(1));
 				p.setMailAddress(rs.getString(2));//メールアドレス
@@ -92,6 +92,8 @@ public class MySQLPurchaseDao implements PurchaseDao{
 				p.setCardNo(rs.getString(10));//カード番号
 				p.setCardCompany(rs.getString(11));//カード会社
 				p.setExpirationDate(rs.getString(12));//有効期限
+
+
 				p.setName(rs.getString(13));//商品名
 				p.setOrderCount(rs.getString(14));//注文個数
 				p.setSubTotal(rs.getString(15));//小計
