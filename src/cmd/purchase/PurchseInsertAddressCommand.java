@@ -76,9 +76,10 @@ public ResponseContext execute(ResponseContext resContext) {
 
     	Object deliveryInfoId=addressBean.getDeliveryInfoId();
     	System.out.println("obj内容"+deliveryInfoId);
+    	System.out.println("obj内容222"+deliveryInfoId);
 		reqContext.setSessionAttribute("address",deliveryInfoId);
 
-		resContext.setTargetCommandPath("purchase");
+		resContext.setTargetCommandPath("chiceCredit");
 		ConnectionManager.getInstance().commit();
 		ConnectionManager.getInstance().closeTransaction();
 	}else {

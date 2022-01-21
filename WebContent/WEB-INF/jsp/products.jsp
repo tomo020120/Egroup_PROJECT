@@ -11,7 +11,13 @@
 <script type="text/javascript" src="js/productsScript.js"></script>
 </head>
 <body>
+<<<<<<< HEAD
 <header><%@include file="header.jsp" %></header>
+=======
+<%@include file="header.jsp" %>
+
+
+>>>>>>> branch 'master' of git@github.com:tomo020120/Egroup_PROJECT.git
 <form action="productsSearch" method="GET" name="form1">
 製品名検索(仮)：<input type="search" name="productName" value="${sessionScope.holdSearchWord}">
 <select name="sort" id = "SORT">
@@ -90,8 +96,6 @@
 
  </c:forEach>
 
-
-
  </table>
 
 <script>
@@ -117,10 +121,7 @@
 	console.log("ソート順:"+queryObject.sort);
 	console.log("色:"+queryObject.color);
 
-
-
 	//正規表現導入　asz→ASZ　ｓｚ→sz
-
 
 	//全てのcheckboxの状態を取得
 	function submitColor(){
@@ -137,8 +138,6 @@
 		console.log(colors);
 		sessionStorage.setItem("key",colors);
 	}
-
-
 
 	window.addEventListener('DOMContentLoaded', function(){
 		//ソートプルダウン
@@ -158,11 +157,6 @@
 
 
 </script>
-
-
-
-
-
 
 </body>
 </html>

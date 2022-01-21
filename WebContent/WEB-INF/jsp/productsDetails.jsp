@@ -9,7 +9,7 @@
 <%@include file="/CSS/productsDetailsStyle.css" %>
 </head>
 <body>
-	<header><%@include file="header.jsp" %></header>
+	<%@include file="header.jsp" %>
 	<table border="1">
 	<tr>
 		<th>商品ID</th>

@@ -15,6 +15,7 @@ h1{
 
 .image {
 	position: absolute;
+	top:-40px;
     right:  78px;                /* 右からの位置指定 */
 	width: 1500px;
 	height: 800px;

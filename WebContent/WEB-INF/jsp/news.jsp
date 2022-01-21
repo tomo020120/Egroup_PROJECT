@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="CSS/newsStyle.css">
 </head>
 <body>
-	<header><%@include file="header.jsp" %></header>
+<%@include file="header.jsp"%>
 	<h1 class="title">news</h1>
 </body>
 </html>

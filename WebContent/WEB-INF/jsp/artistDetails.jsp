@@ -10,7 +10,7 @@
 <%@include file="/CSS/productsDetailsStyle.css" %>
 </head>
 <body>
-	<header><%@include file="header.jsp" %></header>
+	<%@include file="header.jsp" %>
 	<table border="1">
 		<tr>
 		<th>アーティスト名</th>
