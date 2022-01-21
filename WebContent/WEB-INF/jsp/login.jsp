@@ -27,7 +27,7 @@
     パスワードを表示する
  </div>
 </div>
-				<input type="submit" value="ログイン">
+				<input type="submit" id="submitBtn" value="ログイン">
 </form>
 <!-- 認証エラーメッセージ取得 -->
 <p>${message}</p>
@@ -39,6 +39,8 @@
 <script type="text/javascript">
 	var input_pass=document.getElementById("passCheck");
 	var input_mail=document.getElementById("mailCheck");
+	var mailJudge=false;
+	var passJudge=false;
 
 	const regex=/^[A-Z]([a-zA-Z0-9]){7,19}$/;
 	const reg =/^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}.[A-Za-z0-9]{1,}$/;
@@ -47,9 +49,11 @@
 	const circle2=document.getElementById("circle2ID");
 	const mailCircle=document.getElementById("mailCircleID");
 	const mailCircle2=document.getElementById("mailCircle2ID");
+	const button=document.getElementById("submitBtn");
 
 	circle.style.display="none";
 	circle2.style.display="none";
+	button.disabled="true";
 
 	//パスワード書式チェック
 	input_pass.addEventListener("input",function(){
@@ -57,11 +61,14 @@
 			console.log("ok");
 			circle2.style.display="none";
 			circle.style.display ="inline-block";
+			passJudge=true;
 		}else{
 			console.log("no");
 			circle.style.display="none";
 			circle2.style.display ="inline-block";
+			passJudge=false;
 		}
+		pushControll(passJudge,mailJudge);
 
 		  });
 
@@ -76,13 +83,28 @@
 			console.log("ok");
 			mailCircle2.style.display="none";
 			mailCircle.style.display ="inline-block";
+			mailJudge=true;
 		}else{
 			console.log("no");
 			mailCircle.style.display="none";
 			mailCircle2.style.display ="inline-block";
+			mailJudge=false;
 		}
+		pushControll(passJudge,mailJudge);
 
 		  });
+
+	function pushControll(passJudge,mailJudge){
+		if(passJudge && mailJudge){
+			button.disabled = false;
+		}else{
+			button.disabled = true;
+		}
+	}
+
+
+
+
 
 	/*
 	//パスワード一致チェック
