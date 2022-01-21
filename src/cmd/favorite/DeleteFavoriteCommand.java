@@ -1,5 +1,6 @@
 package cmd.favorite;
 
+import bean.joinBean.UserAndCartBean;
 import cmd.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
@@ -15,9 +16,11 @@ public class DeleteFavoriteCommand extends AbstractCommand {
 		AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
 		FavoriteDao favorite = factory.getFavoriteDao();
 
-		String itemId = reqContext.getParameter("favoriteId")[0];
+		String itemId = reqContext.getParameter("itemId")[0];
 
-		if(favorite.deleteFavorite(itemId)) {
+		String userId = ((UserAndCartBean)reqContext.getToken()).getUserId();
+
+		if(favorite.deleteFavorite(itemId,userId)) {
 			System.out.println("cartinside削除");
 
 			resContext.setTargetCommandPath("products");

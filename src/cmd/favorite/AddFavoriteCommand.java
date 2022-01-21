@@ -18,7 +18,7 @@ public class AddFavoriteCommand extends AbstractCommand {
 		FavoriteDao favorite = factory.getFavoriteDao();
 
 		String userId = ((UserAndCartBean)reqContext.getToken()).getUserId();
-		String itemId = "";
+		String itemId = reqContext.getParameter("itemId")[0];
 
 		FavoriteBean favoriteBean = new FavoriteBean();
 
@@ -28,6 +28,7 @@ public class AddFavoriteCommand extends AbstractCommand {
 		ConnectionManager.getInstance().beginTransaction();
 
 		if(favorite.addFavorite(favoriteBean)) {
+			resContext.setTargetCommandPath("products");
 			ConnectionManager.getInstance().commit();
 			ConnectionManager.getInstance().closeTransaction();
 		}else {
