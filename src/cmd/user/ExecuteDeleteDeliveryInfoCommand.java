@@ -24,9 +24,11 @@ public class ExecuteDeleteDeliveryInfoCommand extends AbstractCommand {
 
 		ConnectionManager.getInstance().beginTransaction();
 
+		String url = "deliveryInfoEdit?message=";
+
 		if(edit.deleteDeliveryInfo(userId,deliveryInfoId)) {
-			resContext.setTargetCommandPath("deliveryInfoEdit");
-			reqContext.setSessionAttribute("deleteFlag",true);
+			url += "配送先情報消去完了";
+			resContext.setTargetCommandPath(url);
 
 			ConnectionManager.getInstance().commit();
 			ConnectionManager.getInstance().closeTransaction();

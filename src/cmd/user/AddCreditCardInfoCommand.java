@@ -40,9 +40,13 @@ public class AddCreditCardInfoCommand extends AbstractCommand {
 		CreditCardInfoEditDao edit = factory.getCreditCardInfoEditDao();
 		ConnectionManager.getInstance().beginTransaction();
 
+		String url = "creditCardInfoEdit?message=";
+
 		if(edit.getSameCreditCardQuantity(cardNo, userId) == 0) { // 同一のクレジットカード既に登録されていたらエラー処理
 			if(CreditCardSecurityCodeAuthentication.isCorrectSecurityCode(cardNo, securityCode)) { // セキュリティコード認証
 				if(edit.addCreditCardInfo(creditCardBean)) {
+					url += "カード追加完了。";
+
 					ConnectionManager.getInstance().commit();
 					ConnectionManager.getInstance().closeTransaction();
 				}else {
@@ -52,16 +56,18 @@ public class AddCreditCardInfoCommand extends AbstractCommand {
 				}
 			}else {
 				//認証エラーメッセージを格納
+				url += "セキュリティコードが違います。";
+
 				ConnectionManager.getInstance().rollback();
 				ConnectionManager.getInstance().closeTransaction();
 			}
-
 		}else {
 			// 既に登録されていた時の処理
+			url += "そのカードはすでに登録されています。";
 			ConnectionManager.getInstance().closeTransaction();
 		}
 
-		resContext.setTargetCommandPath("creditCardInfoEdit");
+		resContext.setTargetCommandPath(url);
 
 		return resContext;
 	}

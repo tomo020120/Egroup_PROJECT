@@ -22,7 +22,7 @@ public class MySQLDeliveryInfoEditDao implements DeliveryInfoEditDao {
 		try {
 			cn = ConnectionManager.getInstance().getConnection();
 
-			String sql = "select deliveryInfoId,deliveryName,postalCode,replace(address,'/',''),tel,userId from address_table where userId = ?";
+			String sql = "select * from address_table where userId = ?";
 
 			st = cn.prepareStatement(sql);
 
@@ -61,49 +61,6 @@ public class MySQLDeliveryInfoEditDao implements DeliveryInfoEditDao {
 			}
 		}
 		return addressList;
-	}
-
-	@Override
-	public AddressBean getTargetDeliveryInfo(String deliveryInfoId) {
-		AddressBean addressBean = new AddressBean();
-		try {
-			cn = ConnectionManager.getInstance().getConnection();
-
-			String sql = "select * from address_table where deliveryInfoId = ?";
-
-			st = cn.prepareStatement(sql);
-
-			st.setString(1, deliveryInfoId);
-
-			rs = st.executeQuery();
-
-			while (rs.next()) {
-				addressBean.setDeliveryInfoId(rs.getString(1));
-				addressBean.setDeliveryName(rs.getString(2));
-				addressBean.setPostalCode(rs.getString(3));
-				addressBean.setAddress(rs.getString(4));
-				addressBean.setTel(rs.getString(5));
-				addressBean.setUserId(rs.getString(6));
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-			ConnectionManager.getInstance().rollback();
-			throw new DaoOperationException(e.getMessage(), e);
-		} catch (Exception e) {
-			e.printStackTrace();
-			ConnectionManager.getInstance().rollback();
-			throw new DaoOperationException(e.getMessage(), e);
-		} finally {
-			if (st != null) {
-				try {
-					st.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-					throw new DaoOperationException(e.getMessage(), e);
-				}
-			}
-		}
-		return addressBean;
 	}
 
 	@Override

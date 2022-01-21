@@ -15,12 +15,21 @@ public class TransferCreditCardInfoEitCommand extends AbstractCommand {
 		RequestContext reqContext = getRequestContext();
 		String userId = ((UserAndCartBean)(reqContext.getToken())).getUserId();
 
+		String message = "";
+		try {
+			message = reqContext.getParameter("message")[0];
+		}
+		catch(NullPointerException e) {
+			message = "";
+		}
+
 		AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
 		CreditCardInfoEditDao edit = factory.getCreditCardInfoEditDao();
 
 		ConnectionManager.getInstance().beginTransaction();
 
 		resContext.setResult(edit.getCreditCardInfo(userId));
+		resContext.setMessage(message);
 		resContext.setTargetPath("creditCardInfoEdit");
 
 		ConnectionManager.getInstance().commit();

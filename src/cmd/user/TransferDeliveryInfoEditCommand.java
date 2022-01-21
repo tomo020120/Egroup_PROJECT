@@ -15,11 +15,20 @@ public class TransferDeliveryInfoEditCommand extends AbstractCommand {
 		RequestContext reqContext = getRequestContext();
 		String userId = ((UserAndCartBean)reqContext.getToken()).getUserId(); // セッションからユーザーID取得
 
+		String message = ""; // 一つ前のコマンドでパラメータとして渡されたものを取得。ヌルポならなにも入れない。
+		try {
+			message = reqContext.getParameter("message")[0];
+		}
+		catch(NullPointerException e) {
+			message = "";
+		}
+
 		AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
 		DeliveryInfoEditDao edit = factory.getDeliveryInfoEditDao();
 
 		ConnectionManager.getInstance().beginTransaction();
 
+		resContext.setMessage(message);
 		resContext.setResult(edit.getDeliveryInfo(userId));
 
 		ConnectionManager.getInstance().commit();

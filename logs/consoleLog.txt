@@ -1,81 +1,81 @@
-1 20, 2022 2:26:00 午後 org.apache.tomcat.util.digester.SetPropertiesRule begin
+1 21, 2022 2:28:14 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
 警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:threader' did not find a matching property.
-1 20, 2022 2:26:00 午後 org.apache.tomcat.util.digester.SetPropertiesRule begin
+1 21, 2022 2:28:14 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
 警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:rjp' did not find a matching property.
-1 20, 2022 2:26:00 午後 org.apache.tomcat.util.digester.SetPropertiesRule begin
+1 21, 2022 2:28:14 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
 警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:oop' did not find a matching property.
-1 20, 2022 2:26:00 午後 org.apache.tomcat.util.digester.SetPropertiesRule begin
+1 21, 2022 2:28:14 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
 警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:j2ee4' did not find a matching property.
-1 20, 2022 2:26:00 午後 org.apache.tomcat.util.digester.SetPropertiesRule begin
+1 21, 2022 2:28:14 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
 警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:Egroup_PROJECT' did not find a matching property.
-1 20, 2022 2:26:00 午後 org.apache.catalina.startup.VersionLoggerListener log
+1 21, 2022 2:28:14 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Server version:        Apache Tomcat/8.0.36
-1 20, 2022 2:26:00 午後 org.apache.catalina.startup.VersionLoggerListener log
+1 21, 2022 2:28:14 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Server built:          Jun 9 2016 13:55:50 UTC
-1 20, 2022 2:26:00 午後 org.apache.catalina.startup.VersionLoggerListener log
+1 21, 2022 2:28:14 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Server number:         8.0.36.0
-1 20, 2022 2:26:00 午後 org.apache.catalina.startup.VersionLoggerListener log
+1 21, 2022 2:28:14 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: OS Name:               Windows 10
-1 20, 2022 2:26:00 午後 org.apache.catalina.startup.VersionLoggerListener log
+1 21, 2022 2:28:14 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: OS Version:            10.0
-1 20, 2022 2:26:00 午後 org.apache.catalina.startup.VersionLoggerListener log
+1 21, 2022 2:28:14 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Architecture:          amd64
-1 20, 2022 2:26:00 午後 org.apache.catalina.startup.VersionLoggerListener log
+1 21, 2022 2:28:14 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Java Home:             C:\Program Files\Java\jdk1.8.0_202\jre
-1 20, 2022 2:26:00 午後 org.apache.catalina.startup.VersionLoggerListener log
+1 21, 2022 2:28:14 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: JVM Version:           1.8.0_202-b08
-1 20, 2022 2:26:00 午後 org.apache.catalina.startup.VersionLoggerListener log
+1 21, 2022 2:28:14 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: JVM Vendor:            Oracle Corporation
-1 20, 2022 2:26:00 午後 org.apache.catalina.startup.VersionLoggerListener log
+1 21, 2022 2:28:14 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: CATALINA_BASE:         C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0
-1 20, 2022 2:26:00 午後 org.apache.catalina.startup.VersionLoggerListener log
+1 21, 2022 2:28:14 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: CATALINA_HOME:         C:\pleiades\tomcat\8
-1 20, 2022 2:26:00 午後 org.apache.catalina.startup.VersionLoggerListener log
+1 21, 2022 2:28:14 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Dcatalina.base=C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0
-1 20, 2022 2:26:00 午後 org.apache.catalina.startup.VersionLoggerListener log
+1 21, 2022 2:28:14 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Dcatalina.home=C:\pleiades\tomcat\8
-1 20, 2022 2:26:00 午後 org.apache.catalina.startup.VersionLoggerListener log
+1 21, 2022 2:28:14 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Dwtp.deploy=C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps
-1 20, 2022 2:26:00 午後 org.apache.catalina.startup.VersionLoggerListener log
+1 21, 2022 2:28:14 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Djava.endorsed.dirs=C:\pleiades\tomcat\8\endorsed
-1 20, 2022 2:26:00 午後 org.apache.catalina.startup.VersionLoggerListener log
+1 21, 2022 2:28:14 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Dfile.encoding=UTF-8
-1 20, 2022 2:26:00 午後 org.apache.catalina.startup.VersionLoggerListener log
+1 21, 2022 2:28:14 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Xbootclasspath/a:C:\pleiades\tomcat\8\lib\mysql-connector-java-8.0.22.jar
-1 20, 2022 2:26:00 午後 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+1 21, 2022 2:28:14 午前 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
 情報: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.8.0_202\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/pleiades/eclipse//jre/bin/server;C:/pleiades/eclipse//jre/bin;C:\app\oracle\product\19.1.0\dbhome_1\bin;C:\app\oracle\product\12.1.0\dbhome_1\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Common Files\Roxio Shared\DLLShared\;C:\Program Files (x86)\Common Files\Roxio Shared\OEM\12.0\DLLShared\;C:\Program Files (x86)\Roxio 2010\OEM\AudioCore\;c:\Borland\Bcc55\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\dotnet\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\koyama\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk1.8.0_202\bin;C:\Users\koyama\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Users\koyama\.dotnet\tools;C:\pleiades\eclipse;;.
-1 20, 2022 2:26:00 午後 org.apache.coyote.AbstractProtocol init
-情報: Initializing ProtocolHandler ["http-nio-9090"]
-1 20, 2022 2:26:01 午後 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
+1 21, 2022 2:28:14 午前 org.apache.coyote.AbstractProtocol init
+情報: Initializing ProtocolHandler ["http-nio-8080"]
+1 21, 2022 2:28:14 午前 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
 情報: Using a shared selector for servlet write/read
-1 20, 2022 2:26:01 午後 org.apache.coyote.AbstractProtocol init
-情報: Initializing ProtocolHandler ["ajp-nio-9009"]
-1 20, 2022 2:26:01 午後 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
+1 21, 2022 2:28:14 午前 org.apache.coyote.AbstractProtocol init
+情報: Initializing ProtocolHandler ["ajp-nio-8009"]
+1 21, 2022 2:28:14 午前 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
 情報: Using a shared selector for servlet write/read
-1 20, 2022 2:26:01 午後 org.apache.catalina.startup.Catalina load
-情報: Initialization processed in 1416 ms
-1 20, 2022 2:26:01 午後 org.apache.catalina.core.StandardService startInternal
+1 21, 2022 2:28:14 午前 org.apache.catalina.startup.Catalina load
+情報: Initialization processed in 1333 ms
+1 21, 2022 2:28:14 午前 org.apache.catalina.core.StandardService startInternal
 情報: サービス Catalina を起動します
-1 20, 2022 2:26:01 午後 org.apache.catalina.core.StandardEngine startInternal
+1 21, 2022 2:28:14 午前 org.apache.catalina.core.StandardEngine startInternal
 情報: Starting Servlet Engine: Apache Tomcat/8.0.36
-1 20, 2022 2:26:02 午後 org.apache.jasper.servlet.TldScanner scanJars
+1 21, 2022 2:28:16 午前 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-1 20, 2022 2:26:03 午後 org.apache.jasper.servlet.TldScanner scanJars
+1 21, 2022 2:28:17 午前 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-1 20, 2022 2:26:05 午後 org.apache.jasper.servlet.TldScanner scanJars
+1 21, 2022 2:28:18 午前 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-1 20, 2022 2:26:06 午後 org.apache.jasper.servlet.TldScanner scanJars
+1 21, 2022 2:28:20 午前 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-1 20, 2022 2:26:07 午後 org.apache.jasper.servlet.TldScanner scanJars
+1 21, 2022 2:28:21 午前 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-1 20, 2022 2:26:08 午後 org.apache.jasper.servlet.TldScanner scanJars
+1 21, 2022 2:28:22 午前 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-1 20, 2022 2:26:08 午後 org.apache.coyote.AbstractProtocol start
-情報: Starting ProtocolHandler ["http-nio-9090"]
-1 20, 2022 2:26:08 午後 org.apache.coyote.AbstractProtocol start
-情報: Starting ProtocolHandler ["ajp-nio-9009"]
-1 20, 2022 2:26:08 午後 org.apache.catalina.startup.Catalina start
-情報: Server startup in 6791 ms
+1 21, 2022 2:28:22 午前 org.apache.coyote.AbstractProtocol start
+情報: Starting ProtocolHandler ["http-nio-8080"]
+1 21, 2022 2:28:22 午前 org.apache.coyote.AbstractProtocol start
+情報: Starting ProtocolHandler ["ajp-nio-8009"]
+1 21, 2022 2:28:22 午前 org.apache.catalina.startup.Catalina start
+情報: Server startup in 7689 ms
 キー値：userInfoEdit
 取得プロパティ：cmd.user.TransferUserInfoEditCommand
 セッション登録値(token) :null
@@ -86,7 +86,7 @@ sessionInfo : null
 セッション登録値(token) :null
 キー値：login
 取得プロパティ：cmd.user.login.TransferLoginPageCommand
-referer :http://localhost:9090/Egroup_PROJECT/
+referer :http://localhost:8080/Egroup_PROJECT/
 referer(トリミング済み) :
 セッション登録値(token) :null
 result1 : null
@@ -111,100 +111,264 @@ sessionInfo : null
 転送先 : /topPage
 result1 : null
 message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@ee9758e
-sessionInfo : bean.joinBean.UserAndCartBean@ee9758e
-セッション登録値(token) :bean.joinBean.UserAndCartBean@ee9758e
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+sessionInfo : bean.joinBean.UserAndCartBean@68cee08f
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
 キー値：topPage
 取得プロパティ：cmd.top.TransferTopPageCommand
 result1 : null
 message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@ee9758e
-sessionInfo : bean.joinBean.UserAndCartBean@ee9758e
-セッション登録値(token) :bean.joinBean.UserAndCartBean@ee9758e
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+sessionInfo : bean.joinBean.UserAndCartBean@68cee08f
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
 キー値：userInfoEdit
 取得プロパティ：cmd.user.TransferUserInfoEditCommand
-セッション登録値(token) :bean.joinBean.UserAndCartBean@ee9758e
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
 result1 : null
 message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@ee9758e
-sessionInfo : bean.joinBean.UserAndCartBean@ee9758e
-セッション登録値(token) :bean.joinBean.UserAndCartBean@ee9758e
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+sessionInfo : bean.joinBean.UserAndCartBean@68cee08f
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
 キー値：creditCardInfoEdit
 取得プロパティ：cmd.user.TransferCreditCardInfoEitCommand
-セッション登録値(token) :bean.joinBean.UserAndCartBean@ee9758e
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
 トランザクション開始
 接続
 新規接続
 接続
 コミットします。
 クローズしました。
-result1 : []
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@ee9758e
-sessionInfo : bean.joinBean.UserAndCartBean@ee9758e
-セッション登録値(token) :bean.joinBean.UserAndCartBean@ee9758e
-キー値：addCreditCardInfo
-取得プロパティ：cmd.user.AddCreditCardInfoCommand
-セッション登録値(token) :bean.joinBean.UserAndCartBean@ee9758e
-トランザクション開始
-接続
-新規接続
-接続
-生成セキュリティコード  :460
-接続
-コミットします。
-クローズしました。
-result1 : null
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@ee9758e
-sessionInfo : bean.joinBean.UserAndCartBean@ee9758e
-セッション登録値(token) :bean.joinBean.UserAndCartBean@ee9758e
-キー値：creditCardInfoEdit
-取得プロパティ：cmd.user.TransferCreditCardInfoEitCommand
-セッション登録値(token) :bean.joinBean.UserAndCartBean@ee9758e
+result1 : [bean.CreditCardBean@3facb0c]
+message : 
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+sessionInfo : bean.joinBean.UserAndCartBean@68cee08f
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+キー値：deliveryInfoEdit
+取得プロパティ：cmd.user.TransferDeliveryInfoEditCommand
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
 トランザクション開始
 接続
 新規接続
 接続
 コミットします。
 クローズしました。
-result1 : [bean.CreditCardBean@d34ba98]
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@ee9758e
-sessionInfo : bean.joinBean.UserAndCartBean@ee9758e
-セッション登録値(token) :bean.joinBean.UserAndCartBean@ee9758e
-キー値：updateCreditCardInfo
-取得プロパティ：cmd.user.UpdateCreditCardInfoCommand
-トランザクション開始
-接続
-新規接続
-接続
-ns
-2032/03
-3
-コミットします。
-クローズしました。
-result1 : null
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@ee9758e
-sessionInfo : bean.joinBean.UserAndCartBean@ee9758e
-セッション登録値(token) :bean.joinBean.UserAndCartBean@ee9758e
-キー値：creditCardInfoEdit
-取得プロパティ：cmd.user.TransferCreditCardInfoEitCommand
-セッション登録値(token) :bean.joinBean.UserAndCartBean@ee9758e
+result1 : [bean.AddressBean@1eaedb62, bean.AddressBean@54b90ceb]
+message : 
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+sessionInfo : bean.joinBean.UserAndCartBean@68cee08f
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+キー値：deliveryInfoEdit
+取得プロパティ：cmd.user.TransferDeliveryInfoEditCommand
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
 トランザクション開始
 接続
 新規接続
 接続
 コミットします。
 クローズしました。
-result1 : [bean.CreditCardBean@53963b1a]
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@ee9758e
-sessionInfo : bean.joinBean.UserAndCartBean@ee9758e
-セッション登録値(token) :bean.joinBean.UserAndCartBean@ee9758e
+result1 : [bean.AddressBean@74bbe4b5, bean.AddressBean@4fed7ab2]
+message : 
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+sessionInfo : bean.joinBean.UserAndCartBean@68cee08f
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
 キー値：deleteCreditCardInfo
-取得プロパティ：cmd.user.DeleteCreditCardInfoCommand
+取得プロパティ：cmd.user.ExecuteDeleteCreditCardInfoCommand
+キー値：deleteCreditCardInfo
+取得プロパティ：cmd.user.ExecuteDeleteCreditCardInfoCommand
+1 21, 2022 2:37:32 午前 org.apache.catalina.core.StandardWrapperValve invoke
+重大: サーブレット FrontServlet のServlet.service()が例外を投げました
+java.lang.NullPointerException
+	at cmd.user.ExecuteDeleteCreditCardInfoCommand.execute(ExecuteDeleteCreditCardInfoCommand.java:17)
+	at context.WebApplicationContext.handleRequest(WebApplicationContext.java:24)
+	at FrontServlet.doPost(FrontServlet.java:25)
+	at FrontServlet.doGet(FrontServlet.java:15)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:616)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:528)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1099)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:670)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1520)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1476)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+1 21, 2022 2:37:32 午前 org.apache.catalina.core.StandardWrapperValve invoke
+重大: サーブレット FrontServlet のServlet.service()が例外を投げました
+java.lang.NullPointerException
+	at cmd.user.ExecuteDeleteCreditCardInfoCommand.execute(ExecuteDeleteCreditCardInfoCommand.java:17)
+	at context.WebApplicationContext.handleRequest(WebApplicationContext.java:24)
+	at FrontServlet.doPost(FrontServlet.java:25)
+	at FrontServlet.doGet(FrontServlet.java:15)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:616)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:528)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1099)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:670)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1520)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1476)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+キー値：deliveryInfoEdit
+取得プロパティ：cmd.user.TransferDeliveryInfoEditCommand
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+トランザクション開始
+接続
+新規接続
+接続
+コミットします。
+クローズしました。
+result1 : [bean.AddressBean@211ae675, bean.AddressBean@64186c32]
+message : 
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+sessionInfo : bean.joinBean.UserAndCartBean@68cee08f
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+キー値：deliveryInfoEdit
+取得プロパティ：cmd.user.TransferDeliveryInfoEditCommand
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+トランザクション開始
+接続
+新規接続
+接続
+コミットします。
+クローズしました。
+result1 : [bean.AddressBean@262e828a, bean.AddressBean@732b7889]
+message : 
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+sessionInfo : bean.joinBean.UserAndCartBean@68cee08f
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+キー値：deleteDeliveryInfo
+取得プロパティ：cmd.user.ExecuteDeleteDeliveryInfoCommand
+キー値：deleteDeliveryInfo
+取得プロパティ：cmd.user.ExecuteDeleteDeliveryInfoCommand
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+トランザクション開始
+接続
+新規接続
+トランザクション開始
+接続
+新規接続
+接続
+接続
+ロールバックします。
+コミットします。
+クローズしました。
+クローズしました。
+result1 : null
+message : null
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+sessionInfo : bean.joinBean.UserAndCartBean@68cee08f
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+1 21, 2022 2:38:39 午前 org.apache.catalina.core.StandardWrapperValve invoke
+重大: サーブレット FrontServlet のServlet.service()が例外を投げました
+ex.IntegrationException: 配送先情報消去時エラー
+	at cmd.user.ExecuteDeleteDeliveryInfoCommand.execute(ExecuteDeleteDeliveryInfoCommand.java:39)
+	at context.WebApplicationContext.handleRequest(WebApplicationContext.java:24)
+	at FrontServlet.doPost(FrontServlet.java:25)
+	at FrontServlet.doGet(FrontServlet.java:15)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:616)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:528)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1099)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:670)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1520)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1476)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+キー値：deliveryInfoEdit
+取得プロパティ：cmd.user.TransferDeliveryInfoEditCommand
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+トランザクション開始
+接続
+新規接続
+接続
+コミットします。
+クローズしました。
+result1 : [bean.AddressBean@78c45989, bean.AddressBean@1dd928e1]
+message : 配送先情報消去完了
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+sessionInfo : bean.joinBean.UserAndCartBean@68cee08f
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+キー値：userInfoEdit
+取得プロパティ：cmd.user.TransferUserInfoEditCommand
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+result1 : null
+message : null
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+sessionInfo : bean.joinBean.UserAndCartBean@68cee08f
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+キー値：creditCardInfoEdit
+取得プロパティ：cmd.user.TransferCreditCardInfoEitCommand
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+トランザクション開始
+接続
+新規接続
+接続
+コミットします。
+クローズしました。
+result1 : [bean.CreditCardBean@23ab87c0]
+message : 
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+sessionInfo : bean.joinBean.UserAndCartBean@68cee08f
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+キー値：deliveryInfoEdit
+取得プロパティ：cmd.user.TransferDeliveryInfoEditCommand
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+トランザクション開始
+接続
+新規接続
+接続
+コミットします。
+クローズしました。
+result1 : [bean.AddressBean@53f9ac33, bean.AddressBean@38edbbe0]
+message : 
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+sessionInfo : bean.joinBean.UserAndCartBean@68cee08f
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+キー値：deleteDeliveryInfo
+取得プロパティ：cmd.user.ExecuteDeleteDeliveryInfoCommand
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
 トランザクション開始
 接続
 新規接続
@@ -213,20 +377,147 @@ sessionInfo : bean.joinBean.UserAndCartBean@ee9758e
 クローズしました。
 result1 : null
 message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@ee9758e
-sessionInfo : bean.joinBean.UserAndCartBean@ee9758e
-セッション登録値(token) :bean.joinBean.UserAndCartBean@ee9758e
-キー値：creditCardInfoEdit
-取得プロパティ：cmd.user.TransferCreditCardInfoEitCommand
-セッション登録値(token) :bean.joinBean.UserAndCartBean@ee9758e
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+sessionInfo : bean.joinBean.UserAndCartBean@68cee08f
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+キー値：deliveryInfoEdit
+取得プロパティ：cmd.user.TransferDeliveryInfoEditCommand
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
 トランザクション開始
 接続
 新規接続
 接続
 コミットします。
 クローズしました。
-result1 : []
+result1 : [bean.AddressBean@5d92dd82]
+message : 配送先情報消去完了
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+sessionInfo : bean.joinBean.UserAndCartBean@68cee08f
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+キー値：addDeliveryInfo
+取得プロパティ：cmd.user.AddDeliveryInfoCommand
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+トランザクション開始
+接続
+新規接続
+接続
+接続
+コミットします。
+クローズしました。
+result1 : null
 message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@ee9758e
-sessionInfo : bean.joinBean.UserAndCartBean@ee9758e
-セッション登録値(token) :bean.joinBean.UserAndCartBean@ee9758e
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+sessionInfo : bean.joinBean.UserAndCartBean@68cee08f
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+キー値：deliveryInfoEdit
+取得プロパティ：cmd.user.TransferDeliveryInfoEditCommand
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+トランザクション開始
+接続
+新規接続
+接続
+コミットします。
+クローズしました。
+result1 : [bean.AddressBean@2dc4c7bf, bean.AddressBean@71b6677e]
+message : 配送先情報追加完了
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+sessionInfo : bean.joinBean.UserAndCartBean@68cee08f
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+キー値：deliveryInfoEdit
+取得プロパティ：cmd.user.TransferDeliveryInfoEditCommand
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+トランザクション開始
+接続
+新規接続
+接続
+コミットします。
+クローズしました。
+result1 : [bean.AddressBean@12e55c86, bean.AddressBean@73b236f7]
+message : 
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+sessionInfo : bean.joinBean.UserAndCartBean@68cee08f
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+キー値：deliveryInfoEdit
+取得プロパティ：cmd.user.TransferDeliveryInfoEditCommand
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+トランザクション開始
+接続
+新規接続
+接続
+コミットします。
+クローズしました。
+result1 : [bean.AddressBean@3934736b, bean.AddressBean@5f890cee]
+message : 
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+sessionInfo : bean.joinBean.UserAndCartBean@68cee08f
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+キー値：deliveryInfoEdit
+取得プロパティ：cmd.user.TransferDeliveryInfoEditCommand
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+トランザクション開始
+接続
+新規接続
+接続
+コミットします。
+クローズしました。
+result1 : [bean.AddressBean@721671e1, bean.AddressBean@6623ef4]
+message : 
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+sessionInfo : bean.joinBean.UserAndCartBean@68cee08f
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+キー値：deliveryInfoEdit
+取得プロパティ：cmd.user.TransferDeliveryInfoEditCommand
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+トランザクション開始
+接続
+新規接続
+接続
+コミットします。
+クローズしました。
+result1 : [bean.AddressBean@3b271eb4, bean.AddressBean@7012ba9f]
+message : 
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+sessionInfo : bean.joinBean.UserAndCartBean@68cee08f
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+キー値：deliveryInfoEdit
+取得プロパティ：cmd.user.TransferDeliveryInfoEditCommand
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+トランザクション開始
+接続
+新規接続
+接続
+コミットします。
+クローズしました。
+result1 : [bean.AddressBean@69d09593, bean.AddressBean@4c3d1995]
+message : 
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+sessionInfo : bean.joinBean.UserAndCartBean@68cee08f
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+キー値：deliveryInfoEdit
+取得プロパティ：cmd.user.TransferDeliveryInfoEditCommand
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+トランザクション開始
+接続
+新規接続
+接続
+コミットします。
+クローズしました。
+result1 : [bean.AddressBean@2a0cc82d, bean.AddressBean@8c18f95]
+message : 
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+sessionInfo : bean.joinBean.UserAndCartBean@68cee08f
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+キー値：deliveryInfoEdit
+取得プロパティ：cmd.user.TransferDeliveryInfoEditCommand
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+トランザクション開始
+接続
+新規接続
+接続
+コミットします。
+クローズしました。
+result1 : [bean.AddressBean@2fa926a9, bean.AddressBean@33e031e7]
+message : 
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f
+sessionInfo : bean.joinBean.UserAndCartBean@68cee08f
+セッション登録値(token) :bean.joinBean.UserAndCartBean@68cee08f

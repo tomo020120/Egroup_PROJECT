@@ -37,11 +37,13 @@ public class AddDeliveryInfoCommand extends AbstractCommand {
 		AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
 		DeliveryInfoEditDao edit = factory.getDeliveryInfoEditDao();
 
+		String url = "deliveryInfoEdit?message=";
+
 		ConnectionManager.getInstance().beginTransaction();
 
 		if(edit.getSameAddressQuantity(fullAddress, userId) != 0) {
-			resContext.setMessage("入力された住所は登録済みです。");
-			resContext.setTargetPath("addDeliveryInfoForm");
+			url += "入力された住所はすでに登録されているため登録できません。";
+			resContext.setTargetPath(url);
 
 			ConnectionManager.getInstance().closeTransaction();
 
@@ -54,8 +56,10 @@ public class AddDeliveryInfoCommand extends AbstractCommand {
 		addressBean.setAddress(fullAddress);
 		addressBean.setUserId(userId);
 
+
 		if(edit.addDeliveryInfo(addressBean)) {
-			resContext.setTargetCommandPath("deliveryInfoEdit");
+			url += "配送先情報追加完了";
+			resContext.setTargetCommandPath(url);
 
 			ConnectionManager.getInstance().commit();
 			ConnectionManager.getInstance().closeTransaction();
