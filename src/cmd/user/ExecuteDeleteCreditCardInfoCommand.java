@@ -8,7 +8,7 @@ import dao.user.CreditCardInfoEditDao;
 import dbManager.ConnectionManager;
 import ex.IntegrationException;
 
-public class DeleteCreditCardInfoCommand extends AbstractCommand {
+public class ExecuteDeleteCreditCardInfoCommand extends AbstractCommand {
 
 	@Override
 	public ResponseContext execute(ResponseContext resContext) {
@@ -19,10 +19,13 @@ public class DeleteCreditCardInfoCommand extends AbstractCommand {
 		AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
 		CreditCardInfoEditDao edit = factory.getCreditCardInfoEditDao();
 
+		String url = "creditCardInfoEdit?message=";
+
 		ConnectionManager.getInstance().beginTransaction();
 
 		if(edit.deleteCreditCardInfo(cardId)) {
-			resContext.setTargetCommandPath("creditCardInfoEdit");
+			url += "カード消去完了";
+			resContext.setTargetCommandPath(url);
 			//消去完了メッセージ
 
 			ConnectionManager.getInstance().commit();

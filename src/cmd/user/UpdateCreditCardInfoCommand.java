@@ -30,10 +30,13 @@ public class UpdateCreditCardInfoCommand extends AbstractCommand {
 		creditCardBean.setCardOwnerName(cardOwnerName);
 		creditCardBean.setExpirationDate(expirationDate);
 
+		String url="creditCardInfoEdit?message=";
+
 		ConnectionManager.getInstance().beginTransaction();
 
 		if(edit.updateCreditCardInfo(creditCardBean)) {
-			resContext.setTargetCommandPath("creditCardInfoEdit");
+			url += "カード編集完了。";
+			resContext.setTargetCommandPath(url);
 
 			ConnectionManager.getInstance().commit();
 			ConnectionManager.getInstance().closeTransaction();

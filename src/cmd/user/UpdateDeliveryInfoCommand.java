@@ -45,18 +45,19 @@ public class UpdateDeliveryInfoCommand extends AbstractCommand{
 		addressBean.setPostalCode(postalCode);
 		addressBean.setAddress(fullAddress);
 
+		String url = "deliveryInfoEdit?message=";
 
 		if(edit.updateDeliveryInfo(addressBean)) {
 			int result = edit.getSameAddressQuantity(fullAddress, userId);
-			System.out.println("住所チェック  " + result);
 			if(result <= 1) {
-				resContext.setTargetCommandPath("deliveryInfoEdit");
+				url += "配送先情報編集完了";
+				resContext.setTargetCommandPath(url);
 
 				ConnectionManager.getInstance().commit();
 				ConnectionManager.getInstance().closeTransaction();
 			}else {
-				reqContext.setSessionAttribute("errorFlag", true); // TargetCommandPathのためメッセージをリクエストスコープで格納するとJSPでは表示できないため、セッションでFlagの登録
-				resContext.setTargetCommandPath("updateDeliveryInfoForm");
+				url += "入力された住所はすでに登録されているため登録できません。";
+				resContext.setTargetCommandPath(url);
 
 				ConnectionManager.getInstance().rollback();
 				ConnectionManager.getInstance().closeTransaction();

@@ -86,7 +86,7 @@
 				<p>Diners Club</p>
 			</div>
 		</div>
-				<button id="canselButton" type="button">キャンセル</button>	<button id="executeAddButton">カードを追加</button>
+		<button id="canselButton" type="button">キャンセル</button>	<button id="executeAddButton">カードを追加</button>
 	</div>
 
 	<div id="updateCardFormArea" class="animFormArea">

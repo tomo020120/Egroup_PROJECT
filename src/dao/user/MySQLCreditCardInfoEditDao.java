@@ -66,12 +66,6 @@ public class MySQLCreditCardInfoEditDao implements CreditCardInfoEditDao {
 	}
 
 	@Override
-	public CreditCardBean getTargetCreditCardInfo(String creditCardId) {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	@Override
 	public int getSameCreditCardQuantity(String cardNo, String userId) {
 		int result = 0;
 		try {
