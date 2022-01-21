@@ -7,5 +7,5 @@ import bean.FavoriteBean;
 public interface FavoriteDao {
 	public abstract List<FavoriteBean> getFavoriteList(String userId);
 	public abstract boolean addFavorite(FavoriteBean favoriteBean);
-	public abstract boolean deleteFavorite(String favoriteId);
+	public abstract boolean deleteFavorite(String itemId,String userId);
 }

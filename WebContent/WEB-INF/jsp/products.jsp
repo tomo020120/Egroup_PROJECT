@@ -11,6 +11,8 @@
 <script type="text/javascript" src="js/productsScript.js"></script>
 </head>
 <body>
+<header><%@include file="header.jsp" %></header>
+<%@include file="header.jsp" %>
 
 <form action="productsSearch" method="GET" name="form1">
 製品名検索(仮)：<input type="search" name="productName" value="${sessionScope.holdSearchWord}">
@@ -84,7 +86,7 @@
   	<td><a href="productsDetails?itemId=${product.itemId}">${product.name}</a></td>
   	<td><a href="productsDetails?itemId=${product.itemId}"><img src="${product.pictPath}"></a></td>
   	<td>${product.price}円</td>
-	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="bt(this)"style="border: 4px solid #0F0;">❤︎</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="bt(this)" value="${product.itemId}" style="border: 4px solid #0F0;">❤︎</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 
   </tr>
 

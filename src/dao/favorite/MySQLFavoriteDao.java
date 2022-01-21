@@ -68,12 +68,12 @@ public class MySQLFavoriteDao implements FavoriteDao {
 		try {
 			cn = ConnectionManager.getInstance().getConnection();
 
-			String sql = "insert into favorite_table (userId, itemId) values(?,?,)";
+			String sql = "insert into favorite_table (userId, itemId) values(?,?)";
 
 			st = cn.prepareStatement(sql);
 
-			st.setString(2, favoriteBean.getUserId());
-			st.setString(3,favoriteBean.getItemId());
+			st.setString(1, favoriteBean.getUserId());
+			st.setString(2,favoriteBean.getItemId());
 			int result = st.executeUpdate();
 
 			if(result > 0) {
@@ -103,15 +103,16 @@ public class MySQLFavoriteDao implements FavoriteDao {
 	}
 
 	@Override
-	public boolean deleteFavorite(String favoriteId) {
+	public boolean deleteFavorite(String itemId,String userId) {
 		boolean flag = false;
 		try {
 			cn = ConnectionManager.getInstance().getConnection();
 
-			String sql ="delete FROM favorite_table WHERE favoriteId=?";
+			String sql ="delete FROM favorite_table WHERE itemId = ? and userId = ?";
 			st = cn.prepareStatement(sql);
 
-			st.setString(1,favoriteId);
+			st.setString(1,itemId);
+			st.setString(2,userId);
 
 
 			int result = st.executeUpdate();
