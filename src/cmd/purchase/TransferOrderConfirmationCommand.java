@@ -24,12 +24,15 @@ public class TransferOrderConfirmationCommand extends AbstractCommand{
 
 
 
+
 		AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
 		PurchaseDao dao = factory.getPurchaseDao();
     	ConnectionManager.getInstance().beginTransaction();
 
+    	//List<AllOrderConfirmationBean> allBeanList = dao.getAllOrderConfirmation(userId, deliveryInfoId, cardId, cartId);
 
-    	resContext.setResult(dao.getAllOrderConfirmation(userId,deliveryInfoId,cardId,cartId));
+    	resContext.setResult(dao.getAllOrderConfirmation(userId, deliveryInfoId, cardId, cartId));
+    	//reqContext.setSessionAttribute("orderBeanList",allBeanList);
     	resContext.setTargetPath("orderConfirmationt");
 
 		ConnectionManager.getInstance().commit();

@@ -1,5 +1,6 @@
 package dao.purchase;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,7 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bean.AddressBean;
+import bean.joinBean.AllCartBean;
 import bean.joinBean.AllOrderConfirmationBean;
+import bean.joinBean.AllPurchaseHistoryBean;
 import dbManager.ConnectionManager;
 import ex.DaoOperationException;
 
@@ -126,4 +129,156 @@ public class MySQLPurchaseDao implements PurchaseDao{
 		}
 		return confirmation;
 	}
+
+	public boolean PurchaseCompleted(String ItemId,String OrderCount,String subTotal,String cartId,int total,String userId) {
+		boolean flag = false; // insert結果flag
+
+
+		String[] item = ItemId.split(",");
+		String[] order = OrderCount.split(",");
+		String[] sub = subTotal.split(",");
+
+		for(int i=0; i<item.length; i++) {
+			try {
+				cn = ConnectionManager.getInstance().getConnection();
+
+				String sql = "call purchase(?,?,?,?,?,now(),?)"; // カート内に同一商品があれば更新、なければ追加をするストアドプロシージャの実行
+
+				CallableStatement cst = cn.prepareCall(sql);
+
+
+				cst.setString(1, item[i]);
+				cst.setString(2, order[i]);
+				cst.setString(3, sub[i]);
+				cst.setString(4, cartId);
+				cst.setInt(5, total);
+				cst.setString(6, userId);
+
+				int result = cst.executeUpdate();
+
+				if(result > 0) {
+					flag = true;
+				}
+			}catch(SQLException e) {
+				e.printStackTrace();
+				ConnectionManager.getInstance().rollback();
+				throw new DaoOperationException(e.getMessage(), e);
+			}catch(Exception e) {
+				e.printStackTrace();
+				ConnectionManager.getInstance().rollback();
+				throw new DaoOperationException(e.getMessage(), e);
+			}finally {
+				if(st != null) {
+					try {
+						st.close();
+					}
+					catch(SQLException e) {
+						e.printStackTrace();
+						throw new DaoOperationException(e.getMessage(), e);
+					}
+				}
+			}
+		}
+		return flag;
+	}
+
+	public AllCartBean getInsideCart(String cartId) {
+		AllCartBean p = new AllCartBean();
+		try {
+			cn = ConnectionManager.getInstance().getConnection();
+
+
+			String sql = " SELECT group_Concat(itemId),group_Concat(orderCount),group_Concat(subTotal) FROM inside_cart_table WHERE cartId=?";
+
+			st=cn.prepareStatement(sql);
+
+			st.setString(1, cartId);
+
+			rs=st.executeQuery();
+
+
+
+			while(rs.next()) {
+
+				p.setItemId(rs.getString(1));
+				p.setOrderCount(rs.getString(2));
+				p.setSubTotal(rs.getString(3));
+
+			}
+
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}catch(Exception e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}finally {
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
+		}
+
+	return p;
+
+	}
+
+	public List<AllPurchaseHistoryBean> getAllPurchaseHistory(String userId) {
+		List<AllPurchaseHistoryBean> purchaseHistory = new ArrayList<AllPurchaseHistoryBean>();
+		try {
+			cn = ConnectionManager.getInstance().getConnection();
+
+			String sql = "SELECT history.purchaseId,userId,details.itemId,details.orderCount,subTotal,name,pictPath,price,purchaseDate FROM purchase_history_table AS history LEFT OUTER JOIN purchase_details_table AS details ON history.purchaseId = details.purchaseId LEFT OUTER JOIN product_table AS product ON details.itemId=product.itemId LEFT OUTER JOIN item_pict_table AS pict ON details.itemId=pict.itemId WHERE userId=?";
+
+			st = cn.prepareStatement(sql);
+
+			st.setString(1, userId);
+
+			rs = st.executeQuery();
+
+			while(rs.next()) {
+
+				AllPurchaseHistoryBean p = new AllPurchaseHistoryBean();
+
+				p.setName(rs.getString(6));//商品名
+				p.setOrderCount(rs.getString(4));//注文個数
+				p.setSubTotal(rs.getString(5));//小計
+				p.setItemId(rs.getString(3));//アイテムID
+				p.setPictPath(rs.getString(7));//商品の写真
+				p.setPrice(rs.getString(8));//小計
+				p.setDate(rs.getString(9));//時間
+
+				purchaseHistory.add(p);
+			}
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}catch(Exception e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}finally {
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
+		}
+		return purchaseHistory;
+	}
+
 }
