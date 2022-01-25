@@ -269,5 +269,44 @@ public class MySQLCartDao implements CartDao{
 			}
 		return flag;
 	}
+
+	@Override
+	public int getTotalAmount(String cartId) {
+		int totalAmount = 0;
+		try {
+			cn = ConnectionManager.getInstance().getConnection();
+
+			String sql = "select total from cart_table where cartId = ?";
+			st = cn.prepareStatement(sql);
+
+			st.setString(1, cartId);
+
+			rs = st.executeQuery();
+
+			while(rs.next()) {
+				totalAmount = rs.getInt(1);
+			}
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}catch(Exception e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}finally {
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
+		}
+		return totalAmount;
+	}
 }
 

@@ -36,12 +36,14 @@ public class AddCartProductCommand extends AbstractCommand{
 		if(cartDao.addCartProduct(itemId, orderCount, subTotal, cartId)) {
 			System.out.println("cartinside追加");
 			if(cartDao.updateCartTotal(cartId)) {
+				int totalAmount = cartDao.getTotalAmount(cartId);
+
+				user.setTotal(totalAmount); // セッション内のカート合計金額を更新
+
+				resc.setTargetPath("addCartComplete");
 
 				ConnectionManager.getInstance().commit();
 				ConnectionManager.getInstance().closeTransaction();
-
-				resc.setTargetPath("addCartComplete");
-				System.out.println("cart追加");
 				return resc;
 			}
 		}

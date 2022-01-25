@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bean.AddressBean;
+import bean.CreditCardBean;
 import bean.joinBean.AllCartBean;
 import bean.joinBean.AllOrderConfirmationBean;
 import bean.joinBean.AllPurchaseHistoryBean;
@@ -61,8 +62,6 @@ public class MySQLPurchaseDao implements PurchaseDao{
 
 		return existFlag;
 	}
-
-
 
 	public List<AllOrderConfirmationBean> getAllOrderConfirmation(String userId,String deliveryInfoId,String cardId,String cartId) {
 		List<AllOrderConfirmationBean> confirmation = new ArrayList<AllOrderConfirmationBean>();
@@ -131,9 +130,9 @@ public class MySQLPurchaseDao implements PurchaseDao{
 	}
 
 	public boolean PurchaseCompleted(String ItemId,String OrderCount,String subTotal,String cartId,int total,String userId) {
-		boolean flag = false; // insert結果flag
+		boolean flag = false; // プロシージャ実行結果flag
 
-
+		// 各データを配列化
 		String[] item = ItemId.split(",");
 		String[] order = OrderCount.split(",");
 		String[] sub = subTotal.split(",");
@@ -142,7 +141,7 @@ public class MySQLPurchaseDao implements PurchaseDao{
 			try {
 				cn = ConnectionManager.getInstance().getConnection();
 
-				String sql = "call purchase(?,?,?,?,?,now(),?)"; // カート内に同一商品があれば更新、なければ追加をするストアドプロシージャの実行
+				String sql = "call purchase(?,?,?,?,?,now(),?)"; // 購入確定の一連の処理を行うプロシージャ
 
 				CallableStatement cst = cn.prepareCall(sql);
 
@@ -281,4 +280,91 @@ public class MySQLPurchaseDao implements PurchaseDao{
 		return purchaseHistory;
 	}
 
+	@Override
+	public AddressBean getTargetAddressInfo(String deliveryInfoId) {
+		AddressBean addressBean = new AddressBean();
+		try {
+			cn = ConnectionManager.getInstance().getConnection();
+
+			String sql = "select * from address_table where deliveryInfoId = ?";
+			st = cn.prepareStatement(sql);
+
+			st.setString(1, deliveryInfoId);
+
+			rs = st.executeQuery();
+
+			while(rs.next()) {
+				addressBean.setDeliveryInfoId(rs.getString(1));
+				addressBean.setDeliveryName(rs.getString(2));
+				addressBean.setPostalCode(rs.getString(3));
+				addressBean.setAddress(rs.getString(4).replace("/", "")); // 区切り文字を外した状態で格納
+			}
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}catch(Exception e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}finally {
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
+		}
+		return addressBean;
+	}
+
+	@Override
+	public CreditCardBean getTargetCreditCardInfo(String cardId) {
+		CreditCardBean creditCardBean = new CreditCardBean();
+		try {
+			cn = ConnectionManager.getInstance().getConnection();
+
+			String sql = "select * from credit_card_table where cardId = ?";
+			st = cn.prepareStatement(sql);
+
+			st.setString(1, cardId);
+
+			rs = st.executeQuery();
+
+			while(rs.next()) {
+				String cardNo = rs.getString(3);
+				String lastFourDisits = cardNo.substring(cardNo.length() - 4); // カード番号下四桁抽出
+
+				creditCardBean.setCardId(rs.getString(1));
+				creditCardBean.setCardOwnerName(rs.getString(2));
+				creditCardBean.setCardNo(lastFourDisits);
+				creditCardBean.setCardCompany(rs.getString(4));
+				creditCardBean.setExpirationDate(rs.getString(5));
+			}
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}catch(Exception e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}finally {
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
+		}
+		return creditCardBean;
+	}
 }

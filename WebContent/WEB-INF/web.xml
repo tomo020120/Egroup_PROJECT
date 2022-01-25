@@ -5,9 +5,27 @@
     http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
     version="3.1" metadata-complete="true">
 
-    <!-- <listener>
+    <filter>
+   		<filter-name>loginCheckFilter</filter-name>
+   		<filter-class>filter.LoginCheckFilter</filter-class>
+   	</filter>
+   	<filter-mapping>
+   		<filter-name>loginCheckFilter</filter-name>
+   		<url-pattern>/*logout</url-pattern>
+   		<url-pattern>/*[(edit)(Edit)]*</url-pattern>
+   		<url-pattern>/addCartProduct</url-pattern>
+   		<url-pattern>/favoriteProduct</url-pattern>
+   		<url-pattern>/deleteCartProduct</url-pattern>
+   		<url-pattern>/deleteAccount</url-pattern>
+   		<url-pattern>/*[(Favorite)(favorite)]*</url-pattern>
+   		<url-pattern>/choiceCredit</url-pattern>
+   		<dispatcher>REQUEST</dispatcher>
+   		<dispatcher>FORWARD</dispatcher>
+   	</filter-mapping>
+
+    <listener>
     	<listener-class>event.ServerStartedEvent</listener-class>
-    </listener> -->
+    </listener>
 
     <welcome-file-list>
         <welcome-file>/WEB-INF/jsp/topPage.jsp</welcome-file>

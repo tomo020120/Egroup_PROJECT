@@ -18,6 +18,7 @@
 		<th>値段</th>
 		<th>商品の写真</th>
 		<th>小計</th>
+		<th>購入日</th>
 	</tr>
 	<c:forEach var="result" items="${result}">
 	<tr>

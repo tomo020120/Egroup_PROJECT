@@ -14,9 +14,7 @@ public class TransferPurchraseAddressCommand extends AbstractCommand{
 			RequestContext reqContext = getRequestContext();
 	    	AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
 
-
 	    	String userId = ((UserAndCartBean)reqContext.getToken()).getUserId();
-
 
 	    	DeliveryInfoEditDao edit = factory.getDeliveryInfoEditDao();
 

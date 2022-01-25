@@ -13,26 +13,23 @@ public class TransferOrderConfirmationCommand extends AbstractCommand{
 		RequestContext reqContext = getRequestContext();
 
 		String creditCardInfoId = reqContext.getParameter("creditCardInfoId")[0];
-		System.out.println("creditCardInfoId"+creditCardInfoId);
+
 		reqContext.setSessionAttribute("creditCard",creditCardInfoId);
 
-		String userId = ((UserAndCartBean)(reqContext.getToken())).getUserId();
-		String cartId = ((UserAndCartBean)(reqContext.getToken())).getCartId();
-		System.out.println(userId);
+		UserAndCartBean userAndCartBean = (UserAndCartBean)reqContext.getToken();
+
+		String userId = userAndCartBean.getUserId();
+		String cartId = userAndCartBean.getCartId();
+
 		String deliveryInfoId=reqContext.getSessionAttribute("address").toString();
 		String cardId=reqContext.getSessionAttribute("creditCard").toString();
-
-
-
 
 		AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
 		PurchaseDao dao = factory.getPurchaseDao();
     	ConnectionManager.getInstance().beginTransaction();
 
-    	//List<AllOrderConfirmationBean> allBeanList = dao.getAllOrderConfirmation(userId, deliveryInfoId, cardId, cartId);
 
     	resContext.setResult(dao.getAllOrderConfirmation(userId, deliveryInfoId, cardId, cartId));
-    	//reqContext.setSessionAttribute("orderBeanList",allBeanList);
     	resContext.setTargetPath("orderConfirmationt");
 
 		ConnectionManager.getInstance().commit();

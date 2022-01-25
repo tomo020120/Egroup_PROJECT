@@ -41,7 +41,7 @@ public abstract class SendMail{
 			InternetAddress fromAddress = new InternetAddress("ibanezttc@gmail.com", "Ibanez");
 			mimeMessage.setFrom(fromAddress);
 			mimeMessage.setSubject("【Ibanez】お買い上げ頂きありがとうございます。", "ISO-2022-JP");
-			mimeMessage.setText(messageBody, "ISO-2022-JP");
+			mimeMessage.setContent(createHTML(messageBody),"text/html; charset=ISO-2022-JP");
 			Transport.send(mimeMessage);
 			System.out.println("メール送信が完了しました。");
 		} catch (Exception e) {
@@ -57,12 +57,27 @@ public abstract class SendMail{
 			InternetAddress fromAddress = new InternetAddress("ibanezttc@gmail.com", "Ibanez");
 			mimeMessage.setFrom(fromAddress);
 			mimeMessage.setSubject(title, "ISO-2022-JP");
-			mimeMessage.setText(messageBody, "ISO-2022-JP");
+			mimeMessage.setContent(createHTML(messageBody),"text/html; charset=ISO-2022-JP");
 			Transport.send(mimeMessage);
 			System.out.println("メール送信が完了しました。");
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new MailSendException(e.getMessage(),e);
 		}
+	}
+
+	private static String createHTML(String messageBody) { // HTMLメール基本フォーマット作成メソッド
+		StringBuilder b = new StringBuilder();
+		b.append("<html><head>");
+		b.append("<style type=\"text/css\">");
+		b.append("ul {background-color: #fff; width:100%;}");
+		b.append("li {font-size: 1em; padding: 0; margin: 0; background-color: #fff;}");
+		b.append("</style>");
+		b.append("</head>");
+		b.append("<body>");
+		b.append(messageBody);
+		b.append("</body></html>");
+
+		return b.toString();
 	}
 }
