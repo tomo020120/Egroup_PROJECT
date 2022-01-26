@@ -6,6 +6,8 @@ import dao.cart.CartDao;
 import dao.cart.MySQLCartDao;
 import dao.favorite.FavoriteDao;
 import dao.favorite.MySQLFavoriteDao;
+import dao.history.HistoryDao;
+import dao.history.MySQLHistoryDao;
 import dao.products.MySQLProductsDao;
 import dao.products.ProductsDao;
 import dao.purchase.MySQLPurchaseDao;
@@ -68,5 +70,9 @@ public class MySQLDaoFactory extends AbstractDaoFactory{
 	@Override
 	public FavoriteDao getFavoriteDao() {
 		return new MySQLFavoriteDao();
+	}
+	
+	public HistoryDao getHistoryDao() {
+		return new MySQLHistoryDao();
 	}
 }

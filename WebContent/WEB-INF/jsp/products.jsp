@@ -9,6 +9,7 @@
 <title>商品一覧</title>
 <%@include file="/CSS/productsStyle.css" %>
 <script type="text/javascript" src="js/productsScript.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 <header><%@include file="header.jsp" %></header>
@@ -93,6 +94,19 @@
  </c:forEach>
 
  </table>
+ <a href="productHistory">閲覧履歴編集へ</a>
+<div id = "productHistoryFooter">
+</div>
+
+<script>
+	$(function(){
+		$('#productHistoryFooter').load('productHistoryFooter', function(data, status) {
+			  if(status === 'success') {
+			    console.log('読み込みが正常に行われました');
+			  }
+		});
+	});
+</script>
 
 <script>
 	//requestパラメータの取得

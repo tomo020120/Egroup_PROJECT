@@ -7,6 +7,7 @@ import java.util.Properties;
 import dao.artists.ArtistsDao;
 import dao.cart.CartDao;
 import dao.favorite.FavoriteDao;
+import dao.history.HistoryDao;
 import dao.products.ProductsDao;
 import dao.purchase.PurchaseDao;
 import dao.user.CreditCardInfoEditDao;
@@ -51,4 +52,5 @@ public abstract class AbstractDaoFactory{
 	public abstract CreditCardInfoEditDao getCreditCardInfoEditDao(); // クレジットード編集用のDao生成
 	public abstract PurchaseDao getPurchaseDao(); // 購入画面のDao生成
 	public abstract FavoriteDao getFavoriteDao(); // お気に入り用のDao生成
+	public abstract HistoryDao getHistoryDao();
 }

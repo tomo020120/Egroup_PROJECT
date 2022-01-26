@@ -1,4 +1,4 @@
-package cmd.products.details;
+package cmd.history;
 
 import bean.joinBean.UserAndCartBean;
 import cmd.AbstractCommand;
@@ -6,16 +6,14 @@ import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
 import dao.history.HistoryDao;
-import dao.products.ProductsDao;
 import dbManager.ConnectionManager;
 
 
-public class ProductsDetailsCommand extends AbstractCommand{
+public class ProductHistoryDeleteCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
 		RequestContext reqc=getRequestContext();
 		AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
-		ProductsDao dao = factory.getProductsDao();
-		HistoryDao dao2 = factory.getHistoryDao();
+		HistoryDao dao = factory.getHistoryDao();
 		String itemId=reqc.getParameter("itemId")[0];
 		String userId=null;
 		if(reqc.getToken()!=null) {
@@ -23,17 +21,17 @@ public class ProductsDetailsCommand extends AbstractCommand{
 		}
 		
 		
-		
+		////////////////////////////////////////////////
 		ConnectionManager.getInstance().beginTransaction();
-		if(userId!=null) {
-			dao2.addProductHistory(userId,itemId);
-		}
-			resc.setResult(dao.getProductsDetails(itemId));
-
+		System.out.println(userId);
+		dao.deleteProductHistory(userId,itemId);
+		resc.setResult(dao.getProductHistory(userId));
+		
 		ConnectionManager.getInstance().commit();
 		ConnectionManager.getInstance().closeTransaction();
-
-		resc.setTargetPath("productsDetails");
+		
+		resc.setTargetPath("productHistoryFooter");
+		
 		return resc;
-    }
+	}
 }
