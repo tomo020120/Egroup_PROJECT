@@ -8,7 +8,6 @@
 <meta charset="UTF-8">
 <title>商品一覧</title>
 <%@include file="/CSS/productsStyle.css" %>
-<script type="text/javascript" src="js/productsScript.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
@@ -80,15 +79,13 @@
 
 <h1>商品一覧</h1>
 <table border="1">
- <tr><th>商品ID</th><th>商品名</th><th>画像</th><th>価格</th><th>お気に入り</th></tr>
+ <tr><th>商品ID</th><th>商品名</th><th>画像</th><th>価格</th></tr>
  <c:forEach var="product" items="${result}">
   <tr>
   	<td>${product.itemId}</td>
   	<td><a href="productsDetails?itemId=${product.itemId}">${product.name}</a></td>
   	<td><a href="productsDetails?itemId=${product.itemId}"><img src="${product.pictPath}"></a></td>
   	<td>${product.price}円</td>
-	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="bt(this)" value="${product.itemId}" style="border: 4px solid #0F0;">❤︎</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-
   </tr>
 
  </c:forEach>

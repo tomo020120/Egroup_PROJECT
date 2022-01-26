@@ -23,7 +23,7 @@ public class DeleteFavoriteCommand extends AbstractCommand {
 		if(favorite.deleteFavorite(itemId,userId)) {
 			System.out.println("cartinside削除");
 
-			resContext.setTargetCommandPath("products");
+			resContext.setTargetCommandPath("productsDetails?itemId=" + itemId);
 
 			ConnectionManager.getInstance().commit();
 			ConnectionManager.getInstance().closeTransaction();
@@ -35,8 +35,8 @@ public class DeleteFavoriteCommand extends AbstractCommand {
 			throw new IntegrationException(null, null);
 
 		}
-				return resContext;
 
+		return resContext;
 	}
 
 }

@@ -6,9 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>商品詳細</title>
-<%@include file="/CSS/productsDetailsStyle.css" %>
+<link rel="stylesheet" href="CSS/productsDetailsStyle.css" >
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/productsDetailsScript.js"></script>
 </head>
-<body>
+<body data-favorite="${result.get(1)}">
 	<%@include file="header.jsp" %>
 	<table border="1">
 	<tr>
@@ -17,16 +19,18 @@
 		<th>値段</th>
 		<th>発売日</th>
 		<th>商品写真</th>
+		<th>お気に入り</th>
 	</tr>
 	<tr>
-		<td>${result.itemId}</td>
-		<td>${result.name}</td>
-		<td>${result.price}円</td>
-		<td>${result.releaseDate}</td>
-		<td><img src="${result.pictPath}"></td>
+		<td>${result.get(0).itemId}</td>
+		<td>${result.get(0).name}</td>
+		<td>${result.get(0).price}円</td>
+		<td>${result.get(0).releaseDate}</td>
+		<td><img src="${result.get(0).pictPath}"></td>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="favoriteBtn" onclick="favoriteClick(this);" value="${result.get(0).itemId}" style="border: 4px solid #0F0;">❤︎</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 	</tr>
 	</table>
-	<form method="post" action="addCartProduct?itemId=${result.itemId}&price=${result.price} ">
+	<form method="post" action="addCartProduct?itemId=${result.get(0).itemId}&price=${result.get(0).price} ">
 		<select name="orderCount">
 			<option value="1">1</option>
 			<option value="2">2</option>
@@ -34,5 +38,6 @@
 		</select>
 		<input type="submit" value="カートに入れる">
 	</form>
+	<a href="products">商品一覧へ戻る</a>
 </body>
 </html>

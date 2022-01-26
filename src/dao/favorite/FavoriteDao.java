@@ -8,4 +8,5 @@ public interface FavoriteDao {
 	public abstract List<FavoriteBean> getFavoriteList(String userId);
 	public abstract boolean addFavorite(FavoriteBean favoriteBean);
 	public abstract boolean deleteFavorite(String itemId,String userId);
+	public abstract boolean isAddFavoriteItem(String itemId,String userId);
 }

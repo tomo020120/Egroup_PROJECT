@@ -142,4 +142,49 @@ public class MySQLFavoriteDao implements FavoriteDao {
 		return flag;
 	}
 
+	@Override
+	public boolean isAddFavoriteItem(String itemId,String userId) {
+		boolean flag = false;
+		try {
+			cn = ConnectionManager.getInstance().getConnection();
+
+			String sql ="select count(itemId) from favorite_table where itemId = ? and userId = ?"; // お気に入りに追加したか否かを判定
+			st = cn.prepareStatement(sql);
+
+			st.setString(1,itemId);
+			st.setString(2,userId);
+
+			rs = st.executeQuery();
+
+			while(rs.next()) {
+				int count = rs.getInt(1);
+
+				if(count > 0) {
+					flag = true;
+				}
+			}
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}catch(Exception e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}finally {
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
+		}
+
+		return flag;
+	}
+
 }

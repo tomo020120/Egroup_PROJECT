@@ -28,14 +28,13 @@ public class AddFavoriteCommand extends AbstractCommand {
 		ConnectionManager.getInstance().beginTransaction();
 
 		if(favorite.addFavorite(favoriteBean)) {
-			resContext.setTargetCommandPath("products");
+			resContext.setTargetCommandPath("productsDetails?itemId=" + itemId);
 			ConnectionManager.getInstance().commit();
 			ConnectionManager.getInstance().closeTransaction();
 		}else {
 			ConnectionManager.getInstance().rollback();
 			ConnectionManager.getInstance().closeTransaction();
 		}
-
 
 		return resContext;
 	}
