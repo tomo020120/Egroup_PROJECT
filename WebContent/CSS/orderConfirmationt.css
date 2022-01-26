@@ -1,0 +1,18 @@
+
+<style>
+@charset "UTF-8";
+.cardInfo{
+	display: inline-block;
+	position: absolute;
+	top: 170px;
+	right: 900px;
+
+	}
+.purchase{
+	display: inline-block;
+	position: absolute;
+	top: 170px;
+	right: 70px;
+
+	}
+</style>

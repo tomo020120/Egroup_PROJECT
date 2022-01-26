@@ -7,13 +7,14 @@
 <head>
 <meta charset="UTF-8">
 <title>最後</title>
+<script>
+function delay(){
+	setTimeout("location.href='<%=request.getContextPath()%>'",5000);
+}
+</script>
 </head>
-<body>
-	<%@include file="header.jsp"%>
-	<h1>購入完了しました</h1>
-
-
-
-
+<body onload="delay();">
+	<h1>購入完了しました。</h1>
+	<p>5秒後に自動的にトップページへ戻ります</p>
 </body>
 </html>
