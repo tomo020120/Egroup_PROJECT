@@ -8,7 +8,16 @@
 <meta charset="UTF-8">
 <title>カート</title>
 <%@include file="/CSS/orderConfirmationt.css" %>
-
+<script>
+window.onload = function(){
+	var dateObj = new Date();
+	var y = dateObj.getFullYear();
+	var m = dateObj.getMonth() + 1;
+	var d = dateObj.getDate()+4;
+	var yb = "木金土日月火水".charAt(dateObj.getDay());
+	document.getElementById("currentDate").innerHTML = y+"年"+m+"月"+d+"日("+yb+")";
+	}
+</script>
 </head>
 <body>
 	<%@include file="header.jsp"%>
@@ -29,11 +38,14 @@
 				${con.cardOwnerName}<br>
 				${con.cardNo}<br>
 				${con.cardCompany}<br>
-				${con.expirationDate}
+				${con.expirationDate}<br>
 
 		</c:if>
 	</c:forEach>
 </div>
+<h1>お届け日</h1>
+
+<p><span id="currentDate"></span></p>
 
 <h1>購入商品</h1>
 <table border="1">
