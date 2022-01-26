@@ -20,8 +20,8 @@ public class MySQLPurchaseDao implements PurchaseDao{
 	private Connection cn = null;
 	private PreparedStatement st = null;
 	private ResultSet rs = null;
-	public boolean getdeliveryInfoId(String userId,String fullAddress){
-		boolean existFlag = false;
+	public String getdeliveryInfoId(String userId,String fullAddress){
+		String deliveryInfoId=null;
 		try {
 			cn = ConnectionManager.getInstance().getConnection();
 
@@ -36,10 +36,9 @@ public class MySQLPurchaseDao implements PurchaseDao{
 
 
 			while(rs.next()) {
-				AddressBean p = new AddressBean();
-				p.setDeliveryInfoId(rs.getString(1));
+				deliveryInfoId=rs.getString(1);
 			}
-			existFlag = rs.next();
+
 		}catch(SQLException e) {
 			e.printStackTrace();
 			ConnectionManager.getInstance().rollback();
@@ -60,7 +59,7 @@ public class MySQLPurchaseDao implements PurchaseDao{
 			}
 		}
 
-		return existFlag;
+		return deliveryInfoId;
 	}
 
 	public List<AllOrderConfirmationBean> getAllOrderConfirmation(String userId,String deliveryInfoId,String cardId,String cartId) {
@@ -367,4 +366,47 @@ public class MySQLPurchaseDao implements PurchaseDao{
 		}
 		return creditCardBean;
 	}
+
+	public String getCardId(String userId,String cardNo){
+		String cardId=null;
+		try {
+			cn = ConnectionManager.getInstance().getConnection();
+
+			String sql = "SELECT cardId FROM credit_card_table WHERE cardNo=? AND userId=?";
+
+			st = cn.prepareStatement(sql);
+
+			st.setString(1, cardNo);
+			st.setString(2, userId);
+
+
+			rs = st.executeQuery();
+
+
+			while(rs.next()) {
+				 cardId=(rs.getString(1));
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}catch(Exception e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}finally {
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
+		}
+
+		return cardId;
+	}
+
 }

@@ -1,7 +1,6 @@
 <style>
 body {
   background-color: #000; //背景黒
-  overflow-x: hidden;
 }
 h1{
 	color: #FFFFFF; //ｈ１タグ文字白
@@ -10,7 +9,6 @@ p{
 	color: #FFFFFF; //ｈ１タグ文字白
 }
 .pic {
-	width: 100px;
-	height: 100px;
+
 }
 </style>

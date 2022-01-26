@@ -11,17 +11,16 @@
 <body>
 	<%@include file="header.jsp" %>
 	<h1>artist</h1>
-	<table border="1">
+
 
 	<c:forEach var="artists" items="${result}">
-	<tr>
-	  	<td><a href="artistsDetails?artistId=${artists.artistId}"><img src="${artists.artistPict}"></a></td>
 
-  	<td><p>${artists.artistName}</p></td>
+	  	<div class=pic><a href="artistsDetails?artistId=${artists.artistId}"><img src="${artists.artistPict}"></a></div>
+		<div><p>${artists.artistName}</p></div>
 
-  </tr>
+
  </c:forEach>
- </table>
+
 
 </body>
 </html>

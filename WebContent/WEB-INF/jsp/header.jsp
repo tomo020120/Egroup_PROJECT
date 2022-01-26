@@ -35,8 +35,10 @@
 	 <div class=position>
       <a href="cart"><img src="images/cart-removebg-preview.png" alt="カート" width="40" ></a>
 	  <a href="login"><img src="images/people-removebg-preview.png" alt="ログイン" width="40" ></a>
-	   </div>
-	  <p>${sessionInfo.userName}</p>
+	 </div>
+	  <div class=name>
+	 	 <p>${sessionInfo.userName}</p>
+	 </div>
   </div>
 </header>
 <div class=kara>　　

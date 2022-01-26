@@ -145,6 +145,13 @@ input:checked ~ #h-menu_black {
 	display: inline-block;
 	margin-left:200px;
 	}
+.name{
+	display: inline-block;
+	position: absolute;
+	top: 30px;
+	right: 10px;
+
+	}
 .kara{
 	margin:50px;
 }
