@@ -40,6 +40,7 @@ public class AddCartProductCommand extends AbstractCommand{
 
 				user.setTotal(totalAmount); // セッション内のカート合計金額を更新
 
+				resc.setResult(cartDao.getPictPath(itemId));
 				resc.setTargetPath("addCartComplete");
 
 				ConnectionManager.getInstance().commit();

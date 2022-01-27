@@ -234,7 +234,7 @@ public class MySQLPurchaseDao implements PurchaseDao{
 		try {
 			cn = ConnectionManager.getInstance().getConnection();
 
-			String sql = "SELECT history.purchaseId,userId,details.itemId,details.orderCount,subTotal,name,pictPath,price,purchaseDate FROM purchase_history_table AS history LEFT OUTER JOIN purchase_details_table AS details ON history.purchaseId = details.purchaseId LEFT OUTER JOIN product_table AS product ON details.itemId=product.itemId LEFT OUTER JOIN item_pict_table AS pict ON details.itemId=pict.itemId WHERE userId=?";
+			String sql = "SELECT history.purchaseId,userId,details.itemId,details.orderCount,subTotal,name,pictPath,price,purchaseDate FROM purchase_history_table AS history LEFT OUTER JOIN purchase_details_table AS details ON history.purchaseId = details.purchaseId LEFT OUTER JOIN product_table AS product ON details.itemId=product.itemId LEFT OUTER JOIN item_pict_table AS pict ON details.itemId=pict.itemId WHERE userId=? ORDER BY purchaseDate DESC";
 
 			st = cn.prepareStatement(sql);
 

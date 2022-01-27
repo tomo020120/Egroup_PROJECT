@@ -13,7 +13,6 @@
 	<%@include file="header.jsp" %>
 	<table border="1">
 	<tr>
-		<th>商品ID</th>
 		<th>商品名</th>
 		<th>値段</th>
 		<th>商品の写真</th>
@@ -22,7 +21,6 @@
 	</tr>
 	<c:forEach var="result" items="${result}">
 	<tr>
-		<td>${result.itemId}</td>
 		<td>${result.name}</td>
 		<td>${result.price}円</td>
 		<td><img src="${result.pictPath}"></td>

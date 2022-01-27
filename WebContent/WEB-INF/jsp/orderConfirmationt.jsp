@@ -11,11 +11,16 @@
 <script>
 window.onload = function(){
 	var dateObj = new Date();
-	var y = dateObj.getFullYear();
-	var m = dateObj.getMonth() + 1;
-	var d = dateObj.getDate()+4;
-	var yb = "木金土日月火水".charAt(dateObj.getDay());
-	document.getElementById("currentDate").innerHTML = y+"年"+m+"月"+d+"日("+yb+")";
+	var ly = dateObj.getFullYear();
+	var lm = dateObj.getMonth() + 1;
+	var ld = dateObj.getDate()+4;
+	var lb = "木金土日月火水".charAt(dateObj.getDay());
+
+	var fy = dateObj.getFullYear();
+	var fm = dateObj.getMonth() + 1;
+	var fd = dateObj.getDate()+2;
+	var fb = "火水木金土日月".charAt(dateObj.getDay());
+	document.getElementById("currentDate").innerHTML =fy+"年"+fm+"月"+fd+"日("+fb+")"+ "～"+ly+"年"+lm+"月"+ld+"日("+lb+")";
 	}
 </script>
 </head>

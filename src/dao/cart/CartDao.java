@@ -2,6 +2,7 @@ package dao.cart;
 
 import java.util.List;
 
+import bean.ItemPictBean;
 import bean.joinBean.AllCartBean;
 
 public interface CartDao{
@@ -12,4 +13,5 @@ public interface CartDao{
 	public abstract boolean updateCartTotal(String cartId);
 	public abstract boolean deleteCartProduct(String cartId,String itemId);
 	public abstract int getTotalAmount(String cartId);
+	public abstract List<ItemPictBean> getPictPath(String itemId);
 }

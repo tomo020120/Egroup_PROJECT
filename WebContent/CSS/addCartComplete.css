@@ -1,0 +1,30 @@
+<style>
+body{
+	//background-color:#000;
+
+}
+
+.btn--orange,
+a.btn--orange {
+  color: #000;
+  background-color: #eb6100;
+}
+.btn--orange:hover,
+a.btn--orange:hover {
+
+  background: #f56500;
+}
+
+a.btn--radius {
+	 padding: 1rem 4rem;
+   border-radius: 150vh;
+}
+
+.btn--white,
+a.btn--white {
+  color: #000;
+  background-color: #fff;
+}
+
+
+</style>

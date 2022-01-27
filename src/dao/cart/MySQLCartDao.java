@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import bean.ItemPictBean;
 import bean.joinBean.AllCartBean;
 import dbManager.ConnectionManager;
 import ex.DaoOperationException;
@@ -51,8 +52,53 @@ public class MySQLCartDao implements CartDao{
 				}
 			}
 		}
-
 		return existFlag;
+	}
+		public List<ItemPictBean> getPictPath(String itemId){
+			List<ItemPictBean> pic = new ArrayList<ItemPictBean>();
+
+			try {
+				cn = ConnectionManager.getInstance().getConnection();
+
+				String sql = "SELECT pictPath FROM item_pict_table WHERE itemId=?";
+
+				st = cn.prepareStatement(sql);
+
+				st.setString(1, itemId);
+
+				rs = st.executeQuery();
+
+				while(rs.next()){
+					ItemPictBean p = new ItemPictBean();
+
+					p.setPictPath(rs.getString(1));
+
+
+					pic.add(p);
+				}
+
+
+			}catch(SQLException e) {
+				e.printStackTrace();
+				ConnectionManager.getInstance().rollback();
+				throw new DaoOperationException(e.getMessage(), e);
+			}catch(Exception e) {
+				e.printStackTrace();
+				ConnectionManager.getInstance().rollback();
+				throw new DaoOperationException(e.getMessage(), e);
+			}finally {
+				if(st != null) {
+					try {
+						st.close();
+					}
+					catch(SQLException e) {
+						e.printStackTrace();
+						throw new DaoOperationException(e.getMessage(), e);
+					}
+				}
+			}
+
+		return pic;
 	}
 
 	public boolean createCart(String userId) {
