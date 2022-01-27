@@ -68,7 +68,7 @@ public class PurchseInsertAddressCommand extends AbstractCommand{
 			System.out.println("obj内容"+deliveryInfoId);
 			System.out.println("obj内容222"+deliveryInfoId);
 			url += "choiceCredit?creditCardInfoId="+deliveryInfoId;
-			//reqContext.setSessionAttribute("address",deliveryInfoId);
+			reqContext.setSessionAttribute("address",deliveryInfoId);
 
 			ConnectionManager.getInstance().commit();
 			ConnectionManager.getInstance().closeTransaction();
