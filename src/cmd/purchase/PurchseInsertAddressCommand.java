@@ -67,12 +67,12 @@ public class PurchseInsertAddressCommand extends AbstractCommand{
 			String deliveryInfoId=dao.getdeliveryInfoId(userId,fullAddress);
 			System.out.println("obj内容"+deliveryInfoId);
 			System.out.println("obj内容222"+deliveryInfoId);
-			url += "choiceCredit";
-			reqContext.setSessionAttribute("address",deliveryInfoId);
+			url += "choiceCredit?creditCardInfoId="+deliveryInfoId;
+			//reqContext.setSessionAttribute("address",deliveryInfoId);
 
 			ConnectionManager.getInstance().commit();
 			ConnectionManager.getInstance().closeTransaction();
-			resContext.setTargetCommandPath(url);
+
 
 		}else {
 			ConnectionManager.getInstance().rollback();
@@ -80,7 +80,7 @@ public class PurchseInsertAddressCommand extends AbstractCommand{
 
 			throw new IntegrationException("配送先情報新規追加エラー", null);
 		}
-
+		resContext.setTargetCommandPath(url);
 		return resContext;
 	}
 }
