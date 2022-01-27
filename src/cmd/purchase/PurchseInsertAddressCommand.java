@@ -73,7 +73,6 @@ public class PurchseInsertAddressCommand extends AbstractCommand{
 			ConnectionManager.getInstance().commit();
 			ConnectionManager.getInstance().closeTransaction();
 
-
 		}else {
 			ConnectionManager.getInstance().rollback();
 			ConnectionManager.getInstance().closeTransaction();

@@ -26,7 +26,6 @@ public class TransferPurchraseCreditCommand extends AbstractCommand{
 
     	ConnectionManager.getInstance().beginTransaction();
 
-
     	resContext.setResult(edit.getCreditCardInfo(userId));
     	resContext.setTargetPath("choiceCredit");
 
