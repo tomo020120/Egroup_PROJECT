@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,19 +27,24 @@
       <div class=logo>
       	<a href="topPage"><img src="images/logo.png" alt="ロゴ" width="180" ></a>
       </div>
-      <a href="userInfoEdit?userId = "${sessionInfo.userId}>ユーザー情報編集</a>
 
-
-	<a href="favorite">お気に入り</a>
-		<a href="logout">ログアウト</a>
-		<a href="purchaseHistory">履歴</a>
 	 <div class=position>
       <a href="cart"><img src="images/cart-removebg-preview.png" alt="カート" width="40" ></a>
-	  <a href="login"><img src="images/people-removebg-preview.png" alt="ログイン" width="40" ></a>
+
+
 	 </div>
 	  <div class=name>
 	 	 <p>${sessionInfo.userName}</p>
 	 </div>
+
+	 <c:choose>
+    <c:when test="${!empty sessionInfo.userName}">
+        <a href="userInfo"><img src="images/people-removebg-preview.png" alt="ログイン" width="40" ></a>
+    </c:when>
+    <c:otherwise>
+         <a href="login"><img src="images/people-removebg-preview.png" alt="ログイン" width="40" ></a>
+    </c:otherwise>
+</c:choose>
   </div>
 </header>
 <div class=kara>　　

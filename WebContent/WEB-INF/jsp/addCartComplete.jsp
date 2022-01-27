@@ -18,6 +18,6 @@
 <br>
 <a href="cart" class="btn btn--white btn--radius">カートに進む</a>
 <a href="purchase" class="btn btn--orange btn--radius">レジに進む</a>
-<a href="products" class="btn btn--orange btn--radius">買い物を続ける</a>
+<a href="products" class="">買い物を続ける</a>
 </body>
 </html>
