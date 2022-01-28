@@ -30,7 +30,7 @@ public class ProductHistoryDeleteCommand extends AbstractCommand{
 		ConnectionManager.getInstance().commit();
 		ConnectionManager.getInstance().closeTransaction();
 		
-		resc.setTargetPath("productHistoryFooter");
+		resc.setTargetPath("productHistoryPage");
 		
 		return resc;
 	}
