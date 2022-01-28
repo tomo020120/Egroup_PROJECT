@@ -7,7 +7,6 @@
 <meta charset="UTF-8">
 <title>トップページ</title>
 <link rel="stylesheet" href="CSS/headerStyle.css">
-
 </head>
 <body>
 

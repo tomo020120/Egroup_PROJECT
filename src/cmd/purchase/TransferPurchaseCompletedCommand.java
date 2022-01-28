@@ -122,7 +122,7 @@ public class TransferPurchaseCompletedCommand extends AbstractCommand{
 		date = calender.getTime();
 
 		TimeZone timezone = TimeZone.getTimeZone("Asia/Tokyo");
-		DateFormat requiredFormat = new SimpleDateFormat("M/DD");
+		DateFormat requiredFormat = new SimpleDateFormat("M/d");
 		requiredFormat.setTimeZone(timezone);
 		String currentDate = requiredFormat.format(date).toUpperCase();
 
@@ -136,7 +136,7 @@ public class TransferPurchaseCompletedCommand extends AbstractCommand{
 	}
 
 	private static String getDeliveryLatestDay() { // 配達の最遅の日時を返す(現在日時の4日後)
-		String strTwoDaysLaterSentense = "";
+		String strFourDaysLaterSentense = "";
 
 		Date date = new Date();
 
@@ -148,16 +148,16 @@ public class TransferPurchaseCompletedCommand extends AbstractCommand{
 		date = calender.getTime();
 
 		TimeZone timezone = TimeZone.getTimeZone("Asia/Tokyo");
-		DateFormat requiredFormat = new SimpleDateFormat("M/DD");
+		DateFormat requiredFormat = new SimpleDateFormat("M/d");
 		requiredFormat.setTimeZone(timezone);
-		String twoDaysLaterDate = requiredFormat.format(date).toUpperCase();
+		String fourDaysLaterDate = requiredFormat.format(date).toUpperCase();
 
 		requiredFormat = new SimpleDateFormat("EEEEEE");
 		requiredFormat.setTimeZone(timezone);
-		String twoDaysLaterOfWeek = requiredFormat.format(date).toUpperCase();
+		String fourDaysLaterOfWeek = requiredFormat.format(date).toUpperCase();
 
-		strTwoDaysLaterSentense = twoDaysLaterOfWeek + "," + twoDaysLaterDate;
+		strFourDaysLaterSentense = fourDaysLaterOfWeek + "," + fourDaysLaterDate;
 
-		return  strTwoDaysLaterSentense;
+		return  strFourDaysLaterSentense;
 	}
 }
