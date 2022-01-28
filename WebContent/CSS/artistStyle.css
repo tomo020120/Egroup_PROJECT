@@ -3,7 +3,8 @@ background:#000000;
   color: #FFFFFF;
 }
 h1{
-font-size:75px;
+font-size:70px;
+text-align: center;
 }
 h2{
 	 color: #555555;
@@ -54,10 +55,15 @@ font-weight: bold;
   transition-duration: 0.3s;
 }
 
-.img_wrap p {
-  position: absolute;/*絶対配置*/
-  margin-top:-40px;
+p {
   color: white;/*文字は白に*/
  z-index: 9999;/*headerを最上位*/
- margin-left:2px;
+  }
+  .abcde{
+   position: absolute;/*絶対配置*/
+  margin-top:-50px;
+  z-index: 9900;/*headerを最上位*/
+  width:225px; height:46px;
+
+background-color:rgba(0,0,0,0.5);
   }
