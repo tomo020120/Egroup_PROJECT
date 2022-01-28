@@ -1,4 +1,4 @@
-<style>
+
 body {
   background-color: #000; //背景黒
   overflow-x: hidden;
@@ -43,5 +43,3 @@ h1{
         z-index:9;}
 	100%{ opacity: 0;}
 }
-
-</style>

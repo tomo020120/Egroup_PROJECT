@@ -4,7 +4,8 @@
 <html>
 <head>
 <title>ユーザー登録</title>
-<%@include file="/CSS/RegistStyle.css"%>
+
+<link rel="stylesheet" href="CSS/RegistStyle.css">
 
 </head>
 <body>

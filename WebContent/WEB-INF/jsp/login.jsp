@@ -7,7 +7,8 @@
 
 <title>ログインページ</title>
 
-<%@include file="/CSS/loginStyle.css"%>
+
+<link rel="stylesheet" href="CSS/loginStyle.css">
 
 </head>
 <body>

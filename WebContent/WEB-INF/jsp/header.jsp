@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>トップページ</title>
 <link rel="stylesheet" href="CSS/headerStyle.css">
+<link rel="icon" href="images/favicon.ico">
 </head>
 <body>
 
@@ -27,11 +28,15 @@
       	<a href="topPage"><img src="images/logo.png" alt="ロゴ" width="180" ></a>
       </div>
 
+
 	 <div class=position>
+	 <a href="purchaseHistory" class="">注文履歴</a>
       <a href="cart"><img src="images/cart-removebg-preview.png" alt="カート" width="40" ></a>
 
 
 	 </div>
+
+
 	  <div class=name>
 	 	 <p>${sessionInfo.userName}</p>
 	 </div>

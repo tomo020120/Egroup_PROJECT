@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>商品一覧</title>
-<%@include file="/CSS/productsStyle.css" %>
+<link rel="stylesheet" href="CSS/productsStyle.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>

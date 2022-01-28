@@ -7,7 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>カート追加完了</title>
-<%@include file="/CSS/addCartComplete.css" %>
+
+<link rel="stylesheet" href="CSS/addCartComplete.css">
 </head>
 <body>
 <%@include file="header.jsp" %>

@@ -7,7 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>注文履歴</title>
-<%@include file="/CSS/productsDetailsStyle.css" %>
+<link rel="stylesheet" href="CSS/productsDetailsStyle.css">
+
 </head>
 <body>
 	<%@include file="header.jsp" %>

@@ -5,7 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>パスワード編集画面</title>
-<%@include file="/CSS/passwordEditFormStyle.css"%>
+
+<link rel="stylesheet" href="CSS/passwordEditFormStyle.css">
 </head>
 <body>
 <%@include file="header.jsp"%>

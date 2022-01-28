@@ -143,7 +143,7 @@ input:checked ~ #h-menu_black {
 }
 .position{
 	display: inline-block;
-	margin-left:550px;
+	margin-left:450px;
 	}
 .name{
 	display: inline-block;
@@ -155,4 +155,5 @@ input:checked ~ #h-menu_black {
 .kara{
 	margin:50px;
 }
+
 

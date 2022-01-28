@@ -7,29 +7,36 @@
 <head>
 <meta charset="UTF-8">
 <title>商品詳細</title>
-<%@include file="/CSS/productsDetailsStyle.css" %>
+<link rel="stylesheet" href="CSS/artistDetailStyle.css">
+
 </head>
 <body>
 	<%@include file="header.jsp" %>
-	<table border="1">
-		<tr>
-		<th>アーティスト名</th>
-		<th>アーティスト写真</th>
-		<th>国</th>
-		<th>グループ</th>
-		<th>商品名</th>
-		<th>商品の写真</th>
-	</tr>
+
+
+<div class="allPosition">
 	 <c:forEach var="detail" items="${result}">
-	<tr>
-		<td>${detail.artistName}</td>
-		<td><img src="${detail.artistPict}"></td>
-		<td>${detail.coutory}</td>
-		<td>${detail.group}</td>
-		<td>${detail.name}</td>
-		<td><a href="productsDetails?itemId=${detail.itemId}"><img src="${detail.pictPath}"></a></td>
-	</tr>
+		<h1>${detail.artistName}</h1>
+		<img src="${detail.artistPict}" width="800" height="800"><br>
 	</c:forEach>
-	</table>
+</div>
+<c:forEach var="detail" items="${result}">
+
+	<div class="artistInfo">
+		<h3>GROUP</h3>
+		${detail.group}<br>
+	</div>
+	<div class="artistInfo">
+		<h3>COUNTORY</h3>
+		${detail.coutory}<br>
+	</div>
+		<div class="productsPosition">
+		<h2>SIGNATURE MODEL</h2>
+		<a href="productsDetails?itemId=${detail.itemId}"><img src="${detail.pictPath}" width="500" height="200"></a><br>
+		<p>　${detail.name}</p>
+		</div>
+	</c:forEach>
+
+
 </body>
 

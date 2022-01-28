@@ -5,7 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>トップページ</title>
-<%@include file="/CSS/topPageStyle.css" %>
+
+<link rel="stylesheet" href="CSS/topPageStyle.css">
 </head>
 <body>
 	<%@include file="header.jsp" %>

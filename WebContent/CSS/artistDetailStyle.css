@@ -1,0 +1,27 @@
+body {
+background: linear-gradient(black 78%, #e2e2e2 27%);
+  color: #FFFFFF;
+}
+h1{
+font-size:75px;
+}
+h2{
+	 color: #555555;
+font-size:35px;
+}
+.artistInfo{
+ display: inline-block;
+  padding:  30px;
+  margin:100px 0px 100px 20px;
+}
+p{
+color: #555555;
+font-weight: bold;
+
+}
+.allPosition{
+	text-align: center;
+}
+.productsPosition{
+	margin-left:40px;
+}
