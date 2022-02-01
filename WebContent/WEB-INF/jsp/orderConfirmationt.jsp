@@ -11,16 +11,22 @@
 <script>
 window.onload = function(){
 	var dateObj = new Date();
-	var ly = dateObj.getFullYear();
-	var lm = dateObj.getMonth() + 1;
-	var ld = dateObj.getDate()+4;
-	var lb = "木金土日月火水".charAt(dateObj.getDay());
+	dateObj.setDate(dateObj.getDate() + 2); // 2日後にセット
 
 	var fy = dateObj.getFullYear();
 	var fm = dateObj.getMonth() + 1;
-	var fd = dateObj.getDate()+2;
-	var fb = "火水木金土日月".charAt(dateObj.getDay());
-	document.getElementById("currentDate").innerHTML =fy+"年"+fm+"月"+fd+"日("+fb+")"+ "～"+ly+"年"+lm+"月"+ld+"日("+lb+")";
+	var fd = dateObj.getDate();
+
+	var fb = "木金土日月火水".charAt(dateObj.getDay());
+
+	dateObj.setDate(dateObj.getDate() + 2); // 更に2日後(4日後)にセット
+
+	var ly = dateObj.getFullYear();
+	var lm = dateObj.getMonth() + 1;
+	var ld = dateObj.getDate();
+	var lb = "火水木金土日月".charAt(dateObj.getDay());
+
+	document.getElementById("deliveryDate").innerHTML =fy+"年"+fm+"月"+fd+"日("+fb+")"+ "～"+ly+"年"+lm+"月"+ld+"日("+lb+")";
 	}
 </script>
 </head>
@@ -50,7 +56,7 @@ window.onload = function(){
 </div>
 <h1>お届け日</h1>
 
-<p><span id="currentDate"></span></p>
+<p><span id="deliveryDate"></span></p>
 
 <h1>購入商品</h1>
 <table border="1">
