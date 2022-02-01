@@ -7,7 +7,9 @@
 <head>
 <meta charset="UTF-8">
 <title>購入内容確認</title>
-<link rel="stylesheet" href="CSS/orderConfirmationStyle.css">
+<link rel="stylesheet" href="CSS/guestPurchaseConfirmPage.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="js/guestPurchaseConfirmPageScript.js"></script>
 <script>
 window.onload = function(){
 	var dateObj = new Date();
@@ -34,25 +36,11 @@ window.onload = function(){
 	<%@include file="header.jsp"%>
 	<h1>最終確認</h1>
 <h1>お届け先住所</h1>
-	<c:forEach var="con" items="${result}" varStatus="i">
-		<c:if test="${i.first}" >
-				${con.deliveryName}<br>
-				${con.postalCode}<br>
-				${con.address}<br>
-				電話番号:${con.tel}
-		</c:if>
-	</c:forEach>
+	<div id="guestDeliveryInfoList"></div>
+
 <div class="cardInfo">
 <h1>支払情報</h1>
-	<c:forEach var="con" items="${result}" varStatus="i">
-		<c:if test="${i.first}" >
-				${con.cardOwnerName}<br>
-				${con.cardNo}<br>
-				${con.cardCompany}<br>
-				${con.expirationDate}<br>
-
-		</c:if>
-	</c:forEach>
+	<div id="guestCreditCardInfoList"></div>
 </div>
 <h1>お届け日</h1>
 
@@ -66,25 +54,14 @@ window.onload = function(){
 		<th>値段</th>
 		<th>商品写真</th>
 	</tr>
-	<c:forEach var="con" items="${result}">
-		<tr>
-			<td>${con.name}</td>
-			<td>${con.orderCount}</td>
-			<td>${con.subTotal}</td>
-			<td><img src="${con.pictPath}"></td>
-		</tr>
-	</c:forEach>
+	<tr id="guestPurchaseItemInfo">
+	</tr>
 </table>
 <div class="purchase">
-<h1><a href="purchaseCompleted">購入を確定する</a></h1>
-
-	<c:forEach var="con" items="${result}" varStatus="i">
-		<c:if test="${i.first}" >
-				商品の小計:\ ${con.total}<br>
-				配送料・手数料:\500<br>
-				ご請求額:\ ${con.total+500}
-		</c:if>
-	</c:forEach>
+		商品の小計:\ <span id="subTotal"></span><br>
+		配送料・手数料:\500<br>
+		ご請求額:\ <span id="BillingAmount"></span>円<br>
+<button id="guestPurchaseDetermineBtn">購入を確定する</button>
 </div>
 </body>
 </html>

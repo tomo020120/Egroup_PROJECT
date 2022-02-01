@@ -18,13 +18,15 @@ $(function(){
 	$("#nologinPurchaseBtn").on('click',function(){
 		var guestPurchaseInfoArray = new Array();
 
-		$("#itemInfoList").find("td").each(function(index,element){
-			if(index == 4){
-				guestPurchaseInfoArray[index] = $("img").attr('src');
-			}else if(index == 5){
-				return false;
+		guestPurchaseInfoArray[0] = $("#orderCount").val();
+
+		$("body").find(".targetInfo").each(function(index,element){
+			var count = (parseInt(index) + 1)
+
+			if(count == 3){
+				guestPurchaseInfoArray[count] = $("#itemPict").attr('src');
 			}else{
-				guestPurchaseInfoArray[index] = element.innerText;
+				guestPurchaseInfoArray[count] = element.innerText;
 			}
 		});
 

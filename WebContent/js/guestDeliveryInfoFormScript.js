@@ -1,28 +1,41 @@
 $(function(){
+	var guestPurchaseInfoArray = sessionStorage.getItem('guestPurchaseInfo').split(",");
+
+	var length = parseInt(guestPurchaseInfoArray.length);
+
 	$("#guestCreditCardInfoFormJumpBtn").on('click',function(){
-		var guestPurchaseInfoArray = sessionStorage.getItem('guestPurchaseInfo').split(",");
 
 		var fullAddress = "";
 		var tel = "";
 
-		$("#addDeliveryInfoForm").find("input").each(function(index,element){
-			if(index == 1 || index == 2 || index == 3){
+		$("#userInfoInputArea,#addDeliveryInfoForm").find("input").each(function(index,element){
+			switch(index){
+			case 0:
+			case 1:
+			case 2:
+				guestPurchaseInfoArray[length + index] = element.value;
+				break;
+			case 3:
+			case 4:
+				tel += ((element.value) + "-");
+				break;
+			case 5:
 				tel += (element.value);
-				if(index != 3){
-					tel += "-";
-				}
-
-				guestPurchaseInfoArray[6] = tel;
-			}else if(index == 4){
-				guestPurchaseInfoArray[7] = element.value;
-			}else if(index == 5 || index == 6 || index == 7){
-				fullAddress += element.value;
-
-				guestPurchaseInfoArray[8] = fullAddress;
-			}else{
-				guestPurchaseInfoArray[parseInt(index) + 5] = element.value;
+				guestPurchaseInfoArray[length + 3] = tel;
+				break;
+			case 6:
+				guestPurchaseInfoArray[length + 4] = element.value;
+				break;
+			case 7:
+			case 8:
+			case 9:
+				fullAddress += element.value
+				guestPurchaseInfoArray[length + 5] = fullAddress;
+				break;
 			}
 		});
+
+		console.log(guestPurchaseInfoArray);
 
 		sessionStorage.setItem('guestPurchaseInfo',guestPurchaseInfoArray.toString());
 

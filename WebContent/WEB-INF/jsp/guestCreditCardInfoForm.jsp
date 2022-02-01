@@ -57,7 +57,7 @@
 			<option value="2042">2042</option>
 		</select>年 <br>
 		セキュリティコード<input type="text" name="securityCode" maxLength="3"><br>
-		<button type="button" id="guestPurchaseComfirmPageJumpBtn">次へ</button>
+		<button type="button" id="guestPurchaseConfirmPageJumpBtn">次へ</button>
 	</form>
 </div>
 </body>

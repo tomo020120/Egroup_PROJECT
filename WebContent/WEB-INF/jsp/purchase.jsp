@@ -19,7 +19,7 @@
 	<div id="deliveryInfoList">
 		<c:forEach var="deliveryInfo" items="${result}">
 			<div class="deliveryInfo">
-				<p>氏名:<span class="deliveryName">${deliveryInfo.deliveryName}</span></p>
+				<p>宛名:<span class="deliveryName">${deliveryInfo.deliveryName}</span></p>
 				<p>電話番号:<span class="tel">${deliveryInfo.tel}</span></p>
 				<p>郵便番号:<span class="postalCode">${deliveryInfo.postalCode}</span></p>
 				<p>住所:<span class="address">${deliveryInfo.address}</span></p>
@@ -35,7 +35,7 @@
 		<h1>配送先情報編集</h1>
 		<form id="updateDeliveryInfoForm" class="h-adr" method="post" action="updateDeliveryInfo">
 			<span class="p-country-name" style="display:none;">Japan</span> <!--日本内に検索設定  -->
-			【必須】氏名:<input id="deliveryName" type="text" name="deliveryName" maxlength="25"><br>
+			【必須】宛名:<input id="deliveryName" type="text" name="deliveryName" maxlength="25"><br>
 			【必須】電話番号(000-0000-0000):<input id="firstTelNo" type="text" id="firstTelephoneNumber" name="firstTelephoneNumber" maxlength="3">-<input type="text" id="secondTelNo" name="secondTelephoneNumber" maxlength="4">-<input type="text" id="thirdTelNo" name="thirdTelephoneNumber" maxlength="4"><br>
 			【必須】郵便番号(ハイフンなし):<input id="postalCode" type="text" class="p-postal-code" name="postalCode" size="7" maxlength="7"><br>
 			【必須】住所:<input type="text" id="address" class="p-region p-locality p-street-address p-extended-address" name="address"/><br>
@@ -47,7 +47,7 @@
 
 	<div id="deleteDeliveryInfoArea" class="animFormArea">
 		<h1>こちらの配送先情報を消去してよろしいでしょうか</h1>
-		<p>氏名:<span class="name"></span></p>
+		<p>宛名:<span class="name"></span></p>
 		<p>電話番号:<span class="tel"></span></p>
 		<p>郵便番号:<span class="postalCode"></span></p>
 		<p>住所:<span class="address"></span></p>
@@ -58,7 +58,7 @@
 	<div id="deliveryFormArea">
 		<form id="registDeliveryInfoForm" class="h-adr" method="post" action="addDelivery" >
 			<span class="p-country-name" style="display:none;">Japan</span> <!--日本内に検索設定  -->
-			【必須】氏名:<input type="text" name="deliveryName" maxlength="25"><br>
+			【必須】宛名:<input type="text" name="deliveryName" maxlength="25"><br>
 			【必須】電話番号(000-0000-0000):<input type="text" name="firstTelephoneNumber" maxlength="3">-<input type="text" name="secondTelephoneNumber" maxlength="4">-<input type="text" name="thirdTelephoneNumber" maxlength="4"><br>
 			【必須】郵便番号(ハイフンなし):<input type="text" class="p-postal-code" name="postalCode" size="7" maxlength="7"><br>
 			【必須】住所:<input type="text" class="p-region p-locality p-street-address p-extended-address" name="address"/><br>

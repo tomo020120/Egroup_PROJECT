@@ -23,15 +23,15 @@
 	</tr>
 	<tr id="itemInfoList">
 		<td>${result.get(0).itemId}</td>
-		<td>${result.get(0).name}</td>
-		<td>${result.get(0).price}円</td>
+		<td class="targetInfo">${result.get(0).name}</td>
+		<td class="targetInfo">${result.get(0).price}円</td>
 		<td>${result.get(0).releaseDate}</td>
-		<td><img src="${result.get(0).pictPath}"></td>
+		<td class="targetInfo"><img id="itemPict" src="${result.get(0).pictPath}"></td>
 		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="favoriteBtn" onclick="favoriteClick(this);" value="${result.get(0).itemId}" style="border: 4px solid #0F0;">❤︎</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 	</tr>
 	</table>
 	<form method="post" action="addCartProduct?itemId=${result.get(0).itemId}&price=${result.get(0).price} ">
-		<select name="orderCount">
+		<select id="orderCount" name="orderCount">
 			<option value="1">1</option>
 			<option value="2">2</option>
 			<option value="3">3</option>

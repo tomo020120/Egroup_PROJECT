@@ -1,4 +1,4 @@
-package cmd.purchase;
+package cmd.user.guest;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -6,63 +6,33 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
-import bean.AddressBean;
-import bean.CreditCardBean;
-import bean.joinBean.AllCartBean;
-import bean.joinBean.UserAndCartBean;
 import cmd.AbstractCommand;
 import cmd.mail.SendMail;
 import context.RequestContext;
 import context.ResponseContext;
-import dao.AbstractDaoFactory;
-import dao.purchase.PurchaseDao;
-import dbManager.ConnectionManager;
 
-public class TransferPurchaseCompletedCommand extends AbstractCommand{
+public class GuestPurchaseDetermineCommand extends AbstractCommand {
 
-	public ResponseContext execute(ResponseContext resc) {
+	@Override
+	public ResponseContext execute(ResponseContext resContext) {
 		RequestContext reqContext = getRequestContext();
 
-		UserAndCartBean userAndCartBean = (UserAndCartBean)reqContext.getToken();
+		String sendMailDescription = reqContext.getParameter("sendMailDescription")[0];
+		String[] sendMailDescriptionArray = sendMailDescription.split(",");
 
-		String userId = userAndCartBean.getUserId();
-		String cartId = userAndCartBean.getCartId();
+		String userName = sendMailDescriptionArray[9];
+		String mailAddress = sendMailDescriptionArray[10];
 
-		int totalAmount = (userAndCartBean.getTotal() + 500);
+		String htmlText = creataPurchaseCompleteMessageBody(userName, sendMailDescriptionArray);
 
-		String deliveryInfoId = reqContext.getSessionAttribute("address").toString();
-		String cardId = reqContext.getSessionAttribute("creditCard").toString();
+		SendMail.send(mailAddress,htmlText);
 
-		AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
-		PurchaseDao dao = factory.getPurchaseDao();
-    	ConnectionManager.getInstance().beginTransaction();
+		resContext.setTargetPath("completed");
 
-    	AllCartBean all=dao.getInsideCart(cartId); // カートの中身取得
-
-    	String ItemId=all.getItemId();
-    	String OrderCount=all.getOrderCount();
-    	String subTotal=all.getSubTotal();
-
-    	if(dao.PurchaseCompleted(ItemId,OrderCount,subTotal,cartId,totalAmount,userId)) {
-    		AddressBean addressBean = dao.getTargetAddressInfo(deliveryInfoId);
-    		CreditCardBean creditCardBean = dao.getTargetCreditCardInfo(cardId);
-
-			String htmlText = creataPurchaseCompleteMessageBody(userAndCartBean.getUserName(), totalAmount, addressBean, creditCardBean);
-
-			SendMail.send(userAndCartBean.getMailAddress(),htmlText);
-
-			ConnectionManager.getInstance().commit();
-			ConnectionManager.getInstance().closeTransaction();
-		}else {
-			ConnectionManager.getInstance().rollback();
-			ConnectionManager.getInstance().closeTransaction();
-		}
-    	resc.setTargetPath("completed");
-
-		return resc;
+		return resContext;
 	}
 
-	private static String creataPurchaseCompleteMessageBody(String userName,int totalAmount,AddressBean addressBean,CreditCardBean creditCardBean) { // 購入完了メール文の生成
+	private static String creataPurchaseCompleteMessageBody(String userName,String[] descriptionArray) { // 購入完了メール文の生成
 		StringBuilder content = new StringBuilder();
 
 		content.append("<h1 style=\"font-size:25px;\">ご注文の確認</h1>");
@@ -81,12 +51,14 @@ public class TransferPurchaseCompletedCommand extends AbstractCommand{
 		String deliveryScheduled = (fastestDay + " - " + latestDay);
 
 		// 各お届け先情報取得
-		String deliveryName = addressBean.getDeliveryName();
-		String postalCode = addressBean.getPostalCode();
-		String address = addressBean.getAddress();
+		String deliveryName = descriptionArray[0];
+		String postalCode = descriptionArray[2];
+		String address = descriptionArray[3];
 
-		String cardNo = creditCardBean.getCardNo();
-		String cardCompany = creditCardBean.getCardCompany();
+		String cardNo = descriptionArray[4];
+		String cardCompany = descriptionArray[5];
+
+		String totalAmount = descriptionArray[8];
 
 		content.append("<div style=\"display:flex;width:700px;border-width:10px;border-style:double;border-color:#333333;padding-top:5px;padding-bottom:5px;padding-right:5px;padding-left:5px;margin-top:0px;margin-bottom:10px;margin-right:0px;margin-left:0px;\">");
 
@@ -160,4 +132,5 @@ public class TransferPurchaseCompletedCommand extends AbstractCommand{
 
 		return  strFourDaysLaterSentense;
 	}
+
 }

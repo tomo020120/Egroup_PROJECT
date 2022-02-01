@@ -24,20 +24,22 @@ $(function(){
 		$("#cardCompany").html(company); // 判定結果の文字列をセット
 	});
 
-	$("#guestPurchaseComfirmPageJumpBtn").on('click',function(){
-		var array = sessionStorage.getItem('guestPurchaseInfo').split(",");
+	var guestPurchaseInfoArray = sessionStorage.getItem('guestPurchaseInfo').split(",");
 
+	var length = parseInt(guestPurchaseInfoArray.length);
+
+	$("#guestPurchaseConfirmPageJumpBtn").on('click',function(){
 		var month = "";
 		var year = "";
 		var expirationDate = "";
 
 		$("#addCreditCardForm").find("input,div,select").each(function(index,element){
 			switch(index){
-				case 0:array[9] = element.value;
+				case 0:guestPurchaseInfoArray[length + index] = (element.value).slice(-4);
 				break;
-				case 1:array[10] = $(element).text();
+				case 1:guestPurchaseInfoArray[length + index] = $(element).text();
 				break;
-				case 2:array[11] = element.value;
+				case 2:guestPurchaseInfoArray[length + index] = element.value;
 				break;
 				case 3:month = element.value;
 				break;
@@ -47,10 +49,12 @@ $(function(){
 		});
 
 		expirationDate = (year + "/" + month);
-		array[12] = expirationDate;
+		guestPurchaseInfoArray[length + 3] = expirationDate;
 
-		sessionStorage.setItem('guestPurchaseInfo',array.toString());
+		console.log(guestPurchaseInfoArray);
 
-		window.location.href="guestPurchaseComfirmPage";
+		sessionStorage.setItem('guestPurchaseInfo',guestPurchaseInfoArray.toString());
+
+		window.location.href="guestPurchaseConfirmPage";
 	});
 });
