@@ -66,4 +66,5 @@ p {
   width:225px; height:46px;
 
 background-color:rgba(0,0,0,0.5);
+transition-duration: 0.3s;
   }

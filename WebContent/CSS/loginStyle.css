@@ -1,6 +1,25 @@
 body {
+ background-color   :#fff;
+}
+h1{
+	font-size: 28px;
+	margin:8px 20px;
+}
+p{
+    color: #767676;
+}
+.p2{
+	color: #ff0000;
+}
+.p3{
+	margin:2px 77px;
+	font-size: 13px;
+	font-weight: 700;
+	color:#111;
 
 }
+
+
 
 .circle {
 	border-radius: 50%;
@@ -20,8 +39,73 @@ body {
 	margin: 5px 0px -6px 5px;
 }
 
-h1 {
-	margin: 8px 10px;
-	/* color: rgb(78, 93, 109); */
-	font-size: 100px;
+
+.box {
+	border:1px solid;
+	border-radius: 8px; /* 半径が8pxの角丸 */
+	border-color: #c0c0c0;
+	margin       : auto;
+	width        : 400px;
+	height       : 300px;
+	background   : linear-gradient(to bottom, #ffffff, #ffffff);
+}
+
+.btn--white,
+a.btn--white {
+  color: #000000;
+  background-color: #e7e9ec;
+  border:1px solid;
+	border-radius: 2px; /* 半径が8pxの角丸 */
+	border-color: #adb1b8;
+	padding:3px 80px;
+}
+.btn--white:hover,
+a.btn--white:hover {
+  color: #000000;
+  background: #c0c0c0;
+}
+.btn--orange,
+a.btn--orange {
+  color: #000000;
+  background: linear-gradient(#f7dfa5,#f0c14b);
+
+  border:1px solid;
+	border-radius: 2px; /* 半径が8pxの角丸 */
+	border-color: #a88734;
+	padding:3px 100px;
+}
+.btn--orange:hover,
+a.btn--orange:hover {
+  color: #000000;
+  background: #f1c85a;
+}
+.btn_position{
+	text-align: center;
+}
+.btn{
+	margin:4px 70px;
+}
+
+input[type="text"] {
+  border: 1px solid #999;
+  background-color: #fff;
+  width: 250px;
+   height:20px;
+    margin:0px 0px 6px 70px;
+}
+input[type="text"]:focus {
+  /*border: 1px solid #ff9900;*/
+  outline: 0;
+}
+
+input[type="password"] {
+  border: 1px solid #999;
+  background-color: #e7e9ec !important;
+   width: 250px;
+   height:20px;
+   margin:0px 0px 0px 70px;
+}
+input[type="password"]:focus {
+  /*border: 1px solid #ff9900;*/
+  outline: 0;
 }

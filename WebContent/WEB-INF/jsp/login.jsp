@@ -13,25 +13,37 @@
 </head>
 <body>
 <%@include file="header.jsp"%>
-<h1 id="title">ログイン</h1>
-<a href="registAccount">新規登録画面へ</a>
+<div class="box" id="makeImg">
+<h1>ログイン</h1>
 
 <!-- 認証に飛ばす -->
 <form name="sampleform" method="post" action="loginCheck">
 
-メールアドレス<input type="text" id="mailCheck" name="mailAddress"><div class="circle" id="mailCircleID"></div><div class="circle2" id="mailCircle2ID"></div><br>
-<div class="toggle">
-パスワード<input type="password"class="field js-password" id="passCheck" name="passWord" maxlength="20"><div class="circle" id="circleID"></div><div class="circle2" id="circle2ID"></div><br>
-<div class="btn">
-    <input class="btn-input js-password-toggle" id="eye" type="checkbox">
-    <label class="btn-label js-password-label" for="eye"><i class="fas fa-eye"></i></label>
-    パスワードを表示する
- </div>
-</div>
-				<input type="submit" id="submitBtn" value="ログイン">
+	<p class="p3">メールアドレス</p><input type="text" id="mailCheck" name="mailAddress">
+		<div class="circle" id="mailCircleID">
+		</div>
+		<div class="circle2" id="mailCircle2ID">
+		</div><br>
+		<div class="toggle">
+			<p class="p3">パスワード</p><input type="password"class="field js-password" id="passCheck" name="passWord" maxlength="20">
+			<div class="circle" id="circleID"></div><div class="circle2" id="circle2ID"></div><br>
+
+				<div class="btn">
+    				<input class="btn-input js-password-toggle" id="eye" type="checkbox">
+    				<label class="btn-label js-password-label" for="eye"><i class="fas fa-eye"></i></label>
+    				パスワードを表示する
+ 				</div>
+			</div>
+			<div class="btn_position"><input type="submit" id="submitBtn" value="ログイン" class="btn btn--orange">
 </form>
 <!-- 認証エラーメッセージ取得 -->
-<p>${message}</p>
+<p class="p2">${message}</p>
+</div>
+</div>
+<div class="btn_position">
+<p>--初めてIbanezをご利用ですか--</p>
+<a href="registAccount" class="btn btn--white">新規登録画面へ</a>
+</div>
 
 
 

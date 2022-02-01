@@ -8,7 +8,7 @@ header {
 	position: fixed; /* ウィンドウを基準に画面に固定 */
 	width: 100%; /* 幅いっぱいを指定 */
   	height: 100px; /* 高さを50pxに指定 */
- 	background: rgba(0,0,0,0.1);
+ 	background: rgba(0,0,0,0.8);
 	padding: 20px 30px 0px 30px;
     box-sizing: border-box; /* padding分を含んで幅を100%にするため */
     top: 0; /* 上下の固定位置を上から0pxにする */
