@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bean.FavoriteBean;
+import bean.joinBean.AllFavoriteBean;
 import dbManager.ConnectionManager;
 import ex.DaoOperationException;
 
@@ -16,26 +17,29 @@ public class MySQLFavoriteDao implements FavoriteDao {
 	private PreparedStatement st = null;
 	private ResultSet rs = null;
 	@Override
-	public List<FavoriteBean> getFavoriteList(String userId) {
+	public List<AllFavoriteBean> getFavoriteList(String userId) {
 
-		ArrayList<FavoriteBean> favorited= new ArrayList<FavoriteBean>();
+		ArrayList<AllFavoriteBean> favorited= new ArrayList<AllFavoriteBean>();
 
 		try {
 			cn = ConnectionManager.getInstance().getConnection();
 
-			String sql = "select t1.name, t1.price, t2.pictPath from favorite_table join product_table t1 on favorite_table.itemId=t1.ItemId join item_pict_table t2 on favorite_table.itemId=t2.itemId;";
-
+			//String sql = "select t1.name, t1.price, t2.pictPath from favorite_table join product_table t1 on favorite_table.itemId=t1.ItemId join item_pict_table t2 on favorite_table.itemId=t2.itemId;";
+			String sql="SELECT  pro.itemId,name,price,releaseDate,pictPath FROM favorite_table AS fav LEFT OUTER JOIN product_table AS pro ON fav.itemId = pro.itemId LEFT OUTER JOIN item_pict_table AS item ON pro.itemId=item.itemId WHERE userId=?";
 			st=cn.prepareStatement(sql);
+			st.setString(1, userId);
 
 			rs=st.executeQuery();
 
+
 			while(rs.next()) {
-				FavoriteBean f = new FavoriteBean();
+				AllFavoriteBean f = new AllFavoriteBean();
 
-				f.setFavoriteId(rs.getString(1));
-				f.setUserId(rs.getString(2));
-				f.setItemId(rs.getString(3));
-
+				f.setItemId(rs.getString(1));
+				f.setName(rs.getString(2));
+				f.setPrice(rs.getString(3));
+				f.setReleaseDate(rs.getString(4));
+				f.setPictPath(rs.getString(5));
 
 				favorited.add(f);
 			}
