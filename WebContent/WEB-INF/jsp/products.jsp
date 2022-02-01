@@ -11,7 +11,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-<header><%@include file="header.jsp" %></header>
+
 <%@include file="header.jsp" %>
 
 <form action="productsSearch" method="GET" name="form1">
@@ -22,7 +22,7 @@
 	<option value="2">価格の高い順</option>
 </select>
 <input type="submit" value="検索"/>
-<header><%@include file="header.jsp" %></header>
+
 <fieldset>
 	  <legend>色</legend>
 	  <input type="hidden" name="color" value="0">

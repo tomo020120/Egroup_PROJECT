@@ -26,6 +26,7 @@
           <li><a href="artist">アーティスト</a></li>
          </ul>
       </div>
+     </div>
       <div class=logo>
       	<a href="topPage"><img src="images/logo.png" alt="ロゴ" width="180" ></a>
       </div>
@@ -36,7 +37,7 @@
       <a href="cart"><img src="images/cart-removebg-preview.png" alt="カート" width="40" ></a>
 
 
-	 </div>
+
 
 
 	  <div class=name>
@@ -51,7 +52,8 @@
          <a href="login"><img src="images/people-removebg-preview.png" alt="ログイン" width="40" ></a>
     </c:otherwise>
 </c:choose>
-  </div>
+</div>
+
 </header>
 <div class=kara>　　
 　　
@@ -59,4 +61,3 @@
 　　</div>
 </body>
 </html>
-
