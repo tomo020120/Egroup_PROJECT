@@ -12,13 +12,23 @@
 </head>
 <body>
 <%@include file="header.jsp" %>
-<h1>カートに追加されました</h1>
+<div class="container">
+<div class="item">
+<div class="box">
+
 <c:forEach var="con" items="${result}">
+<h1>カートに追加されました</h1>
 				<img src="${con.pictPath}">
 </c:forEach>
-<br>
-<a href="cart" class="btn btn--white btn--radius">カートに進む</a>
-<a href="purchase" class="btn btn--orange btn--radius">レジに進む</a>
-<a href="products" class="">買い物を続ける</a>
+</div>
+</div>
+<div class="item">
+<div class=box2>
+<a href="cart">カートに進む</a><br>
+<a href="purchase">レジに進む</a><br>
+<a href="products" class="">買い物を続ける</a><br>
+</div>
+</div>
+</div>
 </body>
 </html>
