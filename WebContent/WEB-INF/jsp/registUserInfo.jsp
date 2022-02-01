@@ -3,25 +3,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>ユーザー登録</title>
+<title>アカウントを作成</title>
 
-<link rel="stylesheet" href="CSS/RegistStyle.css">
+<link rel="stylesheet" href="CSS/loginStyle.css">
 
 </head>
 <body>
-	<header><%@include file="header.jsp" %></header>
-    <h1 id="title">ユーザー登録</h1>
+	<%@include file="header.jsp" %>
+	<div class="box2">
+    <h1>アカウントを作成</h1>
     <form method='post' action="judge">
-    ユーザー名<input type='text' id="userName" name='name' maxLength="25"><div class="circle" id="nameCircleID"></div><div class="circle2" id="nameCircle2ID"></div><br>
-    メールアドレス<input id='mailAddress' type='text' name='mail' maxlength="256"><div class="circle" id="mailCircleID"></div><div class="circle2" id="mailCircle2ID"></div><br>
-    パスワード<input type='text' id='inputpass' name='pass' maxlength="20"><div class="circle" id="circleID"></div><div class="circle2" id="circle2ID"></div><br>
-    パスワード(再入力)<input type='text' id='inputagainpass' name='againpass'><div class="circle" id="reEnterCircleID"></div><div class="circle2" id="reEnterCircle2ID"></div><br>
-    <input type="submit" id="submitBtn" value="登録">
+    <p class="p3">ユーザー名</p>
+    <input type='text' id="userName" name='name' maxLength="25">
+    <div class="circle" id="nameCircleID"></div>
+    <div class="circle2" id="nameCircle2ID"></div>
+
+    <p class="p3">メールアドレス</p>
+    <input id='mailAddress' type='text' name='mail' maxlength="256">
+    <div class="circle" id="mailCircleID"></div>
+    <div class="circle2" id="mailCircle2ID"></div>
+
+    <p class="p3">パスワード</p>
+    <input type='password' id='inputpass' name='pass' maxlength="20"class="field js-password">
+    <div class="circle" id="circleID"></div>
+    <div class="circle2" id="circle2ID"></div>
+
+
+
+    <p class="p3">もう一度パスワードを入力してください</p>
+    <input type='password' id='inputagainpass' name='againpass'class="field js-password1">
+    <div class="circle" id="reEnterCircleID"></div>
+    <div class="circle2" id="reEnterCircle2ID"></div>
+
+    <div class="btn">
+    				<input class="btn-input js-password-toggle" id="eye" type="checkbox">
+    				<label class="btn-label js-password-label" for="eye"><i class="fas fa-eye"></i></label>
+    				パスワードを表示する
+ 	</div>
+
+    <br><input type="submit" id="submitBtn" value="Ibanezのアカウントを作成する" class="btn btn--orange2">
+
+
 
 <!-- ログインできなかったときのエラーメッセージ -->
-    <p>${message}</p>
+    <p class="p4">${message}</p>
 
     </form>
+    </div>
+
+
 <script type="text/javascript">
 	var userName = document.getElementById("userName");
 	var mail = document.getElementById("mailAddress");
@@ -124,5 +154,24 @@
 		}
 	}
 </script>
+<script>
+	//パスワード表示js
+	  const passwordToggle = document.querySelector('.js-password-toggle');
+	  passwordToggle.addEventListener('change', function () {
+	    const password = document.querySelector('.js-password'),
+	    passwordLabel = document.querySelector('.js-password-label');
+	    const password1 = document.querySelector('.js-password1');
+	    if (password.type === 'password') {
+	      password.type = 'text';
+	      password1.type = 'text';
+	      passwordLabel.innerHTML = '<i class="fas fa-eye-slash"></i>';
+	    } else {
+	      password.type = 'password';
+	      password1.type = 'password';
+	      passwordLabel.innerHTML = '<i class="fas fa-eye"></i>';
+	    }
+	    password.focus();
+	  });
+	</script>
 </body>
 </html>
