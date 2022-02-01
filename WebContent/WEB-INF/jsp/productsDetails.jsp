@@ -21,7 +21,7 @@
 		<th>商品写真</th>
 		<th>お気に入り</th>
 	</tr>
-	<tr>
+	<tr id="itemInfoList">
 		<td>${result.get(0).itemId}</td>
 		<td>${result.get(0).name}</td>
 		<td>${result.get(0).price}円</td>
@@ -38,6 +38,9 @@
 		</select>
 		<input type="submit" value="カートに入れる">
 	</form>
+
+	<button id="nologinPurchaseBtn">ログインせずに購入する</button>
+
 	<a href="products">商品一覧へ戻る</a>
 </body>
 </html>

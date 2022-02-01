@@ -67,7 +67,7 @@ public class MySQLPurchaseDao implements PurchaseDao{
 		try {
 			cn = ConnectionManager.getInstance().getConnection();
 
-			String sql = "SELECT user.userId,mailAddress,deliveryInfoId,deliveryName,postalCode,replace(address,'/',''),TEL,cardId,cardOwnerName,cardNo,cardCompany,expirationDate,name,orderCount,subTotal,itemId,cartId,pictPath,total FROM user_table AS user LEFT OUTER JOIN address_table AS address ON user.userId=address.userId LEFT OUTER JOIN credit_card_table AS credit ON user.userId=credit.userId LEFT OUTER JOIN all_inside_cart_view AS cart ON user.userId=cart.userId WHERE user.userId=? AND deliveryInfoId =? AND cardId=? AND cartId=?;";
+			String sql = "SELECT user.userId,mailAddress,deliveryInfoId,deliveryName,postalCode,replace(address,'/',''),TEL,cardId,cardOwnerName,right(cardNo,4),cardCompany,expirationDate,name,orderCount,subTotal,itemId,cartId,pictPath,total FROM user_table AS user LEFT OUTER JOIN address_table AS address ON user.userId=address.userId LEFT OUTER JOIN credit_card_table AS credit ON user.userId=credit.userId LEFT OUTER JOIN all_inside_cart_view AS cart ON user.userId=cart.userId WHERE user.userId=? AND deliveryInfoId =? AND cardId=? AND cartId=?;";
 
 			st = cn.prepareStatement(sql);
 
