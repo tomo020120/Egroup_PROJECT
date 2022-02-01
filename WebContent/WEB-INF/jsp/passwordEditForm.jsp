@@ -5,8 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>パスワード編集画面</title>
-
-<link rel="stylesheet" href="CSS/passwordEditFormStyle.css">
+<%@include file="/CSS/passwordEditFormStyle.css"%>
 </head>
 <body>
 <%@include file="header.jsp"%>
@@ -36,6 +35,7 @@
 
 		var currentPassFlag = false;
 		var inputPassFlag = false;
+		var checkPassFlag = false;
 
 
 		currentPass.addEventListener("input",function(){
@@ -48,7 +48,7 @@
 				console.log(result);
 				currentPassFlag = false;
 			}
-			submitJudge(currentPassFlag,inputPassFlag);
+			submitJudge(currentPassFlag,inputPassFlag,checkPassFlag);
 		});
 
 		newpass.addEventListener("input",function(){
@@ -56,16 +56,19 @@
 				console.log("ok");
 				passcheck2.style.display="none";
 				passcheck.style.display ="inline-block";
+				checkPassFlag = true;
+
 			}else{
 				console.log("no");
 				passcheck.style.display="none";
 				passcheck2.style.display ="inline-block";
+				checkPassFlag = false;
 			}
-			submitJudge(currentPassFlag,inputPassFlag);
+			submitJudge(currentPassFlag,inputPassFlag,checkPassFlag);
 		});
 
 		againpass.addEventListener("input",function(){
-		if(newpass.value == againpass.value)
+		if(againpass.value == newpass.value)
 		{
 			console.log("ok");
 			againpasscheck2.style.display="none";
@@ -78,14 +81,15 @@
 			againpasscheck2.style.display ="inline-block";
 			inputPassFlag = false;
 		}
-		submitJudge(currentPassFlag,inputPassFlag);
+		submitJudge(currentPassFlag,inputPassFlag,checkPassFlag);
 	});
 
-		function submitJudge(flag1,flag2){
+
+		function submitJudge(flag1,flag2,flag3){
 			var updateButton = document.getElementById("updateButton");
 			updateButton.onclick = function(){
 				var form = document.getElementById("updatePasswordForm");
-			if(flag1 && flag2){
+			if(flag1 && flag2 && flag3){
 				form.submit();
 			}else{
 
