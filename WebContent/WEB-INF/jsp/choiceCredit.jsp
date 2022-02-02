@@ -9,7 +9,7 @@
 
 <link rel="stylesheet" href="CSS/creditCardInfoEditStyle.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="js/purchaseCreditCard.js"></script>
+<script src="js/purchaseCreditCardScript.js"></script>
 </head>
 <body>
 <%@include file="header.jsp"%>
@@ -96,7 +96,7 @@
 		<div id="flexContent">
 			<form id="addCreditCardForm" method="post" action="PurchseInsertCreditCardInfo">
 				カード番号<input id="creditCardNo" type="text" name="creditCardNo" maxLength="19">
-				<textarea id="cardCompany" name="cardCompany" readOnly></textarea><br>
+				<textarea id="cardCompanyArea" name="cardCompany" readOnly></textarea><br>
 				クレジットカード名義人<input type="text" name="cardOwnerName" maxLength="50"><br>
 				有効期限
 				<select name="month">

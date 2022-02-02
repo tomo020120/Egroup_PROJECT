@@ -4,6 +4,8 @@ import bean.TemporaryUserBean;
 import bean.UserBean;
 import bean.joinBean.UserAndCartBean;
 import cmd.AbstractCommand;
+import cmd.RandomNumberGenerator.CreateRandomNumber;
+import cmd.mail.SendMail;
 import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
@@ -33,6 +35,17 @@ public class LoginCheckCommand extends AbstractCommand{
 
 		System.out.println("メアド:" + mailAddress);
 		System.out.println("パスワード:" + password);
+
+		if((mailAddress == "adm1n.ibanez0120@gmail.com") && (password == "adminpass0120")) { // もし管理者アカウントでのログインならワンタイムパスワードを生成し認証する。
+			String sixDegits = CreateRandomNumber.getSixDegitsNumber();
+			reqContext.setSessionAttribute("authenticationCode", sixDegits);
+
+			SendMail.send("adm1n.ibanez0120@gmail.com","認証コード:" + sixDegits, "管理者ログイン用認証コード");
+
+			resContext.setTargetPath("adminAuthenticationPage");
+
+			return resContext;
+		}
 
 
 		ConnectionManager.getInstance().beginTransaction();

@@ -32,7 +32,7 @@ public class GuestPurchaseDetermineCommand extends AbstractCommand {
 		return resContext;
 	}
 
-	private static String creataPurchaseCompleteMessageBody(String userName,String[] descriptionArray) { // 購入完了メール文の生成
+	private String creataPurchaseCompleteMessageBody(String userName,String[] descriptionArray) { // 購入完了メール文の生成
 		StringBuilder content = new StringBuilder();
 
 		content.append("<h1 style=\"font-size:25px;\">ご注文の確認</h1>");
@@ -81,7 +81,7 @@ public class GuestPurchaseDetermineCommand extends AbstractCommand {
 		return content.toString();
 	}
 
-	private static String getDeliveryFastestDay() { // 配達の最速の日時を返す(現在日時の2日後)
+	private String getDeliveryFastestDay() { // 配達の最速の日時を返す(現在日時の2日後)
 		String strCurrentDaySentense = "";
 
 		Date date = new Date();
@@ -107,7 +107,7 @@ public class GuestPurchaseDetermineCommand extends AbstractCommand {
 		return  strCurrentDaySentense;
 	}
 
-	private static String getDeliveryLatestDay() { // 配達の最遅の日時を返す(現在日時の4日後)
+	private String getDeliveryLatestDay() { // 配達の最遅の日時を返す(現在日時の4日後)
 		String strFourDaysLaterSentense = "";
 
 		Date date = new Date();

@@ -39,7 +39,7 @@ $(function(){
 			}
 		}
 
-		$("#cardCompany").text(company); // 判定結果の文字列をセット
+		$("#cardCompanyArea").text(company); // 判定結果の文字列をセット
 	});
 
 	/*カード入力後の追加ボタンクリック時フォームをSubmitする。*/
