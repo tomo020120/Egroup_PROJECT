@@ -55,6 +55,9 @@ $(function(){
 
 		sessionStorage.setItem('guestPurchaseInfo',guestPurchaseInfoArray.toString());
 
-		window.location.href="guestPurchaseConfirmPage";
+		var cardNo = $("#creditCardNo").val();
+		var securityCode = $("#securityCode").val();
+
+		window.location.href="guestPurchaseConfirmPage?cardNo=" + cardNo + "&securityCode=" + securityCode;
 	});
 });

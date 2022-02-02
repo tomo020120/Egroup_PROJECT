@@ -1,75 +1,158 @@
-2 02, 2022 12:28:30 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
+2 02, 2022 2:04:15 午後 org.apache.tomcat.util.digester.SetPropertiesRule begin
 警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:Egroup_PROJECT' did not find a matching property.
-2 02, 2022 12:28:30 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
+2 02, 2022 2:04:15 午後 org.apache.tomcat.util.digester.SetPropertiesRule begin
 警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:test' did not find a matching property.
-2 02, 2022 12:28:30 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 02, 2022 2:04:15 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Server version:        Apache Tomcat/8.0.36
-2 02, 2022 12:28:30 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 02, 2022 2:04:15 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Server built:          Jun 9 2016 13:55:50 UTC
-2 02, 2022 12:28:30 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 02, 2022 2:04:15 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Server number:         8.0.36.0
-2 02, 2022 12:28:30 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 02, 2022 2:04:15 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: OS Name:               Windows 10
-2 02, 2022 12:28:30 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 02, 2022 2:04:15 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: OS Version:            10.0
-2 02, 2022 12:28:30 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 02, 2022 2:04:15 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Architecture:          amd64
-2 02, 2022 12:28:30 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 02, 2022 2:04:15 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Java Home:             C:\Program Files\Java\jdk1.8.0_202\jre
-2 02, 2022 12:28:30 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 02, 2022 2:04:15 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: JVM Version:           1.8.0_202-b08
-2 02, 2022 12:28:30 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 02, 2022 2:04:15 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: JVM Vendor:            Oracle Corporation
-2 02, 2022 12:28:30 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 02, 2022 2:04:15 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: CATALINA_BASE:         C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1
-2 02, 2022 12:28:30 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 02, 2022 2:04:15 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: CATALINA_HOME:         C:\pleiades\tomcat\8
-2 02, 2022 12:28:30 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 02, 2022 2:04:15 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Dcatalina.base=C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1
-2 02, 2022 12:28:30 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 02, 2022 2:04:15 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Dcatalina.home=C:\pleiades\tomcat\8
-2 02, 2022 12:28:30 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 02, 2022 2:04:15 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Dwtp.deploy=C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps
-2 02, 2022 12:28:30 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 02, 2022 2:04:15 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Djava.endorsed.dirs=C:\pleiades\tomcat\8\endorsed
-2 02, 2022 12:28:30 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 02, 2022 2:04:15 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Dfile.encoding=UTF-8
-2 02, 2022 12:28:30 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 02, 2022 2:04:15 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Xbootclasspath/a:C:\pleiades\tomcat\8\lib\activation.jar;C:\pleiades\tomcat\8\lib\mail.jar;C:\pleiades\tomcat\8\lib\mysql-connector-java-8.0.22.jar
-2 02, 2022 12:28:30 午前 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+2 02, 2022 2:04:15 午後 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
 情報: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.8.0_202\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/pleiades/eclipse//jre/bin/server;C:/pleiades/eclipse//jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk-17.0.1\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\tomo\AppData\Local\Microsoft\WindowsApps;C:\Users\tomo\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;;C:\pleiades\eclipse;;.
-2 02, 2022 12:28:30 午前 org.apache.coyote.AbstractProtocol init
+2 02, 2022 2:04:15 午後 org.apache.coyote.AbstractProtocol init
 情報: Initializing ProtocolHandler ["http-nio-8080"]
-2 02, 2022 12:28:30 午前 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
+2 02, 2022 2:04:15 午後 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
 情報: Using a shared selector for servlet write/read
-2 02, 2022 12:28:30 午前 org.apache.coyote.AbstractProtocol init
+2 02, 2022 2:04:15 午後 org.apache.coyote.AbstractProtocol init
 情報: Initializing ProtocolHandler ["ajp-nio-8009"]
-2 02, 2022 12:28:30 午前 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
+2 02, 2022 2:04:15 午後 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
 情報: Using a shared selector for servlet write/read
-2 02, 2022 12:28:30 午前 org.apache.catalina.startup.Catalina load
-情報: Initialization processed in 467 ms
-2 02, 2022 12:28:30 午前 org.apache.catalina.core.StandardService startInternal
+2 02, 2022 2:04:15 午後 org.apache.catalina.startup.Catalina load
+情報: Initialization processed in 476 ms
+2 02, 2022 2:04:15 午後 org.apache.catalina.core.StandardService startInternal
 情報: サービス Catalina を起動します
-2 02, 2022 12:28:30 午前 org.apache.catalina.core.StandardEngine startInternal
+2 02, 2022 2:04:15 午後 org.apache.catalina.core.StandardEngine startInternal
 情報: Starting Servlet Engine: Apache Tomcat/8.0.36
-2 02, 2022 12:28:30 午前 org.apache.jasper.servlet.TldScanner scanJars
+2 02, 2022 2:04:16 午後 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2 02, 2022 12:28:31 午前 org.apache.catalina.core.StandardContext checkUnusualURLPattern
+2 02, 2022 2:04:17 午後 org.apache.catalina.core.StandardContext checkUnusualURLPattern
 情報: Suspicious url pattern: "/*[(edit)(Edit)]*" in context [/Egroup_PROJECT] - see sections 12.1 and 12.2 of the Servlet specification
-2 02, 2022 12:28:31 午前 org.apache.catalina.core.StandardContext checkUnusualURLPattern
+2 02, 2022 2:04:17 午後 org.apache.catalina.core.StandardContext checkUnusualURLPattern
 情報: Suspicious url pattern: "/*[(Favorite)(favorite)]*" in context [/Egroup_PROJECT] - see sections 12.1 and 12.2 of the Servlet specification
-2 02, 2022 12:28:31 午前 org.apache.jasper.servlet.TldScanner scanJars
+2 02, 2022 2:04:17 午後 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
 初期化完了
-2 02, 2022 12:28:32 午前 org.apache.jasper.servlet.TldScanner scanJars
+2 02, 2022 2:04:17 午後 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
 プロパティ設定完了
 認証終了
 設定終了
 初期化完了
-2 02, 2022 12:28:32 午前 org.apache.coyote.AbstractProtocol start
+2 02, 2022 2:04:17 午後 org.apache.coyote.AbstractProtocol start
 情報: Starting ProtocolHandler ["http-nio-8080"]
-2 02, 2022 12:28:32 午前 org.apache.coyote.AbstractProtocol start
+2 02, 2022 2:04:17 午後 org.apache.coyote.AbstractProtocol start
 情報: Starting ProtocolHandler ["ajp-nio-8009"]
-2 02, 2022 12:28:32 午前 org.apache.catalina.startup.Catalina start
-情報: Server startup in 1819 ms
+2 02, 2022 2:04:17 午後 org.apache.catalina.startup.Catalina start
+情報: Server startup in 2038 ms
+キー値：products
+取得プロパティ：cmd.products.ProductsCommand
+新規コネクション生成
+トランザクション開始
+接続
+新規接続
+接続
+コミットします。
+クローズしました。
+result1 : [bean.joinBean.ProductPictBean@7f56ba6f, bean.joinBean.ProductPictBean@2e6e0b6d, bean.joinBean.ProductPictBean@4ea3c45b, bean.joinBean.ProductPictBean@50baec38, bean.joinBean.ProductPictBean@1a75a182, bean.joinBean.ProductPictBean@441ef4c2, bean.joinBean.ProductPictBean@144f6106, bean.joinBean.ProductPictBean@1313849b, bean.joinBean.ProductPictBean@24dd4eca, bean.joinBean.ProductPictBean@17d60677, bean.joinBean.ProductPictBean@787e12da, bean.joinBean.ProductPictBean@77c66612, bean.joinBean.ProductPictBean@3923dd3e, bean.joinBean.ProductPictBean@1e6181d3, bean.joinBean.ProductPictBean@1681b807, bean.joinBean.ProductPictBean@5233aa33, bean.joinBean.ProductPictBean@75de5766, bean.joinBean.ProductPictBean@67233f17, bean.joinBean.ProductPictBean@7cf9f274, bean.joinBean.ProductPictBean@33d4bdea, bean.joinBean.ProductPictBean@34b6a991, bean.joinBean.ProductPictBean@4a13e397, bean.joinBean.ProductPictBean@794ac2f3, bean.joinBean.ProductPictBean@6f670bdd, bean.joinBean.ProductPictBean@6e9ccd81, bean.joinBean.ProductPictBean@3bc6849e, bean.joinBean.ProductPictBean@1434944f, bean.joinBean.ProductPictBean@43da4cf7, bean.joinBean.ProductPictBean@4b2261c8, bean.joinBean.ProductPictBean@444fee46, bean.joinBean.ProductPictBean@74699c6c, bean.joinBean.ProductPictBean@65c5cbe2, bean.joinBean.ProductPictBean@3d31dab3, bean.joinBean.ProductPictBean@6373e8d, bean.joinBean.ProductPictBean@3e0548db]
+message : null
+セッション登録値(token) :null
+sessionInfo : null
+セッション登録値(token) :null
+キー値：productHistoryFooter
+取得プロパティ：cmd.history.ProductHistoryFooterCommand
+セッション登録値(token) :null
+2 02, 2022 2:04:21 午後 org.apache.catalina.core.StandardWrapperValve invoke
+重大: サーブレット FrontServlet のServlet.service()が例外を投げました
+java.lang.NullPointerException
+	at cmd.history.ProductHistoryFooterCommand.execute(ProductHistoryFooterCommand.java:16)
+	at context.WebApplicationContext.handleRequest(WebApplicationContext.java:24)
+	at FrontServlet.doPost(FrontServlet.java:25)
+	at FrontServlet.doGet(FrontServlet.java:15)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:616)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:528)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1099)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:670)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1520)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1476)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+キー値：productsDetails
+取得プロパティ：cmd.products.details.ProductsDetailsCommand
+セッション登録値(token) :null
+トランザクション開始
+接続
+新規接続
+接続
+コミットします。
+クローズしました。
+result1 : [bean.joinBean.AllProductDetailBean@72e31705, false]
+message : null
+セッション登録値(token) :null
+sessionInfo : null
+セッション登録値(token) :null
+キー値：guestDeliveryInfoForm
+取得プロパティ：cmd.user.guest.TransferGuestDeliveryInfoFormCommand
+result1 : null
+message : null
+セッション登録値(token) :null
+sessionInfo : null
+セッション登録値(token) :null
+キー値：guestCreditCardInfoForm
+取得プロパティ：cmd.user.guest.TransferGuestCreditCardInfoFormCommand
+result1 : null
+message : null
+セッション登録値(token) :null
+sessionInfo : null
+セッション登録値(token) :null
+キー値：guestPurchaseConfirmPage
+取得プロパティ：cmd.user.guest.TransferGuestPurchaseConfirmPageCommand
+生成セキュリティコード  :466
+result1 : null
+message : セキュリティコードが違います。
+セッション登録値(token) :null
+sessionInfo : null
+セッション登録値(token) :null
