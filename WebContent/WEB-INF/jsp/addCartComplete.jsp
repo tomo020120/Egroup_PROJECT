@@ -15,18 +15,22 @@
 <div class="container">
 <div class="item">
 <div class="box">
-
+<div class="pic">
 <c:forEach var="con" items="${result}">
-<h1>カートに追加されました</h1>
-				<img src="${con.pictPath}">
+
+<img src="${con.pictPath}"width="50%">
+<img src="images/check.png" width="5%"class="pic1">
+<h1>追加されました</h1>
 </c:forEach>
+</div>
 </div>
 </div>
 <div class="item">
 <div class=box2>
-<a href="cart">カートに進む</a><br>
-<a href="purchase">レジに進む</a><br>
-<a href="products" class="">買い物を続ける</a><br>
+<p>カート内の小計:</p>
+<a href="cart" class="cartbtn">カートに進む</a><br>
+<a href="purchase"class="regibtn">レジに進む</a><br>
+<a href="products" class="shopbtn">買い物を続ける</a><br>
 </div>
 </div>
 </div>

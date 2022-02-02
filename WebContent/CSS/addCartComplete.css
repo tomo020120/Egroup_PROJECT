@@ -1,31 +1,88 @@
 body{
-	//background-color:#000;
+	background-color:#f3f3f3;
 
 }
 h1{
-	display:inline-block;
-	font-size;20px;
+
+	font-size:20px;
+	position: relative;
+	top: -100px; left: 500px;
 }
 
+.pic{
+	 display: inline-block;
+	 margin:40px 0px 0px 10px;
+}
+.pic1{
+	position: relative;
+	top: -50px; left: 60px;
+}
 
 .box {
 	border:1px solid;
-	border-radius: 8px; /* 半径が8pxの角丸 */
-	border-color: #c0c0c0;
-	margin       : auto;
-	width        : 80%;
-	height       : 100%;
+	border-radius: 2px; /* 半径が8pxの角丸 */
+	border-color: #fff;
+	margin       : 0px 90px;
+	width        : 800px;
+	height       : 200px;
 	background   : linear-gradient(to bottom, #ffffff, #ffffff);
 }
 .box2 {
 	border:1px solid;
-	border-radius: 8px; /* 半径が8pxの角丸 */
-	border-color: #c0c0c0;
-	margin       : auto;
-	width        : 400px;
-	height       : 300px;
+	border-radius: 2px; /* 半径が8pxの角丸 */
+	border-color: #fff;
+	margin : 0px 90px;
+	width        : 350px;
+	height       : 200px;
 	background   : linear-gradient(to bottom, #ffffff, #ffffff);
+	text-align:center;
 }
 .container {
   display: flex;
+}
+.regibtn {
+  width:300px;
+  font-size:12px;
+  color:#000;
+  text-align:center;
+  display:block;
+  padding:6px 0 6px;
+  background:#FFD814;
+  border-radius: 10px;
+   border: 1px solid #FCD200;
+    margin-top:-10px;
+    margin-left:15px;
+}
+.regibtn:hover{
+	 background:#ffd306;
+}
+.cartbtn{
+	width:300px;
+  font-size:12px;
+  color:#000;
+  text-align:center;
+  display:block;
+  padding:7px 0 7px;
+  background:#fff;
+  border-radius: 10px;
+  border: 1px solid #c0c0c0;
+   margin-left:15px;
+
+  }
+.shopbtn{
+	width:300px;
+  font-size:12px;
+  color:#000;
+  text-align:center;
+  display:block;
+  padding:6px 0 6px;
+  background:#fff;
+  border-radius: 10px;
+  border-color: #c0c0c0;
+   border: 1px solid #c0c0c0;
+   margin-top:-10px;
+    margin-left:15px;
+}
+.po{
+	text-align:center;
 }

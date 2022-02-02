@@ -1,0 +1,12 @@
+.shopbtn{
+	width:300px;
+  font-size:20px;
+  color:#fff;
+  text-align:center;
+  display:block;
+  padding:20px 0 20px;
+  background:#000080;
+  border-radius: 10px;
+   border: 1px solid #0000a0;
+}
+
