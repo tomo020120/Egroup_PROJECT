@@ -9,9 +9,16 @@
   border: solid 1px #c0c0c0;
   border-radius: 3px;
   transition: .4s;
+   width: 400px;
+  height: 100px;
+  margin:20px;
 }
 
 .btn-flat-border:hover {
   background: #eaeaea;
   color: #000000;
+}
+.position{
+	text-align:center;
+	margin-left:10px;
 }

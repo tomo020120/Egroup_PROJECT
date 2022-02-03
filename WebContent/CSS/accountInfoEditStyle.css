@@ -1,0 +1,31 @@
+
+
+.btn--white,
+a.btn--white {
+  color: #000000;
+  background-color: #e7e9ec;
+  border:1px solid;
+	border-radius: 2px; /* 半径が8pxの角丸 */
+	border-color: #adb1b8;
+	padding:3px 10px;
+}
+.btn--white:hover,
+a.btn--white:hover {
+  color: #000000;
+  background: #c0c0c0;
+}
+.btn--orange,
+a.btn--orange {
+  color: #000000;
+  background: linear-gradient(#f7dfa5,#f0c14b);
+
+  border:1px solid;
+	border-radius: 2px; /* 半径が8pxの角丸 */
+	border-color: #a88734;
+	padding:3px 10px;
+}
+.btn--orange:hover,
+a.btn--orange:hover {
+  color: #000000;
+  background: #f1c85a;
+}
