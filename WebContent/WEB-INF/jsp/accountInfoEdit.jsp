@@ -11,24 +11,17 @@
 	<%@include file="header.jsp" %>
 	<p>${message}</p>
 	<div>
-		<table>
-		<tr>ユーザー名:
+		ユーザー名:<br>
 		${sessionInfo.userName}
-		<button onclick="location.href='editUserNameForm'" class="btn btn--white">編集</button>
-		</tr>
-		<tr>
-   		メールアドレス:
+		<button onclick="location.href='editUserNameForm'" class="btn btn--white">編集</button><br>
+   		メールアドレス:<br>
    		${sessionInfo.mailAddress}
-   		<button onclick="location.href='editUserMailAddressForm'" class="btn btn--white">編集</button>
-   		</tr>
-   		<tr>
-   		現在のパスワード:
+   		<button onclick="location.href='editUserMailAddressForm'" class="btn btn--white">編集</button><br>
+   		現在のパスワード:<br>
    		"${sessionInfo.userPassword}"
-   		<button onclick="location.href='editPasswordForm'" class="btn btn--white">編集</button>
-   		</tr>
-   		</table>
+   		<button onclick="location.href='editPasswordForm'" class="btn btn--white">編集</button><br>
 	</div>
-<a href="deleteAccount">アカウント退会</a>
+
    	<button onclick="location.href='userInfoEdit'"  class="btn btn--orange">完了</button>
 </body>
 </html>

@@ -19,6 +19,7 @@
 			<a href="accountInfoEdit"class="btn-flat-border">アカウント情報編集<p>アカウント情報の変更</p></a>
 			<a href="deliveryInfoEdit"class="btn-flat-border">配送先情報編集<p>登録住所の追加・変更</p></a>
 			<a href="creditCardInfoEdit"class="btn-flat-border">クレジットカード情報編集<p>登録クレジットカードの追加・変更</p></a>
+			<a href="deleteAccount" class="btn-flat-border">アカウント退会</a>
 </div>
 </body>
 </html>
