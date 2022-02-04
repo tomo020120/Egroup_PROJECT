@@ -36,7 +36,7 @@ public class LoginCheckCommand extends AbstractCommand{
 		System.out.println("メアド:" + mailAddress);
 		System.out.println("パスワード:" + password);
 
-		if((mailAddress == "adm1n.ibanez0120@gmail.com") && (password == "adminpass0120")) { // もし管理者アカウントでのログインならワンタイムパスワードを生成し認証する。
+		if((mailAddress.equals("adm1n.ibanez0120@gmail.com")) && (password.equals("Adminpass0120"))) { // もし管理者アカウントでのログインならワンタイムパスワードを生成し認証する。
 			String sixDegits = CreateRandomNumber.getSixDegitsNumber();
 			reqContext.setSessionAttribute("authenticationCode", sixDegits);
 

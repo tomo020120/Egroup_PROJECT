@@ -1,5 +1,6 @@
-package admin;
+package cmd.admin;
 
+import bean.joinBean.UserAndCartBean;
 import cmd.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
@@ -14,10 +15,19 @@ public class ExecuteAdminAuthenticationCommand extends AbstractCommand {
 		String inputAuthenticationCode = reqContext.getParameter("admiinAuthenticaionCode")[0];
 
 		if(inputAuthenticationCode.equals(correctAuthenticationCode)) {
-			resContext.
+			UserAndCartBean userAndCartBean = new UserAndCartBean();
+			userAndCartBean.setUserName("管理者");
+
+			reqContext.setToken(userAndCartBean);
+
+			reqContext.removeSessionAttribute("authenticationCode");
+			resContext.setTargetPath("adminPage");
+		}else {
+			resContext.setMessage("認証コードが間違っています");
+			resContext.setTargetPath("adminAuthenticationPage");
 		}
 
-		return null;
+		return resContext;
 	}
 
 }
