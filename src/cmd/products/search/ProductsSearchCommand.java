@@ -17,23 +17,23 @@ public class ProductsSearchCommand extends AbstractCommand{
 		String productName=reqc.getParameter("productName")[0];
 		String sortNo=reqc.getParameter("sort")[0];
 		//String colorNo=reqc.getParameter("color")[0];
-		
+
 		//colorが複数の場合も登録
 		String[] colorsNo=reqc.getParameter("color");
-		
+
 		HoldWordBean hwb = new HoldWordBean();
-		
+
 		reqc.setSessionAttribute("holdSearchWord", productName);
 		reqc.setSessionAttribute("holdsortNo", sortNo);
-		
+
 		hwb.setHoldWord((String)reqc.getSessionAttribute("holdSearchWord"));
 		hwb.setHoldSortNo((String)reqc.getSessionAttribute("holdsortNo"));
-		
-		
+
+
 		System.out.println("ホールド値１："+reqc.getSessionAttribute("holdSearchWord"));
 		System.out.println("ホールド値２："+reqc.getSessionAttribute("holdSortNo"));
-		
-		
+
+
 		switch(sortNo) {
 			case "0" :
 				sortNo="a.itemId ASC";
@@ -53,14 +53,21 @@ public class ProductsSearchCommand extends AbstractCommand{
 		System.out.println(sortNo);
 
 		ConnectionManager.getInstance().beginTransaction();
-		
+
 		//検索実行＋結果取得
 		resc.setResult(dao.getProductsSearchResult(productName,sortNo,colorsNo));
 
 		ConnectionManager.getInstance().commit();
 		ConnectionManager.getInstance().closeTransaction();
 
-		resc.setTargetPath("products");
+		String commandKey = reqc.getCommandKey();
+
+		if(commandKey.equals("searchByAdmin")) {
+			resc.setTargetPath("productEditPage");
+		}else {
+			resc.setTargetPath("products");
+		}
+
 		return resc;
 	}
 }

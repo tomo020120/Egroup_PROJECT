@@ -1,4 +1,4 @@
-package cmd.admin;
+package cmd.admin.product;
 
 import cmd.AbstractCommand;
 import context.ResponseContext;

@@ -1,5 +1,7 @@
 package dao;
 
+import dao.admin.product.MySQLProductEditDao;
+import dao.admin.product.ProductEditDao;
 import dao.artists.ArtistsDao;
 import dao.artists.MySQLArtistsDao;
 import dao.cart.CartDao;
@@ -71,8 +73,13 @@ public class MySQLDaoFactory extends AbstractDaoFactory{
 	public FavoriteDao getFavoriteDao() {
 		return new MySQLFavoriteDao();
 	}
-	
+
 	public HistoryDao getHistoryDao() {
 		return new MySQLHistoryDao();
+	}
+
+	@Override
+	public ProductEditDao getProductEditDao() {
+		return new MySQLProductEditDao();
 	}
 }

@@ -34,11 +34,10 @@
     				パスワードを表示する
  				</div>
 			</div>
-			<div class="btn_position"><input type="submit" id="submitBtn" value="ログイン" class="btn btn--orange">
+			<div class="btn_position"><input type="submit" id="submitBtn" value="ログイン" class="btn btn--orange"></div>
 </form>
 <!-- 認証エラーメッセージ取得 -->
 <p class="p2">${message}</p>
-</div>
 </div>
 <div class="btn_position">
 <p>--初めてIbanezをご利用ですか--</p>

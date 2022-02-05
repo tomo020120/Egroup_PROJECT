@@ -7,5 +7,7 @@
 	<classpathentry kind="lib" path="C:/pleiades/tomcat/8/lib/activation.jar"/>
 	<classpathentry kind="lib" path="C:/pleiades/tomcat/8/lib/mail.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/pleiades/tomcat/8/lib/commons-fileupload-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/pleiades/tomcat/8/lib/commons-io-2.11.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

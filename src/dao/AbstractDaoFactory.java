@@ -4,6 +4,7 @@ package dao;
 import java.io.IOException;
 import java.util.Properties;
 
+import dao.admin.product.ProductEditDao;
 import dao.artists.ArtistsDao;
 import dao.cart.CartDao;
 import dao.favorite.FavoriteDao;
@@ -52,5 +53,6 @@ public abstract class AbstractDaoFactory{
 	public abstract CreditCardInfoEditDao getCreditCardInfoEditDao(); // クレジットード編集用のDao生成
 	public abstract PurchaseDao getPurchaseDao(); // 購入画面のDao生成
 	public abstract FavoriteDao getFavoriteDao(); // お気に入り用のDao生成
-	public abstract HistoryDao getHistoryDao();
+	public abstract HistoryDao getHistoryDao(); // 履歴用のDao生成
+	public abstract ProductEditDao getProductEditDao(); // 管理者機能の製品編集用のDao生成
 }

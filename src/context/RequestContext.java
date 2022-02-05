@@ -5,6 +5,8 @@ public interface RequestContext{
     public abstract Object getRequest();
     public abstract String getCommandKey();
     public abstract String[] getParameter(String key);
+    public abstract boolean uploadFile();
+    public abstract String getPictFileName();
     public abstract void setToken(Object token);
     public abstract Object getToken();
     public abstract void setSessionAttribute(String attrName,Object value);

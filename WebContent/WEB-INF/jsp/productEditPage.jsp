@@ -9,13 +9,20 @@
 <title>商品編集画面</title>
 <link rel="stylesheet" href="CSS/productsStyle.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/productEditPageScript.js"></script>
 </head>
 <body>
 <%@include file="header.jsp" %>
 
 <h1>商品編集画面</h1>
 
-<form action="productsSearch" method="GET" name="form1">
+<div id="adminActionTool">
+	<button id="addProductBtn">商品を追加する</button>
+	<button id="editProdutctBtn">商品を編集する</button>
+	<button id="deleteproductBtn">商品を消去する</button>
+</div>
+
+<form action="searchByAdmin" method="GET" name="form1">
 製品名検索(仮)：<input type="search" name="productName" value="${sessionScope.holdSearchWord}">
 <select name="sort" id = "SORT">
 	<option value="0">商品ID順</option>
@@ -90,22 +97,7 @@
   </tr>
 
  </c:forEach>
-
  </table>
- <a href="productHistory">閲覧履歴編集へ</a>
-<div id = "productHistoryFooter">
-</div>
-
-<script>
-	$(function(){
-		$('#productHistoryFooter').load('productHistoryFooter', function(data, status) {
-			  if(status === 'success') {
-			    console.log('読み込みが正常に行われました');
-			  }
-		});
-	});
-</script>
-
 <script>
 	//requestパラメータの取得
 	var queryString = window.location.search;
