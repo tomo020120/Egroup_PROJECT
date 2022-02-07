@@ -29,9 +29,7 @@ body{
 
 /* カード一覧デザイン */
 #creditCardList{
-	margin:20px 25% 0 25%;
-	border:5px double #333333;
-	background-color:#2070b27a;
+
 }
 
 textarea{

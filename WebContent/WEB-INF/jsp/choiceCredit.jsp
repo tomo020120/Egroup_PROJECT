@@ -7,9 +7,10 @@
 <meta charset="UTF-8">
 <title>クレジットカード</title>
 
-<link rel="stylesheet" href="CSS/creditCardInfoEditStyle.css">
+<link rel="stylesheet" href="CSS/chiceCreditStyle.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="js/purchaseCreditCardScript.js"></script>
+<link rel="stylesheet" href="CSS/creditCardInfoEditStyle.css">
 </head>
 <body>
 <%@include file="header.jsp"%>
@@ -24,7 +25,7 @@
 				クレジットカード名義人:<span class="cardOwnerName">${creditCardInfo.cardOwnerName}</span><br>
 				有効期限:<span class="expirationDate">${creditCardInfo.expirationDate}</span><br>
 				<button class="openUpdateFormButton" type="button" value="${creditCardInfo.cardId}">編集</button><button class="openDeleteComfirmButton" type="button" value="${creditCardInfo.cardId}">消去</button>
-				<a href="orderConfirmation?creditCardInfoId=${creditCardInfo.cardId}">これに決めた</a>
+				<a href="orderConfirmation?creditCardInfoId=${creditCardInfo.cardId}">決定</a>
 			</div>
 		</c:forEach>
 	</div>
@@ -91,14 +92,15 @@
 		有効期限:<span class="expirationDate">${creditCardInfo.expirationDate}</span><br>
 		<button id="deleteCansel" type="button">キャンセル</button>	<button id="executeDeleteButton">消去する</button>
 	</div>
-<div class="kara"></div>
+<hr>
+<div class="allPosition">
 	<h1>クレジットカードを追加</h1>
 		<div id="flexContent">
 			<form id="addCreditCardForm" method="post" action="PurchseInsertCreditCardInfo">
-				カード番号<input id="creditCardNo" type="text" name="creditCardNo" maxLength="19">
+				カード番号<br><input id="creditCardNo" type="text" name="creditCardNo" maxLength="19">
 				<textarea id="cardCompanyArea" name="cardCompany" readOnly></textarea><br>
-				クレジットカード名義人<input type="text" name="cardOwnerName" maxLength="50"><br>
-				有効期限
+				クレジットカード名義人<br><input type="text" name="cardOwnerName" maxLength="50"><br>
+				有効期限<br>
 				<select name="month">
 					<option value="">-</option>
 					<option value="01">01</option>
@@ -138,7 +140,7 @@
 					<option value="2041">2041</option>
 					<option value="2042">2042</option>
 				</select>年 <br>
-				セキュリティコード<input type="text" name="securityCode" maxLength="3">
+				セキュリティコード<br><input type="text" name="securityCode" maxLength="3">
 			</form>
 
 			<div id="availableCardCompanyList">
@@ -151,6 +153,6 @@
 			</div>
 		</div>
 		<button id="canselButton" type="button">キャンセル</button>	<button id="executeAddButton">カードを追加</button>
-
+</div>
 </body>
 </html>

@@ -7,17 +7,19 @@
 <title>クレジットカード情報入力</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="js/guestCreditCardInfoFormScript.js"></script>
+<link rel="stylesheet" href="CSS/guestDeliveryInfoFormStyle.css">
 </head>
 <body>
-<header><%@include file="header.jsp"%></header>
-<h1>クレジットカード情報入力</h1>
+<%@include file="header.jsp"%>
+<div class="allPosition">
+<h1>2 クレジットカード情報入力</h1>
 <div id="addCreditCardFormArea" class="animFormArea">
 	<form id="addCreditCardForm" method="post" action="addCreditCardInfo">
-		カード番号<input id="creditCardNo" type="text" name="creditCardNo" maxLength="19">
+		カード番号<br><input id="creditCardNo" type="text" name="creditCardNo" maxLength="19">
 		<div id="cardCompany"></div>
-		クレジットカード名義人<input type="text" name="cardOwnerName" maxLength="50"><br>
-		有効期限
-		<select name="month">
+		クレジットカード名義人<br><input type="text" name="cardOwnerName" maxLength="50"><br>
+		有効期限<br>
+		<select name="month" class="day">
 			<option value="">-</option>
 			<option value="01">01</option>
 			<option value="02">02</option>
@@ -32,7 +34,7 @@
 			<option value="11">11</option>
 			<option value="12">12</option>
 		</select>月 /
-		<select name="year">
+		<select name="year" class="day">
 			<option value="">-</option>
 			<option value="2022">2022</option>
 			<option value="2023">2023</option>
@@ -56,10 +58,11 @@
 			<option value="2041">2041</option>
 			<option value="2042">2042</option>
 		</select>年 <br>
-		セキュリティコード<input id="securityCode" type="text" name="securityCode" maxLength="3"><br>
+		セキュリティコード<br><input id="securityCode" type="text" name="securityCode" maxLength="3"><br>
 		<button type="button" id="guestPurchaseConfirmPageJumpBtn">次へ</button>
 	</form>
 	<p>${message}</p>
+</div>
 </div>
 </body>
 </html>

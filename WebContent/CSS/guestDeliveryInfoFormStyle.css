@@ -1,0 +1,64 @@
+input[type="text"] {
+  border: 1px solid #b9b9b9;
+  background-color: #fff;
+  width: 380px;
+   height:40px;
+   margin-bottom:15px;
+   font-size: 100%;
+}
+input[type="text"]:focus {
+  /*border: 1px solid #ff9900;*/
+  outline: 0;
+}
+input[type="tel"] {
+  border: 1px solid #b9b9b9;
+  background-color: #fff;
+  width: 118px;
+   height:40px;
+   margin-bottom:15px;
+   font-size: 100%;
+}
+input[type="tel"]:focus {
+  /*border: 1px solid #ff9900;*/
+  outline: 0;
+}
+.day {
+  border: 1px solid #b9b9b9;
+  background-color: #fff;
+  width: 168px;
+   height:40px;
+   margin-bottom:15px;
+   font-size: 100%;
+}
+.day:focus {
+  /*border: 1px solid #ff9900;*/
+  outline: 0;
+}
+.allPosition{
+margin-left:35%;
+}
+#guestCreditCardInfoFormJumpBtn{
+width:390px;
+  font-size:20px;
+  color:#fff;
+  text-align:center;
+  display:block;
+  padding:10px 14px 10px;
+  background:#000000;
+  border-radius: 10px;
+   border: 1px solid #0000a0;
+   margin-top:10px;
+}
+#guestPurchaseConfirmPageJumpBtn{
+	width:390px;
+  font-size:20px;
+  color:#fff;
+  text-align:center;
+  display:block;
+  padding:10px 14px 10px;
+  background:#000000;
+  border-radius: 10px;
+   border: 1px solid #0000a0;
+   margin-top:10px;
+}
+}

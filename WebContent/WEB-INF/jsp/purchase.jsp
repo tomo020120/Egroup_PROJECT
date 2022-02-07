@@ -10,21 +10,24 @@
 <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script> <!-- 郵便番号による自動住所入力のライブラリ読み込み -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="js/purchaseDelivery.js"></script>
+<link rel="stylesheet" href="CSS/purchase.css">
 </head>
 <body>
 	<%@include file="header.jsp"%>
 	<h1>配送先選択</h1>
+	<hr>
 
 
 	<div id="deliveryInfoList">
 		<c:forEach var="deliveryInfo" items="${result}">
 			<div class="deliveryInfo">
-				<p>宛名:<span class="deliveryName">${deliveryInfo.deliveryName}</span></p>
-				<p>電話番号:<span class="tel">${deliveryInfo.tel}</span></p>
-				<p>郵便番号:<span class="postalCode">${deliveryInfo.postalCode}</span></p>
-				<p>住所:<span class="address">${deliveryInfo.address}</span></p>
-				<button type="button" class="openUpdateFormButton" value="${deliveryInfo.deliveryInfoId}">編集</button><button type="button" class="openDeleteComfirmButton" value="${deliveryInfo.deliveryInfoId}">消去</button>
-				<a href="choiceCredit?deliveryInfoId=${deliveryInfo.deliveryInfoId}">決定</a>
+				<p class="p1"><span class="deliveryName">${deliveryInfo.deliveryName}</span></p>
+				<p><span class="tel">${deliveryInfo.tel}</span></p>
+				<p><span class="postalCode">${deliveryInfo.postalCode}</span></p>
+				<p><span class="address">${deliveryInfo.address}</span></p>
+				<a href="choiceCredit?deliveryInfoId=${deliveryInfo.deliveryInfoId}" class="decisionButton">この住所に届ける</a><br>
+				<button type="button" class="openUpdateFormButton" value="${deliveryInfo.deliveryInfoId}">編集</button>
+				<button type="button" class="openDeleteComfirmButton" value="${deliveryInfo.deliveryInfoId}">消去</button>
 			</div>
 		</c:forEach>
 	</div>
@@ -53,21 +56,22 @@
 		<p>住所:<span class="address"></span></p>
 		<button id="deleteCansel" type="button">キャンセル</button>	<button id="executeDeleteButton">消去する</button>
 	</div>
-
-<h1>新規配送先登録</h1>
+<hr>
+<div class="allPosition">
+<h1>新しい住所を追加する</h1>
 	<div id="deliveryFormArea">
 		<form id="registDeliveryInfoForm" class="h-adr" method="post" action="addDelivery" >
 			<span class="p-country-name" style="display:none;">Japan</span> <!--日本内に検索設定  -->
-			【必須】宛名:<input type="text" name="deliveryName" maxlength="25"><br>
-			【必須】電話番号(000-0000-0000):<input type="text" name="firstTelephoneNumber" maxlength="3">-<input type="text" name="secondTelephoneNumber" maxlength="4">-<input type="text" name="thirdTelephoneNumber" maxlength="4"><br>
-			【必須】郵便番号(ハイフンなし):<input type="text" class="p-postal-code" name="postalCode" size="7" maxlength="7"><br>
-			【必須】住所:<input type="text" class="p-region p-locality p-street-address p-extended-address" name="address"/><br>
-			【必須】丁目・番地・号(例:1-2-3):<input type="text" name="houseNumber"><br>
-			【必須】建物名・部屋番号(例:〇〇マンション〇〇号室)<input type="text" name="buildingName"><br>
-			<input type="submit" value="完了">
+			【必須】宛名<br><input type="text" name="deliveryName" maxlength="25"><br>
+			【必須】電話番号(000-0000-0000)<br><input type="tel" name="firstTelephoneNumber" maxlength="3">-<input type="tel" name="secondTelephoneNumber" maxlength="4">-<input type="tel" name="thirdTelephoneNumber" maxlength="4"><br>
+			【必須】郵便番号(ハイフンなし)<br><input type="text" class="p-postal-code" name="postalCode" size="7" maxlength="7"><br>
+			【必須】住所<br><input type="text" class="p-region p-locality p-street-address p-extended-address" name="address"/><br>
+			【必須】丁目・番地・号(例:1-2-3)<br><input type="text" name="houseNumber"><br>
+			【必須】建物名・部屋番号(例:〇〇マンション〇〇号室)<br><input type="text" name="buildingName"><br>
+			<input type="submit" value="完了" id="newCreditBtn">
 		</form>
 	</div>
-
+</div>
 	<p>${message}</p>
 </body>
 </html>
