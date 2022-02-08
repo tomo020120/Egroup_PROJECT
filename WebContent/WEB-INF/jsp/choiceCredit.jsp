@@ -15,17 +15,19 @@
 <body>
 <%@include file="header.jsp"%>
 <h1>クレジットカード</h1>
+<hr>
 <p>${message}</p>
 
 	<div class="creditCardInfo">
 		<c:forEach var="creditCardInfo" items="${result}">
 			<div id="creditCardList">
-				カード番号(下四桁):<span class="lastFourDisits">${creditCardInfo.cardNo}</span><br>
-				種類:<span class="cardCompany">${creditCardInfo.cardCompany}</span><br>
-				クレジットカード名義人:<span class="cardOwnerName">${creditCardInfo.cardOwnerName}</span><br>
-				有効期限:<span class="expirationDate">${creditCardInfo.expirationDate}</span><br>
-				<button class="openUpdateFormButton" type="button" value="${creditCardInfo.cardId}">編集</button><button class="openDeleteComfirmButton" type="button" value="${creditCardInfo.cardId}">消去</button>
-				<a href="orderConfirmation?creditCardInfoId=${creditCardInfo.cardId}">決定</a>
+				<p>カード番号(下四桁):<span class="lastFourDisits">${creditCardInfo.cardNo}</span></p>
+				<p>種類:<span class="cardCompany">${creditCardInfo.cardCompany}</span></p>
+				<p>クレジットカード名義人:<span class="cardOwnerName">${creditCardInfo.cardOwnerName}</span></p>
+				<p>有効期限:<span class="expirationDate">${creditCardInfo.expirationDate}</span></p>
+				<a href="orderConfirmation?creditCardInfoId=${creditCardInfo.cardId}" class="decisionButton">決定</a><br>
+				<button class="openUpdateFormButton" type="button" value="${creditCardInfo.cardId}">編集</button>
+				<button class="openDeleteComfirmButton" type="button" value="${creditCardInfo.cardId}">消去</button>
 			</div>
 		</c:forEach>
 	</div>

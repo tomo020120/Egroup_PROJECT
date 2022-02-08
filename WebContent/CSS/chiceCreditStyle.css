@@ -29,3 +29,86 @@ input[type="tel"]:focus {
 .allPosition{
 margin:0 30%;
 }
+.creditCardInfo{
+	 display: flex;
+	   flex-wrap: wrap;
+
+	     margin       :10px 30px;
+}
+#creditCardList{
+	border:1px solid;
+	border-radius: 8px; /* 半径が8pxの角丸 */
+	border-color: #fff;
+	margin       :10px 30px;
+	width        : 400px;
+	height       : 300px;
+	background   : linear-gradient(to bottom, #ffffff, #ffffff);
+}
+.decisionButton{
+ color: #000000;
+  background: linear-gradient(#f7dfa5,#f0c14b);
+
+  border:1px solid;
+	border-radius: 2px; /* 半径が8pxの角丸 */
+	border-color: #a88734;
+	padding:3px 120px;
+	margin:10px 0px 0 0px
+}
+.decisionButton:hover {
+  color: #000000;
+  background: #f1c85a;
+}
+.openUpdateFormButton{
+	color: #000000;
+  background-color: #e7e9ec;
+  border:1px solid;
+	border-radius: 2px; /* 半径が8pxの角丸 */
+	border-color: #adb1b8;
+	padding:3px 53px;
+	margin:10px 0px 0 0px
+}
+.openUpdateFormButton:hover {
+  color: #000000;
+  background: #c0c0c0;
+}
+.openDeleteComfirmButton{
+	color: #000000;
+  background-color: #e7e9ec;
+  border:1px solid;
+	border-radius: 2px; /* 半径が8pxの角丸 */
+	border-color: #adb1b8;
+	padding:3px 53px;
+	margin:10px 0px 0 0px;
+}
+.openDeleteComfirmButton:hover {
+  color: #000000;
+  background: #c0c0c0;
+}
+#canselButton{
+	color: #000000;
+  background-color: #e7e9ec;
+  border:1px solid;
+	border-radius: 2px; /* 半径が8pxの角丸 */
+	border-color: #adb1b8;
+	padding:3px 52px;
+	margin:0px 0px 0 4%;
+}
+#canselButton:hover {
+ color: #000000;
+  background: #c0c0c0;
+}
+#executeAddButton{
+	color: #000000;
+  background-color: #e7e9ec;
+  border:1px solid;
+	border-radius: 2px; /* 半径が8pxの角丸 */
+	border-color: #adb1b8;
+	padding:3px 54px;
+}
+#executeAddButton:hover {
+ color: #000000;
+  background: #c0c0c0;
+}
+#addCreditCardForm{
+	margin:0 0 0px -50px;
+}
