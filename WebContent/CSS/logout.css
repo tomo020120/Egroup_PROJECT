@@ -1,0 +1,16 @@
+.allPosition{
+text-align:center;
+}
+input[type="button"]{
+	 width: 200px;
+   height:30px;
+ color: #000000;
+  background-color: #e7e9ec;
+  border:1px solid;
+	border-radius: 2px; /* 半径が8pxの角丸 */
+	border-color: #adb1b8;
+}
+input[type="button"]:hover {
+ color: #000000;
+  background: #c0c0c0;
+}
