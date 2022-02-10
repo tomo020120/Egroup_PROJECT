@@ -15,11 +15,12 @@ public class TransferPurchraseCreditCommand extends AbstractCommand{
 		String userId = ((UserAndCartBean)(reqContext.getToken())).getUserId();
 		System.out.println(userId);
 
-			if(reqContext.getSessionAttribute("address")== null) {
+			//if(reqContext.getSessionAttribute("address")== null) {
 			String deliveryInfoId = reqContext.getParameter("deliveryInfoId")[0];
 			//System.out.println("deliveryInfoId:"+deliveryInfoId);
 			reqContext.setSessionAttribute("address",deliveryInfoId);
-		}
+
+		//}
 
 		AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
 		CreditCardInfoEditDao edit = factory.getCreditCardInfoEditDao();
@@ -28,6 +29,8 @@ public class TransferPurchraseCreditCommand extends AbstractCommand{
 
     	resContext.setResult(edit.getCreditCardInfo(userId));
     	resContext.setTargetPath("choiceCredit");
+
+
 
 		ConnectionManager.getInstance().commit();
 		ConnectionManager.getInstance().closeTransaction();

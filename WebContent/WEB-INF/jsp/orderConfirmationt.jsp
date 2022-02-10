@@ -24,7 +24,7 @@ window.onload = function(){
 	var ly = dateObj.getFullYear();
 	var lm = dateObj.getMonth() + 1;
 	var ld = dateObj.getDate();
-	var lb = "火水木金土日月".charAt(dateObj.getDay());
+	var lb = "木金土日月火水".charAt(dateObj.getDay());
 
 	document.getElementById("deliveryDate").innerHTML =fy+"年"+fm+"月"+fd+"日("+fb+")"+ "～"+ly+"年"+lm+"月"+ld+"日("+lb+")";
 	}
