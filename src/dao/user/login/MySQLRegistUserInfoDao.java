@@ -29,6 +29,8 @@ public class MySQLRegistUserInfoDao implements RegistUserInfoDao {
 			st.setString(2, tempUserBean.getUserPassword());
 			st.setString(3, tempUserBean.getMailAddress());
 
+			System.out.println(st.toString());
+
 			int result = st.executeUpdate();
 
 			if(result > 0) {

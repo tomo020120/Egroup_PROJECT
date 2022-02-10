@@ -74,7 +74,13 @@ public class LoginCheckCommand extends AbstractCommand{
 			ConnectionManager.getInstance().commit();
 			ConnectionManager.getInstance().closeTransaction();
 
-			resContext.setTargetCommandPath(reqContext.getPastLocation());
+			String location = (String)reqContext.getPastLocation(); // ログインに飛ぶ前にいたページ
+
+			if(location == null) {
+				resContext.setTargetCommandPath("topPage");
+			}else{
+				resContext.setTargetCommandPath(location);
+			}
 			System.out.println("転送先 : " + resContext.getTargetPath());
 		}else {
 			ConnectionManager.getInstance().rollback();

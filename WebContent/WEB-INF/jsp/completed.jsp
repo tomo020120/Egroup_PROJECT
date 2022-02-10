@@ -9,7 +9,7 @@
 <title>最後</title>
 <script>
 function delay(){
-	setTimeout("location.href='<%=request.getContextPath()%>'",5000);
+	setTimeout("location.href='topPage'",5000);
 }
 </script>
 </head>

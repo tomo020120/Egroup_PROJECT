@@ -18,7 +18,7 @@
    		${sessionInfo.mailAddress}
    		<button onclick="location.href='editUserMailAddressForm'" class="btn btn--white">編集</button><br>
    		現在のパスワード:<br>
-   		"${sessionInfo.userPassword}"
+   		********
    		<button onclick="location.href='editPasswordForm'" class="btn btn--white">編集</button><br>
 	</div>
 

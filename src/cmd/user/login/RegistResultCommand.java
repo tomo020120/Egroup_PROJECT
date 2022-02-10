@@ -28,12 +28,11 @@ public class RegistResultCommand extends AbstractCommand{
 
 		System.out.println("登録メアド :" + tempUserBean.getMailAddress());
 		if(regist.addUserInfo(tempUserBean)) {
+			reqContext.setToken(tempUserBean); // 登録後に即ログインをするためにセッションに登録しておく
+			resContext.setTargetPath("registComplete");
+
 			ConnectionManager.getInstance().commit();
 			ConnectionManager.getInstance().closeTransaction();
-
-			reqContext.setToken(tempUserBean); // 登録後に即ログインをするためにセッションに登録しておく
-
-			resContext.setTargetPath("registComplete");
 		}
 		else {
 			ConnectionManager.getInstance().rollback();
