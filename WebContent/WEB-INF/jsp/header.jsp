@@ -22,7 +22,9 @@
       <div id="h-menu_content">
         <ul>
           <li><a href="news">ニュース</a></li>
-          <li><a href="products">商品一覧</a></li>
+          <li><a href="products?categoryId=1">商品一覧(エレキギター)</a></li>
+           <li><a href="products?categoryId=2">商品一覧(アコースティックギター)</a></li>
+            <li><a href="products?categoryId=3">商品一覧（ベース）</a></li>
           <li><a href="artist">アーティスト</a></li>
          </ul>
       </div>

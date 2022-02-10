@@ -12,6 +12,8 @@ import dbManager.ConnectionManager;
 public class ProductsSearchCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
 		RequestContext reqc=getRequestContext();
+		String categoryId = reqc.getParameter("categoryId")[0];
+
 		AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
 		ProductsDao dao = factory.getProductsDao();
 		String productName=reqc.getParameter("productName")[0];
@@ -55,7 +57,7 @@ public class ProductsSearchCommand extends AbstractCommand{
 		ConnectionManager.getInstance().beginTransaction();
 
 		//検索実行＋結果取得
-		resc.setResult(dao.getProductsSearchResult(productName,sortNo,colorsNo));
+		resc.setResult(dao.getProductsSearchResult(productName,sortNo,colorsNo,categoryId));
 
 		ConnectionManager.getInstance().commit();
 		ConnectionManager.getInstance().closeTransaction();

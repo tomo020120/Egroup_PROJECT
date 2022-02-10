@@ -14,8 +14,15 @@
 
 <%@include file="header.jsp" %>
 
+
+
 <form action="productsSearch" method="GET" name="form1">
 製品名検索(仮)：<input type="search" name="productName" value="${sessionScope.holdSearchWord}">
+<select name="categoryId">
+	<option value="1">エレキギター</option>
+	<option value="2">アコースティックギター</option>
+	<option value="3">ベース</option>
+</select>
 <select name="sort" id = "SORT">
 	<option value="0">商品ID順</option>
 	<option value="1">価格の安い順</option>
@@ -86,6 +93,7 @@
   	<td><a href="productsDetails?itemId=${product.itemId}">${product.name}</a></td>
   	<td><a href="productsDetails?itemId=${product.itemId}"><img src="${product.pictPath}"></a></td>
   	<td>${product.price}円</td>
+
   </tr>
 
  </c:forEach>
@@ -149,6 +157,7 @@
 	window.addEventListener('DOMContentLoaded', function(){
 		//ソートプルダウン
 		document.form1.sort.selectedIndex = parseInt(queryObject.sort);
+		document.form1.categoryId.selectedIndex = parseInt(queryObject.categoryId)-1;
 
 
 		var ckstate = sessionStorage.getItem("key").split(",");
