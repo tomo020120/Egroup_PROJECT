@@ -9,9 +9,9 @@
 <script src="js/addProductPageScript.js"></script>
 </head>
 <body>
-<header><%@include file="header.jsp"%></header>
+<%@include file="header.jsp"%>
 <h1>製品追加ページ</h1>
-<form action="addProduct" method="post" enctype="multipart/form-data">
+<form id="addProductForm" action="addProduct" method="post" enctype="multipart/form-data">
 	製品名<input type="text" name="productName"><br>
 	価格<input type="text" name="price"><br>
 	カテゴリー番号<input type="text" name="categoryId"><br>
@@ -20,8 +20,9 @@
 	【任意】アーティスト番号<input type="text" name="artistId"><br>
 	製品写真<input type="file" name="productPict" id="productPict" accept="image/*"><br>
 	<img id="thumbnail" src=""><br>
-	<input type="submit" value="追加">
+	<button id="submitBtn" type="button">追加</button>
 </form>
-
+<p>${message}</p>
+<a href="productEdit">商品一覧へ戻る</a>
 </body>
 </html>

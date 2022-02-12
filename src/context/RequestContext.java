@@ -6,6 +6,7 @@ public interface RequestContext{
     public abstract String getCommandKey();
     public abstract String[] getParameter(String key);
     public abstract boolean uploadFile();
+    public abstract String getAbsoluteFilePath();
     public abstract String getPictFileName();
     public abstract void setToken(Object token);
     public abstract Object getToken();

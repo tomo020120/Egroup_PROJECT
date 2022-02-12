@@ -1,513 +1,374 @@
-2 10, 2022 11:45:32 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
-警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:threader' did not find a matching property.
-2 10, 2022 11:45:32 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
-警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:rjp' did not find a matching property.
-2 10, 2022 11:45:32 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
-警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:oop' did not find a matching property.
-2 10, 2022 11:45:32 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
-警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:j2ee4' did not find a matching property.
-2 10, 2022 11:45:32 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
+2 13, 2022 4:58:59 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
 警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:Egroup_PROJECT' did not find a matching property.
-2 10, 2022 11:45:32 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 13, 2022 4:58:59 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:test' did not find a matching property.
+2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Server version:        Apache Tomcat/8.0.36
-2 10, 2022 11:45:32 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Server built:          Jun 9 2016 13:55:50 UTC
-2 10, 2022 11:45:32 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Server number:         8.0.36.0
-2 10, 2022 11:45:32 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: OS Name:               Windows 10
-2 10, 2022 11:45:32 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: OS Version:            10.0
-2 10, 2022 11:45:32 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Architecture:          amd64
-2 10, 2022 11:45:32 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Java Home:             C:\Program Files\Java\jdk1.8.0_202\jre
-2 10, 2022 11:45:32 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: JVM Version:           1.8.0_202-b08
-2 10, 2022 11:45:32 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: JVM Vendor:            Oracle Corporation
-2 10, 2022 11:45:32 午前 org.apache.catalina.startup.VersionLoggerListener log
-情報: CATALINA_BASE:         C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0
-2 10, 2022 11:45:32 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
+情報: CATALINA_BASE:         C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1
+2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: CATALINA_HOME:         C:\pleiades\tomcat\8
-2 10, 2022 11:45:32 午前 org.apache.catalina.startup.VersionLoggerListener log
-情報: Command line argument: -Dcatalina.base=C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0
-2 10, 2022 11:45:32 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
+情報: Command line argument: -Dcatalina.base=C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1
+2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Dcatalina.home=C:\pleiades\tomcat\8
-2 10, 2022 11:45:32 午前 org.apache.catalina.startup.VersionLoggerListener log
-情報: Command line argument: -Dwtp.deploy=C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps
-2 10, 2022 11:45:32 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
+情報: Command line argument: -Dwtp.deploy=C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps
+2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Djava.endorsed.dirs=C:\pleiades\tomcat\8\endorsed
-2 10, 2022 11:45:32 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Dfile.encoding=UTF-8
-2 10, 2022 11:45:32 午前 org.apache.catalina.startup.VersionLoggerListener log
-情報: Command line argument: -Xbootclasspath/a:C:\pleiades\tomcat\8\lib\mysql-connector-java-8.0.22.jar
-2 10, 2022 11:45:32 午前 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
-情報: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.8.0_202\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/pleiades/eclipse//jre/bin/server;C:/pleiades/eclipse//jre/bin;C:\app\oracle\product\19.1.0\dbhome_1\bin;C:\app\oracle\product\12.1.0\dbhome_1\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Common Files\Roxio Shared\DLLShared\;C:\Program Files (x86)\Common Files\Roxio Shared\OEM\12.0\DLLShared\;C:\Program Files (x86)\Roxio 2010\OEM\AudioCore\;c:\Borland\Bcc55\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\dotnet\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\koyama\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk1.8.0_202\bin;C:\Users\koyama\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Users\koyama\.dotnet\tools;C:\pleiades\eclipse;;.
-2 10, 2022 11:45:32 午前 org.apache.coyote.AbstractProtocol init
+2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
+情報: Command line argument: -Xbootclasspath/a:C:\pleiades\tomcat\8\lib\activation.jar;C:\pleiades\tomcat\8\lib\mail.jar;C:\pleiades\tomcat\8\lib\mysql-connector-java-8.0.22.jar
+2 13, 2022 4:58:59 午前 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+情報: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.8.0_202\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/pleiades/eclipse//jre/bin/server;C:/pleiades/eclipse//jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk-17.0.1\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\tomo\AppData\Local\Microsoft\WindowsApps;C:\Users\tomo\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;;C:\pleiades\eclipse;;.
+2 13, 2022 4:58:59 午前 org.apache.coyote.AbstractProtocol init
 情報: Initializing ProtocolHandler ["http-nio-8080"]
-2 10, 2022 11:45:33 午前 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
+2 13, 2022 4:58:59 午前 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
 情報: Using a shared selector for servlet write/read
-2 10, 2022 11:45:33 午前 org.apache.coyote.AbstractProtocol init
+2 13, 2022 4:58:59 午前 org.apache.coyote.AbstractProtocol init
 情報: Initializing ProtocolHandler ["ajp-nio-8009"]
-2 10, 2022 11:45:33 午前 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
+2 13, 2022 4:58:59 午前 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
 情報: Using a shared selector for servlet write/read
-2 10, 2022 11:45:33 午前 org.apache.catalina.startup.Catalina load
-情報: Initialization processed in 1382 ms
-2 10, 2022 11:45:33 午前 org.apache.catalina.core.StandardService startInternal
+2 13, 2022 4:58:59 午前 org.apache.catalina.startup.Catalina load
+情報: Initialization processed in 455 ms
+2 13, 2022 4:58:59 午前 org.apache.catalina.core.StandardService startInternal
 情報: サービス Catalina を起動します
-2 10, 2022 11:45:33 午前 org.apache.catalina.core.StandardEngine startInternal
+2 13, 2022 4:58:59 午前 org.apache.catalina.core.StandardEngine startInternal
 情報: Starting Servlet Engine: Apache Tomcat/8.0.36
-2 10, 2022 11:45:34 午前 org.apache.jasper.servlet.TldScanner scanJars
+2 13, 2022 4:59:00 午前 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2 10, 2022 11:45:35 午前 org.apache.jasper.servlet.TldScanner scanJars
-情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2 10, 2022 11:45:36 午前 org.apache.jasper.servlet.TldScanner scanJars
-情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2 10, 2022 11:45:37 午前 org.apache.catalina.core.StandardContext checkUnusualURLPattern
+2 13, 2022 4:59:00 午前 org.apache.catalina.core.StandardContext checkUnusualURLPattern
 情報: Suspicious url pattern: "/*[(edit)(Edit)]*" in context [/Egroup_PROJECT] - see sections 12.1 and 12.2 of the Servlet specification
-2 10, 2022 11:45:37 午前 org.apache.catalina.core.StandardContext checkUnusualURLPattern
+2 13, 2022 4:59:00 午前 org.apache.catalina.core.StandardContext checkUnusualURLPattern
 情報: Suspicious url pattern: "/*[(Favorite)(favorite)]*" in context [/Egroup_PROJECT] - see sections 12.1 and 12.2 of the Servlet specification
-2 10, 2022 11:45:37 午前 org.apache.jasper.servlet.TldScanner scanJars
+2 13, 2022 4:59:00 午前 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
 初期化完了
-2 10, 2022 11:45:38 午前 org.apache.jasper.servlet.TldScanner scanJars
+2 13, 2022 4:59:01 午前 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2 10, 2022 11:45:39 午前 org.apache.jasper.servlet.TldScanner scanJars
-情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2 10, 2022 11:45:39 午前 org.apache.coyote.AbstractProtocol start
+プロパティ設定完了
+認証終了
+設定終了
+初期化完了
+2 13, 2022 4:59:01 午前 org.apache.coyote.AbstractProtocol start
 情報: Starting ProtocolHandler ["http-nio-8080"]
-2 10, 2022 11:45:39 午前 org.apache.coyote.AbstractProtocol start
+2 13, 2022 4:59:01 午前 org.apache.coyote.AbstractProtocol start
 情報: Starting ProtocolHandler ["ajp-nio-8009"]
-2 10, 2022 11:45:39 午前 org.apache.catalina.startup.Catalina start
-情報: Server startup in 6633 ms
-キー値：login
-取得プロパティ：cmd.user.login.TransferLoginPageCommand
-referer :http://localhost:8080/Egroup_PROJECT/
-referer(トリミング済み) :
-セッション登録値(token) :null
+2 13, 2022 4:59:01 午前 org.apache.catalina.startup.Catalina start
+情報: Server startup in 1756 ms
+取得パラメーターMap要素数0
+キー値：addProductPage
+取得プロパティ：cmd.admin.product.TransferAddProductPageCommand
 result1 : null
 message : null
 セッション登録値(token) :null
 sessionInfo : null
 セッション登録値(token) :null
-キー値：registAccount
-取得プロパティ：cmd.user.TransferRegistUserInfoCommand
+取得パラメーターMap要素数0
+キー値：addProductPage
+取得プロパティ：cmd.admin.product.TransferAddProductPageCommand
 result1 : null
 message : null
 セッション登録値(token) :null
 sessionInfo : null
 セッション登録値(token) :null
-キー値：judge
-取得プロパティ：cmd.user.login.IsRegistJudgeCommand
-入力メアド:tomoiw0120@gmail.com
+取得パラメーターMap要素数0
+キー値：addProductPage
+取得プロパティ：cmd.admin.product.TransferAddProductPageCommand
+result1 : null
+message : null
+セッション登録値(token) :null
+sessionInfo : null
+セッション登録値(token) :null
+取得パラメーターMap要素数0
+キー値：addProduct
+取得プロパティ：cmd.admin.product.AddProductCommand
+フォルダまでのPath：C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Egroup_PROJECT\images
+productName
+iwasawa
+price
+200
+categoryId
+1
+colorId
+1
+shapeId
+1
+artistId
+0
+アップロードファイル名:こうじさん.jpg
+こうじさん.jpg
+パラメータ: iwasawa
+パラメータ: 200
+パラメータ: 1
+パラメータ: 1
+パラメータ: 1
+パラメータ: 0
 新規コネクション生成
 トランザクション開始
 接続
 新規接続
 接続
-接続
-メール送信が完了しました。
+影響行数1
+コミットします。
+クローズしました。
 result1 : null
-message : null
+message : 製品追加完了
 セッション登録値(token) :null
 sessionInfo : null
 セッション登録値(token) :null
-キー値：registResult
-取得プロパティ：cmd.user.login.RegistResultCommand
-取得UUID :0c9eef22-6583-4d53-abc4-2ddeb0d2936a
+取得パラメーターMap要素数0
+キー値：addProduct
+取得プロパティ：cmd.admin.product.AddProductCommand
+フォルダまでのPath：C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Egroup_PROJECT\images
+productName
+iwasawa
+price
+200
+categoryId
+1
+colorId
+1
+shapeId
+1
+artistId
+0
+アップロードファイル名:ヤニックさん.jpg
+result1 : null
+message : その写真はすでにアップロードされているか予期せぬ事態が起き追加できませんでした
+セッション登録値(token) :null
+sessionInfo : null
+セッション登録値(token) :null
+取得パラメーターMap要素数0
+キー値：addProduct
+取得プロパティ：cmd.admin.product.AddProductCommand
+フォルダまでのPath：C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Egroup_PROJECT\images
+productName
+iwasawa
+price
+200
+categoryId
+1
+colorId
+1
+shapeId
+1
+artistId
+0
+アップロードファイル名:丸山さん.jpg
+丸山さん.jpg
+パラメータ: iwasawa
+パラメータ: 200
+パラメータ: 1
+パラメータ: 1
+パラメータ: 1
+パラメータ: 0
 トランザクション開始
 接続
-登録メアド :tomoiw0120@gmail.com
+新規接続
 接続
-com.mysql.cj.jdbc.ClientPreparedStatement: insert into user_table(userName,userPassword,mailAddress) values('とも','Tomo0120','tomoiw0120@gmail.com')
+影響行数1
 コミットします。
 クローズしました。
 result1 : null
-message : null
-セッション登録値(token) :bean.TemporaryUserBean@6b50eb8c
-sessionInfo : bean.TemporaryUserBean@6b50eb8c
-セッション登録値(token) :bean.TemporaryUserBean@6b50eb8c
-キー値：loginCheck
-取得プロパティ：cmd.user.login.LoginCheckCommand
-セッション登録値(token) :bean.TemporaryUserBean@6b50eb8c
-メアド:tomoiw0120@gmail.com
-パスワード:Tomo0120
+message : 製品追加完了
+セッション登録値(token) :null
+sessionInfo : null
+セッション登録値(token) :null
+取得パラメーターMap要素数0
+キー値：addProduct
+取得プロパティ：cmd.admin.product.AddProductCommand
+フォルダまでのPath：C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Egroup_PROJECT\images
+productName
+iwasawa
+price
+200
+categoryId
+1
+colorId
+1
+shapeId
+1
+artistId
+0
+アップロードファイル名:許さん.jpg
+許さん.jpg
+パラメータ: iwasawa
+パラメータ: 200
+パラメータ: 1
+パラメータ: 1
+パラメータ: 1
+パラメータ: 0
 トランザクション開始
 接続
 新規接続
 接続
-接続
-カートがまだ存在してないので新規作成
-接続
-接続
-コミットします。
-クローズしました。
-転送先 : /topPage
-result1 : null
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-sessionInfo : bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-キー値：topPage
-取得プロパティ：cmd.top.TransferTopPageCommand
-result1 : null
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-sessionInfo : bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-キー値：userInfo
-取得プロパティ：cmd.top.TransferUserInfoPageCommand
-result1 : null
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-sessionInfo : bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-キー値：products
-取得プロパティ：cmd.products.ProductsCommand
-トランザクション開始
-接続
-新規接続
-接続
-コミットします。
-クローズしました。
-result1 : [bean.joinBean.ProductPictBean@39daa5fa, bean.joinBean.ProductPictBean@4d759e43, bean.joinBean.ProductPictBean@829b98b, bean.joinBean.ProductPictBean@356cdc97, bean.joinBean.ProductPictBean@59f55ab5, bean.joinBean.ProductPictBean@3813504e, bean.joinBean.ProductPictBean@7db35326, bean.joinBean.ProductPictBean@2e68b063, bean.joinBean.ProductPictBean@5dbb67e9, bean.joinBean.ProductPictBean@7f88cd30, bean.joinBean.ProductPictBean@18458b84, bean.joinBean.ProductPictBean@73c5db47, bean.joinBean.ProductPictBean@75476ef9, bean.joinBean.ProductPictBean@4c9fdc2c, bean.joinBean.ProductPictBean@78327790, bean.joinBean.ProductPictBean@25f08432, bean.joinBean.ProductPictBean@6b0e06d3, bean.joinBean.ProductPictBean@5942c922, bean.joinBean.ProductPictBean@3227bb6d, bean.joinBean.ProductPictBean@13d7680f, bean.joinBean.ProductPictBean@8f4dc38, bean.joinBean.ProductPictBean@47b01fdd, bean.joinBean.ProductPictBean@48c32895, bean.joinBean.ProductPictBean@607ca692, bean.joinBean.ProductPictBean@4e47a3b9, bean.joinBean.ProductPictBean@94e135b, bean.joinBean.ProductPictBean@58981567, bean.joinBean.ProductPictBean@5d5560d0, bean.joinBean.ProductPictBean@2e7c4aa8, bean.joinBean.ProductPictBean@57d140f7, bean.joinBean.ProductPictBean@4f7a4447, bean.joinBean.ProductPictBean@395ffe98, bean.joinBean.ProductPictBean@753ada11, bean.joinBean.ProductPictBean@28b1fab9, bean.joinBean.ProductPictBean@3574db94]
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-sessionInfo : bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-キー値：productHistoryFooter
-取得プロパティ：cmd.history.ProductHistoryFooterCommand
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-トランザクション開始
-接続
-新規接続
-7
-接続
-コミットします。
-クローズしました。
-result1 : []
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-sessionInfo : bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-キー値：productsDetails
-取得プロパティ：cmd.products.details.ProductsDetailsCommand
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-トランザクション開始
-接続
-新規接続
-接続
-接続
-接続
-コミットします。
-クローズしました。
-result1 : [bean.joinBean.AllProductDetailBean@6e522afb, false]
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-sessionInfo : bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-フィルター作動
-キー値：addCartProduct
-取得プロパティ：cmd.cart.AddCartProductCommand
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-トランザクション開始
-接続
-新規接続
-接続
-cartinside追加
-接続
-接続
-接続
-コミットします。
-クローズしました。
-result1 : [bean.ItemPictBean@3a17b147]
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-sessionInfo : bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-キー値：cart
-取得プロパティ：cmd.cart.TransferCartCommand
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-トランザクション開始
-接続
-新規接続
-接続
-test4
-コミットします。
-クローズしました。
-result1 : [bean.joinBean.AllCartBean@4dd08729]
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-sessionInfo : bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-キー値：purchase
-取得プロパティ：cmd.purchase.TransferPurchraseAddressCommand
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-トランザクション開始
-接続
-新規接続
-接続
-セッション登録値 :null
-コミットします。
-クローズしました。
-result1 : []
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-sessionInfo : bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-キー値：addDelivery
-取得プロパティ：cmd.purchase.PurchseInsertAddressCommand
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-トランザクション開始
-接続
-新規接続
-接続
-接続
-トランザクション開始
-接続
-obj内容9
-obj内容2229
+影響行数1
 コミットします。
 クローズしました。
 result1 : null
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-sessionInfo : bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-フィルター作動
-キー値：choiceCredit
-取得プロパティ：cmd.purchase.TransferPurchraseCreditCommand
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-7
-セッション登録値 :9
+message : 製品追加完了
+セッション登録値(token) :null
+sessionInfo : null
+セッション登録値(token) :null
+取得パラメーターMap要素数0
+キー値：addProduct
+取得プロパティ：cmd.admin.product.AddProductCommand
+フォルダまでのPath：C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Egroup_PROJECT\images
+productName
+aze
+price
+200
+categoryId
+1
+colorId
+1
+shapeId
+1
+artistId
+0
+アップロードファイル名:徐さん.jpg
+徐さん.jpg
+パラメータ: aze
+パラメータ: 200
+パラメータ: 1
+パラメータ: 1
+パラメータ: 1
+パラメータ: 0
 トランザクション開始
 接続
 新規接続
 接続
-コミットします。
-クローズしました。
-result1 : []
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-sessionInfo : bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-キー値：PurchseInsertCreditCardInfo
-取得プロパティ：cmd.purchase.PurchseInsertCreditCardInfoCommand
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-トランザクション開始
-接続
-新規接続
-接続
-生成セキュリティコード  :460
-接続
-トランザクション開始
-接続
-カード番号7
-コミットします。
-クローズしました。
-result1 : null
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-sessionInfo : bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-キー値：orderConfirmation
-取得プロパティ：cmd.purchase.TransferOrderConfirmationCommand
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値 :9
-セッション登録値 :7
-トランザクション開始
-接続
-新規接続
-接続
-コミットします。
-クローズしました。
-result1 : [bean.joinBean.AllOrderConfirmationBean@3b013349]
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-sessionInfo : bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-キー値：purchaseCompleted
-取得プロパティ：cmd.purchase.TransferPurchaseCompletedCommand
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値 :9
-セッション登録値 :7
-トランザクション開始
-接続
-新規接続
-接続
-test4
-接続
-接続
-接続
-メール送信が完了しました。
+影響行数1
 コミットします。
 クローズしました。
 result1 : null
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-sessionInfo : bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-キー値：topPage
-取得プロパティ：cmd.top.TransferTopPageCommand
-result1 : null
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-sessionInfo : bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-キー値：products
-取得プロパティ：cmd.products.ProductsCommand
+message : 製品追加完了
+セッション登録値(token) :null
+sessionInfo : null
+セッション登録値(token) :null
+取得パラメーターMap要素数0
+キー値：addProduct
+取得プロパティ：cmd.admin.product.AddProductCommand
+フォルダまでのPath：C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Egroup_PROJECT\images
+productName
+iwasawa
+price
+200
+categoryId
+1
+colorId
+1
+shapeId
+1
+artistId
+0
+アップロードファイル名:落合さん.jpg
+落合さん.jpg
+パラメータ: iwasawa
+パラメータ: 200
+パラメータ: 1
+パラメータ: 1
+パラメータ: 1
+パラメータ: 0
 トランザクション開始
 接続
 新規接続
 接続
-コミットします。
-クローズしました。
-result1 : [bean.joinBean.ProductPictBean@7a246d8b, bean.joinBean.ProductPictBean@3794d7a2, bean.joinBean.ProductPictBean@7e268c19, bean.joinBean.ProductPictBean@662ceead, bean.joinBean.ProductPictBean@3fbd8fd6, bean.joinBean.ProductPictBean@2e856644, bean.joinBean.ProductPictBean@648961c9, bean.joinBean.ProductPictBean@6551b273, bean.joinBean.ProductPictBean@36415230, bean.joinBean.ProductPictBean@33f3a5fa, bean.joinBean.ProductPictBean@1c5b0d64, bean.joinBean.ProductPictBean@74f1e6b6, bean.joinBean.ProductPictBean@481deaca, bean.joinBean.ProductPictBean@666f4a46, bean.joinBean.ProductPictBean@229b4bc2, bean.joinBean.ProductPictBean@59a4dd71, bean.joinBean.ProductPictBean@7e483735, bean.joinBean.ProductPictBean@62e97fc0, bean.joinBean.ProductPictBean@1ad4fd04, bean.joinBean.ProductPictBean@6564e47a, bean.joinBean.ProductPictBean@5aaa967c, bean.joinBean.ProductPictBean@7314e596, bean.joinBean.ProductPictBean@4e950a2d, bean.joinBean.ProductPictBean@c1060b1, bean.joinBean.ProductPictBean@2870e39, bean.joinBean.ProductPictBean@566b73aa, bean.joinBean.ProductPictBean@30c9df28, bean.joinBean.ProductPictBean@3f532468, bean.joinBean.ProductPictBean@51f037d, bean.joinBean.ProductPictBean@8e4d657, bean.joinBean.ProductPictBean@76aa78fc, bean.joinBean.ProductPictBean@50fc6225, bean.joinBean.ProductPictBean@2d0587ac, bean.joinBean.ProductPictBean@37daa35, bean.joinBean.ProductPictBean@26354f3e]
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-sessionInfo : bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-キー値：productHistoryFooter
-取得プロパティ：cmd.history.ProductHistoryFooterCommand
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-トランザクション開始
-接続
-新規接続
-7
-接続
-コミットします。
-クローズしました。
-result1 : [bean.joinBean.AllBrowsingHistoryInfoBean@5a61ab92]
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-sessionInfo : bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-キー値：productsDetails
-取得プロパティ：cmd.products.details.ProductsDetailsCommand
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-トランザクション開始
-接続
-新規接続
-接続
-接続
-接続
-コミットします。
-クローズしました。
-result1 : [bean.joinBean.AllProductDetailBean@4a8cad63, false]
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-sessionInfo : bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-フィルター作動
-キー値：addCartProduct
-取得プロパティ：cmd.cart.AddCartProductCommand
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-トランザクション開始
-接続
-新規接続
-接続
-cartinside追加
-接続
-接続
-接続
-コミットします。
-クローズしました。
-result1 : [bean.ItemPictBean@69baa968]
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-sessionInfo : bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-キー値：cart
-取得プロパティ：cmd.cart.TransferCartCommand
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-トランザクション開始
-接続
-新規接続
-接続
-test1
-コミットします。
-クローズしました。
-result1 : [bean.joinBean.AllCartBean@5fb50dbc]
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-sessionInfo : bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-キー値：purchase
-取得プロパティ：cmd.purchase.TransferPurchraseAddressCommand
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-トランザクション開始
-接続
-新規接続
-接続
-セッション登録値 :null
-コミットします。
-クローズしました。
-result1 : [bean.AddressBean@16b394e6]
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-sessionInfo : bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-フィルター作動
-キー値：choiceCredit
-取得プロパティ：cmd.purchase.TransferPurchraseCreditCommand
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-7
-セッション登録値 :9
-トランザクション開始
-接続
-新規接続
-接続
-コミットします。
-クローズしました。
-result1 : [bean.CreditCardBean@71b78e60]
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-sessionInfo : bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-キー値：orderConfirmation
-取得プロパティ：cmd.purchase.TransferOrderConfirmationCommand
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値 :9
-セッション登録値 :7
-トランザクション開始
-接続
-新規接続
-接続
-コミットします。
-クローズしました。
-result1 : [bean.joinBean.AllOrderConfirmationBean@39c9435c]
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-sessionInfo : bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-キー値：purchaseCompleted
-取得プロパティ：cmd.purchase.TransferPurchaseCompletedCommand
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値 :9
-セッション登録値 :7
-トランザクション開始
-接続
-新規接続
-接続
-test1
-接続
-接続
-接続
-メール送信が完了しました。
+影響行数1
 コミットします。
 クローズしました。
 result1 : null
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-sessionInfo : bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-キー値：topPage
-取得プロパティ：cmd.top.TransferTopPageCommand
+message : 製品追加完了
+セッション登録値(token) :null
+sessionInfo : null
+セッション登録値(token) :null
+取得パラメーターMap要素数0
+キー値：addProduct
+取得プロパティ：cmd.admin.product.AddProductCommand
+フォルダまでのPath：C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Egroup_PROJECT\images
+productName
+aze
+price
+200
+categoryId
+1
+colorId
+1
+shapeId
+1
+artistId
+0
+アップロードファイル名:丸山さん.jpg
+丸山さん.jpg
+パラメータ: aze
+パラメータ: 200
+パラメータ: 1
+パラメータ: 1
+パラメータ: 1
+パラメータ: 0
+トランザクション開始
+接続
+新規接続
+接続
+影響行数1
+コミットします。
+クローズしました。
 result1 : null
-message : null
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
-sessionInfo : bean.joinBean.UserAndCartBean@503ca6e0
-セッション登録値(token) :bean.joinBean.UserAndCartBean@503ca6e0
+message : 製品追加完了
+セッション登録値(token) :null
+sessionInfo : null
+セッション登録値(token) :null
+取得パラメーターMap要素数0
+キー値：addProduct
+取得プロパティ：cmd.admin.product.AddProductCommand
+フォルダまでのPath：C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Egroup_PROJECT\images
+productName
+aze
+price
+200
+categoryId
+1
+colorId
+1
+shapeId
+1
+artistId
+0
+アップロードファイル名:五十嵐さん.jpg
+五十嵐さん.jpg
+パラメータ: aze
+パラメータ: 200
+パラメータ: 1
+パラメータ: 1
+パラメータ: 1
+パラメータ: 0
+トランザクション開始
+接続
+新規接続
+接続
+影響行数1
+コミットします。
+クローズしました。
+result1 : null
+message : 製品追加完了
+セッション登録値(token) :null
+sessionInfo : null
+セッション登録値(token) :null

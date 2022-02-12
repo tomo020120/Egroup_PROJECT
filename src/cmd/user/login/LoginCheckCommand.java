@@ -20,12 +20,13 @@ public class LoginCheckCommand extends AbstractCommand{
 		AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
 		UserSelectDao userSelect = factory.getUserSelectDao();
 
-		TemporaryUserBean tempUserBean = (TemporaryUserBean)reqContext.getToken(); // 新規登録時のトークンを取得
+		Object token = reqContext.getToken(); // 新規登録時のトークンを取得
 
 		String mailAddress = null;
 		String password = null;
 
-		if(tempUserBean != null) { // 新規登録の場合はフォーム入力値ではなくセッションから値を取得
+		if(token != null) { // 新規登録の場合はフォーム入力値ではなくセッションから値を取得
+			TemporaryUserBean tempUserBean = (TemporaryUserBean)token;
 			mailAddress = tempUserBean.getMailAddress();
 			password = tempUserBean.getUserPassword();
 		}else {

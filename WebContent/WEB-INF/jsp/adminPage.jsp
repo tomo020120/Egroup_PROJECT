@@ -7,9 +7,8 @@
 <title>管理者ページ</title>
 </head>
 <body>
-<header><%@include file="header.jsp"%></header>
+<%@include file="header.jsp"%>
 <h1>管理者ページ</h1>
 <a href="productEdit">製品編集をする</a>
-<a href="artistEdit">アーティストページを編集する</a>
 </body>
 </html>

@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import bean.ProductBean;
 import bean.joinBean.AllProductDetailBean;
 import bean.joinBean.ProductPictBean;
 import dbManager.ConnectionManager;
@@ -17,44 +16,6 @@ public class MySQLProductsDao implements ProductsDao{
 	private Connection cn = null;
 	private PreparedStatement st = null;
 	private ResultSet rs = null;
-
-	//addProductは仮置き
-	public void addProduct(ProductBean p) {
-
-		try {
-			cn = ConnectionManager.getInstance().getConnection();
-
-			String sql = "insert into t_products (pid,name,price) " + "values(?,?,?)";
-
-			st = cn.prepareStatement(sql);
-
-			st.setString(1, p.getItemId());
-			st.setString(2, p.getName());
-			st.setString(3, p.getPrice());
-
-			st.executeUpdate();
-
-		}catch(SQLException e) {
-			e.printStackTrace();
-			ConnectionManager.getInstance().rollback();
-			throw new DaoOperationException(e.getMessage(), e);
-		}catch(Exception e) {
-			e.printStackTrace();
-			ConnectionManager.getInstance().rollback();
-			throw new DaoOperationException(e.getMessage(), e);
-		}finally {
-			if(st != null) {
-				try {
-					st.close();
-				}
-				catch(SQLException e) {
-					e.printStackTrace();
-					throw new DaoOperationException(e.getMessage(), e);
-				}
-			}
-		}
-	}
-
 
 	public AllProductDetailBean getProductsDetails(String itemId) {
 		AllProductDetailBean all = new AllProductDetailBean();

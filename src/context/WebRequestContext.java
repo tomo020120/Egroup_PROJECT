@@ -1,6 +1,7 @@
 package context;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -15,10 +16,13 @@ public class WebRequestContext implements RequestContext{
     private HttpServletRequest request;
     private Map<String,String[]> parametersMap;
     private String pictFileName;
+    private String absoluteFilePath;
 
     public void setRequest(Object request){
         this.request = (HttpServletRequest)request;
         parametersMap = this.request.getParameterMap();
+
+        System.out.println("取得パラメーターMap要素数" + parametersMap.size());
     }
 
     public Object getRequest(){
@@ -35,6 +39,8 @@ public class WebRequestContext implements RequestContext{
     public String[] getParameter(String key){
         String[] value = (String[])parametersMap.get(key);
 
+        System.out.println("パラメータ: " + value[0]);
+
         return value;
     }
 
@@ -49,6 +55,7 @@ public class WebRequestContext implements RequestContext{
     	DiskFileItemFactory factory = new DiskFileItemFactory();
     	ServletFileUpload sfu = new ServletFileUpload(factory);
 
+    	parametersMap = new HashMap<String,String[]>();
     	try {
     		List<FileItem> list = sfu.parseRequest(request); // doPostで送られたリクエストをフォームの部品ごとにFileItem型で分割しリストで返す
     		Iterator<FileItem> it = list.iterator();
@@ -64,7 +71,11 @@ public class WebRequestContext implements RequestContext{
 
     					System.out.println("アップロードファイル名:" + fileName);
 
-    					File pictFile = new File(imagePath + File.separator + fileName);
+    					absoluteFilePath = imagePath + File.separator + fileName;
+
+    					setAbsoluteFilePath(absoluteFilePath);
+
+    					File pictFile = new File(absoluteFilePath);
 
     					if(pictFile.exists()) { // 同一写真が存在していたら処理終了
     						uploadFlag = false;
@@ -76,6 +87,13 @@ public class WebRequestContext implements RequestContext{
     					item.write(pictFile); // 指定されたパスに保存する
     					uploadFlag = true;
     				}
+    			}else {
+    				String key = item.getFieldName();
+    				String[] value = {item.getString()};
+
+    				System.out.println(key);
+    				System.out.println(value[0]);
+    				parametersMap.put(key,value);
     			}
     		}
     	}
@@ -85,6 +103,14 @@ public class WebRequestContext implements RequestContext{
     	}
 
     	return uploadFlag;
+    }
+
+    private void setAbsoluteFilePath(String absoluteFilePath) {
+    	this.absoluteFilePath = absoluteFilePath;
+    }
+
+    public String getAbsoluteFilePath() {
+    	return absoluteFilePath;
     }
 
     private void setPictFileName(String pictFileName) { // このクラス内でしか呼び出したくないためprivateのセッター

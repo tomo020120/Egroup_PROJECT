@@ -20,6 +20,8 @@ public class MySQLPurchaseDao implements PurchaseDao{
 	private Connection cn = null;
 	private PreparedStatement st = null;
 	private ResultSet rs = null;
+	private CallableStatement cst = null;
+
 	public String getdeliveryInfoId(String userId,String fullAddress){
 		String deliveryInfoId=null;
 		try {
@@ -142,7 +144,7 @@ public class MySQLPurchaseDao implements PurchaseDao{
 
 				String sql = "call purchase(?,?,?,?,?,now(),?)"; // 購入確定の一連の処理を行うプロシージャ
 
-				CallableStatement cst = cn.prepareCall(sql);
+				cst = cn.prepareCall(sql);
 
 
 				cst.setString(1, item[i]);
@@ -166,9 +168,9 @@ public class MySQLPurchaseDao implements PurchaseDao{
 				ConnectionManager.getInstance().rollback();
 				throw new DaoOperationException(e.getMessage(), e);
 			}finally {
-				if(st != null) {
+				if(cst != null) {
 					try {
-						st.close();
+						cst.close();
 					}
 					catch(SQLException e) {
 						e.printStackTrace();

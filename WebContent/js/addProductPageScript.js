@@ -13,4 +13,14 @@ $(function(){
 		    }
 		}
 	});
+
+	$("#submitBtn").on('click',function(){
+		var artistIdValue = $("input[name=artistId]").val();
+
+		if(artistIdValue == null || artistIdValue == ''){
+			$("input[name=artistId]").val(0);
+		}
+
+		$("#addProductForm").submit();
+	});
 });

@@ -12,6 +12,7 @@ public class MySQLProductEditDao implements ProductEditDao {
 
 	private Connection cn = null;
 	private PreparedStatement st = null;
+	private CallableStatement cst = null;
 
 	@Override
 	public boolean addProduct(String productName, String price, String categoryId, String colorId, String shapeId,
@@ -21,19 +22,21 @@ public class MySQLProductEditDao implements ProductEditDao {
 			try {
 				cn = ConnectionManager.getInstance().getConnection();
 
-				String sql = "call add_product(?,?,?,?,?,?,?)"; // カート内に同一商品があれば更新、なければ追加をするストアドプロシージャの実行
+				String sql = "call add_product(?,?,?,?,?,?,?)"; // 同一商品名、各IDの有無をすべてチェックし正しいデータの場合product_table、item_pict_tableにinsertするプロシージャ実行
 
-				CallableStatement cst = cn.prepareCall(sql);
+				cst = cn.prepareCall(sql);
 
 				cst.setString(1, productName);
 				cst.setInt(2, Integer.parseInt(price));
-				cst.setInt(3, Integer.parseInt(categoryId));
-				cst.setInt(4, Integer.parseInt(colorId));
-				cst.setInt(5, Integer.parseInt(shapeId));
-				cst.setInt(6, Integer.parseInt(artistId));
+				cst.setString(3, categoryId);
+				cst.setString(4, colorId);
+				cst.setString(5, shapeId);
+				cst.setString(6, artistId);
 				cst.setString(7, pictPath);
 
 				int result = cst.executeUpdate();
+
+				System.out.println("影響行数" + result);
 
 				if(result > 0) {
 					flag = true;
@@ -47,9 +50,9 @@ public class MySQLProductEditDao implements ProductEditDao {
 				ConnectionManager.getInstance().rollback();
 				throw new DaoOperationException(e.getMessage(), e);
 			}finally {
-				if(st != null) {
+				if(cst != null) {
 					try {
-						st.close();
+						cst.close();
 					}
 					catch(SQLException e) {
 						e.printStackTrace();

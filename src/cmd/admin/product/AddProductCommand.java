@@ -1,5 +1,7 @@
 package cmd.admin.product;
 
+import java.io.File;
+
 import cmd.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
@@ -12,17 +14,9 @@ public class AddProductCommand extends AbstractCommand {
 	@Override
 	public ResponseContext execute(ResponseContext resContext) {
 		RequestContext reqContext = getRequestContext();
-
-		String productName = reqContext.getParameter("productName")[0];
-		String price = reqContext.getParameter("price")[0];
-		String categoryId = reqContext.getParameter("categoryId")[0];
-		String colorId = reqContext.getParameter("colorId")[0];
-		String shapeId = reqContext.getParameter("shapeId")[0];
-		String artistId = reqContext.getParameter("artistId")[0];
-
 		String pictPath = "";
 
-		if(reqContext.uploadFile()) { // 写真のアップロード
+		if(reqContext.uploadFile()) { // 写真のアップロードもしもう写真があるならfalse
 			String fileName = reqContext.getPictFileName(); // ファイル名の取得
 			System.out.println(fileName);
 
@@ -34,6 +28,12 @@ public class AddProductCommand extends AbstractCommand {
 			return resContext;
 		}
 
+		String productName = reqContext.getParameter("productName")[0];
+		String price = reqContext.getParameter("price")[0];
+		String categoryId = reqContext.getParameter("categoryId")[0];
+		String colorId = reqContext.getParameter("colorId")[0];
+		String shapeId = reqContext.getParameter("shapeId")[0];
+		String artistId = reqContext.getParameter("artistId")[0];
 
 		AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
 		ProductEditDao edit = factory.getProductEditDao();
@@ -49,7 +49,10 @@ public class AddProductCommand extends AbstractCommand {
 			ConnectionManager.getInstance().closeTransaction();
 		}
 		else {
-			resContext.setMessage("その商品は既に存在しているため追加できません");
+			File imageFile = new File(reqContext.getAbsoluteFilePath()); //追加に失敗したらアップロードしたファイルをフォルダから消す
+			imageFile.delete();
+
+			resContext.setMessage("存在していない番号の指定または、同じ製品名の商品がすでに存在しているため追加できませんでした。");
 			resContext.setTargetPath("addProductPage");
 
 			ConnectionManager.getInstance().rollback();

@@ -18,6 +18,7 @@ public class MySQLCartDao implements CartDao{
 	private Connection cn = null;
 	private PreparedStatement st = null;
 	private ResultSet rs = null;
+	private CallableStatement cst = null;
 
 	public boolean isExistenceCart(String userId) {
 		boolean existFlag = false;
@@ -203,7 +204,7 @@ public class MySQLCartDao implements CartDao{
 
 				String sql = "call upsert_inside_cart(?,?,?,?)"; // カート内に同一商品があれば更新、なければ追加をするストアドプロシージャの実行
 
-				CallableStatement cst = cn.prepareCall(sql);
+				cst = cn.prepareCall(sql);
 
 				cst.setString(1, itemId);
 				cst.setString(2, orderCount);
@@ -224,9 +225,9 @@ public class MySQLCartDao implements CartDao{
 				ConnectionManager.getInstance().rollback();
 				throw new DaoOperationException(e.getMessage(), e);
 			}finally {
-				if(st != null) {
+				if(cst != null) {
 					try {
-						st.close();
+						cst.close();
 					}
 					catch(SQLException e) {
 						e.printStackTrace();

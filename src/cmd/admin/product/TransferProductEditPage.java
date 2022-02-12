@@ -15,7 +15,7 @@ public class TransferProductEditPage extends AbstractCommand {
 
 		ConnectionManager.getInstance().beginTransaction();
 
-		resContext.setResult(dao.getAllProducts());
+		resContext.setResult(dao.getAllProducts("1"));
 
 		ConnectionManager.getInstance().commit();
 		ConnectionManager.getInstance().closeTransaction();
