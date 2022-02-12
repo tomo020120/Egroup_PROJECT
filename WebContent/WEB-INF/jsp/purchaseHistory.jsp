@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
@@ -11,24 +11,29 @@
 
 </head>
 <body>
-	<%@include file="header.jsp" %>
-	<table border="1">
-	<tr>
-		<th>商品名</th>
-		<th>値段</th>
-		<th>商品の写真</th>
-		<th>小計</th>
-		<th>購入日</th>
-	</tr>
+	<%@include file="header.jsp"%>
+	<h1>注文履歴</h1>
+	<c:set var="total" value= "0"/>
 	<c:forEach var="result" items="${result}">
-	<tr>
-		<td>${result.name}</td>
-		<td>${result.price}円</td>
-		<td><img src="${result.pictPath}"></td>
-		<td>${result.subTotal}</td>
-<td>${result.date}</td>
-	</tr>
+
+		<c:set var="num1" value="${result.date}" />
+
+
+<c:choose>
+	<c:when test="${num != num1 }">
+		<hr>
+		<h2>${result.date}</h2>
+
+	</c:when>
+
+</c:choose>
+		${result.name}<br>
+		<img src="${result.pictPath}" width="500px">
+		<br>
+		${result.price}円<br>
+		${result.orderCount}個<br>
+		${result.subTotal}<br>
+		<c:set var="num" value="${result.date}" />
 	</c:forEach>
-	</table>
 </body>
 </html>
