@@ -55,13 +55,13 @@ public class MySQLCartDao implements CartDao{
 		}
 		return existFlag;
 	}
-		public List<ItemPictBean> getPictPath(String itemId){
+		public List<ItemPictBean> getPictPath(String itemId,int totalAmount){
 			List<ItemPictBean> pic = new ArrayList<ItemPictBean>();
 
 			try {
 				cn = ConnectionManager.getInstance().getConnection();
 
-				String sql = "SELECT pictPath FROM item_pict_table WHERE itemId=?";
+				String sql = "SELECT pictPath, price,categoryId FROM product_table AS pro LEFT OUTER JOIN item_pict_table AS pict ON pro.itemId=pict.itemId WHERE pro.itemId=?;";
 
 				st = cn.prepareStatement(sql);
 
@@ -73,8 +73,9 @@ public class MySQLCartDao implements CartDao{
 					ItemPictBean p = new ItemPictBean();
 
 					p.setPictPath(rs.getString(1));
-
-
+					p.setPrice(rs.getString(2));
+					p.setCategoryId(rs.getString(3));
+					p.setTotalAmount(totalAmount);
 					pic.add(p);
 				}
 

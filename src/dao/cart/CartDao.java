@@ -13,5 +13,5 @@ public interface CartDao{
 	public abstract boolean updateCartTotal(String cartId);
 	public abstract boolean deleteCartProduct(String cartId,String itemId);
 	public abstract int getTotalAmount(String cartId);
-	public abstract List<ItemPictBean> getPictPath(String itemId);
+	public abstract List<ItemPictBean> getPictPath(String itemId,int totalAmount);
 }

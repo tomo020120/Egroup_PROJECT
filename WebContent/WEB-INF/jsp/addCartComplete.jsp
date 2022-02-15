@@ -25,12 +25,15 @@
 </div>
 </div>
 </div>
+
 <div class="item">
 <div class=box2>
-<p>カート内の小計:</p>
+<c:forEach var="con" items="${result}">
+<p>カート内の小計:${con.totalAmount}</p>
 <a href="cart" class="cartbtn">カートに進む</a><br>
 <a href="purchase"class="regibtn">レジに進む</a><br>
-<a href="products" class="shopbtn">買い物を続ける</a><br>
+<a href="products?categoryId=${con.categoryId}" class="shopbtn">買い物を続ける</a><br>
+</c:forEach>
 </div>
 </div>
 </div>
