@@ -16,10 +16,31 @@ body{
 	position:fixed; /*スクロールしても位置を固定 */
 }
 
+
+
+
+
+.addDeliveryInfoButton{
+	display: flex;
+    justify-content: center;
+}
+
+.deliveryInfoList{
+	display: flex;
+    justify-content: center;
+}
+.deliveryInfo{
+	border-width: thick;
+	border-color: #c0c0c0;
+	border-style: solid;
+	border-radius:10%;
+	margin-left:5%;
+}
 /* 横並びにしたい要素を持つ親要素 */
 #flexContent{
 	display:flex; /* 子要素を横並びにする */
 	margin:0 0 30px 70px; /* 位置指定 */
+
 }
 
 /* 利用可能クレジットカード会社リストデザイン */

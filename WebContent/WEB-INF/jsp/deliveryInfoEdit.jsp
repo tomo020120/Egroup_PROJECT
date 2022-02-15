@@ -14,9 +14,9 @@
 <body>
 	<%@include file="header.jsp"%>
 	<h1>配送先情報編集</h1>
-	<button id="addDeliveryInfoButton">新しい住所を追加</button>
 
-	<div id="deliveryInfoList">
+	<div id="deliveryInfoList" class="deliveryInfoList">
+	<button id="addDeliveryInfoButton" class="addDeliveryInfoButton">新しい住所を追加</button>
 		<c:forEach var="deliveryInfo" items="${result}">
 			<div class="deliveryInfo">
 				<p>宛名:<span class="deliveryName">${deliveryInfo.deliveryName}</span></p>
