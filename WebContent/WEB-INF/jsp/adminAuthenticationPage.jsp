@@ -7,7 +7,7 @@
 <title>管理者認証ページ</title>
 </head>
 <body>
-<%@include file="header.jsp"%>
+
 <h1>管理者認証ページ</h1>
 <form method="post" action="executeAuthentication" autocomplete="off">
 	認証コード:<input type="text" name="admiinAuthenticaionCode" maxLength="6">

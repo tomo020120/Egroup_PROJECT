@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="CSS/creditCardInfoEditStyle.css">
 </head>
 <body>
-<%@include file="header.jsp"%>
+
 <h1>クレジットカード</h1>
 <hr>
 <p>${message}</p>

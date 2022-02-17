@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="CSS/purchase.css">
 </head>
 <body>
-	<%@include file="header.jsp"%>
+
 	<h1>配送先選択</h1>
 	<hr>
 

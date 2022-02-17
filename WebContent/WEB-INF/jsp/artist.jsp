@@ -11,7 +11,7 @@
 </head>
 
 <body>
-	<%@include file="header.jsp" %>
+	
 	<h1>ARTISTS</h1>
 <div id="item-list">
 <ul>

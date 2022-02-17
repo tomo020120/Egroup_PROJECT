@@ -13,7 +13,7 @@
 </script>
 </head>
 <body onload="delay();">
-<%@include file="header.jsp"%>
+
 <h1>ログアウトが完了しました。</h1>
 <p>自動的に3秒後トップページへ戻ります。</p>
 </body>

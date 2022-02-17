@@ -11,7 +11,7 @@
 
 </head>
 <body>
-	<%@include file="header.jsp"%>
+
 	<h1>注文履歴</h1>
 	<c:set var="total" value= "0"/>
 	<c:forEach var="result" items="${result}">

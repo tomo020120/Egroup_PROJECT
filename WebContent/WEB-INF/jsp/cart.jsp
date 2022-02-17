@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="CSS/cartStyle.css">
 </head>
 <body>
-	<%@include file="header.jsp"%>
+
 <div class="container">
 <div class="item">
 

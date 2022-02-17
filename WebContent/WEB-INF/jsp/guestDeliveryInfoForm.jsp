@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="CSS/guestDeliveryInfoFormStyle.css">
 </head>
 <body>
-<%@include file="header.jsp"%>
+
 <div class=allPosition>
 <h1>１お届け先住所</h1>
 <div id="userInfoInputArea">

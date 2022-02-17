@@ -9,7 +9,7 @@
 <script src="js/addProductPageScript.js"></script>
 </head>
 <body>
-<%@include file="header.jsp"%>
+
 <h1>製品追加ページ</h1>
 <form id="addProductForm" action="addProduct" method="post" enctype="multipart/form-data">
 	製品名<input type="text" name="productName"><br>

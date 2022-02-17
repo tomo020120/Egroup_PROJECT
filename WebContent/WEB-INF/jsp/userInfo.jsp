@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="CSS/userInfoStyle.css">
 </head>
 <body>
-	<%@include file="header.jsp" %>
+	
 <div class="position">
 <!--<a href="userInfoEdit?userId = "${sessionInfo.userId} class="btn-flat-border">ユーザー情報<p>住所、クレジットカードの登録・変更・破棄</p></a>-->
 			<a href="logout"class="btn-flat-border">ログアウト<p>アカウントからログアウトできます</p></a>

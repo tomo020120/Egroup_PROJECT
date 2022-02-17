@@ -33,7 +33,7 @@ window.onload = function(){
 </script>
 </head>
 <body>
-	<%@include file="header.jsp"%>
+
 	<h1>最終確認</h1>
 <h1>お届け先住所</h1>
 	<div id="guestDeliveryInfoList"></div>

@@ -10,7 +10,7 @@
 </head>
 
 <body>
-	<%@include file="header.jsp" %>
+	
 	<form action="productHistoryDelete" method="GET">
 	<a href="products">商品一覧へ戻る</a>
 	<table border="1">

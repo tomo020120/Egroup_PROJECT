@@ -7,7 +7,7 @@
 <title>ユーザー名変更</title>
 </head>
 <body>
-	<%@include file="header.jsp"%>
+
 	<h1>ユーザー名変更</h1>
 	<form method="post" action="updateUserName">
 		新しい名前:<input type="text" name="newUserName" maxLength="25">

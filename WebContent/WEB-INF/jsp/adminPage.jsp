@@ -7,7 +7,7 @@
 <title>管理者ページ</title>
 </head>
 <body>
-<%@include file="header.jsp"%>
+
 <h1>管理者ページ</h1>
 <a href="productEdit">製品編集をする</a>
 </body>

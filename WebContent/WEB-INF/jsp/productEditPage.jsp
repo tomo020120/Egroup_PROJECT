@@ -12,7 +12,7 @@
 <script src="js/productEditPageScript.js"></script>
 </head>
 <body>
-<%@include file="header.jsp" %>
+
 
 <h1>商品編集画面</h1>
 

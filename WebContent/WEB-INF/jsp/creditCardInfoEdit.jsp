@@ -11,7 +11,7 @@
 <script src="js/creditCardInfoEditScript.js"></script>
 </head>
 <body>
-<%@include file="header.jsp"%>
+
 <h1>クレジットカード情報編集</h1>
 <p>${message}</p>
 	<button id="addCreditCardButton">新しいクレジットカードを追加</button>

@@ -32,7 +32,7 @@ window.onload = function(){
 </head>
 
 <body>
-	<%@include file="header.jsp"%>
+
 	<h1 class="title">注文内容を確認・変更する</h1>
 <div class="abc">
 <div class="box2">

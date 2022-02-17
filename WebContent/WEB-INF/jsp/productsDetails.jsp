@@ -11,7 +11,7 @@
 <script type="text/javascript" src="js/productsDetailsScript.js"></script>
 </head>
 <body data-favorite="${result.get(1)}">
-	<%@include file="header.jsp" %>
+	
 	<table border="1">
 	<tr>
 		<th>商品ID</th>

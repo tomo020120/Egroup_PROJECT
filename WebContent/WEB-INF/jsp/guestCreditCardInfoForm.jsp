@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="CSS/guestDeliveryInfoFormStyle.css">
 </head>
 <body>
-<%@include file="header.jsp"%>
+
 <div class="allPosition">
 <h1>2 クレジットカード情報入力</h1>
 <div id="addCreditCardFormArea" class="animFormArea">

@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="CSS/topPageStyle.css">
 </head>
 <body>
-	<%@include file="header.jsp" %>
+
 
 
 	<div class="container">

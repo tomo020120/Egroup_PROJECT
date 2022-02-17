@@ -12,7 +12,7 @@
 
 </head>
 <body>
-<%@include file="header.jsp"%>
+
 <div class="box" id="makeImg">
 <h1>ログイン</h1>
 

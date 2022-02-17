@@ -7,7 +7,7 @@
 <title>製品追加完了</title>
 </head>
 <body>
-<header><%@include file="header.jsp"%></header>
+
 <p>${message}</p>
 <a href="addProductPage">製品追加を続ける</a>
 <a href="productEdit">製品一覧へ戻る</a>

@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="CSS/accountInfoEditStyle.css">
 </head>
 <body>
-	<%@include file="header.jsp" %>
+
 	<p>${message}</p>
 	<div>
 		ユーザー名:<br>

@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="CSS/addCartComplete.css">
 </head>
 <body>
-<%@include file="header.jsp" %>
+
 <div class="container">
 <div class="item">
 <div class="box">

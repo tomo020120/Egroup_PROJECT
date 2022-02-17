@@ -9,7 +9,7 @@
 
 </head>
 <body>
-	<%@include file="header.jsp" %>
+	
 	<div class="box2">
     <h1>アカウントを作成</h1>
     <form method='post' action="judge">

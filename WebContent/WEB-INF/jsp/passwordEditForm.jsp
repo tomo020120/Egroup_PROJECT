@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="CSS/passwordEditFormStyle.css">
 </head>
 <body>
-<%@include file="header.jsp"%>
+
 	<h1>パスワード編集画面</h1>
 	<form id="updatePasswordForm" method="post" action="updatePassword">
 		現在のパスワード:<input id="currentPassword" type="password" name="currentPassword" maxLength="20"><br>

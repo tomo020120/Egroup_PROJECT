@@ -12,7 +12,7 @@
 <script src="js/deliveryInfoEditScript.js"></script>
 </head>
 <body>
-	<%@include file="header.jsp"%>
+
 	<h1>配送先情報編集</h1>
 
 	<div id="deliveryInfoList" class="deliveryInfoList">
