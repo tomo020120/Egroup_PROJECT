@@ -70,4 +70,14 @@
     	<servlet-name>default</servlet-name>
     	<url-pattern>/https://yubinbango.github.io/yubinbango/yubinbango.js</url-pattern>
     </servlet-mapping>
+
+
+    <!-- 複数のJSPで共通する宣言をまとめるやつ -->
+	<jsp-config>
+		<jsp-property-group>
+			<url-pattern>*.jsp</url-pattern>
+			<page-encoding>UTF-8</page-encoding>
+			<include-prelude>header.jsp</include-prelude>
+		</jsp-property-group>
+	</jsp-config>
 </web-app>

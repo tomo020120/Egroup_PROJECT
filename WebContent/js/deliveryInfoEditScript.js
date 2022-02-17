@@ -81,7 +81,7 @@ $(function(){
 
 			$("#updateDeliveryFormArea").fadeIn(1100); /*1100ミリ秒かけてフェードイン*/
 
-			$("body").css('background-color','#BBBBBB');
+			$("body").css('background-color','#BBB');
 
 			$("body").find("#addDeliveryInfoButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",true); /*ボタンの無効化*/
 		});

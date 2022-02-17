@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="CSS/headerStyle.css">
 
 <link rel="icon" href="images/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="icon" href="images/favicon.ico">
 </head>
 <body>
 
@@ -42,7 +43,7 @@
 
 
 
-	  <div class=name>
+	  <div class=names>
 	 	 <p>${sessionInfo.userName}</p>
 	 </div>
 
