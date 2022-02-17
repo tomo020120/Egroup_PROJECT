@@ -20,10 +20,16 @@ public class DeleteFavoriteCommand extends AbstractCommand {
 
 		String userId = ((UserAndCartBean)reqContext.getToken()).getUserId();
 
+		String commandKey = reqContext.getCommandKey(); // 呼び出し元のパス
+
 		if(favorite.deleteFavorite(itemId,userId)) {
 			System.out.println("cartinside削除");
 
-			resContext.setTargetCommandPath("productsDetails?itemId=" + itemId);
+			if(commandKey.equals("deleteFavoriteForFavPage")) { // 呼び出され元がお気に入りページの場合は消去後に商品詳細ではなくお気に入りに戻す
+				resContext.setTargetCommandPath("favorite");
+			}else {
+				resContext.setTargetCommandPath("productsDetails?itemId=" + itemId);
+			}
 
 			ConnectionManager.getInstance().commit();
 			ConnectionManager.getInstance().closeTransaction();
