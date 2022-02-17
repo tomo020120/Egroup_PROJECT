@@ -27,3 +27,22 @@ a.btn--orange:hover {
   color: #000000;
   background: #f1c85a;
 }
+
+.box {
+  display:flex;
+  flex-flow: column;
+  border:1px #ccc solid;
+  height:300px;
+  width:50%;
+  margin:0 0 1em;
+}
+
+.content {
+  padding:1em;
+  background-color:#FFCC80;
+  margin:0.5em auto;
+  width:95.5%;
+}
+.button{
+  margin: 0 0 0 auto;
+}

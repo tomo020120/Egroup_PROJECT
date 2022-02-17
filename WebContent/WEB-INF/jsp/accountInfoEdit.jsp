@@ -10,16 +10,16 @@
 <body>
 
 	<p>${message}</p>
-	<div>
-		ユーザー名:<br>
+	<div class="box">
+		<div class="content">ユーザー名:
 		${sessionInfo.userName}
-		<button onclick="location.href='editUserNameForm'" class="btn btn--white">編集</button><br>
-   		メールアドレス:<br>
+		<div class="button"><button onclick="location.href='editUserNameForm'" class="btn btn--white">編集</button></div></div>
+   		<div class="content">メールアドレス:
    		${sessionInfo.mailAddress}
-   		<button onclick="location.href='editUserMailAddressForm'" class="btn btn--white">編集</button><br>
-   		現在のパスワード:<br>
+   		<div class="button"><button onclick="location.href='editUserMailAddressForm'" class="btn btn--white">編集</button></div></div>
+   		<div class="content">現在のパスワード:
    		********
-   		<button onclick="location.href='editPasswordForm'" class="btn btn--white">編集</button><br>
+   		<div class="button"><button onclick="location.href='editPasswordForm'" class="btn btn--white">編集</button></div></div>
 	</div>
 
    	<button onclick="location.href='userInfoEdit'"  class="btn btn--orange">完了</button>
