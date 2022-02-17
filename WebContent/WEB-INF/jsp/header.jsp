@@ -52,7 +52,7 @@
         <a href="userInfo"><img src="images/people-removebg-preview.png" alt="ログイン" width="40" ></a>
     </c:when>
     <c:otherwise>
-         <a href="login"><img src="images/people-removebg-preview.png" alt="ログイン" width="40" ></a>
+         <a href="login"><img src="images/people-removebg-preview.png" alt="ログイン" width="30" ></a>
     </c:otherwise>
 </c:choose>
 </div>
