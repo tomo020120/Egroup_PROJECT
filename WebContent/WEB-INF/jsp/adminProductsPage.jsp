@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/adminProductsPageScript.js"></script>
 
 <!DOCTYPE html>
 <html>
@@ -12,7 +14,12 @@
 <script src="js/productsScript.js"></script>
 </head>
 <body>
-${message}
+<h1>商品編集画面</h1>
+<p>${message}</p>
+<div id="adminActionTool">
+	<button id="addProductBtn">商品を追加する</button>
+	<button id="deleteProductBtn">商品を消去する</button>
+</div>
 <form action="searchByAdmin" method="GET" name="form1">
 製品名検索(仮)：<input type="search" name="productName" value="${sessionScope.holdSearchWord}" class="info1">
 <select name="categoryId" id="CATEGORY" class="info1">
@@ -86,7 +93,7 @@ ${message}
  <tr><th>編集</th><th>商品名</th><th>画像</th><th>価格</th></tr>
  <c:forEach var="product" items="${result}">
   <tr>
-  	<td><button id="productEditBtn" onclick="location.href='editProductPage?itemId=${product.itemId}'">編集する</button></td>
+  	<td id="adminAction"><button id="productEditBtn" onclick="location.href='editProductPage?itemId=${product.itemId}'">編集する</button></td>
   	<td><a href="productsDetails?itemId=${product.itemId}">${product.name}</a></td>
   	<td><a href="productsDetails?itemId=${product.itemId}"><img src="${product.pictPath}"></a></td>
   	<td>${product.price}円</td>

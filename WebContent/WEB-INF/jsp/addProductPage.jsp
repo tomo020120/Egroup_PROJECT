@@ -23,6 +23,6 @@
 	<button id="submitBtn" type="button">追加</button>
 </form>
 <p>${message}</p>
-<a href="productEdit">商品一覧へ戻る</a>
+<a href="adminProductsPage">商品一覧へ戻る</a>
 </body>
 </html>

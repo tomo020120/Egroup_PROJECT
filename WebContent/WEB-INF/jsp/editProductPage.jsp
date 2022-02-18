@@ -18,10 +18,11 @@
 	カラー番号<input type="text" name="colorId" value="${result.colorId}"><br>
 	形状番号<input type="text" name="shapeId" value="${result.shapeId}"><br>
 	【任意】アーティスト番号<input type="text" name="artistId" value="${result.artistId}"><br>
+	<input type="hidden" name="exitPictPath" value="${result.pictPath}" >
+	<input type="hidden" name="itemId" value="${result.itemId}" >
 	製品写真<input type="file" name="productPict" id="productPict" accept="image/*"><br>
 	<img id="thumbnail" src="${result.pictPath}"><br>
-	<input type="hidden" name="exitPictPath" value="${result.pictPath}" >
-	<button type="submit" name="itemId" value="${result.itemId}">編集完了</button>
+	<button type="submit">編集完了</button>
 </form>
 ${message}
 </body>

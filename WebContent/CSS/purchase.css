@@ -264,7 +264,7 @@ width:390px;
   border:1px solid;
 	border-radius: 2px; /* 半径が8pxの角丸 */
 	border-color: #a88734;
-	padding:3px 100px;
+	padding:3px 110px;
 }
 .decisionButton:hover {
   color: #000000;

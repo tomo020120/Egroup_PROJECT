@@ -1,6 +1,9 @@
 package context;
 
 import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -79,6 +82,7 @@ public class WebRequestContext implements RequestContext{
     					File pictFile = new File(absoluteFilePath);
 
     					if(pictFile.exists()) { // 同一写真が存在していたら処理終了
+    						System.out.println("同じ写真あります。");
     						uploadFlag = false;
     						return uploadFlag;
     					}
@@ -88,6 +92,7 @@ public class WebRequestContext implements RequestContext{
     					item.write(pictFile); // 指定されたパスに保存する
     					uploadFlag = true;
     				}else {
+    					System.out.println("ファイルがないです");
     					setNoFileFlag(true); // ファイルがあげられていない
     				}
     			}else {
@@ -104,6 +109,8 @@ public class WebRequestContext implements RequestContext{
     		uploadFlag = false;
     	}
 
+    	System.out.println("uploadの判定" + uploadFlag);
+
     	return uploadFlag;
     }
 
@@ -114,11 +121,11 @@ public class WebRequestContext implements RequestContext{
     		@SuppressWarnings("deprecation") // 処理の都合上、非推奨メソッドを呼び出してるため警告を消すアノテーションを記述
     		String contextPath = request.getRealPath("WebContent"); // imagesフォルダの手前までの絶対パスを取得「C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Egroup_PROJECT\WebContent」
 
-    		String pictAbsPath = (contextPath + File.pathSeparator +  pictPath);
+    		String pictAbsPath = (contextPath + File.separator +  pictPath);
+    		Path path = Paths.get(pictAbsPath);
+    		System.out.println("消去写真パス" + pictAbsPath);
 
-    		File file = new File(pictAbsPath);
-
-    		deleteFlag = file.delete();
+    		Files.delete(path);
     	}catch(Exception e) {
     		e.printStackTrace();
     		deleteFlag = false;

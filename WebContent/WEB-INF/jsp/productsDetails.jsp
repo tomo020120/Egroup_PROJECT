@@ -11,37 +11,41 @@
 <script type="text/javascript" src="js/productsDetailsScript.js"></script>
 </head>
 <body data-favorite="${result.get(1)}">
+<h1>${result.get(0).name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="favoriteBtn" onclick="favoriteClick(this);" value="${result.get(0).itemId}" style="border: 4px solid #0F0;">❤︎</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+<div class="container">
+<div class="item">
+<div class="box">
+<div class="pic">
 
-	<table border="1">
-	<tr>
-		<th>商品ID</th>
-		<th>商品名</th>
-		<th>値段</th>
-		<th>発売日</th>
-		<th>商品写真</th>
-		<th>お気に入り</th>
-	</tr>
-	<tr id="itemInfoList">
-		<td>${result.get(0).itemId}</td>
-		<td class="targetInfo">${result.get(0).name}</td>
-		<td class="targetInfo">${result.get(0).price}円</td>
-		<td>${result.get(0).releaseDate}</td>
-		<td class="targetInfo"><img id="itemPict" src="${result.get(0).pictPath}"></td>
-		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="favoriteBtn" onclick="favoriteClick(this);" value="${result.get(0).itemId}" style="border: 4px solid #0F0;">❤︎</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-	</tr>
-	</table>
+
+
+
+		<img id="itemPict" src="${result.get(0).pictPath}" class="pic"><br>
+		<p class="p1">\ ${result.get(0).price}</p>
+
+
+
+</div>
+</div>
+</div>
+<div class="item">
+<div class=box2>
+<br>
 	<form method="post" action="addCartProduct?itemId=${result.get(0).itemId}&price=${result.get(0).price} ">
-		<select id="orderCount" name="orderCount">
+		${result.get(0).name}　　　　　　数量:<select id="orderCount" name="orderCount">
 			<option value="1">1</option>
 			<option value="2">2</option>
 			<option value="3">3</option>
-		</select>
+		</select><br>
 		<input type="submit" value="カートに入れる">
 	</form>
 
-	<button id="nologinPurchaseBtn">ログインせずに購入する</button>
+	<button id="nologinPurchaseBtn">ログインせずに購入する</button><br>
 
-	<a href="products?categoryId=${result.get(0).categoryId}">商品一覧へ戻る</a>
-	
+	<a href="products?categoryId=${result.get(0).categoryId}"class="shopbtn">商品一覧へ戻る</a>
+</div>
+</div>
+</div>
 </body>
 </html>
+

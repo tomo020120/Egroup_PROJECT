@@ -25,7 +25,7 @@
 				<p>種類:<span class="cardCompany">${creditCardInfo.cardCompany}</span></p>
 				<p>クレジットカード名義人:<span class="cardOwnerName">${creditCardInfo.cardOwnerName}</span></p>
 				<p>有効期限:<span class="expirationDate">${creditCardInfo.expirationDate}</span></p>
-				<a href="orderConfirmation?creditCardInfoId=${creditCardInfo.cardId}" class="decisionButton">決定</a><br>
+				<button class="decisionButton" type="button" onclick="location.href='orderConfirmation?creditCardInfoId=${creditCardInfo.cardId}'">決定</button>
 				<button class="openUpdateFormButton" type="button" value="${creditCardInfo.cardId}">編集</button>
 				<button class="openDeleteComfirmButton" type="button" value="${creditCardInfo.cardId}">消去</button>
 			</div>
