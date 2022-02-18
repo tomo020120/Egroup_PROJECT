@@ -7,7 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>注文履歴</title>
-<link rel="stylesheet" href="CSS/productsDetailsStyle.css">
+<link rel="stylesheet" href="CSS/purchaseHistory.css">
+
 
 </head>
 <body>
@@ -21,19 +22,24 @@
 
 <c:choose>
 	<c:when test="${num != num1 }">
-		<hr>
+<br>
 		<h2>${result.date}</h2>
 
 	</c:when>
 
 </c:choose>
-		${result.name}<br>
-		<img src="${result.pictPath}" width="500px">
-		<br>
-		${result.price}円<br>
-		${result.orderCount}個<br>
-		${result.subTotal}<br>
+<div class="box">
+<img src="${result.pictPath}" width="500px"class="pic2">
+		<p class="p1">${result.name}</p>
+		<p class="p1">${result.orderCount}個</p>
+		<p class="p1">\ ${result.subTotal}</p>
+
+		<!-- <p class="p1">${result.price}円<br></p> -->
+</div>
+
 		<c:set var="num" value="${result.date}" />
 	</c:forEach>
+
+
 </body>
 </html>
