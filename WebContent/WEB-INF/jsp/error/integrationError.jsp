@@ -12,7 +12,9 @@ function delay(){
 </script>
 </head>
 <body onload="delay()">
+<div class="error">
 	<h1>予期せぬ事態が起き実行できませんでした。</h1>
 	<p>10秒後にトップページに戻ります。</p>
+</div>
 </body>
 </html>

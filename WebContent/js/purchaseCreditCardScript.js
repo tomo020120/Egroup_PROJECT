@@ -5,7 +5,7 @@ $(function(){
 
 		$("body").css('background-color','#BBBBBB');
 
-		$("body").find("#addCreditCardButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",true);
+		$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",true);
 	});
 
 	/*追加をキャンセルボタンクリック示時、追加用フォームを非表示にする*/
@@ -14,7 +14,7 @@ $(function(){
 
 		$("body").css('background-color','#ffffff');
 
-		$("body").find("#addCreditCardButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",false);
+		$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",false);
 	});
 
 	/*クレジットカード番号入力中動的に、カード会社判定を行う。*/
@@ -77,8 +77,10 @@ $(function(){
 			$("#updateCardFormArea").fadeIn(1100); /*1100ミリ秒かけてフェードイン*/
 
 			$("body").css('background-color','#BBBBBB');
-
-			$("body").find("#addCreditCardButton , .openUpdateFormButton , /openDeleteComfirmButton").attr("disabled",true); /*ボタンの無効化*/
+			$("body").find("#canselButton, #executeAddButton,.decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",true);
+			$("body").find("#canselButton, #executeAddButton,.decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").css("background","#BBBBBB");
+			$("body").find("#canselButton, #executeAddButton,.decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").css("border-color","#ccc");
+			$("body").find("#canselButton, #executeAddButton,.decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").css("pointer-events","none");
 		});
 	});
 
@@ -93,7 +95,13 @@ $(function(){
 
 		$("body").css('background-color','#ffffff');
 
-		$("body").find("#addCreditCardButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",false); /*ボタンの有効化*/
+		$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",false); /*ボタンの有効化*/
+		$("body").find("#executeAddButton,.decisionButton").css("background","linear-gradient(#f7dfa5,#f0c14b)");
+		$("body").find("#canselButton,.openUpdateFormButton , .openDeleteComfirmButton").css("background-color", "#e7e9ec");
+		$("body").find("#canselButton,.openUpdateFormButton , .openDeleteComfirmButton").css("border-color", "#adb1b8");
+		$("body").find("#executeAddButton,.decisionButton").css("border-color","#a88734");
+		$("body").find("#canselButton, #executeAddButton,.decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").css("pointer-events","auto");
+
 	});
 
 
@@ -124,7 +132,10 @@ $(function(){
 
 			$("body").css('background-color','#BBBBBB');
 
-			$("body").find("#addCreditCardButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",true); /*ボタンの無効化*/
+			$("body").find("#canselButton, #executeAddButton,.decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",true);
+			$("body").find("#canselButton, #executeAddButton,.decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").css("background","#BBBBBB");
+			$("body").find("#canselButton, #executeAddButton,.decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").css("border-color","#e7e9ec");
+
 		});
 	});
 
@@ -134,7 +145,13 @@ $(function(){
 
 		$("body").css('background-color','#ffffff');
 
-		$("body").find("#addCreditCardButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",false); /*ボタンの有効化*/
+		$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",false); /*ボタンの有効化*/
+		$("body").find("#executeAddButton,.decisionButton").css("background","linear-gradient(#f7dfa5,#f0c14b)");
+		$("body").find("#canselButton,.openUpdateFormButton , .openDeleteComfirmButton").css("background-color", "#e7e9ec");
+		$("body").find("#canselButton,.openUpdateFormButton , .openDeleteComfirmButton").css("border-color", "#adb1b8");
+		$("body").find("#executeAddButton,.decisionButton").css("border-color","#a88734");
+		$("body").find("#canselButton, #executeAddButton,.decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").css("pointer-events","auto");
+
 	});
 });
 

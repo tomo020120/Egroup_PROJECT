@@ -83,7 +83,10 @@ $(function(){
 
 			$("body").css('background-color','#BBBBBB');
 
-			$("body").find("#addDeliveryInfoButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",true); /*ボタンの無効化*/
+			$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",true); /*ボタンの無効化*/
+			$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").css("background","#BBBBBB");
+			$("body").find(".decisionButton, .openUpdateFormButton , .openDeleteComfirmButton").css("border-color","#ccc");
+			$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").css("pointer-events","none");
 		});
 	});
 
@@ -93,7 +96,12 @@ $(function(){
 
 		$("body").css('background-color','#ffffff');
 
-		$("body").find("#addDeliveryInfoButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",false); /*ボタンの有効化*/
+		$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",false); /*ボタンの有効化*/
+		$("body").find(".decisionButton").css("background","linear-gradient(#f7dfa5,#f0c14b)");
+		$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").css("background-color", "#e7e9ec");
+		$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").css("border-color", "#adb1b8");
+		$("body").find(".decisionButton ").css("border-color","#a88734");
+		$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").css("pointer-events","auto");
 	});
 
 
@@ -124,7 +132,10 @@ $(function(){
 
 			$("body").css('background-color','#BBBBBB');
 
-			$("body").find("#addDeliveryInfoButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",true); /*ボタンの無効化*/
+			$("body").find(".decisionButton, .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",true);/*ボタンの無効化*/
+			$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").css("background","#BBBBBB");
+			$("body").find(".decisionButton, .openUpdateFormButton , .openDeleteComfirmButton").css("border-color","#ccc");
+			$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").css("pointer-events","none");
 		});
 	});
 
@@ -134,7 +145,12 @@ $(function(){
 
 		$("body").css('background-color','#ffffff');
 
-		$("body").find("#addDeliveryInfoButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",false); /*ボタンの有効化*/
+		$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",false); /*ボタンの有効化*/
+		$("body").find(".decisionButton").css("background","linear-gradient(#f7dfa5,#f0c14b)");
+		$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").css("background-color", "#e7e9ec");
+		$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").css("border-color", "#adb1b8");
+		$("body").find(".decisionButton ").css("border-color","#a88734");
+		$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").css("pointer-events","auto");
 	});
 });
 

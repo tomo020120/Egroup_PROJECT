@@ -24,7 +24,7 @@
 				<p><span class="tel">${deliveryInfo.tel}</span></p>
 				<p><span class="postalCode">${deliveryInfo.postalCode}</span></p>
 				<p><span class="address">${deliveryInfo.address}</span></p>
-				<a href="choiceCredit?deliveryInfoId=${deliveryInfo.deliveryInfoId}" class="decisionButton">この住所に届ける</a><br>
+				<button class="decisionButton" type="button" onclick="location.href='choiceCredit?deliveryInfoId=${deliveryInfo.deliveryInfoId}'">この住所に届ける</button>
 				<button type="button" class="openUpdateFormButton" value="${deliveryInfo.deliveryInfoId}">編集</button>
 				<button type="button" class="openDeleteComfirmButton" value="${deliveryInfo.deliveryInfoId}">消去</button>
 			</div>

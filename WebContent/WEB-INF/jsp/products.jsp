@@ -18,7 +18,60 @@
 
 
 <form action="productsSearch" method="GET" name="form1">
-製品名検索(仮)：<input type="search" name="productName" value="${sessionScope.holdSearchWord}" class="info1">
+
+<fieldset class="info">
+	  <legend>検索</legend>
+	  <input type="hidden" name="color" value="0">
+	  <div class=color>
+	    <input type="checkbox" id="1" name="color" value="1" onChange="submitColor()">
+	    <label for="red">赤色</label>
+	  </div>
+	  <div class=color>
+	    <input type="checkbox" id="2" name="color" value="2" onChange="submitColor()">
+	    <label for="brown">茶色</label>
+	  </div>
+	  <div class=color>
+	    <input type="checkbox" id="3" name="color" value="3" onChange="submitColor()">
+	    <label for="black">黒色</label>
+	  </div>
+	  <div class=color>
+	    <input type="checkbox" id="4" name="color" value="4" onChange="submitColor()">
+	    <label for="blue">青色</label>
+	  </div>
+	  <div class=color>
+	    <input type="checkbox" id="5" name="color" value="5" onChange="submitColor()">
+	    <label for="green">緑色</label>
+	  </div>
+	  <div class=color>
+	    <input type="checkbox" id="6" name="color" value="6" onChange="submitColor()">
+	    <label for="orange">橙色</label>
+	  </div>
+	  <div class=color>
+	    <input type="checkbox" id="7" name="color" value="7" onChange="submitColor()">
+	    <label for="pink">桃色</label>
+	  </div>
+	  <div class=color>
+	    <input type="checkbox" id="8" name="color" value="8" onChange="submitColor()">
+	    <label for="purple">紫色</label>
+	  </div>
+	  <div class=color>
+	    <input type="checkbox" id="9" name="color" value="9" onChange="submitColor()">
+	    <label for="silver">銀色</label>
+	  </div>
+	  <div class=color>
+	    <input type="checkbox" id="10" name="color" value="10" onChange="submitColor()">
+	    <label for="white">白色</label>
+	  </div>
+	  <div class=color>
+	    <input type="checkbox" id="11" name="color" value="11" onChange="submitColor()">
+	    <label for="yellow">黄色</label>
+	  </div>
+	  <div class=color>
+	    <input type="checkbox" id="12" name="color" value="12" onChange="submitColor()">
+	    <label for="others">他</label>
+	  </div>
+<div class=pos3>
+	  <input type="search" placeholder="商品名" name="productName" value="${sessionScope.holdSearchWord}" class="info1">
 <select name="categoryId" id="CATEGORY" class="info1">
 	<option value="1">エレキギター</option>
 	<option value="2">アコースティックギター</option>
@@ -31,80 +84,30 @@
 </select>
 <input type="submit" value="検索"/>
 <input type="hidden" name="pageNo" value="1">
-<fieldset class="info">
-	  <legend>色</legend>
-	  <input type="hidden" name="color" value="0">
-	  <div>
-	    <input type="checkbox" id="1" name="color" value="1" onChange="submitColor()">
-	    <label for="red">赤色</label>
-	  </div>
-	  <div>
-	    <input type="checkbox" id="2" name="color" value="2" onChange="submitColor()">
-	    <label for="brown">茶色</label>
-	  </div>
-	  <div>
-	    <input type="checkbox" id="3" name="color" value="3" onChange="submitColor()">
-	    <label for="black">黒色</label>
-	  </div>
-	  <div>
-	    <input type="checkbox" id="4" name="color" value="4" onChange="submitColor()">
-	    <label for="blue">青色</label>
-	  </div>
-	  <div>
-	    <input type="checkbox" id="5" name="color" value="5" onChange="submitColor()">
-	    <label for="green">緑色</label>
-	  </div>
-	  <div>
-	    <input type="checkbox" id="6" name="color" value="6" onChange="submitColor()">
-	    <label for="orange">橙色</label>
-	  </div>
-	  <div>
-	    <input type="checkbox" id="7" name="color" value="7" onChange="submitColor()">
-	    <label for="pink">桃色</label>
-	  </div>
-	  <div>
-	    <input type="checkbox" id="8" name="color" value="8" onChange="submitColor()">
-	    <label for="purple">紫色</label>
-	  </div>
-	  <div>
-	    <input type="checkbox" id="9" name="color" value="9" onChange="submitColor()">
-	    <label for="silver">銀色</label>
-	  </div>
-	  <div>
-	    <input type="checkbox" id="10" name="color" value="10" onChange="submitColor()">
-	    <label for="white">白色</label>
-	  </div>
-	  <div>
-	    <input type="checkbox" id="11" name="color" value="11" onChange="submitColor()">
-	    <label for="yellow">黄色</label>
-	  </div>
-	  <div>
-	    <input type="checkbox" id="12" name="color" value="12" onChange="submitColor()">
-	    <label for="others">他</label>
-	  </div>
+</div>
 	</fieldset>
 </form>
 
 <h1>商品一覧</h1>
-<table border="1">
- <tr><th>商品ID</th><th>商品名</th><th>画像</th><th>価格</th></tr>
+
+<div class="creditCardInfo">
+
  <c:forEach var="product" items="${result}">
-  <tr>
-  	<td>${product.itemId}</td>
-  	<td><a href="productsDetails?itemId=${product.itemId}">${product.name}</a></td>
-  	<td><a href="productsDetails?itemId=${product.itemId}"><img src="${product.pictPath}"></a></td>
-  	<td>${product.price}円</td>
+ 	<div id="creditCardList">
 
-  </tr>
-
+  	<a href="productsDetails?itemId=${product.itemId}"><img src="${product.pictPath}"width="400px"></a>
+  	<a href="productsDetails?itemId=${product.itemId}">${product.name}</a>
+  	</div>
  </c:forEach>
+</div>
 
- </table>
+<div class="pos">
 <button id="previousPageBtn">前のページ</button>
 ${sessionScope.holdPageNo}/${sessionScope.maxPageNo}
 <button id="nextPageBtn">次のページ</button>
+</div>
  <input type="hidden" name="maxPage" value=${sessionScope.maxPageNo} class ="info2">
- <a href="productHistory">閲覧履歴編集へ</a>
+
 <div id = "productHistoryFooter">
 </div>
 
