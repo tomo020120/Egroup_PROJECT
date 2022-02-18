@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="CSS/chiceCreditStyle.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="js/purchaseCreditCardScript.js"></script>
-<link rel="stylesheet" href="CSS/creditCardInfoEditStyle.css">
+
 </head>
 <body>
 
@@ -35,12 +35,12 @@
 
 
 	<div id="updateCardFormArea" class="animFormArea">
-		<h1>クレジットカードを編集</h1>
+		<h2>クレジットカードを編集</h2>
 		<div>
 			<form id="updateCreditCardInfoForm" method="post" action="updateCreditCardInfo">
-				カード番号(下四桁)<input id="lastFourDisitsCreditCardNo" type="text" name="creditCardNo" readOnly>
+				カード番号(下四桁)<br><input id="lastFourDisitsCreditCardNo" type="text" name="creditCardNo" readOnly><br>
 				<textarea id="cardCompany" name="cardCompany" readOnly></textarea><br>
-				クレジットカード名義人<input id="cardOwnerName" type="text" name="cardOwnerName" maxLength="50"><br>
+				クレジットカード名義人<br><input id="cardOwnerName" type="text" name="cardOwnerName" maxLength="50"><br>
 				有効期限
 				<select id="month" name="month">
 					<option value="">-</option>
@@ -87,12 +87,14 @@
 	</div>
 
 	<div id="deleteCreditCardComfirmPageArea" class = "animFormArea">
-		<h1>こちらのクレジットカードを消去してよろしいでしょうか</h1>
+		<h3>こちらのクレジットカードを消去してよろしいでしょうか</h3>
+		<div class="pos">
 		カード番号(下四桁):<span class="lastFourDisits">${creditCardInfo.cardNo}</span><br>
 		種類:<span class="cardCompany">${creditCardInfo.cardCompany}</span><br>
 		クレジットカード名義人:<span class="cardOwnerName">${creditCardInfo.cardOwnerName}</span><br>
 		有効期限:<span class="expirationDate">${creditCardInfo.expirationDate}</span><br>
 		<button id="deleteCansel" type="button">キャンセル</button>	<button id="executeDeleteButton">消去する</button>
+	</div>
 	</div>
 <hr>
 <div class="allPosition">

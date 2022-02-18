@@ -11,7 +11,7 @@
 <script type="text/javascript" src="js/productsDetailsScript.js"></script>
 </head>
 <body data-favorite="${result.get(1)}">
-	
+
 	<table border="1">
 	<tr>
 		<th>商品ID</th>
@@ -41,6 +41,7 @@
 
 	<button id="nologinPurchaseBtn">ログインせずに購入する</button>
 
-	<a href="products">商品一覧へ戻る</a>
+	<a href="products?categoryId=${result.get(0).categoryId}">商品一覧へ戻る</a>
+	
 </body>
 </html>

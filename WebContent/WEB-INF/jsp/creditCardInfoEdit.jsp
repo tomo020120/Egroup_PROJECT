@@ -13,9 +13,10 @@
 <body>
 
 <h1>クレジットカード情報編集</h1>
-<p>${message}</p>
+<p class="error">${message}</p>
+<div class="creditCardInfo">
 	<button id="addCreditCardButton">新しいクレジットカードを追加</button>
-	<div class="creditCardInfo">
+
 		<c:forEach var="creditCardInfo" items="${result}">
 			<div id="creditCardList">
 				カード番号(下四桁):<span class="lastFourDisits">${creditCardInfo.cardNo}</span><br>
@@ -28,13 +29,13 @@
 	</div>
 
 	<div id="addCreditCardFormArea" class="animFormArea">
-		<h1>クレジットカードを追加</h1>
+		<h2>クレジットカードを追加</h2>
 		<div id="flexContent">
 			<form id="addCreditCardForm" method="post" action="addCreditCardInfo">
-				カード番号<input id="creditCardNo" type="text" name="creditCardNo" maxLength="19">
+				カード番号<br><input id="creditCardNo" type="text" name="creditCardNo" maxLength="19"><br>
 				<textarea id="cardCompany" name="cardCompany" readOnly></textarea><br>
-				クレジットカード名義人<input type="text" name="cardOwnerName" maxLength="50"><br>
-				有効期限
+				クレジットカード名義人<br><input type="text" name="cardOwnerName" maxLength="50"><br>
+				有効期限<br>
 				<select name="month">
 					<option value="">-</option>
 					<option value="01">01</option>
@@ -74,7 +75,7 @@
 					<option value="2041">2041</option>
 					<option value="2042">2042</option>
 				</select>年 <br>
-				セキュリティコード<input type="text" name="securityCode" maxLength="3">
+				セキュリティコード<br><input type="text" name="securityCode" maxLength="3">
 			</form>
 
 			<div id="availableCardCompanyList">
@@ -87,15 +88,16 @@
 			</div>
 		</div>
 		<button id="canselButton" type="button">キャンセル</button>	<button id="executeAddButton">カードを追加</button>
+
 	</div>
 
 	<div id="updateCardFormArea" class="animFormArea">
-		<h1>クレジットカードを編集</h1>
+		<h2>クレジットカードを編集</h2>
 		<div>
 			<form id="updateCreditCardInfoForm" method="post" action="updateCreditCardInfo">
-				カード番号(下四桁)<input id="lastFourDisitsCreditCardNo" type="text" name="creditCardNo" readOnly>
+				カード番号(下四桁)<br><input id="lastFourDisitsCreditCardNo" type="text" name="creditCardNo" readOnly><br>
 				<textarea id="cardCompany" name="cardCompany" readOnly></textarea><br>
-				クレジットカード名義人<input id="cardOwnerName" type="text" name="cardOwnerName" maxLength="50"><br>
+				クレジットカード名義人<br><input id="cardOwnerName" type="text" name="cardOwnerName" maxLength="50"><br>
 				有効期限
 				<select id="month" name="month">
 					<option value="">-</option>
@@ -142,14 +144,14 @@
 	</div>
 
 	<div id="deleteCreditCardComfirmPageArea" class = "animFormArea">
-		<h1>こちらのクレジットカードを消去してよろしいでしょうか</h1>
+		<h3>こちらのクレジットカードを消去してよろしいでしょうか</h3>
+		<div class="pos">
 		カード番号(下四桁):<span class="lastFourDisits">${creditCardInfo.cardNo}</span><br>
 		種類:<span class="cardCompany">${creditCardInfo.cardCompany}</span><br>
 		クレジットカード名義人:<span class="cardOwnerName">${creditCardInfo.cardOwnerName}</span><br>
 		有効期限:<span class="expirationDate">${creditCardInfo.expirationDate}</span><br>
 		<button id="deleteCansel" type="button">キャンセル</button>	<button id="executeDeleteButton">消去する</button>
 	</div>
-	<p>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br>テスト<br></p>
-	<h1>さよなら</h1>
+	</div>
 </body>
 </html>

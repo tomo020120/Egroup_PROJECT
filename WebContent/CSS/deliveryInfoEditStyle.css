@@ -2,8 +2,15 @@
 body{
 	transition:background-color 1.1s; /* 1秒間で変化する */
 }
+h1{
+	margin:0px 0 0 3%;
+}
 h2{
 	text-align:center;
+}
+h3{
+	text-align:center;
+	margin:90px 15px 15px 0px;
 }
 /* アニメーションページエリア */
 .animFormArea{
@@ -48,7 +55,34 @@ input[type="tel"]:focus {
 }
 
 
+#canselButton{
+color: #000000;
+  background: c0c0c0;
 
+  border:1px solid;
+	border-radius: 2px; /* 半径が8pxの角丸 */
+	border-color: #c0c0c0;
+	padding:4px 60px;
+	margin:-10px 15px 15px 0px;
+}
+#canselButton:hover {
+  color: #000000;
+  background: #808080;
+}
+#executeAddButton{
+
+color: #000000;
+  background: linear-gradient(#f7dfa5,#f0c14b);
+  border:1px solid;
+	border-radius: 2px; /* 半径が8pxの角丸 */
+	border-color: #a88734;
+	padding:4px 75px;
+	margin:-10px 0px 15px 0px
+}
+#executeAddButton:hover {
+  color: #000000;
+  background: #f1c85a;
+}
 #updateCansel{
 	color: #000000;
   background: c0c0c0;
@@ -57,7 +91,7 @@ input[type="tel"]:focus {
 	border-radius: 2px; /* 半径が8pxの角丸 */
 	border-color: #c0c0c0;
 	padding:4px 60px;
-	margin:-10px 15px 15px 0px
+	margin:-10px 15px 15px 0px;
 }
 #updateCansel:hover {
   color: #000000;
@@ -98,7 +132,7 @@ color: #000000;
 	border-radius: 2px; /* 半径が8pxの角丸 */
 	border-color: #a88734;
 	padding:4px 60px;
-	margin:-10px 0px 15px 0px;
+	margin:30px 0px 15px 0px;
 }
 #executeDeleteButton:hover {
   color: #000000;
@@ -106,26 +140,35 @@ color: #000000;
 }
 
 .addDeliveryInfoButton{
-	display: flex;
+	width:400px;
+	height:250px;
     justify-content: center;
+     margin:10px 30px;
+     font-size:20px;
 }
 .h-adr{
 	margin-left:18%;
 	margin-top:-3%;
 }
-.deliveryInfoList{
-	display: flex;
-    justify-content: center;
+#deliveryInfoList{
+	 display: flex;
+	   flex-wrap: wrap;
+
+	     margin       :10px 30px;
 }
+
 .deliveryInfo{
-	border-width: thick;
-	border-color: #c0c0c0;
-	border-style: solid;
-	border-radius:10%;
-	margin-left:5%;
+	border:1px solid;
+	border-radius: 8px; /* 半径が8pxの角丸 */
+	border-color: rgba(0,0,0,0);;
+	margin       :10px 30px;
+	width        : 400px;
+	height       : 300px;
+	background   : rgba(0,0,0,0);
 }
 .pos{
-margin:10px 0px 10px 100px
+margin:100px 0px 10px 100px;
+font-size: 20px;
 }
 
 /* 横並びにしたい要素を持つ親要素 */

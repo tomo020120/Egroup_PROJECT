@@ -1,6 +1,198 @@
+/* クレジットカード追加フォーム表示時背景色を暗くするクラス */
+body{
+	transition:background-color 1.1s; /* 1秒間で変化する */
+}
+h1{
+	margin:0px 0 0 3%;
+}
+h2{
+	text-align:center;
+}
+h3{
+	text-align:center;
+	margin:90px 15px 15px 0px;
+}
+/* アニメーションページエリア */
+.animFormArea{
+	display:none; /* デフォルトは非表示に */
+	width:600px;
+	height:615px;
+	top:14%; /* top,leftで位置指定 */
+	left:30%;
+	right:10%;
+	background-color:lightgreen;
+	border:1px solid #000000; /*枠線*/
+	margin-right:auto; /* 余白指定 */
+	z-index:2; /* 多重度設定 */
+	position:fixed; /*スクロールしても位置を固定 */
+
+}
+
+
+input[type="text"] {
+  border: 1px solid #b9b9b9;
+  background-color: #fff;
+  width: 380px;
+   height:40px;
+   margin-bottom:15px;
+   font-size: 100%;
+}
+input[type="text"]:focus {
+  /*border: 1px solid #ff9900;*/
+  outline: 0;
+}
+input[type="tel"] {
+  border: 1px solid #b9b9b9;
+  background-color: #fff;
+  width: 118px;
+   height:40px;
+   margin-bottom:15px;
+   font-size: 100%;
+}
+input[type="tel"]:focus {
+  /*border: 1px solid #ff9900;*/
+  outline: 0;
+}
+
+
+#canselButton{
+color: #000000;
+  background: c0c0c0;
+
+  border:1px solid;
+	border-radius: 2px; /* 半径が8pxの角丸 */
+	border-color: #c0c0c0;
+	padding:4px 60px;
+	margin:-10px 15px 15px 0px;
+}
+#canselButton:hover {
+  color: #000000;
+  background: #808080;
+}
+#executeAddButton{
+
+color: #000000;
+  background: linear-gradient(#f7dfa5,#f0c14b);
+  border:1px solid;
+	border-radius: 2px; /* 半径が8pxの角丸 */
+	border-color: #a88734;
+	padding:4px 75px;
+	margin:-10px 0px 15px 0px
+}
+#executeAddButton:hover {
+  color: #000000;
+  background: #f1c85a;
+}
+#updateCansel{
+	color: #000000;
+  background: c0c0c0;
+
+  border:1px solid;
+	border-radius: 2px; /* 半径が8pxの角丸 */
+	border-color: #c0c0c0;
+	padding:4px 60px;
+	margin:-10px 15px 15px 0px;
+}
+#updateCansel:hover {
+  color: #000000;
+  background: #808080;
+}
+
+#deleteCansel{
+	color: #000000;
+  background: c0c0c0;
+
+  border:1px solid;
+	border-radius: 2px; /* 半径が8pxの角丸 */
+	border-color: #c0c0c0;
+	padding:4px 60px;
+	margin:-10px 15px 15px 0px
+}
+#deleteCansel:hover {
+  color: #000000;
+  background: #808080;
+}
+#executeUpdateButton{
+color: #000000;
+  background: linear-gradient(#f7dfa5,#f0c14b);
+  border:1px solid;
+	border-radius: 2px; /* 半径が8pxの角丸 */
+	border-color: #a88734;
+	padding:4px 60px;
+	margin:-10px 0px 15px 0px
+}
+#executeUpdateButton:hover {
+  color: #000000;
+  background: #f1c85a;
+}
+#executeDeleteButton{
+	color: #000000;
+  background: linear-gradient(#f7dfa5,#f0c14b);
+  border:1px solid;
+	border-radius: 2px; /* 半径が8pxの角丸 */
+	border-color: #a88734;
+	padding:4px 60px;
+	margin:30px 0px 15px 0px;
+}
+#executeDeleteButton:hover {
+  color: #000000;
+  background: #f1c85a;
+}
+
+.addDeliveryInfoButton{
+	width:400px;
+	height:250px;
+    justify-content: center;
+     margin:10px 30px;
+     font-size:20px;
+}
+.h-adr{
+	margin-left:18%;
+	margin-top:5%;
+}
+#deliveryInfoList{
+	 display: flex;
+	   flex-wrap: wrap;
+
+	     margin       :10px 30px;
+}
+
+.deliveryInfo{
+	border:1px solid;
+	border-radius: 8px; /* 半径が8pxの角丸 */
+	border-color: rgba(0,0,0,0);;
+	margin       :10px 30px;
+	width        : 400px;
+	height       : 300px;
+	background   : rgba(0,0,0,0);
+}
+.pos{
+margin:100px 0px 10px 100px;
+font-size: 20px;
+}
+
+/* 横並びにしたい要素を持つ親要素 */
+#flexContent{
+	display:flex; /* 子要素を横並びにする */
+	margin:0 0 30px 70px; /* 位置指定 */
+
+}
+
+/* 利用可能クレジットカード会社リストデザイン */
+#availableCardCompanyList{
+	border-left:5px solid #000000; /* 区切りの枠線 */
+}
+
+
+#creditCardList{
+	margin:20px 25% 0 25%;
+	border:5px double #333333;
+	background-color:#2070b27a;
+}
+
 h1{
 	 font-size: 25px;
-	 margin:0 0 0 10px;
+	 margin:0 0 0 20px;
 }
 input[type="text"] {
   border: 1px solid #b9b9b9;
@@ -29,6 +221,11 @@ input[type="tel"]:focus {
 .p1{
 	font-weight: bold;
 }
+.error{
+	color: red;
+	 margin:0 0 0 10px;
+	 font-size: 17px;
+}
 .allPosition{
 margin-left:35%;
 }
@@ -54,11 +251,11 @@ width:390px;
 .deliveryInfo{
 	border:1px solid;
 	border-radius: 8px; /* 半径が8pxの角丸 */
-	border-color: #fff;
+	border-color: rgba(0,0,0,0);
 	margin       :10px 30px;
 	width        : 400px;
 	height       : 300px;
-	background   : linear-gradient(to bottom, #ffffff, #ffffff);
+	background   : rgba(0,0,0,0);
 }
 .decisionButton{
  color: #000000;

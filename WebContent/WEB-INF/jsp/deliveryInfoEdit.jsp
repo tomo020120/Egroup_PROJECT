@@ -29,15 +29,15 @@
 	</div>
 
 	<div id="addDeliveryInfoFormArea" class="animFormArea">
-		<h1>配送先情報の追加</h1>
+		<h2>配送先情報の追加</h2>
 		<form id="addDeliveryInfoForm" class="h-adr" method="post" action="addDeliveryInfo" >
 			<span class="p-country-name" style="display:none;">Japan</span> <!--日本内に検索設定  -->
-			【必須】宛名:<input type="text" name="deliveryName" maxlength="25">
-			【必須】電話番号(000-0000-0000):<input type="text" name="firstTelephoneNumber" maxlength="3">-<input type="text" name="secondTelephoneNumber" maxlength="4">-<input type="text" name="thirdTelephoneNumber" maxlength="4"><br>
-			【必須】郵便番号(ハイフンなし):<input type="text" class="p-postal-code" name="postalCode" size="7" maxlength="7"><br>
-			【必須】住所:<input type="text" class="p-region p-locality p-street-address p-extended-address" name="address"/><br>
-			【必須】丁目・番地・号(例:1-2-3):<input type="text" name="houseNumber"><br>
-			【必須】建物名・部屋番号(例:〇〇マンション〇〇号室)<input type="text" name="buildingName"><br>
+			【必須】宛名<br><input type="text" name="deliveryName" maxlength="25"><br>
+			【必須】電話番号(000-0000-0000)<br><input type="tel" name="firstTelephoneNumber" maxlength="3">-<input type="tel" name="secondTelephoneNumber" maxlength="4">-<input type="tel" name="thirdTelephoneNumber" maxlength="4"><br>
+			【必須】郵便番号(ハイフンなし)<br><input type="text" class="p-postal-code" name="postalCode" size="7" maxlength="7"><br>
+			【必須】住所<br><input type="text" class="p-region p-locality p-street-address p-extended-address" name="address"/><br>
+			【必須】丁目・番地・号(例:1-2-3)<br><input type="text" name="houseNumber"><br>
+			【必須】建物名・部屋番号(例:〇〇マンション〇〇号室)<br><input type="text" name="buildingName"><br>
 			<button id="canselButton" type="button">キャンセル</button>	<button type="button" id="executeAddButton">追加</button>
 		</form>
 	</div>
@@ -58,7 +58,7 @@
 
 	<div id="deleteDeliveryInfoArea" class="animFormArea">
 
-		<h2>こちらの配送先情報を削除してよろしいでしょうか</h2>
+		<h3>こちらの配送先情報を削除してよろしいでしょうか</h3>
 		<div class="pos">
 		宛名:<span class="name"></span><br>
 		電話番号:<span class="tel"></span><br>

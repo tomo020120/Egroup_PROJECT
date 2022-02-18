@@ -48,6 +48,7 @@ public class MySQLProductsDao implements ProductsDao{
 				all.setShapeName(rs.getString(7));
 				all.setColorName(rs.getString(8));
 				all.setArtistName(rs.getString(9));
+				all.setCategoryId(rs.getString(10));
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();

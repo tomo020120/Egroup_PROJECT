@@ -78,7 +78,8 @@ $(function(){
 
 			$("body").css('background-color','#BBBBBB');
 
-			$("body").find("#addCreditCardButton , .openUpdateFormButton , /openDeleteComfirmButton").attr("disabled",true); /*ボタンの無効化*/
+			$("body").find("#addCreditCardButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",true); /*ボタンの無効化*/
+
 		});
 	});
 
