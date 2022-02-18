@@ -9,6 +9,6 @@
 <body>
 
 <h1>管理者ページ</h1>
-<a href="productEdit">製品編集をする</a>
+<a href="adminProductsPage">製品編集をする</a>
 </body>
 </html>

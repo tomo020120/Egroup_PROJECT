@@ -17,6 +17,7 @@ public class WebRequestContext implements RequestContext{
     private Map<String,String[]> parametersMap;
     private String pictFileName;
     private String absoluteFilePath;
+    private boolean fileFlag = false;
 
     public void setRequest(Object request){
         this.request = (HttpServletRequest)request;
@@ -86,6 +87,8 @@ public class WebRequestContext implements RequestContext{
 
     					item.write(pictFile); // 指定されたパスに保存する
     					uploadFlag = true;
+    				}else {
+    					setNoFileFlag(true); // ファイルがあげられていない
     				}
     			}else {
     				String key = item.getFieldName();
@@ -96,13 +99,40 @@ public class WebRequestContext implements RequestContext{
     				parametersMap.put(key,value);
     			}
     		}
-    	}
-    	catch(Exception e) {
+    	}catch(Exception e) {
     		e.printStackTrace();
     		uploadFlag = false;
     	}
 
     	return uploadFlag;
+    }
+
+    public boolean deletePictFile(String pictPath) {
+    	boolean deleteFlag = false;
+
+    	try {
+    		@SuppressWarnings("deprecation") // 処理の都合上、非推奨メソッドを呼び出してるため警告を消すアノテーションを記述
+    		String contextPath = request.getRealPath("WebContent"); // imagesフォルダの手前までの絶対パスを取得「C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Egroup_PROJECT\WebContent」
+
+    		String pictAbsPath = (contextPath + File.pathSeparator +  pictPath);
+
+    		File file = new File(pictAbsPath);
+
+    		deleteFlag = file.delete();
+    	}catch(Exception e) {
+    		e.printStackTrace();
+    		deleteFlag = false;
+    	}
+
+    	return deleteFlag;
+    }
+
+    private void setNoFileFlag(boolean flag) {
+    	this.fileFlag = flag;
+    }
+
+    public boolean isNoFile() { // ファイルがそもそも上げられなかったかどうか
+    	return fileFlag;
     }
 
     private void setAbsoluteFilePath(String absoluteFilePath) {

@@ -1,374 +1,87 @@
-2 13, 2022 4:58:59 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
+2 18, 2022 2:02:16 午後 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:threader' did not find a matching property.
+2 18, 2022 2:02:16 午後 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:rjp' did not find a matching property.
+2 18, 2022 2:02:16 午後 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:oop' did not find a matching property.
+2 18, 2022 2:02:16 午後 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:j2ee4' did not find a matching property.
+2 18, 2022 2:02:16 午後 org.apache.tomcat.util.digester.SetPropertiesRule begin
 警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:Egroup_PROJECT' did not find a matching property.
-2 13, 2022 4:58:59 午前 org.apache.tomcat.util.digester.SetPropertiesRule begin
-警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:test' did not find a matching property.
-2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 2:02:16 午後 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:webapp' did not find a matching property.
+2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Server version:        Apache Tomcat/8.0.36
-2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Server built:          Jun 9 2016 13:55:50 UTC
-2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Server number:         8.0.36.0
-2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: OS Name:               Windows 10
-2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: OS Version:            10.0
-2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Architecture:          amd64
-2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Java Home:             C:\Program Files\Java\jdk1.8.0_202\jre
-2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: JVM Version:           1.8.0_202-b08
-2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: JVM Vendor:            Oracle Corporation
-2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
-情報: CATALINA_BASE:         C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1
-2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
+情報: CATALINA_BASE:         C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0
+2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: CATALINA_HOME:         C:\pleiades\tomcat\8
-2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
-情報: Command line argument: -Dcatalina.base=C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1
-2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
+情報: Command line argument: -Dcatalina.base=C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0
+2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Dcatalina.home=C:\pleiades\tomcat\8
-2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
-情報: Command line argument: -Dwtp.deploy=C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps
-2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
+情報: Command line argument: -Dwtp.deploy=C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps
+2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Djava.endorsed.dirs=C:\pleiades\tomcat\8\endorsed
-2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Dfile.encoding=UTF-8
-2 13, 2022 4:58:59 午前 org.apache.catalina.startup.VersionLoggerListener log
-情報: Command line argument: -Xbootclasspath/a:C:\pleiades\tomcat\8\lib\activation.jar;C:\pleiades\tomcat\8\lib\mail.jar;C:\pleiades\tomcat\8\lib\mysql-connector-java-8.0.22.jar
-2 13, 2022 4:58:59 午前 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
-情報: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.8.0_202\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/pleiades/eclipse//jre/bin/server;C:/pleiades/eclipse//jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk-17.0.1\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\tomo\AppData\Local\Microsoft\WindowsApps;C:\Users\tomo\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;;C:\pleiades\eclipse;;.
-2 13, 2022 4:58:59 午前 org.apache.coyote.AbstractProtocol init
+2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
+情報: Command line argument: -Xbootclasspath/a:C:\pleiades\tomcat\8\lib\mysql-connector-java-8.0.22.jar
+2 18, 2022 2:02:16 午後 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+情報: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.8.0_202\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/pleiades/eclipse//jre/bin/server;C:/pleiades/eclipse//jre/bin;C:\app\oracle\product\19.1.0\dbhome_1\bin;C:\app\oracle\product\12.1.0\dbhome_1\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Common Files\Roxio Shared\DLLShared\;C:\Program Files (x86)\Common Files\Roxio Shared\OEM\12.0\DLLShared\;C:\Program Files (x86)\Roxio 2010\OEM\AudioCore\;c:\Borland\Bcc55\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\dotnet\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\koyama\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk1.8.0_202\bin;C:\Users\koyama\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Users\koyama\.dotnet\tools;C:\pleiades\eclipse;;.
+2 18, 2022 2:02:16 午後 org.apache.coyote.AbstractProtocol init
 情報: Initializing ProtocolHandler ["http-nio-8080"]
-2 13, 2022 4:58:59 午前 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
+2 18, 2022 2:02:16 午後 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
 情報: Using a shared selector for servlet write/read
-2 13, 2022 4:58:59 午前 org.apache.coyote.AbstractProtocol init
+2 18, 2022 2:02:16 午後 org.apache.coyote.AbstractProtocol init
 情報: Initializing ProtocolHandler ["ajp-nio-8009"]
-2 13, 2022 4:58:59 午前 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
+2 18, 2022 2:02:16 午後 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
 情報: Using a shared selector for servlet write/read
-2 13, 2022 4:58:59 午前 org.apache.catalina.startup.Catalina load
-情報: Initialization processed in 455 ms
-2 13, 2022 4:58:59 午前 org.apache.catalina.core.StandardService startInternal
+2 18, 2022 2:02:16 午後 org.apache.catalina.startup.Catalina load
+情報: Initialization processed in 1117 ms
+2 18, 2022 2:02:16 午後 org.apache.catalina.core.StandardService startInternal
 情報: サービス Catalina を起動します
-2 13, 2022 4:58:59 午前 org.apache.catalina.core.StandardEngine startInternal
+2 18, 2022 2:02:16 午後 org.apache.catalina.core.StandardEngine startInternal
 情報: Starting Servlet Engine: Apache Tomcat/8.0.36
-2 13, 2022 4:59:00 午前 org.apache.jasper.servlet.TldScanner scanJars
+2 18, 2022 2:02:18 午後 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2 13, 2022 4:59:00 午前 org.apache.catalina.core.StandardContext checkUnusualURLPattern
+2 18, 2022 2:02:19 午後 org.apache.jasper.servlet.TldScanner scanJars
+情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2 18, 2022 2:02:20 午後 org.apache.jasper.servlet.TldScanner scanJars
+情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2 18, 2022 2:02:21 午後 org.apache.catalina.core.StandardContext checkUnusualURLPattern
 情報: Suspicious url pattern: "/*[(edit)(Edit)]*" in context [/Egroup_PROJECT] - see sections 12.1 and 12.2 of the Servlet specification
-2 13, 2022 4:59:00 午前 org.apache.catalina.core.StandardContext checkUnusualURLPattern
+2 18, 2022 2:02:21 午後 org.apache.catalina.core.StandardContext checkUnusualURLPattern
 情報: Suspicious url pattern: "/*[(Favorite)(favorite)]*" in context [/Egroup_PROJECT] - see sections 12.1 and 12.2 of the Servlet specification
-2 13, 2022 4:59:00 午前 org.apache.jasper.servlet.TldScanner scanJars
+2 18, 2022 2:02:21 午後 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
 初期化完了
-2 13, 2022 4:59:01 午前 org.apache.jasper.servlet.TldScanner scanJars
+2 18, 2022 2:02:23 午後 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-プロパティ設定完了
-認証終了
-設定終了
-初期化完了
-2 13, 2022 4:59:01 午前 org.apache.coyote.AbstractProtocol start
+2 18, 2022 2:02:23 午後 org.apache.jasper.servlet.TldScanner scanJars
+情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2 18, 2022 2:02:24 午後 org.apache.jasper.servlet.TldScanner scanJars
+情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2 18, 2022 2:02:24 午後 org.apache.coyote.AbstractProtocol start
 情報: Starting ProtocolHandler ["http-nio-8080"]
-2 13, 2022 4:59:01 午前 org.apache.coyote.AbstractProtocol start
+2 18, 2022 2:02:24 午後 org.apache.coyote.AbstractProtocol start
 情報: Starting ProtocolHandler ["ajp-nio-8009"]
-2 13, 2022 4:59:01 午前 org.apache.catalina.startup.Catalina start
-情報: Server startup in 1756 ms
-取得パラメーターMap要素数0
-キー値：addProductPage
-取得プロパティ：cmd.admin.product.TransferAddProductPageCommand
-result1 : null
-message : null
-セッション登録値(token) :null
-sessionInfo : null
-セッション登録値(token) :null
-取得パラメーターMap要素数0
-キー値：addProductPage
-取得プロパティ：cmd.admin.product.TransferAddProductPageCommand
-result1 : null
-message : null
-セッション登録値(token) :null
-sessionInfo : null
-セッション登録値(token) :null
-取得パラメーターMap要素数0
-キー値：addProductPage
-取得プロパティ：cmd.admin.product.TransferAddProductPageCommand
-result1 : null
-message : null
-セッション登録値(token) :null
-sessionInfo : null
-セッション登録値(token) :null
-取得パラメーターMap要素数0
-キー値：addProduct
-取得プロパティ：cmd.admin.product.AddProductCommand
-フォルダまでのPath：C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Egroup_PROJECT\images
-productName
-iwasawa
-price
-200
-categoryId
-1
-colorId
-1
-shapeId
-1
-artistId
-0
-アップロードファイル名:こうじさん.jpg
-こうじさん.jpg
-パラメータ: iwasawa
-パラメータ: 200
-パラメータ: 1
-パラメータ: 1
-パラメータ: 1
-パラメータ: 0
-新規コネクション生成
-トランザクション開始
-接続
-新規接続
-接続
-影響行数1
-コミットします。
-クローズしました。
-result1 : null
-message : 製品追加完了
-セッション登録値(token) :null
-sessionInfo : null
-セッション登録値(token) :null
-取得パラメーターMap要素数0
-キー値：addProduct
-取得プロパティ：cmd.admin.product.AddProductCommand
-フォルダまでのPath：C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Egroup_PROJECT\images
-productName
-iwasawa
-price
-200
-categoryId
-1
-colorId
-1
-shapeId
-1
-artistId
-0
-アップロードファイル名:ヤニックさん.jpg
-result1 : null
-message : その写真はすでにアップロードされているか予期せぬ事態が起き追加できませんでした
-セッション登録値(token) :null
-sessionInfo : null
-セッション登録値(token) :null
-取得パラメーターMap要素数0
-キー値：addProduct
-取得プロパティ：cmd.admin.product.AddProductCommand
-フォルダまでのPath：C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Egroup_PROJECT\images
-productName
-iwasawa
-price
-200
-categoryId
-1
-colorId
-1
-shapeId
-1
-artistId
-0
-アップロードファイル名:丸山さん.jpg
-丸山さん.jpg
-パラメータ: iwasawa
-パラメータ: 200
-パラメータ: 1
-パラメータ: 1
-パラメータ: 1
-パラメータ: 0
-トランザクション開始
-接続
-新規接続
-接続
-影響行数1
-コミットします。
-クローズしました。
-result1 : null
-message : 製品追加完了
-セッション登録値(token) :null
-sessionInfo : null
-セッション登録値(token) :null
-取得パラメーターMap要素数0
-キー値：addProduct
-取得プロパティ：cmd.admin.product.AddProductCommand
-フォルダまでのPath：C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Egroup_PROJECT\images
-productName
-iwasawa
-price
-200
-categoryId
-1
-colorId
-1
-shapeId
-1
-artistId
-0
-アップロードファイル名:許さん.jpg
-許さん.jpg
-パラメータ: iwasawa
-パラメータ: 200
-パラメータ: 1
-パラメータ: 1
-パラメータ: 1
-パラメータ: 0
-トランザクション開始
-接続
-新規接続
-接続
-影響行数1
-コミットします。
-クローズしました。
-result1 : null
-message : 製品追加完了
-セッション登録値(token) :null
-sessionInfo : null
-セッション登録値(token) :null
-取得パラメーターMap要素数0
-キー値：addProduct
-取得プロパティ：cmd.admin.product.AddProductCommand
-フォルダまでのPath：C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Egroup_PROJECT\images
-productName
-aze
-price
-200
-categoryId
-1
-colorId
-1
-shapeId
-1
-artistId
-0
-アップロードファイル名:徐さん.jpg
-徐さん.jpg
-パラメータ: aze
-パラメータ: 200
-パラメータ: 1
-パラメータ: 1
-パラメータ: 1
-パラメータ: 0
-トランザクション開始
-接続
-新規接続
-接続
-影響行数1
-コミットします。
-クローズしました。
-result1 : null
-message : 製品追加完了
-セッション登録値(token) :null
-sessionInfo : null
-セッション登録値(token) :null
-取得パラメーターMap要素数0
-キー値：addProduct
-取得プロパティ：cmd.admin.product.AddProductCommand
-フォルダまでのPath：C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Egroup_PROJECT\images
-productName
-iwasawa
-price
-200
-categoryId
-1
-colorId
-1
-shapeId
-1
-artistId
-0
-アップロードファイル名:落合さん.jpg
-落合さん.jpg
-パラメータ: iwasawa
-パラメータ: 200
-パラメータ: 1
-パラメータ: 1
-パラメータ: 1
-パラメータ: 0
-トランザクション開始
-接続
-新規接続
-接続
-影響行数1
-コミットします。
-クローズしました。
-result1 : null
-message : 製品追加完了
-セッション登録値(token) :null
-sessionInfo : null
-セッション登録値(token) :null
-取得パラメーターMap要素数0
-キー値：addProduct
-取得プロパティ：cmd.admin.product.AddProductCommand
-フォルダまでのPath：C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Egroup_PROJECT\images
-productName
-aze
-price
-200
-categoryId
-1
-colorId
-1
-shapeId
-1
-artistId
-0
-アップロードファイル名:丸山さん.jpg
-丸山さん.jpg
-パラメータ: aze
-パラメータ: 200
-パラメータ: 1
-パラメータ: 1
-パラメータ: 1
-パラメータ: 0
-トランザクション開始
-接続
-新規接続
-接続
-影響行数1
-コミットします。
-クローズしました。
-result1 : null
-message : 製品追加完了
-セッション登録値(token) :null
-sessionInfo : null
-セッション登録値(token) :null
-取得パラメーターMap要素数0
-キー値：addProduct
-取得プロパティ：cmd.admin.product.AddProductCommand
-フォルダまでのPath：C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Egroup_PROJECT\images
-productName
-aze
-price
-200
-categoryId
-1
-colorId
-1
-shapeId
-1
-artistId
-0
-アップロードファイル名:五十嵐さん.jpg
-五十嵐さん.jpg
-パラメータ: aze
-パラメータ: 200
-パラメータ: 1
-パラメータ: 1
-パラメータ: 1
-パラメータ: 0
-トランザクション開始
-接続
-新規接続
-接続
-影響行数1
-コミットします。
-クローズしました。
-result1 : null
-message : 製品追加完了
-セッション登録値(token) :null
-sessionInfo : null
-セッション登録値(token) :null
+2 18, 2022 2:02:24 午後 org.apache.catalina.startup.Catalina start
+情報: Server startup in 7883 ms

@@ -1,7 +1,11 @@
 package dao.admin.product;
 
+import bean.joinBean.AllProductDetailBean;
+
 public interface ProductEditDao {
-	public abstract boolean addProduct(String productName,String price,String categoryId,String colorId,String shapeId,String artistId,String pictPath);
-	public abstract boolean updateProduct(String productName,String price,String categoryId,String colorId,String shapeId,String artistId,String pictPath,String itemId);
+
+	public abstract AllProductDetailBean getTargetProduct(String itemId);
+	public abstract boolean addProduct(AllProductDetailBean all);
+	public abstract boolean updateProduct(AllProductDetailBean all);
 	public abstract boolean deleteProduct(String itemId);
 }

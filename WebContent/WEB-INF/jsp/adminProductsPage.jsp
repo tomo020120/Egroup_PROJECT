@@ -6,37 +6,28 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>商品編集画面</title>
+<title>商品一覧</title>
 <link rel="stylesheet" href="CSS/productsStyle.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="js/productEditPageScript.js"></script>
+<script src="js/productsScript.js"></script>
 </head>
 <body>
-
-
-<h1>商品編集画面</h1>
-
-<div id="adminActionTool">
-	<button id="addProductBtn">商品を追加する</button>
-	<button id="editProdutctBtn">商品を編集する</button>
-	<button id="deleteproductBtn">商品を消去する</button>
-</div>
-
+${message}
 <form action="searchByAdmin" method="GET" name="form1">
-製品名検索(仮)：<input type="search" name="productName" value="${sessionScope.holdSearchWord}">
-<select name="categoryId">
+製品名検索(仮)：<input type="search" name="productName" value="${sessionScope.holdSearchWord}" class="info1">
+<select name="categoryId" id="CATEGORY" class="info1">
 	<option value="1">エレキギター</option>
 	<option value="2">アコースティックギター</option>
 	<option value="3">ベース</option>
 </select>
-<select name="sort" id = "SORT">
+<select name="sort" id = "SORT" class="info1">
 	<option value="0">商品ID順</option>
 	<option value="1">価格の安い順</option>
 	<option value="2">価格の高い順</option>
 </select>
 <input type="submit" value="検索"/>
-
-<fieldset>
+<input type="hidden" name="pageNo" value="1">
+<fieldset class="info">
 	  <legend>色</legend>
 	  <input type="hidden" name="color" value="0">
 	  <div>
@@ -92,17 +83,37 @@
 
 <h1>商品一覧</h1>
 <table border="1">
- <tr><th>商品ID</th><th>商品名</th><th>画像</th><th>価格</th></tr>
+ <tr><th>編集</th><th>商品名</th><th>画像</th><th>価格</th></tr>
  <c:forEach var="product" items="${result}">
   <tr>
-  	<td>${product.itemId}</td>
+  	<td><button id="productEditBtn" onclick="location.href='editProductPage?itemId=${product.itemId}'">編集する</button></td>
   	<td><a href="productsDetails?itemId=${product.itemId}">${product.name}</a></td>
   	<td><a href="productsDetails?itemId=${product.itemId}"><img src="${product.pictPath}"></a></td>
   	<td>${product.price}円</td>
+
   </tr>
 
  </c:forEach>
+
  </table>
+<button id="previousPageBtn">前のページ</button>
+${sessionScope.holdPageNo}/${sessionScope.maxPageNo}
+<button id="nextPageBtn">次のページ</button>
+ <input type="hidden" name="maxPage" value=${sessionScope.maxPageNo} class ="info2">
+ <a href="productHistory">閲覧履歴編集へ</a>
+<div id = "productHistoryFooter">
+</div>
+
+<script>
+	$(function(){
+		$('#productHistoryFooter').load('productHistoryFooter', function(data, status) {
+			  if(status === 'success') {
+			    console.log('読み込みが正常に行われました');
+			  }
+		});
+	});
+</script>
+
 <script>
 	//requestパラメータの取得
 	var queryString = window.location.search;
@@ -147,6 +158,7 @@
 	window.addEventListener('DOMContentLoaded', function(){
 		//ソートプルダウン
 		document.form1.sort.selectedIndex = parseInt(queryObject.sort);
+		document.form1.categoryId.selectedIndex = parseInt(queryObject.categoryId)-1;
 
 
 		var ckstate = sessionStorage.getItem("key").split(",");
