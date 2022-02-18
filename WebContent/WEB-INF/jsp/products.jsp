@@ -9,6 +9,7 @@
 <title>商品一覧</title>
 <link rel="stylesheet" href="CSS/productsStyle.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/productsScript.js"></script>
 </head>
 <body>
 
@@ -17,20 +18,20 @@
 
 
 <form action="productsSearch" method="GET" name="form1">
-製品名検索(仮)：<input type="search" name="productName" value="${sessionScope.holdSearchWord}">
-<select name="categoryId">
+製品名検索(仮)：<input type="search" name="productName" value="${sessionScope.holdSearchWord}" class="info1">
+<select name="categoryId" id="CATEGORY" class="info1">
 	<option value="1">エレキギター</option>
 	<option value="2">アコースティックギター</option>
 	<option value="3">ベース</option>
 </select>
-<select name="sort" id = "SORT">
+<select name="sort" id = "SORT" class="info1">
 	<option value="0">商品ID順</option>
 	<option value="1">価格の安い順</option>
 	<option value="2">価格の高い順</option>
 </select>
 <input type="submit" value="検索"/>
-
-<fieldset>
+<input type="hidden" name="pageNo" value="1">
+<fieldset class="info">
 	  <legend>色</legend>
 	  <input type="hidden" name="color" value="0">
 	  <div>
@@ -99,6 +100,10 @@
  </c:forEach>
 
  </table>
+<button id="previousPageBtn">前のページ</button>
+${sessionScope.holdPageNo}/${sessionScope.maxPageNo}
+<button id="nextPageBtn">次のページ</button>
+ <input type="hidden" name="maxPage" value=${sessionScope.maxPageNo} class ="info2">
  <a href="productHistory">閲覧履歴編集へ</a>
 <div id = "productHistoryFooter">
 </div>

@@ -19,6 +19,7 @@ public class ProductsSearchCommand extends AbstractCommand{
 		String productName=reqc.getParameter("productName")[0];
 		String sortNo=reqc.getParameter("sort")[0];
 		//String colorNo=reqc.getParameter("color")[0];
+		String pageNo = reqc.getParameter("pageNo")[0];
 
 		//colorが複数の場合も登録
 		String[] colorsNo=reqc.getParameter("color");
@@ -27,6 +28,9 @@ public class ProductsSearchCommand extends AbstractCommand{
 
 		reqc.setSessionAttribute("holdSearchWord", productName);
 		reqc.setSessionAttribute("holdsortNo", sortNo);
+		reqc.setSessionAttribute("holdColorsNo",colorsNo);
+		reqc.setSessionAttribute("holdPageNo",pageNo);
+
 
 		hwb.setHoldWord((String)reqc.getSessionAttribute("holdSearchWord"));
 		hwb.setHoldSortNo((String)reqc.getSessionAttribute("holdsortNo"));
@@ -56,8 +60,10 @@ public class ProductsSearchCommand extends AbstractCommand{
 
 		ConnectionManager.getInstance().beginTransaction();
 
+		reqc.setSessionAttribute("maxPageNo", dao.getProductsSearchResultCount(productName, colorsNo,categoryId));
+
 		//検索実行＋結果取得
-		resc.setResult(dao.getProductsSearchResult(productName,sortNo,colorsNo,categoryId));
+		resc.setResult(dao.getProductsSearchResult(productName,sortNo,colorsNo,pageNo,categoryId));
 
 		ConnectionManager.getInstance().commit();
 		ConnectionManager.getInstance().closeTransaction();

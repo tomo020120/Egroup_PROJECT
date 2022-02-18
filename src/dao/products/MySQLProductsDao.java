@@ -77,7 +77,7 @@ public class MySQLProductsDao implements ProductsDao{
 		try {
 			cn = ConnectionManager.getInstance().getConnection();
 
-			String sql = "SELECT a.itemId,name,price,releaseDate,orderCount,categoryId,colorId,shapeId,artistId,pictId,pictPath FROM Ibanezdb.item_pict_table AS a JOIN Ibanezdb.product_table AS b ON a.itemId = b.itemId WHERE categoryId=?;";
+			String sql=  "SELECT a.itemId,name,price,releaseDate,orderCount,categoryId,colorId,shapeId,artistId,pictId,pictPath FROM Ibanezdb.item_pict_table AS a JOIN Ibanezdb.product_table AS b ON a.itemId = b.itemId where categoryId=? and name LIKE '%%' ''  order by a.itemId ASC LIMIT 30 OFFSET 0";
 
 			st=cn.prepareStatement(sql);
 
@@ -126,13 +126,14 @@ public class MySQLProductsDao implements ProductsDao{
 		return products;
 	}
 
-	public List<ProductPictBean> getProductsSearchResult(String productName,String sortCode,String[] colorsNo,String categoryId) {
+	public List<ProductPictBean> getProductsSearchResult(String productName,String sortCode,String[] colorsNo,String pageNo,String categoryId) {
 		ArrayList<ProductPictBean> products= new ArrayList<ProductPictBean>();
 		try {
 			cn = ConnectionManager.getInstance().getConnection();
 			int length = colorsNo.length-1;
 			int questionCount=0;
 			String sql = "SELECT a.itemId,name,price,releaseDate,orderCount,categoryId,colorId,shapeId,artistId,pictId,pictPath FROM Ibanezdb.item_pict_table AS a JOIN Ibanezdb.product_table AS b ON a.itemId = b.itemId where name LIKE ?";
+
 			//まずsqlを完成させる
 
 			if(length!=0) {
@@ -151,7 +152,9 @@ public class MySQLProductsDao implements ProductsDao{
 				questionCount=1;
 			}
 
-			sql+="AND categoryId="+categoryId+" order by "+sortCode;
+			pageNo=Integer.toString(30*(Integer.parseInt(pageNo)-1));
+
+			sql+="AND categoryId="+categoryId+" order by "+sortCode+" LIMIT 30 OFFSET "+pageNo;
 			System.out.println("仮SQL:"+sql);
 
 			//set
@@ -219,5 +222,92 @@ public class MySQLProductsDao implements ProductsDao{
 			}
 		}
 		return products;
+	}
+	public String getProductsSearchResultCount(String productName,String[] colorsNo,String categoryId) {
+		String maxPageCount=null;
+
+		try {
+			cn = ConnectionManager.getInstance().getConnection();
+			int length = colorsNo.length-1;
+			int questionCount=0;
+			String sql = "SELECT count(*) FROM Ibanezdb.item_pict_table AS a JOIN Ibanezdb.product_table AS b ON a.itemId = b.itemId where categoryId= "+categoryId+" and name LIKE ?";
+			//String sql = "SELECT count(a.itemId) FROM Ibanezdb.item_pict_table AS a JOIN Ibanezdb.product_table AS b ON a.itemId = b.itemId where name LIKE '%%';";
+			//まずsqlを完成させる
+
+			if(length!=0) {
+				sql+=" and colorId IN (";
+				for(int count =1;count <=length;count++) {
+					//0の分の?は抜いてある
+					sql+=" ? ";
+					questionCount++;
+					if(1<length && count<length) {
+						sql+=", ";
+					}
+				}
+				sql+=" ) ";
+			}else {
+				sql+=" ? ";
+				questionCount=1;
+			}
+
+
+
+			System.out.println("仮SQL:"+sql);
+
+			//set
+			st=cn.prepareStatement(sql);
+			st.setString(1, "%" + productName + "%");
+
+			//0 1,2,3 No.length=4 ,yes
+			//0 1,2 No.length=3 ,yes
+			//0 1 length = 2 ,NO
+			//カラー条件コード構築
+			int j=2;
+			if(length!=0) {
+				for(int i=1;i <= questionCount;i++) {
+					st.setInt(j, Integer.parseInt(colorsNo[i]));
+					j++;
+				}
+			}else {
+				st.setString(j, "");
+				j++;
+			}
+
+			//st.setString(j, sortCode);
+
+			System.out.println("実行SQL :" + st.toString());
+
+			rs=st.executeQuery();
+
+			String resultCount=null;
+			while(rs.next()) {
+				resultCount=rs.getString(1);
+			}
+
+			double countNo=Math.ceil(Double.parseDouble(resultCount)/30.0);
+
+			maxPageCount=Integer.toString((int)countNo);
+
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}catch(Exception e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}finally {
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
+		}
+		return maxPageCount;
 	}
 }
