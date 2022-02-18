@@ -17,19 +17,20 @@ public class EditProductCommand extends AbstractCommand{
 		RequestContext reqContext = getRequestContext();
 		String updatePictPath = "";
 		String exitingPictPath = "";
+		String commandPath = "";
+		String itemId = "";
 		if(reqContext.uploadFile()) { // 写真のアップロードもしもう写真があるならfalse、新しく写真を更新するなら保存と前の画像の消去
 			exitingPictPath = reqContext.getParameter("exitPictPath")[0]; // 更新前の写真のパス
-			if(reqContext.deletePictFile(exitingPictPath)) {// 更新前の写真の消去
-				String fileName = reqContext.getPictFileName(); // ファイル名の取得
-				System.out.println(fileName);
-
-				updatePictPath = "images/" + fileName;
-			}
+			reqContext.deletePictFile(exitingPictPath); // 写真の消去
+			String fileName = reqContext.getPictFileName(); // ファイル名の取得
+			System.out.println(fileName);
+			updatePictPath = "images/" + fileName;
 		}else if(reqContext.isNoFile()){ // ファイルがあげられていない時true
 			updatePictPath = reqContext.getParameter("exitPictPath")[0]; // 更新前の写真のパス
 		}else { // ファイルが存在していた時、または例外
-			resContext.setMessage("その写真はすでにアップロードされているか予期せぬ事態が起き追加できませんでした");
-			resContext.setTargetPath("editProductPage");
+			itemId = reqContext.getParameter("itemId")[0];
+			commandPath = "editProductPage?itemId=" + itemId + "&message=編集に失敗しました";
+			resContext.setTargetCommandPath(commandPath);
 			return resContext;
 		}
 
@@ -39,7 +40,7 @@ public class EditProductCommand extends AbstractCommand{
 		String colorId = reqContext.getParameter("colorId")[0];
 		String shapeId = reqContext.getParameter("shapeId")[0];
 		String artistId = reqContext.getParameter("artistId")[0];
-		String itemId = reqContext.getParameter("itemId")[0];
+		itemId = reqContext.getParameter("itemId")[0];
 
 		AllProductDetailBean all = new AllProductDetailBean();
 
@@ -57,7 +58,6 @@ public class EditProductCommand extends AbstractCommand{
 
 		ConnectionManager.getInstance().beginTransaction();
 
-		String commandPath = "";
 
 		if(edit.updateProduct(all)) {
 			commandPath = "adminProductsPage?message=編集完了";

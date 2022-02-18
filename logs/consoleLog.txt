@@ -1,87 +1,440 @@
-2 18, 2022 2:02:16 午後 org.apache.tomcat.util.digester.SetPropertiesRule begin
+2 18, 2022 4:26:36 午後 org.apache.tomcat.util.digester.SetPropertiesRule begin
 警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:threader' did not find a matching property.
-2 18, 2022 2:02:16 午後 org.apache.tomcat.util.digester.SetPropertiesRule begin
+2 18, 2022 4:26:36 午後 org.apache.tomcat.util.digester.SetPropertiesRule begin
 警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:rjp' did not find a matching property.
-2 18, 2022 2:02:16 午後 org.apache.tomcat.util.digester.SetPropertiesRule begin
+2 18, 2022 4:26:36 午後 org.apache.tomcat.util.digester.SetPropertiesRule begin
 警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:oop' did not find a matching property.
-2 18, 2022 2:02:16 午後 org.apache.tomcat.util.digester.SetPropertiesRule begin
+2 18, 2022 4:26:36 午後 org.apache.tomcat.util.digester.SetPropertiesRule begin
 警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:j2ee4' did not find a matching property.
-2 18, 2022 2:02:16 午後 org.apache.tomcat.util.digester.SetPropertiesRule begin
+2 18, 2022 4:26:36 午後 org.apache.tomcat.util.digester.SetPropertiesRule begin
 警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:Egroup_PROJECT' did not find a matching property.
-2 18, 2022 2:02:16 午後 org.apache.tomcat.util.digester.SetPropertiesRule begin
+2 18, 2022 4:26:36 午後 org.apache.tomcat.util.digester.SetPropertiesRule begin
 警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:webapp' did not find a matching property.
-2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 4:26:36 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Server version:        Apache Tomcat/8.0.36
-2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 4:26:36 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Server built:          Jun 9 2016 13:55:50 UTC
-2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 4:26:36 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Server number:         8.0.36.0
-2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 4:26:36 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: OS Name:               Windows 10
-2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 4:26:36 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: OS Version:            10.0
-2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 4:26:36 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Architecture:          amd64
-2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 4:26:36 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Java Home:             C:\Program Files\Java\jdk1.8.0_202\jre
-2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 4:26:36 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: JVM Version:           1.8.0_202-b08
-2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 4:26:36 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: JVM Vendor:            Oracle Corporation
-2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 4:26:36 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: CATALINA_BASE:         C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0
-2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 4:26:36 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: CATALINA_HOME:         C:\pleiades\tomcat\8
-2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 4:26:36 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Dcatalina.base=C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0
-2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 4:26:36 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Dcatalina.home=C:\pleiades\tomcat\8
-2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 4:26:36 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Dwtp.deploy=C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps
-2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 4:26:36 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Djava.endorsed.dirs=C:\pleiades\tomcat\8\endorsed
-2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 4:26:36 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Dfile.encoding=UTF-8
-2 18, 2022 2:02:16 午後 org.apache.catalina.startup.VersionLoggerListener log
+2 18, 2022 4:26:36 午後 org.apache.catalina.startup.VersionLoggerListener log
 情報: Command line argument: -Xbootclasspath/a:C:\pleiades\tomcat\8\lib\mysql-connector-java-8.0.22.jar
-2 18, 2022 2:02:16 午後 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+2 18, 2022 4:26:36 午後 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
 情報: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.8.0_202\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/pleiades/eclipse//jre/bin/server;C:/pleiades/eclipse//jre/bin;C:\app\oracle\product\19.1.0\dbhome_1\bin;C:\app\oracle\product\12.1.0\dbhome_1\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Common Files\Roxio Shared\DLLShared\;C:\Program Files (x86)\Common Files\Roxio Shared\OEM\12.0\DLLShared\;C:\Program Files (x86)\Roxio 2010\OEM\AudioCore\;c:\Borland\Bcc55\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\dotnet\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\koyama\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk1.8.0_202\bin;C:\Users\koyama\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Users\koyama\.dotnet\tools;C:\pleiades\eclipse;;.
-2 18, 2022 2:02:16 午後 org.apache.coyote.AbstractProtocol init
+2 18, 2022 4:26:36 午後 org.apache.coyote.AbstractProtocol init
 情報: Initializing ProtocolHandler ["http-nio-8080"]
-2 18, 2022 2:02:16 午後 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
+2 18, 2022 4:26:36 午後 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
 情報: Using a shared selector for servlet write/read
-2 18, 2022 2:02:16 午後 org.apache.coyote.AbstractProtocol init
+2 18, 2022 4:26:36 午後 org.apache.coyote.AbstractProtocol init
 情報: Initializing ProtocolHandler ["ajp-nio-8009"]
-2 18, 2022 2:02:16 午後 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
+2 18, 2022 4:26:36 午後 org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
 情報: Using a shared selector for servlet write/read
-2 18, 2022 2:02:16 午後 org.apache.catalina.startup.Catalina load
-情報: Initialization processed in 1117 ms
-2 18, 2022 2:02:16 午後 org.apache.catalina.core.StandardService startInternal
+2 18, 2022 4:26:36 午後 org.apache.catalina.startup.Catalina load
+情報: Initialization processed in 1131 ms
+2 18, 2022 4:26:36 午後 org.apache.catalina.core.StandardService startInternal
 情報: サービス Catalina を起動します
-2 18, 2022 2:02:16 午後 org.apache.catalina.core.StandardEngine startInternal
+2 18, 2022 4:26:36 午後 org.apache.catalina.core.StandardEngine startInternal
 情報: Starting Servlet Engine: Apache Tomcat/8.0.36
-2 18, 2022 2:02:18 午後 org.apache.jasper.servlet.TldScanner scanJars
+2 18, 2022 4:26:38 午後 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2 18, 2022 2:02:19 午後 org.apache.jasper.servlet.TldScanner scanJars
+2 18, 2022 4:26:38 午後 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2 18, 2022 2:02:20 午後 org.apache.jasper.servlet.TldScanner scanJars
+2 18, 2022 4:26:39 午後 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2 18, 2022 2:02:21 午後 org.apache.catalina.core.StandardContext checkUnusualURLPattern
+2 18, 2022 4:26:41 午後 org.apache.catalina.core.StandardContext checkUnusualURLPattern
 情報: Suspicious url pattern: "/*[(edit)(Edit)]*" in context [/Egroup_PROJECT] - see sections 12.1 and 12.2 of the Servlet specification
-2 18, 2022 2:02:21 午後 org.apache.catalina.core.StandardContext checkUnusualURLPattern
+2 18, 2022 4:26:41 午後 org.apache.catalina.core.StandardContext checkUnusualURLPattern
 情報: Suspicious url pattern: "/*[(Favorite)(favorite)]*" in context [/Egroup_PROJECT] - see sections 12.1 and 12.2 of the Servlet specification
-2 18, 2022 2:02:21 午後 org.apache.jasper.servlet.TldScanner scanJars
+2 18, 2022 4:26:41 午後 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
 初期化完了
-2 18, 2022 2:02:23 午後 org.apache.jasper.servlet.TldScanner scanJars
+2 18, 2022 4:26:42 午後 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2 18, 2022 2:02:23 午後 org.apache.jasper.servlet.TldScanner scanJars
+2 18, 2022 4:26:43 午後 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2 18, 2022 2:02:24 午後 org.apache.jasper.servlet.TldScanner scanJars
+2 18, 2022 4:26:43 午後 org.apache.jasper.servlet.TldScanner scanJars
 情報: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2 18, 2022 2:02:24 午後 org.apache.coyote.AbstractProtocol start
+2 18, 2022 4:26:43 午後 org.apache.coyote.AbstractProtocol start
 情報: Starting ProtocolHandler ["http-nio-8080"]
-2 18, 2022 2:02:24 午後 org.apache.coyote.AbstractProtocol start
+2 18, 2022 4:26:43 午後 org.apache.coyote.AbstractProtocol start
 情報: Starting ProtocolHandler ["ajp-nio-8009"]
-2 18, 2022 2:02:24 午後 org.apache.catalina.startup.Catalina start
-情報: Server startup in 7883 ms
+2 18, 2022 4:26:43 午後 org.apache.catalina.startup.Catalina start
+情報: Server startup in 7154 ms
+取得パラメーターMap要素数0
+キー値：adminProductsPage
+取得プロパティ：cmd.admin.product.TransferAdminProductsPageCommand
+新規コネクション生成
+トランザクション開始
+接続
+新規接続
+接続
+コミットします。
+クローズしました。
+result1 : [bean.joinBean.ProductPictBean@218dd3fc, bean.joinBean.ProductPictBean@703d8a62, bean.joinBean.ProductPictBean@495fc0b0, bean.joinBean.ProductPictBean@40f1de38, bean.joinBean.ProductPictBean@face7e9, bean.joinBean.ProductPictBean@13de02e4, bean.joinBean.ProductPictBean@24330a6f, bean.joinBean.ProductPictBean@6a7d10cf, bean.joinBean.ProductPictBean@20621c6, bean.joinBean.ProductPictBean@61acda40, bean.joinBean.ProductPictBean@5d70d468, bean.joinBean.ProductPictBean@5f094c61, bean.joinBean.ProductPictBean@6cb24e57, bean.joinBean.ProductPictBean@6b4be75b, bean.joinBean.ProductPictBean@3043bdce, bean.joinBean.ProductPictBean@25bc95e3, bean.joinBean.ProductPictBean@5b82b7f5, bean.joinBean.ProductPictBean@6f47f2e1, bean.joinBean.ProductPictBean@42c78f0a, bean.joinBean.ProductPictBean@395093c, bean.joinBean.ProductPictBean@4de63ba4, bean.joinBean.ProductPictBean@1de60803, bean.joinBean.ProductPictBean@63a76b6a, bean.joinBean.ProductPictBean@485042cb, bean.joinBean.ProductPictBean@34977b7e, bean.joinBean.ProductPictBean@191ccbff, bean.joinBean.ProductPictBean@41380f8d, bean.joinBean.ProductPictBean@b344b7b, bean.joinBean.ProductPictBean@4f79de8, bean.joinBean.ProductPictBean@7b4bedba]
+message : null
+セッション登録値(token) :null
+sessionInfo : null
+セッション登録値(token) :null
+取得パラメーターMap要素数0
+キー値：productHistoryFooter
+取得プロパティ：cmd.history.ProductHistoryFooterCommand
+セッション登録値(token) :null
+2 18, 2022 4:26:44 午後 org.apache.catalina.core.StandardWrapperValve invoke
+重大: サーブレット FrontServlet のServlet.service()が例外を投げました
+java.lang.NullPointerException
+	at cmd.history.ProductHistoryFooterCommand.execute(ProductHistoryFooterCommand.java:16)
+	at context.WebApplicationContext.handleRequest(WebApplicationContext.java:24)
+	at FrontServlet.doPost(FrontServlet.java:25)
+	at FrontServlet.doGet(FrontServlet.java:15)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:616)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:528)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1099)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:670)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1520)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1476)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+取得パラメーターMap要素数0
+キー値：adminProductsPage
+取得プロパティ：cmd.admin.product.TransferAdminProductsPageCommand
+トランザクション開始
+接続
+新規接続
+接続
+コミットします。
+クローズしました。
+result1 : [bean.joinBean.ProductPictBean@4ae1a175, bean.joinBean.ProductPictBean@fe3264d, bean.joinBean.ProductPictBean@1a48c56, bean.joinBean.ProductPictBean@3ea6ad88, bean.joinBean.ProductPictBean@790b5920, bean.joinBean.ProductPictBean@6fccd902, bean.joinBean.ProductPictBean@4a2f3e91, bean.joinBean.ProductPictBean@416e00b1, bean.joinBean.ProductPictBean@620f93e5, bean.joinBean.ProductPictBean@6b82426f, bean.joinBean.ProductPictBean@58ea2238, bean.joinBean.ProductPictBean@69b0da1c, bean.joinBean.ProductPictBean@77beec74, bean.joinBean.ProductPictBean@e5649d6, bean.joinBean.ProductPictBean@72451c6, bean.joinBean.ProductPictBean@682b1b04, bean.joinBean.ProductPictBean@68769739, bean.joinBean.ProductPictBean@54d27b18, bean.joinBean.ProductPictBean@71ddaa25, bean.joinBean.ProductPictBean@419e6c21, bean.joinBean.ProductPictBean@1d8de474, bean.joinBean.ProductPictBean@5ac05666, bean.joinBean.ProductPictBean@46d05399, bean.joinBean.ProductPictBean@741dd006, bean.joinBean.ProductPictBean@6c124b5, bean.joinBean.ProductPictBean@5eea216d, bean.joinBean.ProductPictBean@1ae2edb2, bean.joinBean.ProductPictBean@658308, bean.joinBean.ProductPictBean@f0efb3d, bean.joinBean.ProductPictBean@6052f8]
+message : null
+セッション登録値(token) :null
+sessionInfo : null
+セッション登録値(token) :null
+取得パラメーターMap要素数0
+キー値：productHistoryFooter
+取得プロパティ：cmd.history.ProductHistoryFooterCommand
+セッション登録値(token) :null
+2 18, 2022 4:28:07 午後 org.apache.catalina.core.StandardWrapperValve invoke
+重大: サーブレット FrontServlet のServlet.service()が例外を投げました
+java.lang.NullPointerException
+	at cmd.history.ProductHistoryFooterCommand.execute(ProductHistoryFooterCommand.java:16)
+	at context.WebApplicationContext.handleRequest(WebApplicationContext.java:24)
+	at FrontServlet.doPost(FrontServlet.java:25)
+	at FrontServlet.doGet(FrontServlet.java:15)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:616)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:528)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1099)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:670)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1520)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1476)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+取得パラメーターMap要素数0
+キー値：adminProductsPage
+取得プロパティ：cmd.admin.product.TransferAdminProductsPageCommand
+トランザクション開始
+接続
+新規接続
+接続
+コミットします。
+クローズしました。
+result1 : [bean.joinBean.ProductPictBean@72043119, bean.joinBean.ProductPictBean@3926ec0e, bean.joinBean.ProductPictBean@433c2023, bean.joinBean.ProductPictBean@41f4a388, bean.joinBean.ProductPictBean@122bce56, bean.joinBean.ProductPictBean@1c630681, bean.joinBean.ProductPictBean@3e7c1016, bean.joinBean.ProductPictBean@5af00cb2, bean.joinBean.ProductPictBean@166530c4, bean.joinBean.ProductPictBean@12b66b87, bean.joinBean.ProductPictBean@4c142567, bean.joinBean.ProductPictBean@16db35cb, bean.joinBean.ProductPictBean@2907d4c4, bean.joinBean.ProductPictBean@8cc7830, bean.joinBean.ProductPictBean@659e4b53, bean.joinBean.ProductPictBean@2aa44f46, bean.joinBean.ProductPictBean@3d920f22, bean.joinBean.ProductPictBean@5674fd58, bean.joinBean.ProductPictBean@41a7f016, bean.joinBean.ProductPictBean@49f1491b, bean.joinBean.ProductPictBean@64b7b418, bean.joinBean.ProductPictBean@15580beb, bean.joinBean.ProductPictBean@6b817e16, bean.joinBean.ProductPictBean@28fb5bec, bean.joinBean.ProductPictBean@71b52d9f, bean.joinBean.ProductPictBean@24e76711, bean.joinBean.ProductPictBean@44f6cc55, bean.joinBean.ProductPictBean@36a0cb1c, bean.joinBean.ProductPictBean@6e21d182, bean.joinBean.ProductPictBean@7161fcb8]
+message : null
+セッション登録値(token) :null
+sessionInfo : null
+セッション登録値(token) :null
+取得パラメーターMap要素数0
+キー値：productHistoryFooter
+取得プロパティ：cmd.history.ProductHistoryFooterCommand
+セッション登録値(token) :null
+2 18, 2022 4:29:48 午後 org.apache.catalina.core.StandardWrapperValve invoke
+重大: サーブレット FrontServlet のServlet.service()が例外を投げました
+java.lang.NullPointerException
+	at cmd.history.ProductHistoryFooterCommand.execute(ProductHistoryFooterCommand.java:16)
+	at context.WebApplicationContext.handleRequest(WebApplicationContext.java:24)
+	at FrontServlet.doPost(FrontServlet.java:25)
+	at FrontServlet.doGet(FrontServlet.java:15)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:616)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:528)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1099)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:670)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1520)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1476)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+取得パラメーターMap要素数0
+キー値：adminProductsPage
+取得プロパティ：cmd.admin.product.TransferAdminProductsPageCommand
+トランザクション開始
+接続
+新規接続
+接続
+コミットします。
+クローズしました。
+result1 : [bean.joinBean.ProductPictBean@119b6e31, bean.joinBean.ProductPictBean@43253185, bean.joinBean.ProductPictBean@20c09bdf, bean.joinBean.ProductPictBean@3b949adb, bean.joinBean.ProductPictBean@71b4917e, bean.joinBean.ProductPictBean@1bf73fd4, bean.joinBean.ProductPictBean@3f4d4116, bean.joinBean.ProductPictBean@20905666, bean.joinBean.ProductPictBean@75fa0c6b, bean.joinBean.ProductPictBean@5751949f, bean.joinBean.ProductPictBean@2c13a92, bean.joinBean.ProductPictBean@20407fca, bean.joinBean.ProductPictBean@57ca6fd, bean.joinBean.ProductPictBean@5ed23fa1, bean.joinBean.ProductPictBean@55cc8b43, bean.joinBean.ProductPictBean@76d1101f, bean.joinBean.ProductPictBean@167a0b76, bean.joinBean.ProductPictBean@599a112f, bean.joinBean.ProductPictBean@683d0fcc, bean.joinBean.ProductPictBean@1612ab3c, bean.joinBean.ProductPictBean@50f52333, bean.joinBean.ProductPictBean@59ef536b, bean.joinBean.ProductPictBean@59ac74f5, bean.joinBean.ProductPictBean@5ae47fb7, bean.joinBean.ProductPictBean@23f12363, bean.joinBean.ProductPictBean@a6487d, bean.joinBean.ProductPictBean@3a978f40, bean.joinBean.ProductPictBean@43f74662, bean.joinBean.ProductPictBean@69378f44, bean.joinBean.ProductPictBean@5b60d7bf]
+message : null
+セッション登録値(token) :null
+sessionInfo : null
+セッション登録値(token) :null
+取得パラメーターMap要素数0
+キー値：productHistoryFooter
+取得プロパティ：cmd.history.ProductHistoryFooterCommand
+セッション登録値(token) :null
+2 18, 2022 4:29:52 午後 org.apache.catalina.core.StandardWrapperValve invoke
+重大: サーブレット FrontServlet のServlet.service()が例外を投げました
+java.lang.NullPointerException
+	at cmd.history.ProductHistoryFooterCommand.execute(ProductHistoryFooterCommand.java:16)
+	at context.WebApplicationContext.handleRequest(WebApplicationContext.java:24)
+	at FrontServlet.doPost(FrontServlet.java:25)
+	at FrontServlet.doGet(FrontServlet.java:15)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:616)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:528)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1099)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:670)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1520)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1476)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+取得パラメーターMap要素数0
+キー値：adminProductsPage
+取得プロパティ：cmd.admin.product.TransferAdminProductsPageCommand
+トランザクション開始
+接続
+新規接続
+接続
+コミットします。
+クローズしました。
+result1 : [bean.joinBean.ProductPictBean@5b5c27f5, bean.joinBean.ProductPictBean@1dc68b2d, bean.joinBean.ProductPictBean@709a50c0, bean.joinBean.ProductPictBean@6bf06b1b, bean.joinBean.ProductPictBean@51a99a1f, bean.joinBean.ProductPictBean@789ffce4, bean.joinBean.ProductPictBean@5a21bf67, bean.joinBean.ProductPictBean@32e1bf8b, bean.joinBean.ProductPictBean@2f05b2aa, bean.joinBean.ProductPictBean@28fa1372, bean.joinBean.ProductPictBean@7ff75b8d, bean.joinBean.ProductPictBean@4055ae1f, bean.joinBean.ProductPictBean@42c7c45d, bean.joinBean.ProductPictBean@3ade3ef4, bean.joinBean.ProductPictBean@7f303111, bean.joinBean.ProductPictBean@12784dbe, bean.joinBean.ProductPictBean@6e618680, bean.joinBean.ProductPictBean@25032c26, bean.joinBean.ProductPictBean@5b45392e, bean.joinBean.ProductPictBean@b809a45, bean.joinBean.ProductPictBean@69375833, bean.joinBean.ProductPictBean@55e92b2f, bean.joinBean.ProductPictBean@2717f4f5, bean.joinBean.ProductPictBean@28ca00e0, bean.joinBean.ProductPictBean@7bef330a, bean.joinBean.ProductPictBean@67c3cf0b, bean.joinBean.ProductPictBean@7f6b2f5a, bean.joinBean.ProductPictBean@7deed57, bean.joinBean.ProductPictBean@52bf9c5, bean.joinBean.ProductPictBean@7ce9c5fc]
+message : null
+セッション登録値(token) :null
+sessionInfo : null
+セッション登録値(token) :null
+取得パラメーターMap要素数0
+キー値：productHistoryFooter
+取得プロパティ：cmd.history.ProductHistoryFooterCommand
+セッション登録値(token) :null
+2 18, 2022 4:30:34 午後 org.apache.catalina.core.StandardWrapperValve invoke
+重大: サーブレット FrontServlet のServlet.service()が例外を投げました
+java.lang.NullPointerException
+	at cmd.history.ProductHistoryFooterCommand.execute(ProductHistoryFooterCommand.java:16)
+	at context.WebApplicationContext.handleRequest(WebApplicationContext.java:24)
+	at FrontServlet.doPost(FrontServlet.java:25)
+	at FrontServlet.doGet(FrontServlet.java:15)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:616)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:528)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1099)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:670)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1520)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1476)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+取得パラメーターMap要素数0
+キー値：addProductPage
+取得プロパティ：cmd.admin.product.TransferAddProductPageCommand
+result1 : null
+message : null
+セッション登録値(token) :null
+sessionInfo : null
+セッション登録値(token) :null
+取得パラメーターMap要素数0
+キー値：adminProductsPage
+取得プロパティ：cmd.admin.product.TransferAdminProductsPageCommand
+トランザクション開始
+接続
+新規接続
+接続
+コミットします。
+クローズしました。
+result1 : [bean.joinBean.ProductPictBean@6fe7b3de, bean.joinBean.ProductPictBean@58b1fe94, bean.joinBean.ProductPictBean@6711bf89, bean.joinBean.ProductPictBean@1051019f, bean.joinBean.ProductPictBean@427a3908, bean.joinBean.ProductPictBean@15e82a8d, bean.joinBean.ProductPictBean@7f6f224e, bean.joinBean.ProductPictBean@67aa99c5, bean.joinBean.ProductPictBean@748b5e41, bean.joinBean.ProductPictBean@20e3be1f, bean.joinBean.ProductPictBean@2618951f, bean.joinBean.ProductPictBean@154f54a8, bean.joinBean.ProductPictBean@3b986916, bean.joinBean.ProductPictBean@6b63b3c, bean.joinBean.ProductPictBean@6464e698, bean.joinBean.ProductPictBean@b6114a8, bean.joinBean.ProductPictBean@73490c0b, bean.joinBean.ProductPictBean@4491b685, bean.joinBean.ProductPictBean@782d8a9, bean.joinBean.ProductPictBean@4c558a5, bean.joinBean.ProductPictBean@3fd72562, bean.joinBean.ProductPictBean@76bb9983, bean.joinBean.ProductPictBean@676d406d, bean.joinBean.ProductPictBean@49432c55, bean.joinBean.ProductPictBean@4f39fc2a, bean.joinBean.ProductPictBean@65e403cf, bean.joinBean.ProductPictBean@68075936, bean.joinBean.ProductPictBean@38f6f1e7, bean.joinBean.ProductPictBean@38ae927f, bean.joinBean.ProductPictBean@7d9114de]
+message : null
+セッション登録値(token) :null
+sessionInfo : null
+セッション登録値(token) :null
+取得パラメーターMap要素数0
+キー値：productHistoryFooter
+取得プロパティ：cmd.history.ProductHistoryFooterCommand
+セッション登録値(token) :null
+2 18, 2022 4:30:37 午後 org.apache.catalina.core.StandardWrapperValve invoke
+重大: サーブレット FrontServlet のServlet.service()が例外を投げました
+java.lang.NullPointerException
+	at cmd.history.ProductHistoryFooterCommand.execute(ProductHistoryFooterCommand.java:16)
+	at context.WebApplicationContext.handleRequest(WebApplicationContext.java:24)
+	at FrontServlet.doPost(FrontServlet.java:25)
+	at FrontServlet.doGet(FrontServlet.java:15)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:616)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:528)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1099)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:670)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1520)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1476)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+取得パラメーターMap要素数0
+キー値：addProductPage
+取得プロパティ：cmd.admin.product.TransferAddProductPageCommand
+result1 : null
+message : null
+セッション登録値(token) :null
+sessionInfo : null
+セッション登録値(token) :null
+取得パラメーターMap要素数0
+キー値：adminProductsPage
+取得プロパティ：cmd.admin.product.TransferAdminProductsPageCommand
+トランザクション開始
+接続
+新規接続
+接続
+コミットします。
+クローズしました。
+result1 : [bean.joinBean.ProductPictBean@57be716c, bean.joinBean.ProductPictBean@12373c6d, bean.joinBean.ProductPictBean@44b1bd76, bean.joinBean.ProductPictBean@4dde4fe0, bean.joinBean.ProductPictBean@694f7226, bean.joinBean.ProductPictBean@42b0ff36, bean.joinBean.ProductPictBean@b23a01b, bean.joinBean.ProductPictBean@34bd5fd0, bean.joinBean.ProductPictBean@2671d523, bean.joinBean.ProductPictBean@63fdc794, bean.joinBean.ProductPictBean@75489088, bean.joinBean.ProductPictBean@2b55122e, bean.joinBean.ProductPictBean@3a512aa, bean.joinBean.ProductPictBean@ee9a42d, bean.joinBean.ProductPictBean@3f94b9a8, bean.joinBean.ProductPictBean@3c530816, bean.joinBean.ProductPictBean@17c86d74, bean.joinBean.ProductPictBean@54436b6c, bean.joinBean.ProductPictBean@4e00c1b5, bean.joinBean.ProductPictBean@6a3763db, bean.joinBean.ProductPictBean@3ec00024, bean.joinBean.ProductPictBean@7197149b, bean.joinBean.ProductPictBean@39d27e75, bean.joinBean.ProductPictBean@682aeb2f, bean.joinBean.ProductPictBean@56d5172e, bean.joinBean.ProductPictBean@1f2ff2a3, bean.joinBean.ProductPictBean@35a406e5, bean.joinBean.ProductPictBean@a68f0ed, bean.joinBean.ProductPictBean@747afae9, bean.joinBean.ProductPictBean@14a0a42f]
+message : null
+セッション登録値(token) :null
+sessionInfo : null
+セッション登録値(token) :null
+取得パラメーターMap要素数0
+キー値：productHistoryFooter
+取得プロパティ：cmd.history.ProductHistoryFooterCommand
+セッション登録値(token) :null
+2 18, 2022 4:30:44 午後 org.apache.catalina.core.StandardWrapperValve invoke
+重大: サーブレット FrontServlet のServlet.service()が例外を投げました
+java.lang.NullPointerException
+	at cmd.history.ProductHistoryFooterCommand.execute(ProductHistoryFooterCommand.java:16)
+	at context.WebApplicationContext.handleRequest(WebApplicationContext.java:24)
+	at FrontServlet.doPost(FrontServlet.java:25)
+	at FrontServlet.doGet(FrontServlet.java:15)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:616)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:528)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1099)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:670)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1520)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1476)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
