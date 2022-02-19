@@ -11,7 +11,7 @@
 <title>商品一覧</title>
 <link rel="stylesheet" href="CSS/productsStyle.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="js/productsScript.js"></script>
+<script src="js/adminProductsPageScript.js"></script>
 </head>
 <body>
 <h1>商品編集画面</h1>
