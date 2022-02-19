@@ -106,7 +106,7 @@
 ${sessionScope.holdPageNo}/${sessionScope.maxPageNo}
 <button id="nextPageBtn">次のページ</button>
 </div>
- <input type="hidden" name="maxPage" value=${sessionScope.maxPageNo} class ="info2">
+ <input type="hidden" name="maxPage" value="${sessionScope.maxPageNo}" class ="info2">
 
 <div id = "productHistoryFooter">
 </div>

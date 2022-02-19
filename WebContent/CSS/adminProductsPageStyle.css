@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+#selectItemList{
+	display:none; /* デフォルトは非表示に */
+	width:600px;
+	height:600px;
+	top:14%; /* top,leftで位置指定 */
+	left:30%;
+	right:10%;
+	background-color:lightgreen;
+	border:1px solid #000000; /*枠線*/
+	margin-right:auto; /* 余白指定 */
+	z-index:2; /* 多重度設定 */
+	position:fixed; /*スクロールしても位置を固定 */
+
+}
+
+#itemList{
+	display:flex;
+	height: 494px;
+	flex-direction: column;
+    flex-wrap: wrap;
+	overflow:hidden; /* 枠を超えないように */
+}
+
+#itemList>div {
+        flex: 1 1 80px;
+ }

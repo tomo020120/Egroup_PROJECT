@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="js/adminProductsPageScript.js"></script>
 
 <!DOCTYPE html>
 <html>
@@ -10,6 +8,7 @@
 <meta charset="UTF-8">
 <title>商品一覧</title>
 <link rel="stylesheet" href="CSS/productsStyle.css">
+<link rel="stylesheet" href="CSS/adminProductsPageStyle.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="js/adminProductsPageScript.js"></script>
 </head>
@@ -17,11 +16,14 @@
 <h1>商品編集画面</h1>
 <p>${message}</p>
 <div id="adminActionTool">
-	<button id="addProductBtn">商品を追加する</button>
-	<button id="deleteProductBtn">商品を消去する</button>
+	<button id="addProductBtn" class="actionBtn">商品を追加する</button>
+	<button id="selectProductBtn" class="actionBtn">商品を選択する</button>
+	<div id="allSelectArea"><input type="checkbox" id="allSelect" class="actionBtn">全選択/解除</div>
+	<button id="deleteProductsBtn" class="actionBtn">選択商品の消去</button>
+	<button id="canselSelectBtn" class="actionBtn">キャンセル</button>
 </div>
 <form action="searchByAdmin" method="GET" name="form1">
-製品名検索(仮)：<input type="search" name="productName" value="${sessionScope.holdSearchWord}" class="info1">
+製品名検索：<input type="search" name="productName" value="${sessionScope.holdSearchWord}" class="info1">
 <select name="categoryId" id="CATEGORY" class="info1">
 	<option value="1">エレキギター</option>
 	<option value="2">アコースティックギター</option>
@@ -90,36 +92,36 @@
 
 <h1>商品一覧</h1>
 <table border="1">
- <tr><th>編集</th><th>商品名</th><th>画像</th><th>価格</th></tr>
+ <tr><th id="actionText">編集</th><th>商品名</th><th>画像</th><th>価格</th></tr>
  <c:forEach var="product" items="${result}">
   <tr>
-  	<td id="adminAction"><button id="productEditBtn" onclick="location.href='editProductPage?itemId=${product.itemId}'">編集する</button></td>
-  	<td><a href="productsDetails?itemId=${product.itemId}">${product.name}</a></td>
-  	<td><a href="productsDetails?itemId=${product.itemId}"><img src="${product.pictPath}"></a></td>
+  	<td class="adminAction"><button class="productEditBtn" onclick="location.href='editProductPage?itemId=${product.itemId}'">編集する</button><input type="checkbox" id="${product.name}" class="targetItemCheck actionBtn" name="deleteTargetItem" value="${product.itemId}"></td>
+  	<td><a href="productsDetails?itemId=${product.itemId}" class="itemLink">${product.name}</a></td>
+  	<td><a href="productsDetails?itemId=${product.itemId}" class="itemLink"><img src="${product.pictPath}"></a></td>
   	<td>${product.price}円</td>
-
   </tr>
-
  </c:forEach>
-
  </table>
+
+<!-- 選択された商品確認画面 -->
+ <div id="selectItemList">
+ 	<p>消去した場合元に戻すことはできません<br>選択された商品(ID:商品名)</p>
+ 	<div id="itemList"></div>
+ 	<div id="choiseBtn">
+	 	<button id="canselBtn">選択を続ける</button>
+	 	<button id="deleteBtn">消去</button>
+ 	</div>
+ </div>
+
+<div class="pos">
 <button id="previousPageBtn">前のページ</button>
 ${sessionScope.holdPageNo}/${sessionScope.maxPageNo}
 <button id="nextPageBtn">次のページ</button>
- <input type="hidden" name="maxPage" value=${sessionScope.maxPageNo} class ="info2">
- <a href="productHistory">閲覧履歴編集へ</a>
+</div>
+ <input type="hidden" name="maxPage" value="${sessionScope.maxPageNo}" class ="info2">
+
 <div id = "productHistoryFooter">
 </div>
-
-<script>
-	$(function(){
-		$('#productHistoryFooter').load('productHistoryFooter', function(data, status) {
-			  if(status === 'success') {
-			    console.log('読み込みが正常に行われました');
-			  }
-		});
-	});
-</script>
 
 <script>
 	//requestパラメータの取得

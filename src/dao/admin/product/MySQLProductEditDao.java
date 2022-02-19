@@ -61,9 +61,9 @@ public class MySQLProductEditDao implements ProductEditDao {
 			ConnectionManager.getInstance().rollback();
 			throw new DaoOperationException(e.getMessage(), e);
 		}finally {
-			if(cst != null) {
+			if(st != null) {
 				try {
-					cst.close();
+					st.close();
 				}
 				catch(SQLException e) {
 					e.printStackTrace();
@@ -132,7 +132,7 @@ public class MySQLProductEditDao implements ProductEditDao {
 
 			String sql = "update product_table join item_pict_table using(itemId) set name=?,price=?,categoryId=?,colorId=?,shapeId=?,artistId=?,pictPath=? where itemId = ?"; //二つのテーブルの結合をしてから一括更新
 
-			st = cn.prepareCall(sql);
+			st = cn.prepareStatement(sql);
 
 			st.setString(1, all.getName());
 			st.setString(2, all.getPrice());
@@ -159,9 +159,9 @@ public class MySQLProductEditDao implements ProductEditDao {
 			ConnectionManager.getInstance().rollback();
 			throw new DaoOperationException(e.getMessage(), e);
 		}finally {
-			if(cst != null) {
+			if(st != null) {
 				try {
-					cst.close();
+					st.close();
 				}
 				catch(SQLException e) {
 					e.printStackTrace();
@@ -174,9 +174,47 @@ public class MySQLProductEditDao implements ProductEditDao {
 	}
 
 	@Override
-	public boolean deleteProduct(String itemId) {
-		// TODO 自動生成されたメソッド・スタブ
-		return false;
+	public boolean deleteProduct(String[] itemIdArray) {
+		boolean flag = false; // insert結果flag
+		int result = 0;
+		int length = itemIdArray.length; // 要素数
+		try {
+			cn = ConnectionManager.getInstance().getConnection();
+
+			String sql = "delete from product_table where itemId=?"; //二つのテーブルの結合をしてから一括更新
+			st = cn.prepareStatement(sql);
+
+			for(int i = 0; i < length; i++) {
+				st.setString(1, itemIdArray[i]);
+				result += st.executeUpdate();
+			}
+
+			System.out.println("影響行数" + result);
+
+			if(result > 0) {
+				flag = true;
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}catch(Exception e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}finally {
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
+		}
+
+		return flag;
 	}
 
 }

@@ -78,7 +78,7 @@ public class MySQLProductsDao implements ProductsDao{
 		try {
 			cn = ConnectionManager.getInstance().getConnection();
 
-			String sql=  "SELECT a.itemId,name,price,releaseDate,orderCount,categoryId,colorId,shapeId,artistId,pictId,pictPath FROM Ibanezdb.item_pict_table AS a JOIN Ibanezdb.product_table AS b ON a.itemId = b.itemId where categoryId=? and name LIKE '%%' ''  order by a.itemId ASC LIMIT 30 OFFSET 0";
+			String sql=  "SELECT a.itemId,name,price,releaseDate,orderCount,categoryId,colorId,shapeId,artistId,pictId,pictPath FROM Ibanezdb.item_pict_table AS a JOIN Ibanezdb.product_table AS b ON a.itemId = b.itemId where categoryId=? and name LIKE '%%' order by a.itemId ASC LIMIT 30 OFFSET 0";
 
 			st=cn.prepareStatement(sql);
 

@@ -71,6 +71,11 @@ public class ProductsSearchCommand extends AbstractCommand{
 		String commandKey = reqc.getCommandKey();
 
 		if(commandKey.equals("searchByAdmin") || commandKey.equals("editProduct")) {
+			try {
+				String message = reqc.getParameter("message")[0];
+				resc.setMessage(message);
+			}catch(NullPointerException e) {}
+
 			resc.setTargetPath("adminProductsPage");
 		}else {
 			resc.setTargetPath("products");
