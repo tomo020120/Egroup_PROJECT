@@ -15,4 +15,5 @@ public abstract class AbstractCommand {
 	}
 
 	public abstract ResponseContext execute(ResponseContext resContext);
+
 }
