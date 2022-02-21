@@ -86,7 +86,7 @@ _:-ms-lang(x)::-ms-backdrop,
 }
 
 .d-demo__list--left{
-animation :infinity-scroll-left 95s infinite linear 0.5s both;
+animation :infinity-scroll-left 40s infinite linear 0.3s both;
 }
 
 .d-demo__item {
