@@ -28,6 +28,7 @@ public class RegistResultCommand extends AbstractCommand{
 
 		System.out.println("登録メアド :" + tempUserBean.getMailAddress());
 		if(regist.addUserInfo(tempUserBean)) {
+			regist.deleteTemporaryData(UUID); // 登録後、仮データを消去
 			reqContext.setToken(tempUserBean); // 登録後に即ログインをするためにセッションに登録しておく
 			resContext.setTargetPath("registComplete");
 

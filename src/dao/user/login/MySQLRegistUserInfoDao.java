@@ -60,6 +60,49 @@ public class MySQLRegistUserInfoDao implements RegistUserInfoDao {
 	}
 
 	@Override
+	public boolean deleteTemporaryData(String UUID) {
+		boolean flag = false;
+
+		try {
+			cn = ConnectionManager.getInstance().getConnection();
+
+			String sql = "delete from temporary_user_data where UUID = ?";
+
+			st = cn.prepareStatement(sql);
+
+			st.setString(1, UUID);
+
+			System.out.println(st.toString());
+
+			int result = st.executeUpdate();
+
+			if(result > 0) {
+				flag = true;
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}catch(Exception e) {
+			e.printStackTrace();
+			ConnectionManager.getInstance().rollback();
+			throw new DaoOperationException(e.getMessage(), e);
+		}finally {
+			if(st != null) {
+				try {
+					st.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+					throw new DaoOperationException(e.getMessage(), e);
+				}
+			}
+		}
+
+		return flag;
+	}
+
+	@Override
 	public TemporaryUserBean getTempUserInfo(String UUID) {
 		TemporaryUserBean tempUserBean = null;
 
@@ -103,5 +146,6 @@ public class MySQLRegistUserInfoDao implements RegistUserInfoDao {
 		}
 		return tempUserBean;
 	}
+
 
 }

@@ -4,9 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta charset="UTF-8">
-<title>トップページ</title>
 <link rel="stylesheet" href="CSS/headerStyle.css">
 
 <link rel="icon" href="images/favicon.ico" type="image/vnd.microsoft.icon">

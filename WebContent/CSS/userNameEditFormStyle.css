@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+body{
+	text-align:center;
+}
+
+.errorText{
+	color:red;
+	font-size:10px;
+	text-align:center;
+	font-weight:bold;
+}

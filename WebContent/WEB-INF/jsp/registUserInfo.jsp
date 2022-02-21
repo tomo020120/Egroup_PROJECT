@@ -4,36 +4,32 @@
 <html>
 <head>
 <title>アカウントを作成</title>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet" href="CSS/loginStyle.css">
 
 </head>
 <body>
-	
+
 	<div class="box2">
     <h1>アカウントを作成</h1>
-    <form method='post' action="judge">
-    <p class="p3">ユーザー名</p>
-    <input type='text' id="userName" name='name' maxLength="25">
-    <div class="circle" id="nameCircleID"></div>
-    <div class="circle2" id="nameCircle2ID"></div>
+    <form id="registForm" method='post' action="judge">
+    <p class="p3">ユーザー名(50字以内)</p>
+    <input type='text' id="userName" name='name' maxLength="50">
+	<div class="errorText" id="nameError"></div>
 
     <p class="p3">メールアドレス</p>
     <input id='mailAddress' type='text' name='mail' maxlength="256">
-    <div class="circle" id="mailCircleID"></div>
-    <div class="circle2" id="mailCircle2ID"></div>
+	<div class="errorText" id="mailError"></div>
 
-    <p class="p3">パスワード</p>
+    <p class="p3">パスワード<br>(英大・小と数字を含む8～20字)</p>
     <input type='password' id='inputpass' name='pass' maxlength="20"class="field js-password">
-    <div class="circle" id="circleID"></div>
-    <div class="circle2" id="circle2ID"></div>
+    <div class="errorText" id="passError"></div>
 
 
 
     <p class="p3">もう一度パスワードを入力してください</p>
     <input type='password' id='inputagainpass' name='againpass'class="field js-password1">
-    <div class="circle" id="reEnterCircleID"></div>
-    <div class="circle2" id="reEnterCircle2ID"></div>
+    <div class="errorText" id="againPassError"></div>
 
     <div class="btn">
     				<input class="btn-input js-password-toggle" id="eye" type="checkbox">
@@ -41,7 +37,7 @@
     				パスワードを表示する
  	</div>
 
-    <br><input type="submit" id="submitBtn" value="Ibanezのアカウントを作成する" class="btn btn--orange2">
+    <br><input type="button" id="submitBtn" value="Ibanezのアカウントを作成する" class="btn btn--orange2">
 
 
 
@@ -51,110 +47,130 @@
     </form>
     </div>
 
-
 <script type="text/javascript">
-	var userName = document.getElementById("userName");
-	var mail = document.getElementById("mailAddress");
-	var pass = document.getElementById("inputpass");
-	var passagain = document.getElementById("inputagainpass");
+	var mailTextPattern = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}.[A-Za-z0-9]{1,}$/; // メアドの正規表現
+	var passPattern=/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[a-zA-Z0-9]{8,20}$/ // パスワードの正規表現(大文字、小文字、数字を少なくとも一回含める)
+	var emptyPattern = /^[ 　\r\n\t]*$/; // スペースなども空白と判定するための正規表現
 
-	var nameJudge=false;
-	var mailJudge=false;
-	var passJudge=false;
-	var rePassJudge=false;
-//正規表現
-	const regis =/^[A-Z]([a-zA-Z0-9]){7,19}$/;
-	const reg =/^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}.[A-Za-z0-9]{1,}$/;
-//CSSを取る
-	const nameCircle=document.getElementById("nameCircleID");
-	const nameCircle2=document.getElementById("nameCircle2ID");
-	const circle=document.getElementById("circleID");
-	const circle2=document.getElementById("circle2ID");
-	const mailCircle=document.getElementById("mailCircleID");
-	const mailCircle2=document.getElementById("mailCircle2ID");
-	const reEnterCircle=document.getElementById("reEnterCircleID");
-	const reEnterCircle2=document.getElementById("reEnterCircle2ID");
-	const button=document.getElementById("submitBtn");
-	mailCircle.style.display="none";
-	mailCircle2.style.display="none";
-	nameCircle.style.display="none";
-	nameCircle2.style.display="none";
-	circle.style.display="none";
-	circle2.style.display="none";
-	reEnterCircle.style.display="none";
-	reEnterCircle2.style.display="none";
-	button.disabled="true";
+	$(function(){
+		$("#userName").bind("blur", function() {
+			var input_name  = $(this).val();
+			check_name(input_name);
+		});
 
-//入力チェック
-	userName.addEventListener("input",function(){
-	if(this.value !=null){
-		console.log("ok");
-		nameCircle2.style.display="none";
-		nameCircle.style.display ="inline-block";
-		nameJudge=true;
-	}else{
-		console.log("no");
-		nameCircle.style.display="none";
-		nameCircle2.style.display ="inline-block";
-		nameJudge=false;
-	}
-	pushControll(nameJudge,rePassJudge,passJudge,mailJudge);
+		$("#mailAddress").bind("blur", function() {
+			var input_mail = $(this).val();
+			check_mail(input_mail);
+		});
+
+		$("#inputpass").bind("blur", function() {
+			var input_pass = $(this).val();
+			check_pass(input_pass);
+		});
+
+		$("#inputagainpass").bind("blur", function() {
+			var input_again_pass = $(this).val();
+			check_againPass(input_again_pass);
+		});
+
+		$("#submitBtn").on('click',function(){
+			var result;
+			var name = $("#userName").val();
+			var mail = $("#mailAddress").val();
+			var pass = $("#inputpass").val();
+			var againPass = $("#inputagainpass").val();
+
+			result = check_name(name);
+
+			result = check_mail(mail);
+
+			result = check_pass(pass);
+
+			result = check_againPass(againPass);
+
+			if(result){
+				$("#registForm").submit();
+			}
+		});
 	});
-//正規表現メール
-	mail.addEventListener("input",function(){
-	if(reg.test(mail.value)){
-		console.log("ok");
-		mailCircle2.style.display="none";
-		mailCircle.style.display ="inline-block";
-		mailJudge=true;
-	}else{
-		console.log("no");
-		mailCircle.style.display="none";
-		mailCircle2.style.display ="inline-block";
-		mailJudge=false;
-	}
-	pushControll(nameJudge,rePassJudge,passJudge,mailJudge);
-	});
-//正規表現をパスワードに設定
-	pass.addEventListener("input",function(){
-	if(regis.test(pass.value)){
-		console.log("ok");
-		circle2.style.display="none";
-		circle.style.display ="inline-block";
-		passJudge=true;
-	}else{
-		console.log("no");
-		circle.style.display="none";
-		circle2.style.display ="inline-block";
-		passJudge=false;
-	}
-	pushControll(nameJudge,rePassJudge,passJudge,mailJudge);
-	});
-//passwordのチェック
-	passagain.addEventListener("input",function(){
-		if(passagain.value === pass.value){
-			console.log("ok");
-			reEnterCircle.style.display="inline-block";
-			reEnterCircle2.style.display="none";
-			rePassJudge=true;
+
+	function check_name(str){
+		var _result = true;
+		var _textbox = $.trim(str);
+
+		if(_textbox.match(emptyPattern)){
+			$("#nameError").html("ユーザー名を入力してください");
+			_result = false;
+		}else if(_textbox.match(/管理者/)){
+			$("#nameError").html("そのユーザー名は使用できません");
+			_result = false;
+		}else if(_textbox.match(/admin/)){
+			$("#nameError").html("そのユーザー名は使用できません");
+			_result = false;
 		}else{
-			console.log("no");
-			reEnterCircle2.style.display="inline-block";
-			reEnterCircle.style.display="none";
-			repassJudge=false;
+			$("#nameError").html("");
 		}
-		pushControll(nameJudge,rePassJudge,passJudge,mailJudge);
-	});
-
-	function pushControll(nameJudge,rePassJudge,passJudge,mailJudge){
-		if(passJudge && mailJudge && nameJudge && rePassJudge){
-			button.disabled = false;
-		}else{
-			button.disabled = true;
-		}
+		return _result;
 	}
-</script>
-<script>
+
+	function check_mail(str){ // メアドチェック関数
+		var _result = true;
+		var _textbox = $.trim(str);
+
+		console.log(_textbox);
+
+		if(_textbox.match(emptyPattern)){
+			$("#mailError").html("メールアドレスを入力してください");
+			_result = false;
+		}else if(!_textbox.match(mailTextPattern)){
+			$("#mailError").html("正しいメールアドレスの書式ではありません");
+			_result = false;
+		}else{
+			$("#mailError").html("");
+		}
+		return _result;
+	}
+
+	function check_pass(str){ // パスワード関数
+		var _result = true;
+		var _textbox = $.trim(str);
+
+		console.log(_textbox);
+
+		if(_textbox.match(emptyPattern)){
+			$("#passError").html("パスワードを入力してください");
+			_result = false;
+		}else if(_textbox.length < 8){
+			$("#passError").html("パスワードは8文字以上である必要があります");
+			_result = false;
+		}else if(!_textbox.match(passPattern)){
+			$("#passError").html("正しいパスワードの書式ではありません");
+			_result = false;
+		}else{
+			$("#passError").html("");
+		}
+		return _result;
+	}
+
+	function check_againPass(str){ // パスワード関数
+		var _result = true;
+		var _textbox = $.trim(str);
+		var pass = $("#inputpass").val();
+
+		console.log(_textbox);
+
+		if(_textbox.match(emptyPattern)){
+			$("#againPassError").html("再度パスワードを入力してください");
+			_result = false;
+		}else if(_textbox != pass){
+			$("#againPassError").html("入力されたパスワードと一致しません");
+			_result = false;
+		}else{
+			$("#againPassError").html("");
+		}
+		return _result;
+	}
+
 	//パスワード表示js
 	  const passwordToggle = document.querySelector('.js-password-toggle');
 	  passwordToggle.addEventListener('change', function () {
@@ -172,6 +188,6 @@
 	    }
 	    password.focus();
 	  });
-	</script>
+</script>
 </body>
 </html>
