@@ -91,7 +91,7 @@ $(function(){
 
 
 		//checkBoxsの中を繰り返し処理で書き出しでカンマうち処理
-		window.location.href=hostname+"/Egroup_PROJECT/productsSearch?productName="+searchs[0]+"&categoryId="+searchs[1]+"&sort="+searchs[2]+"&color="+checkBoxSplit+"&pageNo="+sessionStorage.getItem('sessionPageNo');
+		window.location.href=protocol+"//"+hostname+"/Egroup_PROJECT/productsSearch?productName="+searchs[0]+"&categoryId="+searchs[1]+"&sort="+searchs[2]+"&color="+checkBoxSplit+"&pageNo="+sessionStorage.getItem('sessionPageNo');
 	});
 
 	$("#previousPageBtn").on('click',function(){
@@ -133,6 +133,6 @@ $(function(){
 
 
 		//checkBoxsの中を繰り返し処理で書き出しでカンマうち処理
-		window.location.href=hostname+"/Egroup_PROJECT/productsSearch?productName="+searchs[0]+"&categoryId="+searchs[1]+"&sort="+searchs[2]+"&color="+checkBoxSplit+"&pageNo="+sessionStorage.getItem('sessionPageNo');
+		window.location.href=protocol+"//"+hostname+"/Egroup_PROJECT/productsSearch?productName="+searchs[0]+"&categoryId="+searchs[1]+"&sort="+searchs[2]+"&color="+checkBoxSplit+"&pageNo="+sessionStorage.getItem('sessionPageNo');
 	});
 });
