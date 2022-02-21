@@ -36,7 +36,7 @@
 
 
 	 <div class=position>
-	 <a href="purchaseHistory" class=""><img src="images/history-removebg-preview.png" alt="カート" width="40" class="white"></a>
+	 <a href="productHistory" class=""><img src="images/history-removebg-preview.png" alt="カート" width="40" class="white"></a>
       <a href="cart"><img src="images/cart-removebg-preview.png" alt="カート" width="40" ></a>
 
 

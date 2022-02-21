@@ -19,19 +19,18 @@ public class ProductHistoryDeleteCommand extends AbstractCommand{
 		if(reqc.getToken()!=null) {
 			userId = ((UserAndCartBean)(reqc.getToken())).getUserId();
 		}
-		
-		
-		////////////////////////////////////////////////
+
+
 		ConnectionManager.getInstance().beginTransaction();
 		System.out.println(userId);
 		dao.deleteProductHistory(userId,itemId);
 		resc.setResult(dao.getProductHistory(userId));
-		
+
 		ConnectionManager.getInstance().commit();
 		ConnectionManager.getInstance().closeTransaction();
-		
+
 		resc.setTargetPath("productHistoryPage");
-		
+
 		return resc;
 	}
 }

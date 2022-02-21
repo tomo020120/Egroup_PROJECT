@@ -1,4 +1,4 @@
-package cmd.admin;
+package cmd.admin.user;
 
 import cmd.AbstractCommand;
 import cmd.RandomNumberGenerator.CreateRandomNumber;

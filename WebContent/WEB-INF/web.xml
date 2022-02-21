@@ -11,14 +11,76 @@
    	</filter>
    	<filter-mapping>
    		<filter-name>loginCheckFilter</filter-name>
-   		<url-pattern>/*logout</url-pattern>
-   		<url-pattern>/*[(edit)(Edit)]*</url-pattern>
-   		<url-pattern>/addCartProduct</url-pattern>
-   		<url-pattern>/favoriteProduct</url-pattern>
-   		<url-pattern>/deleteCartProduct</url-pattern>
+   		<url-pattern>/login</url-pattern>
+   		<url-pattern>/logout</url-pattern>
+   		<url-pattern>/executeLogout</url-pattern>
    		<url-pattern>/deleteAccount</url-pattern>
-   		<url-pattern>/*[(Favorite)(favorite)]*</url-pattern>
+   		<url-pattern>/executeDeleteAccount</url-pattern>
+   		<url-pattern>/userInfo</url-pattern>
+   		<url-pattern>/userInfoEdit</url-pattern>
+   		<url-pattern>/accountInfoEdit</url-pattern>
+   		<url-pattern>/editUserNameForm</url-pattern>
+   		<url-pattern>/updateUserName</url-pattern>
+   		<url-pattern>/editUserMailAddressForm</url-pattern>
+   		<url-pattern>/judgeCorrectUserMailAddress</url-pattern>
+   		<url-pattern>/updateUserMailAddress</url-pattern>
+   		<url-pattern>/editPasswordForm</url-pattern>
+   		<url-pattern>/updatePassword</url-pattern>
+   		<url-pattern>/deliveryInfoEdit</url-pattern>
+   		<url-pattern>/addDeliveryInfo</url-pattern>
+   		<url-pattern>/updateDeliveryInfo</url-pattern>
+   		<url-pattern>/deleteDeliveryInfo</url-pattern>
+   		<url-pattern>/creditCardInfoEdit</url-pattern>
+   		<url-pattern>/addCreditCardInfo</url-pattern>
+   		<url-pattern>/updateCreditCardInfo</url-pattern>
+   		<url-pattern>/deleteCreditCardInfo</url-pattern>
+   		<url-pattern>/cart</url-pattern>
+   		<url-pattern>/addCartProduct</url-pattern>
+   		<url-pattern>/deleteCartProduct</url-pattern>
+   		<url-pattern>/favorite</url-pattern>
+   		<url-pattern>/favoriteProduct</url-pattern>
+   		<url-pattern>/addFavorite</url-pattern>
+   		<url-pattern>/deleteFavorite</url-pattern>
+   		<url-pattern>/deleteFavoriteForFavPage</url-pattern>
+   		<url-pattern>/purchase*</url-pattern>
+   		<url-pattern>/addDelivery</url-pattern>
    		<url-pattern>/choiceCredit</url-pattern>
+   		<url-pattern>/orderConfirmation</url-pattern>
+   		<url-pattern>/purchaseCompleted</url-pattern>
+   		<url-pattern>/purchaseHistory</url-pattern>
+   		<url-pattern>/productHistory</url-pattern>
+   		<url-pattern>/productHistoryDelete</url-pattern>
+   		<url-pattern>/productHistoryFooter</url-pattern>
+   		<dispatcher>REQUEST</dispatcher>
+   		<dispatcher>FORWARD</dispatcher>
+   	</filter-mapping>
+
+   	<filter>
+   		<filter-name>AdminCheckFilter</filter-name>
+   		<filter-class>filter.AdminCheckFilter</filter-class>
+   	</filter>
+   	<filter-mapping>
+   		<filter-name>AdminCheckFilter</filter-name>
+   		<url-pattern>/adminProductsPage</url-pattern>
+   		<url-pattern>/searchByAdmin</url-pattern>
+   		<url-pattern>/addProductPage</url-pattern>
+   		<url-pattern>/editProductPage</url-pattern>
+   		<url-pattern>/editProduct</url-pattern>
+   		<url-pattern>/deleteProducts</url-pattern>
+   		<dispatcher>REQUEST</dispatcher>
+   		<dispatcher>FORWARD</dispatcher>
+   	</filter-mapping>
+
+   	<filter>
+   		<filter-name>GuestUserFilter</filter-name>
+   		<filter-class>filter.GuestUserFilter</filter-class>
+   	</filter>
+   	<filter-mapping>
+   		<filter-name>GuestUserFilter</filter-name>
+   		<url-pattern>/guestDeliveryInfoForm</url-pattern>
+   		<url-pattern>/guestCreditCardInfoForm</url-pattern>
+   		<url-pattern>/guestPurchaseConfirmPage</url-pattern>
+   		<url-pattern>/guestPurchaseDetermine</url-pattern>
    		<dispatcher>REQUEST</dispatcher>
    		<dispatcher>FORWARD</dispatcher>
    	</filter-mapping>
@@ -77,7 +139,7 @@
 		<jsp-property-group>
 			<url-pattern>*.jsp</url-pattern>
 			<page-encoding>UTF-8</page-encoding>
-			<include-prelude>header.jsp</include-prelude>
+			<include-prelude>/WEB-INF/jsp/header.jsp</include-prelude>
 		</jsp-property-group>
 	</jsp-config>
 </web-app>

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import bean.joinBean.UserAndCartBean;
 
-public class LoginCheckFilter implements Filter {
+public class AdminCheckFilter implements Filter {
 
 	@Override
 	public void destroy() {
@@ -23,7 +23,7 @@ public class LoginCheckFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest req, ServletResponse res, FilterChain filterChain)
 			throws IOException, ServletException {
-		System.out.println("フィルター作動");
+		System.out.println("adminフィルター作動");
 
 		HttpServletRequest httpRequest = (HttpServletRequest)req;
 		HttpServletResponse httpResponse = (HttpServletResponse)res;
@@ -34,10 +34,10 @@ public class LoginCheckFilter implements Filter {
 			System.out.println("ログインしてないのでログイン画面へ移動");
 
 			req.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(httpRequest,httpResponse);
-		}else if(userAndCartBean.getUserName() == "管理者") { // ログインしているが、管理者の場合はほかのページに飛べないようにする。
-			req.getRequestDispatcher("/WEB-INF/jsp/switchLoginUser.jsp").forward(httpRequest,httpResponse);;
-		}else {
+		}else if(userAndCartBean.getUserName() == "管理者") { // 管理者の場合はページに飛ばす。
 			filterChain.doFilter(req, res);
+		}else {
+			req.getRequestDispatcher("/WEB-INF/jsp/switchLoginUser.jsp").forward(httpRequest,httpResponse);;
 		}
 
 	}

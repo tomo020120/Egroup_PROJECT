@@ -1,4 +1,4 @@
-package cmd.admin;
+package cmd.admin.user;
 
 import bean.joinBean.UserAndCartBean;
 import cmd.AbstractCommand;

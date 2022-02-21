@@ -111,13 +111,20 @@ ${sessionScope.holdPageNo}/${sessionScope.maxPageNo}
 <div id = "productHistoryFooter">
 </div>
 
+<input id="token" type="hidden" name="${sessionScope.token.userName }" value="${sessionScope.token}">
+
 <script>
 	$(function(){
-		$('#productHistoryFooter').load('productHistoryFooter', function(data, status) {
-			  if(status === 'success') {
-			    console.log('読み込みが正常に行われました');
-			  }
-		});
+		var token = $("#token").val();
+		var userName = $("#token").attr('name');
+
+		if(token != "" && userName != "管理者"){
+			$('#productHistoryFooter').load('productHistoryFooter', function(data, status) {
+				  if(status === 'success') {
+				    console.log('読み込みが正常に行われました');
+				  }
+			});
+		}
 	});
 </script>
 

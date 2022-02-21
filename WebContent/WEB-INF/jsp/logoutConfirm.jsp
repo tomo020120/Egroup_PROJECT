@@ -11,8 +11,8 @@
 
 <div class="allPosition">
 <h1>ログアウトしますか？</h1>
-<input type="button" onclick="history.back()" value="戻る">
 <input type="button" onclick="location.href='executeLogout'" value="ログアウトする">
+<input type="button" onclick="history.back()" value="戻る">
 </div>
 </body>
 </html>
