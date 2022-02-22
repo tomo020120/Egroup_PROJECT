@@ -11,7 +11,7 @@
 <script type="text/javascript" src="js/productsDetailsScript.js"></script>
 </head>
 <body data-favorite="${result.get(1)}">
-<h1>${result.get(0).name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="favoriteBtn" onclick="favoriteClick(this);" value="${result.get(0).itemId}" style="border: 4px solid #0F0;">❤︎</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+<h1>${result.get(0).name}</h1>
 <div class="container">
 <div class="item">
 <div class="box">
@@ -22,8 +22,8 @@
 
 		<img id="itemPict" src="${result.get(0).pictPath}" class="pic"><br>
 		<p class="p1">\ ${result.get(0).price}</p>
-		<p class="p1"> ${result.get(0).spec}</p>
-		<p class="p1"> ${result.get(0).neck}</p>
+
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="favoriteBtn" onclick="favoriteClick(this);" value="${result.get(0).itemId}" style="border: 4px solid #0F0;">❤︎</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
 
@@ -31,6 +31,7 @@
 </div>
 </div>
 <div class="item">
+
 <div class=box2>
 <br>
 	<form method="post" action="addCartProduct?itemId=${result.get(0).itemId}&price=${result.get(0).price} ">
@@ -47,7 +48,14 @@
 	<a href="products?categoryId=${result.get(0).categoryId}"class="shopbtn">商品一覧へ戻る</a>
 </div>
 </div>
+
+
 </div>
+
+<br>
+
+<!--  <p class=""> ${result.get(0).spec}</p>-->
+<!--  <p class=""> ${result.get(0).neck}</p>-->
 </body>
 </html>
 

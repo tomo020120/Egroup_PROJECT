@@ -48,8 +48,8 @@ a.btn--orange {
   border:1px solid;
 	border-radius: 2px; /* 半径が8pxの角丸 */
 	border-color: #a88734;
-	padding:3px 20%;
-	margin:0 0 3px 0px;
+	padding:3px 24%;
+	margin:0 0 0px -4px;
 }
 .btn--orange:hover,
 a.btn--orange:hover {
@@ -103,6 +103,8 @@ padding:3px 0px;
 	color:#b70000;
 	font-weight: bold;
 }
-
+.p7{
+	font-size:1vw;
+}
 
 

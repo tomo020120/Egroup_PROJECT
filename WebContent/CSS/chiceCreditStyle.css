@@ -113,13 +113,15 @@ color: #000000;
   border:1px solid;
 	border-radius: 2px; /* 半径が8pxの角丸 */
 	border-color: #a88734;
-	padding:4px 50px;
-	margin:-10px 0px 15px 0px
+	padding:6px 150px;
+	margin:-10px 0px 15px 20px
 }
+
 #executeAddButton:hover {
   color: #000000;
   background: #f1c85a;
 }
+
 .creditCardInfo{
 	 display: flex;
 	   flex-wrap: wrap;
@@ -160,7 +162,7 @@ color: #000000;
   border:1px solid;
 	border-radius: 2px; /* 半径が8pxの角丸 */
 	border-color: #c0c0c0;
-	padding:4px 60px;
+	padding:4px 65px;
 	margin:-10px 15px 15px -10px
 }
 #deleteCansel:hover {
@@ -281,7 +283,7 @@ margin:0 30%;
   border:1px solid;
 	border-radius: 2px; /* 半径が8pxの角丸 */
 	border-color: #adb1b8;
-	padding:3px 53px;
+	padding:3px 50px;
 	margin:10px 0px 0 0px;
 }
 .openDeleteComfirmButton:hover {
@@ -301,18 +303,8 @@ margin:0 30%;
  color: #000000;
   background: #c0c0c0;
 }
-#executeAddButton{
-	color: #000000;
-  background-color: #e7e9ec;
-  border:1px solid;
-	border-radius: 2px; /* 半径が8pxの角丸 */
-	border-color: #adb1b8;
-	padding:3px 54px;
-}
-#executeAddButton:hover {
- color: #000000;
-  background: #c0c0c0;
-}
+
+
 #addCreditCardForm{
 	margin:0 0 0px -50px;
 }

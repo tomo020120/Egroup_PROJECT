@@ -70,7 +70,7 @@ window.onload = function(){
 	</c:forEach>
 	<h1>お届け日</h1>
 
-<p><span id="deliveryDate"></span></p>
+<p class="p7"><span id="deliveryDate"></span></p>
 </div>
 </div>
 

@@ -36,7 +36,7 @@
 	</c:forEach>
 </div>
 	</form>
-<a href="products?categoryId=1">商品一覧へ戻る</a>
+<div class="urlpos"><a href="products?categoryId=1">商品一覧へ戻る</a></div>
 
 </body>
 </html>

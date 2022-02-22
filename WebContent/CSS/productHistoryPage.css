@@ -20,7 +20,10 @@ width:50px;
 
 }
 
-
+.urlpos{
+	text-align: right;
+	 margin:0px 50px 100px 0px;
+}
 .creditCardInfo{
 	 display: flex;
 	   flex-wrap: wrap;
