@@ -8,27 +8,43 @@ public class AllProductDetailBean implements Serializable{
 	private String price;
 	private String releaseDate;
 	private String orderCount;
-	
+
 	private String colorId;
 	private String colorName;
-	
+
 	private String categoryId;
 	private String categoryName;
-	
+
 
 	private String shapeId;
 	private String shapeName;
-	
+
 	private String artistId;
 	private String artistName;
 	private String coutory;
 	private String group;
 	private String artistPict;
-	
+
 
 	private String pictId;
 	private String pictPath;
-	
+
+	private String spec;
+	private String neck;
+
+
+	public String getSpec() {
+		return spec;
+	}
+	public void setSpec(String spec) {
+		this.spec = spec;
+	}
+	public String getNeck() {
+		return neck;
+	}
+	public void setNeck(String neck) {
+		this.neck = neck;
+	}
 	public String getItemId() {
 		return itemId;
 	}
@@ -59,7 +75,7 @@ public class AllProductDetailBean implements Serializable{
 	public void setOrderCount(String orderCount) {
 		this.orderCount = orderCount;
 	}
-	
+
 	public String getColorId() {
 		return colorId;
 	}

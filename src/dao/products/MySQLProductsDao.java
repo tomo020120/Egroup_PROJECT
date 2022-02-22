@@ -23,7 +23,7 @@ public class MySQLProductsDao implements ProductsDao{
 			cn = ConnectionManager.getInstance().getConnection();
 
 			//itemIdが一致する商品詳の詳細を取ってくる
-			String sql = "SELECT  a.itemId,name,price,CAST(`releaseDate` AS DATE),pictPath,categoryName,shapeName,colorName,artistName,a.categoryId,a.colorId,a.shapeId,a.artistId\n" +
+			String sql = "SELECT  a.itemId,name,price,CAST(`releaseDate` AS DATE),pictPath,categoryName,shapeName,colorName,artistName,a.categoryId,spec,neck_dimensions,a.colorId,a.shapeId,a.artistId\n" +
 					"FROM Ibanezdb.product_table AS a LEFT OUTER JOIN Ibanezdb.item_pict_table AS b ON a.itemId = b.itemId\n" +
 					"LEFT OUTER JOIN Ibanezdb.category_table AS c ON a.categoryId=c.categoryId\n" +
 					"LEFT OUTER JOIN Ibanezdb.color_table AS d ON a.colorId=d.colorId\n" +
@@ -49,6 +49,8 @@ public class MySQLProductsDao implements ProductsDao{
 				all.setColorName(rs.getString(8));
 				all.setArtistName(rs.getString(9));
 				all.setCategoryId(rs.getString(10));
+				all.setSpec(rs.getString(11));
+				all.setNeck(rs.getString(12));
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();

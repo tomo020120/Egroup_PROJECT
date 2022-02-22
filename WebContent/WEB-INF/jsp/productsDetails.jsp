@@ -22,6 +22,8 @@
 
 		<img id="itemPict" src="${result.get(0).pictPath}" class="pic"><br>
 		<p class="p1">\ ${result.get(0).price}</p>
+		<p class="p1"> ${result.get(0).spec}</p>
+		<p class="p1"> ${result.get(0).neck}</p>
 
 
 
