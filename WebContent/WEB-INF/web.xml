@@ -17,7 +17,6 @@
    		<url-pattern>/deleteAccount</url-pattern>
    		<url-pattern>/executeDeleteAccount</url-pattern>
    		<url-pattern>/userInfo</url-pattern>
-   		<url-pattern>/userInfoEdit</url-pattern>
    		<url-pattern>/accountInfoEdit</url-pattern>
    		<url-pattern>/editUserNameForm</url-pattern>
    		<url-pattern>/updateUserName</url-pattern>

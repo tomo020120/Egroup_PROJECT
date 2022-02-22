@@ -11,7 +11,7 @@ body{
 	font-size:22px;
  display: inline-block;
  position: relative;
-	left: 100%;top: -105px;
+	left: -3%;top: -10px;
 
 }
 h1{
@@ -112,7 +112,7 @@ input[type="submit"] {
   background:#FFD814;
   border-radius: 10px;
    border: 1px solid #FCD200;
-    margin:10px 15px 0 10px;
+    margin:10px 15px 0 15px;
     border-color: #FCD200;
 
 

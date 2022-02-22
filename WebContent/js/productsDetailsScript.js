@@ -9,6 +9,16 @@ function favoriteClick(obj){
 }
 
 $(function(){
+	var token = $("#token").val();
+
+	console.log(token);
+	if(token != ""){ // ログインしてるときはゲスト購入のボタンを表示しない
+		$("#nologinPurchaseBtn").hide();
+	}else{
+		$("#nologinPurchaseBtn").show();
+	}
+
+
 	var favoriteFlag = $("body").data("favorite");
 
 	if(favoriteFlag){
@@ -20,18 +30,15 @@ $(function(){
 
 		guestPurchaseInfoArray[0] = $("#orderCount").val();
 
-		$("body").find(".targetInfo").each(function(index,element){
-			var count = (parseInt(index) + 1)
+		guestPurchaseInfoArray[1] = $("#itemName").val();
 
-			if(count == 3){
-				guestPurchaseInfoArray[count] = $("#itemPict").attr('src');
-			}else{
-				guestPurchaseInfoArray[count] = element.innerText;
-			}
-		});
+		guestPurchaseInfoArray[2] = $("#itemPrice").val();
+
+		guestPurchaseInfoArray[3] = $("#itemPict").attr('src');
 
 		sessionStorage.setItem('guestPurchaseInfo',guestPurchaseInfoArray.toString()); // sessionに格納
 
+		console.log(sessionStorage.getItem('guestPurchaseInfo').split(","));
 		window.location.href="guestDeliveryInfoForm";
 	});
 });

@@ -16,7 +16,7 @@ h3{
 .animFormArea{
 	display:none; /* デフォルトは非表示に */
 	width:600px;
-	height:600px;
+	height:700px;
 	top:14%; /* top,leftで位置指定 */
 	left:30%;
 	right:10%;
@@ -188,4 +188,31 @@ font-size: 20px;
 	margin:20px 25% 0 25%;
 	border:5px double #333333;
 	background-color:#2070b27a;
+}
+
+.btn--orange,
+a.btn--orange {
+  color: #000000;
+  background: linear-gradient(#f7dfa5,#f0c14b);
+
+  border:1px solid;
+	border-radius: 2px; /* 半径が8pxの角丸 */
+	border-color: #a88734;
+	padding:3px 10px;
+	margin-left:80%;
+	width:100px;
+}
+
+.btn--orange:hover,
+a.btn--orange:hover {
+  color: #000000;
+  background: #f1c85a;
+}
+
+.errorText{
+	color:red;
+	font-size:13px;
+	left:50%;
+	font-weight:bold;
+	margin-top:0;
 }

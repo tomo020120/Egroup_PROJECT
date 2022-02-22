@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>クレジットカード</title>
 
-<link rel="stylesheet" href="CSS/chiceCreditStyle.css">
+<link rel="stylesheet" href="CSS/choiceCreditStyle.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="js/purchaseCreditCardScript.js"></script>
 
@@ -39,10 +39,12 @@
 		<div>
 			<form id="updateCreditCardInfoForm" method="post" action="updateCreditCardInfo">
 				カード番号(下四桁)<br><input id="lastFourDisitsCreditCardNo" type="text" name="creditCardNo" readOnly><br>
-				<textarea id="cardCompany" name="cardCompany" readOnly></textarea><br>
-				クレジットカード名義人<br><input id="cardOwnerName" type="text" name="cardOwnerName" maxLength="50"><br>
+
+				クレジットカード名義人<br><input id="cardOwnerName" class="upName" type="text" name="cardOwnerName" maxLength="50"><br>
+				<div class="errorText cardOwnerNameEditError"></div>
+
 				有効期限
-				<select id="month" name="month">
+				<select id="month" class="upMonth" name="month">
 					<option value="">-</option>
 					<option value="01">01</option>
 					<option value="02">02</option>
@@ -57,7 +59,7 @@
 					<option value="11">11</option>
 					<option value="12">12</option>
 				</select>月 /
-				<select id="year" name="year">
+				<select id="year" class="upYear" name="year">
 					<option value="">-</option>
 					<option value="2022">2022</option>
 					<option value="2023">2023</option>
@@ -81,8 +83,9 @@
 					<option value="2041">2041</option>
 					<option value="2042">2042</option>
 				</select>年 <br>
-				<button id="updateCansel" type="button">キャンセル</button>	<button id="executeUpdateButton">編集完了</button>
+				<div class="errorText dateEditError"></div>
 			</form>
+				<button id="updateCansel" type="button">キャンセル</button>	<button id="executeUpdateButton">編集完了</button>
 		</div>
 	</div>
 
@@ -101,11 +104,16 @@
 	<h1>クレジットカードを追加</h1>
 		<div id="flexContent">
 			<form id="addCreditCardForm" method="post" action="PurchseInsertCreditCardInfo">
-				カード番号<br><input id="creditCardNo" type="text" name="creditCardNo" maxLength="19">
-				<textarea id="cardCompanyArea" name="cardCompany" readOnly></textarea><br>
-				クレジットカード名義人<br><input type="text" name="cardOwnerName" maxLength="50"><br>
+				カード番号<br><input id="creditCardNo" type="text" name="creditCardNo" maxLength="16"><br>
+				<div class="errorText cardNoError"></div>
+
+				<div id="cardCompany"></div>
+
+				クレジットカード名義人<br><input type="text" id="inputCardOwnerName" name="cardOwnerName" maxLength="50"><br>
+				<div class="errorText cardOwnerNameError"></div>
+
 				有効期限<br>
-				<select name="month">
+				<select id="inputMonth" name="month">
 					<option value="">-</option>
 					<option value="01">01</option>
 					<option value="02">02</option>
@@ -120,7 +128,7 @@
 					<option value="11">11</option>
 					<option value="12">12</option>
 				</select>月 /
-				<select name="year">
+				<select id="inputYear" name="year">
 					<option value="">-</option>
 					<option value="2022">2022</option>
 					<option value="2023">2023</option>
@@ -144,7 +152,9 @@
 					<option value="2041">2041</option>
 					<option value="2042">2042</option>
 				</select>年 <br>
-				セキュリティコード<br><input type="text" name="securityCode" maxLength="3">
+				<div class="errorText dateError"></div>
+				セキュリティコード<br><input id="inputSecurityCode" type="text" name="securityCode" maxLength="3">
+				<div class="errorText securityCodeError"></div>
 			</form>
 
 			<div id="availableCardCompanyList">
@@ -152,12 +162,11 @@
 				<p>VISA</p>
 				<p>JCB</p>
 				<p>MasterCard</p>
-				<p>American Express</p>
 				<p>Diners Club</p>
 			</div>
 		</div>
-		<button id="executeAddButton">カードを追加</button>
-
+		<button id="executeAddButton">完了</button>
+		<p class="error">${message}</p>
 </div>
 </body>
 </html>

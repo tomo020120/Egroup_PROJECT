@@ -37,7 +37,6 @@ public class TransferPurchraseAddressCommand extends AbstractCommand{
 			resc.setTargetPath("purchase");
 			return resc;
 		}
-
 }
 
 

@@ -16,7 +16,7 @@ h3{
 .animFormArea{
 	display:none; /* デフォルトは非表示に */
 	width:600px;
-	height:615px;
+	height:700px;
 	top:14%; /* top,leftで位置指定 */
 	left:30%;
 	right:10%;
@@ -145,10 +145,6 @@ color: #000000;
     justify-content: center;
      margin:10px 30px;
      font-size:20px;
-}
-.h-adr{
-	margin-left:18%;
-	margin-top:5%;
 }
 #deliveryInfoList{
 	 display: flex;
@@ -295,4 +291,16 @@ width:390px;
 .openDeleteComfirmButton:hover {
   color: #000000;
   background: #c0c0c0;
+}
+
+#updateDeliveryInfoForm{
+	margin-left:18%;
+}
+
+.errorText{
+	color:red;
+	font-size:13px;
+	left:50%;
+	font-weight:bold;
+	margin-top:0;
 }

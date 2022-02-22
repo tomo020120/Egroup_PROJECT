@@ -61,15 +61,14 @@
 		});
 
 		$("#submitBtn").on('click',function(){
-			var result;
 			var mail = $("#mailCheck").val();
 			var pass = $("#passCheck").val();
 
-			result = check_mail(mail);
+			var result1 = check_mail(mail);
 
-			result = check_pass(pass);
+			var result2 = check_pass(pass);
 
-			if(result){
+			if(result1 && result2){
 				$("#loginForm").submit();
 			}
 		});

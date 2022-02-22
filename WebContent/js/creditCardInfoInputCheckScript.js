@@ -5,12 +5,15 @@ var americanPattern = /^3[47][0-9]{13}$/;
 var dinersPattern = /^3(?:0[0-5]|[68][0-9])[0-9]{11}$/;
 var jcbPattern = /^(?:2131|1800|35\d{3})\d{11}$/;
 
+
 $(function(){
 	var cardNoError = $(".cardNoError");
 	var cardOwnerNameError = $(".cardOwnerNameError");
 	var dateError = $(".dateError");
 	var securityCodeError = $(".securityCodeError");
-
+	var cardOwnerNameEditError = $(".cardOwnerNameEditError");
+	var dateEditError = $(".dateEditError");
+//--------------------------------カード追加----------------------------------
 	$("#creditCardNo").bind("blur", function() {
 		console.log("error");
 		var creditCardNo = $(this).val();
@@ -34,83 +37,36 @@ $(function(){
 		check_securityCode(inputSecurityCode,securityCodeError);
 	});
 
-	$("#guestPurchaseConfirmPageJumpBtn").on('click',function(){ // 編集の追加
+	$("#executeAddButton").on('click',function(){ // 編集の追加
 		var cardNo = $("#creditCardNo").val();
 		var cardOwner = $("#inputCardOwnerName").val();
-		var month2 = $("#inputMonth").val();
-		var year2 = $("#inputYear").val();
+		var month = $("#inputMonth").val();
+		var year = $("#inputYear").val();
 		var code = $("#inputSecurityCode").val();
 
 		var result1 = check_cardNo(cardNo,cardNoError);
 		var result2 = check_cardOwnerName(cardOwner,cardOwnerNameError);
-		var result3 = check_date(month2,year2,dateError);
+		var result3 = check_date(month,year,dateError);
 		var result4 = check_securityCode(code,securityCodeError);
 
 		if(result1 && result2 && result3 && result4){
-			var guestPurchaseInfoArray = sessionStorage.getItem('guestPurchaseInfo').split(",");
-
-			var length = parseInt(guestPurchaseInfoArray.length);
-
-				var month = "";
-				var year = "";
-				var expirationDate = "";
-
-				$("#addCreditCardForm").find(".target").each(function(index,element){
-					switch(index){
-					case 0:guestPurchaseInfoArray[10] = (element.value).slice(-4);
-					break;
-					case 1:guestPurchaseInfoArray[11] = $(element).text();
-					break;
-					case 2:guestPurchaseInfoArray[12] = element.value;
-					break;
-					case 3:month = element.value;
-					break;
-					case 4:year = element.value;
-					break;
-					}
-				});
-
-				expirationDate = (year + "/" + month);
-				guestPurchaseInfoArray[13] = expirationDate;
-
-				console.log(guestPurchaseInfoArray);
-
-				sessionStorage.setItem('guestPurchaseInfo',guestPurchaseInfoArray.toString());
-
-				var cardNo = $("#creditCardNo").val();
-				var securityCode = $("#inputSecurityCode").val();
-
-				window.location.href="guestPurchaseConfirmPage?cardNo=" + cardNo + "&securityCode=" + securityCode;
+			$("#addCreditCardForm").submit();
 		}
-
 	});
 
+//--------------------------------カード編集----------------------------------
 
-	/*クレジットカード番号入力中動的に、カード会社判定を行う。
-	$("#creditCardNo").on("input",function(){
-		var inputNo = $(this).val(); //入力値取得
-		var firstCardNo = inputNo.slice(0,1);
-		var company = "";
-
-		if(firstCardNo == 4){ //頭文字で判定
-			company = "VISA";
-		}else if(firstCardNo == 5){
-			company = "Master Card"
-		}else{
-			var firstTwoDigitsCardNo = inputNo.slice(0,2);
-
-			if(firstTwoDigitsCardNo == 35){
-				company = "JCB";
-			}else if(firstTwoDigitsCardNo == 36){
-				company = "Diners Club";
-			}else if((firstTwoDigitsCardNo == 34) || (firstTwoDigitsCardNo == 37 )){
-				company = "American Express";
-			}
-		}
-
-		$("#cardCompany").html(company); // 判定結果の文字列をセット
+	$("#cardOwnerName").bind("blur", function() { // 編集画面のカード編集
+		var inputCardOwnerName = $(this).val();
+		check_cardOwnerName(inputCardOwnerName,cardOwnerNameError);
 	});
-*/
+
+	$("#month , #year").bind("blur", function() {
+		var inputMonth = $("#month").val();
+		var inputYear = $("#year").val();
+
+		check_date(inputMonth,inputYear,dateError);
+	});
 });
 
 function check_cardNo(str,eObj){

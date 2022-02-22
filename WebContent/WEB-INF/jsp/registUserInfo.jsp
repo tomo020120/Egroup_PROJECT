@@ -74,21 +74,20 @@
 		});
 
 		$("#submitBtn").on('click',function(){
-			var result;
 			var name = $("#userName").val();
 			var mail = $("#mailAddress").val();
 			var pass = $("#inputpass").val();
 			var againPass = $("#inputagainpass").val();
 
-			result = check_name(name);
+			var result1 = check_name(name);
 
-			result = check_mail(mail);
+			var result2 = check_mail(mail);
 
-			result = check_pass(pass);
+			var result3 = check_pass(pass);
 
-			result = check_againPass(againPass);
+			var result4 = check_againPass(againPass);
 
-			if(result){
+			if(result1 && result2 && result3 && result4){
 				$("#registForm").submit();
 			}
 		});

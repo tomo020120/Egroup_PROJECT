@@ -56,18 +56,17 @@
 		});
 
 		$("#updateButton").on('click',function(){
-			var result;
 			var currentPass = $("#currentPass").val();
 			var pass = $("#inputpass").val();
 			var againPass = $("#inputagainpass").val();
 
-			result = check_currentPass(currentPass);
+			var result1 = check_currentPass(currentPass);
 
-			result = check_pass(pass);
+			var result2 = check_pass(pass);
 
-			result = check_againPass(againPass);
+			var result3 = check_againPass(againPass);
 
-			if(result){
+			if(result1 && result2 && result3){
 				$("#updatePasswordForm").submit();
 			}
 		});

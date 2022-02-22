@@ -22,6 +22,6 @@
    		<div class="button"><button onclick="location.href='editPasswordForm'" class="btn btn--white">編集</button></div></div>
 	</div>
 
-   	<button onclick="location.href='userInfoEdit'"  class="btn btn--orange">完了</button>
+   	<button onclick="location.href='userInfo'"  class="btn btn--orange">完了</button>
 </body>
 </html>

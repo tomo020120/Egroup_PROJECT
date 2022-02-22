@@ -15,18 +15,30 @@
 <div class=allPosition>
 <h1>１お届け先住所</h1>
 <div id="userInfoInputArea">
-	【必須】氏名<br><input type="text" name="userName" maxLength="50"><br>
-	【必須】メールアドレス<br><input type="text" name="mailAddress" maxLength="256">
+	【必須】氏名<br><input id="inputUserName" type="text" name="userName" maxLength="50"><br>
+	<div class="errorText userNameError"></div>
+	【必須】メールアドレス<br><input id="inputMail" type="text" name="mailAddress" maxLength="256">
+	<div class="errorText mailError"></div>
 </div>
 <div id="addDeliveryInfoFormArea" class="animFormArea">
-	<form id="addDeliveryInfoForm" class="h-adr" method="post" action="addDeliveryInfo" >
-		<span class="p-country-name" style="display:none;">Japan</span> <!--日本内に検索設定  -->
-		【必須】宛名<br><input type="text" name="deliveryName" maxlength="25"><br>
-		【必須】電話番号(000-0000-0000)<br><input type="tel" name="firstTelephoneNumber" maxlength="3">-<input type="tel" name="secondTelephoneNumber" maxlength="4">-<input type="tel" name="thirdTelephoneNumber" maxlength="4"><br>
-		【必須】郵便番号(ハイフンなし)<br><input type="text" class="p-postal-code" name="postalCode" size="7" maxlength="7"><br>
-		【必須】住所<br><input type="text" class="p-region p-locality p-street-address p-extended-address" name="address"/><br>
-		【必須】丁目・番地・号(例:1-2-3)<br><input type="text" name="houseNumber"><br>
-		【任意】建物名・部屋番号(例:〇〇マンション〇〇号室)<br><input type="text" name="buildingName"><br>
+	<form id="addDeliveryInfoForm" class="h-adr" method="post" action="" >
+			<span class="p-country-name" style="display:none;">Japan</span> <!--日本内に検索設定  -->
+			【必須】宛名<br><input id="inputName" type="text" name="deliveryName" maxlength="50"><br>
+			<div class="errorText deliveryNameError"></div>
+
+			【必須】電話番号<br><input id="inputFirstNum" type="tel" name="firstTelephoneNumber" maxlength="4">-<input id="inputSecondNum" type="tel" name="secondTelephoneNumber" maxlength="4">-<input id="inputThirdNum" type="tel" name="thirdTelephoneNumber" maxlength="4"><br>
+			<div class="errorText telError"></div>
+
+			【必須】郵便番号(ハイフンなし)<br><input id="inputPostalCode" type="text" class="p-postal-code" name="postalCode" size="7" maxlength="7"><br>
+			<div class="errorText postalCodeError"></div>
+
+			【必須】住所<br><input id="inputAddress" type="text" class="p-region p-locality p-street-address p-extended-address" name="address"/><br>
+			<div class="errorText addressError"></div>
+
+			【必須】丁目・番地・号(例:1-2-3)<br><input id="inputHouseNumber" type="text" name="houseNumber"><br>
+			<div class="errorText houseNumberError"></div>
+
+			【任意】建物名・部屋番号(例:〇〇マンション〇〇号室)<br><input type="text" name="buildingName"><br>
 		<button type="button" id="guestCreditCardInfoFormJumpBtn">次へ</button>
 	</form>
 </div>

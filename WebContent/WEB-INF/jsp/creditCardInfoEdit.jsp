@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="CSS/creditCardInfoEditStyle.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="js/creditCardInfoEditScript.js"></script>
+<script src="js/creditCardInfoInputCheckScript.js"></script>
 </head>
 <body>
 
@@ -31,12 +32,17 @@
 	<div id="addCreditCardFormArea" class="animFormArea">
 		<h2>クレジットカードを追加</h2>
 		<div id="flexContent">
-			<form id="addCreditCardForm" method="post" action="addCreditCardInfo">
-				カード番号<br><input id="creditCardNo" type="text" name="creditCardNo" maxLength="19"><br>
-				<textarea id="cardCompany" name="cardCompany" readOnly></textarea><br>
-				クレジットカード名義人<br><input type="text" name="cardOwnerName" maxLength="50"><br>
+			<form id="addCreditCardForm" method="post" action="addCreditCardInfo" autocomplete="off">
+				カード番号<br><input id="creditCardNo" type="text" name="creditCardNo" maxLength="16"><br>
+				<div class="errorText cardNoError"></div>
+
+				<div id="cardCompany"></div>
+
+				クレジットカード名義人<br><input type="text" id="inputCardOwnerName" name="cardOwnerName" maxLength="50"><br>
+				<div class="errorText cardOwnerNameError"></div>
+
 				有効期限<br>
-				<select name="month">
+				<select id="inputMonth" name="month">
 					<option value="">-</option>
 					<option value="01">01</option>
 					<option value="02">02</option>
@@ -51,7 +57,7 @@
 					<option value="11">11</option>
 					<option value="12">12</option>
 				</select>月 /
-				<select name="year">
+				<select id="inputYear" name="year">
 					<option value="">-</option>
 					<option value="2022">2022</option>
 					<option value="2023">2023</option>
@@ -75,7 +81,9 @@
 					<option value="2041">2041</option>
 					<option value="2042">2042</option>
 				</select>年 <br>
-				セキュリティコード<br><input type="text" name="securityCode" maxLength="3">
+				<div class="errorText dateError"></div>
+				セキュリティコード<br><input id="inputSecurityCode" type="text" name="securityCode" maxLength="4">
+				<div class="errorText securityCodeError"></div>
 			</form>
 
 			<div id="availableCardCompanyList">
@@ -96,8 +104,11 @@
 		<div>
 			<form id="updateCreditCardInfoForm" method="post" action="updateCreditCardInfo">
 				カード番号(下四桁)<br><input id="lastFourDisitsCreditCardNo" type="text" name="creditCardNo" readOnly><br>
-				<textarea id="cardCompany" name="cardCompany" readOnly></textarea><br>
+				<div id="cardCompany"></div>
+
 				クレジットカード名義人<br><input id="cardOwnerName" type="text" name="cardOwnerName" maxLength="50"><br>
+				<div class="errorText cardOwnerNameError"></div>
+
 				有効期限
 				<select id="month" name="month">
 					<option value="">-</option>
@@ -138,8 +149,9 @@
 					<option value="2041">2041</option>
 					<option value="2042">2042</option>
 				</select>年 <br>
-				<button id="updateCansel" type="button">キャンセル</button>	<button id="executeUpdateButton">編集完了</button>
+				<div class="errorText dateError"></div>
 			</form>
+				<button id="updateCansel" type="button">キャンセル</button>	<button id="executeUpdateButton">編集完了</button>
 		</div>
 	</div>
 

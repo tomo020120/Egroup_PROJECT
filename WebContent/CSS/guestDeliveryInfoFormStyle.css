@@ -61,4 +61,12 @@ width:390px;
    border: 1px solid #0000a0;
    margin-top:10px;
 }
+
+
+.errorText{
+	color:red;
+	font-size:13px;
+	left:50%;
+	font-weight:bold;
+	margin-top:0;
 }

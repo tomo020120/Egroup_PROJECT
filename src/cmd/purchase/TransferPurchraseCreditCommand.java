@@ -24,6 +24,13 @@ public class TransferPurchraseCreditCommand extends AbstractCommand{
 			deliveryInfoId = (String)reqContext.getSessionAttribute("address");
 
 		}
+
+		try {
+			String message = reqContext.getParameter("message")[0];
+
+			resContext.setMessage(message);
+		}catch(NullPointerException e) {}
+
 		reqContext.setSessionAttribute("address",deliveryInfoId);
 
 		AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();

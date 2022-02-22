@@ -14,6 +14,8 @@ public class TransferGuestPurchaseConfirmPageCommand extends AbstractCommand {
 		String securityCode = reqContext.getParameter("securityCode")[0];
 		String cardNo = reqContext.getParameter("cardNo")[0];
 
+		System.out.println("入力セキュリティコード" + securityCode);
+
 		boolean isCorrectCode = CreditCardSecurityCodeAuthentication.isCorrectSecurityCode(cardNo, securityCode);
 
 		if(isCorrectCode) {

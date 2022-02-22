@@ -18,7 +18,7 @@ $(function(){
 
 		$("body").css('background-color','#BBBBBB');
 
-		$("body").find("#addDeliveryInfoButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",true);
+		$("body").find("#addDeliveryInfoButton , .openUpdateFormButton , .openDeleteComfirmButton , #completeBtn").attr("disabled",true);
 	});
 
 	/*キャンセルボタンクリック示時、フォームを非表示にする*/
@@ -27,17 +27,15 @@ $(function(){
 
 		$("body").css('background-color','#ffffff');
 
-		$("body").find("#addDeliveryInfoButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",false);
-	});
+		$("body").find("#addDeliveryInfoButton , .openUpdateFormButton , .openDeleteComfirmButton , #completeBtn").attr("disabled",false);
 
-	/*配送先情報入力後の追加ボタンクリック時フォームをSubmitする。*/
-	$("#executeAddButton").on('click',function(){
-		$("#addDeliveryInfoForm").submit();
+		$(".errorText").html("");
 	});
 
 	/*配送先情報情報一覧の変更ボタンクリック時値のセットとフォームの表示*/
 	$("#deliveryInfoList").each(function(){
 		$(".openUpdateFormButton").on('click',function(){
+			$(".errorText").html("");
 			var targetDeliveryInfo = $(this).parent();
 
 			var deliveryName = targetDeliveryInfo.find(".deliveryName").html();
@@ -71,19 +69,42 @@ $(function(){
 			updateForm.find("#buildingName").val(separationAddress[2]);
 
 			console.log(deliveryInfoId);
+			var deliveryNameError = $(".deliveryNameError");
+			var telError = $(".telError");
+			var postalCodeError = $(".postalCodeError");
+			var addressError = $(".addressError");
+			var houseNumberError = $(".houseNumberError");
 
-			updateForm.find("#executeUpdateButton").on('click',function(){
-				var url = "updateDeliveryInfo?deliveryInfoId=" + deliveryInfoId;
-				console.log(url);
-				updateForm.attr('action',url);
-				updateForm.submit();
+			$("#executeUpdateButton").on('click',function(){
+				var result;
+				var input_name = $("#deliveryName").val();
+				var first = $("#firstTelNo").val();
+				var second = $("#secondTelNo").val();
+				var third = $("#thirdTelNo").val();
+				var tel = (first.toString() + second.toString() + third.toString());
+				var input_pos = $("#postalCode").val();
+				var input_address = $("#address").val();
+				var input_houseNumber = $("#houseNumber").val();
+
+				result = check_name(input_name,deliveryNameError);
+				result = check_tel(tel,telError);
+				result = check_postalCode(input_pos,postalCodeError);
+				result = check_address(input_address,addressError);
+				result = check_houseNumber(input_houseNumber,houseNumberError);
+
+				if(result){
+					var url = "updateDeliveryInfo?deliveryInfoId=" + deliveryInfoId;
+					console.log(url);
+					updateForm.attr('action',url);
+					updateForm.submit();
+				}
 			});
 
 			$("#updateDeliveryFormArea").fadeIn(1100); /*1100ミリ秒かけてフェードイン*/
 
 			$("body").css('background-color','#BBB');
 
-			$("body").find("#addDeliveryInfoButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",true); /*ボタンの無効化*/
+			$("body").find("#addDeliveryInfoButton , .openUpdateFormButton , .openDeleteComfirmButton , #completeBtn").attr("disabled",true); /*ボタンの無効化*/
 		});
 	});
 
@@ -93,7 +114,9 @@ $(function(){
 
 		$("body").css('background-color','#ffffff');
 
-		$("body").find("#addDeliveryInfoButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",false); /*ボタンの有効化*/
+		$("body").find("#addDeliveryInfoButton , .openUpdateFormButton , .openDeleteComfirmButton , #completeBtn").attr("disabled",false); /*ボタンの有効化*/
+
+		$(".errorText").html("");
 	});
 
 
@@ -124,7 +147,7 @@ $(function(){
 
 			$("body").css('background-color','#BBBBBB');
 
-			$("body").find("#addDeliveryInfoButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",true); /*ボタンの無効化*/
+			$("body").find("#addDeliveryInfoButton , .openUpdateFormButton , .openDeleteComfirmButton , #completeBtn").attr("disabled",true); /*ボタンの無効化*/
 		});
 	});
 
@@ -134,7 +157,7 @@ $(function(){
 
 		$("body").css('background-color','#ffffff');
 
-		$("body").find("#addDeliveryInfoButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",false); /*ボタンの有効化*/
+		$("body").find("#addDeliveryInfoButton , .openUpdateFormButton , .openDeleteComfirmButton , #completeBtn").attr("disabled",false); /*ボタンの有効化*/
 	});
 });
 

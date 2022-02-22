@@ -18,7 +18,7 @@ $(function(){
 	});
 
 	/*クレジットカード番号入力中動的に、カード会社判定を行う。*/
-	$("#creditCardNo").on("input",function(){
+	/*$("#creditCardNo").on("input",function(){
 		var inputNo = $(this).val(); //入力値取得
 		var firstCardNo = inputNo.slice(0,1);
 		var company = "";
@@ -40,16 +40,12 @@ $(function(){
 		}
 
 		$("#cardCompany").text(company); // 判定結果の文字列をセット
-	});
-
-	/*カード入力後の追加ボタンクリック時フォームをSubmitする。*/
-	$("#executeAddButton").on('click',function(){
-		$("#addCreditCardForm").submit();
-	});
+	});*/
 
 	/*クレジットカード情報一覧の変更ボタンクリック時値のセットとフォームの表示*/
 	$(".creditCardInfo").each(function(){
 		$(".openUpdateFormButton").on('click',function(){
+			$(".errorText").html("");
 			var targetCreditCardInfo = $(this).parent();
 
 			var cardNo = targetCreditCardInfo.find(".lastFourDisits").html();
@@ -69,9 +65,24 @@ $(function(){
 			updateForm.find("#year").val(separationDate[0]);
 			updateForm.find("#month").val(separationDate[1]);
 
-			updateForm.find("#executeUpdateButton").on('click',function(){
-				var url = "updateCreditCardInfo?cardId=" + cardId;
-				updateForm.attr('action',url);
+			$("#executeUpdateButton").on('click',function(){
+				console.log("osare");
+				var cardOwnerNameError = $(".cardOwnerNameError");
+				var dateError = $(".dateError");
+
+				var cardOwner = $("#cardOwnerName").val();
+				var month = $("#month").val();
+				var year = $("#year").val();
+
+				var result1 = check_cardOwnerName(cardOwner,cardOwnerNameError);
+				var result2 = check_date(month,year,dateError);
+
+				if(result1 && result2){
+					var url = "updateCreditCardInfo?cardId=" + cardId;
+					console.log(url);
+					updateForm.attr('action',url);
+					$("#updateCreditCardInfoForm").submit();
+				}
 			});
 
 			$("#updateCardFormArea").fadeIn(1100); /*1100ミリ秒かけてフェードイン*/
@@ -83,11 +94,6 @@ $(function(){
 		});
 	});
 
-	/*編集完了ボタンクリック時のsubmit処理*/
-	$("executeUpdateButton").on('click',function(){
-		$("#updateCreditCardInfoForm").submit();
-	});
-
 	/*編集キャンセルボタン処理*/
 	$("#updateCansel").on('click',function(){
 		$("#updateCardFormArea").fadeOut();
@@ -95,6 +101,8 @@ $(function(){
 		$("body").css('background-color','#ffffff');
 
 		$("body").find("#addCreditCardButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",false); /*ボタンの有効化*/
+
+		$(".errorText").html("");
 	});
 
 
@@ -136,6 +144,8 @@ $(function(){
 		$("body").css('background-color','#ffffff');
 
 		$("body").find("#addCreditCardButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",false); /*ボタンの有効化*/
+
+		$(".errorText").html("");
 	});
 });
 
