@@ -11,14 +11,14 @@
 <body>
 
 	<h1>パスワード編集画面</h1>
-	<form id="updatePasswordForm" method="post" action="updatePassword">
-		現在のパスワード:<input id="currentPass" type="password" name="currentPassword" maxLength="20" class="field js-password2"><br>
+	<form id="updatePasswordForm" method="post" action="updatePassword" class="formBox">
+		現在のパスワード<br><input id="currentPass" type="password" name="currentPassword" maxLength="20" class="field js-password2"><br>
 		<div id="currentPassError" class="errorText"></div>
 
-		新規パスワード:<input type="password" id="inputpass" name="newPassword" maxLength="20" class="field js-password" ><br>
+		新規パスワード<br><input type="password" id="inputpass" name="newPassword" maxLength="20" class="field js-password" ><br>
 		<div id="newPassError" class="errorText"></div>
 
-		新規パスワード(再入力):<input type="password" id="inputagainpass" name="againNewPassword" maxLength="20" class="field js-password1"><br>
+		新規パスワード(再入力)<br><input type="password" id="inputagainpass" name="againNewPassword" maxLength="20" class="field js-password1"><br>
 		<div id="againPassError" class="errorText"></div>
 
 		<div class="btn">
@@ -32,7 +32,7 @@
 		<input id="correctPassword" type="hidden" value="${sessionInfo.userPassword}">
 	</form>
 
-	<a href="accountInfoEdit">戻る</a>
+	<div class="button"><a href="accountInfoEdit">戻る</a></div>
 
 	<script type="text/javascript">
 	var mailTextPattern = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}.[A-Za-z0-9]{1,}$/; // メアドの正規表現

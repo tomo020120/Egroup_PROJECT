@@ -10,12 +10,12 @@
 </head>
 <body>
 	<h1>メールアドレス変更</h1>
-	<form id="upadateMailForm" method="post" action="judgeCorrectUserMailAddress">
-		新しいメールアドレス:<input id="newMailAddress" type="text" name="newUserMailAddress" maxLength="256">
+	<form id="upadateMailForm" method="post" action="judgeCorrectUserMailAddress" class="formBox">
+		新しいメールアドレス<br><input id="newMailAddress" type="text" name="newUserMailAddress" maxLength="256">
 		<div class="errorText" id="mailError"></div>
 		<input id="submitBtn" type="button" value="変更を保存">
 	</form>
-	<a href="accountInfoEdit">戻る</a>
+	<div class="button"><a href="accountInfoEdit">戻る</a></div>
 	<p>${message}</p>
 <script type="text/javascript">
 	var mailTextPattern = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}.[A-Za-z0-9]{1,}$/; // メアドの正規表現

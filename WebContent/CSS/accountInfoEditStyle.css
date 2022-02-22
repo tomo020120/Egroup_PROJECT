@@ -21,6 +21,10 @@ a.btn--orange {
 	border-radius: 2px; /* 半径が8pxの角丸 */
 	border-color: #a88734;
 	padding:3px 10px;
+	width:50%;
+	display: block;
+  margin-left: auto;
+  margin-right: auto
 }
 .btn--orange:hover,
 a.btn--orange:hover {
@@ -32,16 +36,18 @@ a.btn--orange:hover {
   display:flex;
   flex-flow: column;
   border:1px #ccc solid;
-  height:300px;
+  height:30%;
   width:50%;
   margin:0 0 1em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
 }
 
 .content {
   padding:1em;
   background-color:#FFCC80;
-  margin:0.5em auto;
-  width:95.5%;
+  border:1px #ccc solid;
 }
 .button{
   margin: 0 0 0 auto;
