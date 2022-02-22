@@ -26,3 +26,27 @@
 #itemList>div {
         flex: 1 1 80px;
  }
+ #adminActionTool{
+	margin:0px 0px 0px 10px;
+}
+input[type="text"] {
+  border: 1px solid #b9b9b9;
+  background-color: #fff;
+  width: 380px;
+   height:40px;
+   margin-bottom:15px;
+   font-size: 100%;
+}
+
+.allPosition{
+	margin:0px 0px 0px 38%;
+}
+h1{
+	 text-align:center;
+}
+#submitBtn{
+	padding:4px 170px;
+}
+.linkpos{
+	 float: right;
+}
