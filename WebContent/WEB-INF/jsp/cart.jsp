@@ -7,9 +7,11 @@
 <head>
 <meta charset="UTF-8">
 <title>カート</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet" href="CSS/cartStyle.css">
 </head>
 <body>
+<div id="empty"></div>
 
 <div class="container">
 <div class="item">
@@ -26,8 +28,8 @@
 		<p class="p2">\ ${cart.subTotal}</p>
 		<p class="p3"><a href="deleteCartProduct?itemId=${cart.itemId}"><img src="images/batu.png" class="pic2"></a></p>
 		</div>
-
-</div>
+	</div>
+	<input id="itemId" type="hidden" value="${cart.itemId}">
 	</c:forEach>
 
 </div>
@@ -45,5 +47,20 @@
 </div>
 </div>
 </div>
+
+<script>
+	$(function(){
+		var itemId = $("#itemId").val();
+
+		if(itemId == undefined){
+			$(".container").hide();
+			$("#empty").html("<h1 style='text-align:center;'>カートに商品は入っていません</h1>");
+		}else{
+			$(".container").show();
+			("#empty").html("");
+		}
+	});
+</script>
+
 </body>
 </html>
