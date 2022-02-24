@@ -20,14 +20,14 @@ window.onload = function(){
 	var fm = dateObj.getMonth() + 1;
 	var fd = dateObj.getDate();
 
-	var fb = "木金土日月火水".charAt(dateObj.getDay());
+	var fb = "日月火水木金土".charAt(dateObj.getDay());
 
 	dateObj.setDate(dateObj.getDate() + 2); // 更に2日後(4日後)にセット
 
 	var ly = dateObj.getFullYear();
 	var lm = dateObj.getMonth() + 1;
 	var ld = dateObj.getDate();
-	var lb = "火水木金土日月".charAt(dateObj.getDay());
+	var lb = "日月火水木金土".charAt(dateObj.getDay());
 
 	document.getElementById("deliveryDate").innerHTML =fy+"年"+fm+"月"+fd+"日("+fb+")"+ "～"+ly+"年"+lm+"月"+ld+"日("+lb+")";
 	}
@@ -71,7 +71,7 @@ window.onload = function(){
 <div id="itemName" class="p1"></div>
 <div id="itemCount" class="p2"></div>
 <div id="itemPrice" class="p2"></div>
-<div id="itemPic" class="pic2" ></div>
+<div id="itemPic" class="pic3" ></div>
 </div>
 </div>
 

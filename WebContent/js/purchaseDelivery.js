@@ -208,10 +208,10 @@ $(function(){
 
 			$("body").css('background-color','#BBBBBB');
 
-			$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",true); /*ボタンの無効化*/
-			$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").css("background","#BBBBBB");
-			$("body").find(".decisionButton, .openUpdateFormButton , .openDeleteComfirmButton").css("border-color","#ccc");
-			$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").css("pointer-events","none");
+			$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton,#newCreditBtn").attr("disabled",true); /*ボタンの無効化*/
+			$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton,#newCreditBtn").css("background","#BBBBBB");
+			$("body").find(".decisionButton, .openUpdateFormButton , .openDeleteComfirmButton,#newCreditBtn").css("border-color","#ccc");
+			$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton,#newCreditBtn").css("pointer-events","none");
 		});
 	});
 
@@ -221,12 +221,36 @@ $(function(){
 
 		$("body").css('background-color','#ffffff');
 
-		$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",false); /*ボタンの有効化*/
-		$("body").find(".decisionButton").css("background","linear-gradient(#f7dfa5,#f0c14b)");
+		$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton,#newCreditBtn").attr("disabled",false); /*ボタンの有効化*/
+		$("body").find(".decisionButton,#newCreditBtn").css("background","linear-gradient(#f7dfa5,#f0c14b)");
 		$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").css("background-color", "#e7e9ec");
 		$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").css("border-color", "#adb1b8");
-		$("body").find(".decisionButton ").css("border-color","#a88734");
-		$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").css("pointer-events","auto");
+		$("body").find(".decisionButton,#newCreditBtn").css("border-color","#a88734");
+		$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton,#newCreditBtn").css("pointer-events","auto");
+		$("body").find(".openUpdateFormButton , .openDeleteComfirmButton").hover(function() {
+
+		    //マウスを乗せたら色が変わる
+		    $(this).css('background', '#c0c0c0');
+
+		  //ここにはマウスを離したときの動作を記述
+		  }, function() {
+
+		    //色指定を空欄にすれば元の色に戻る
+		    $(this).css('background', '');
+
+		  });
+		$("body").find(".decisionButton,#newCreditBtn").hover(function() {
+
+		    //マウスを乗せたら色が変わる
+		    $(this).css('background', '#f1c85a');
+
+		  //ここにはマウスを離したときの動作を記述
+		  }, function() {
+
+		    //色指定を空欄にすれば元の色に戻る
+		    $(this).css('background', '');
+
+		  });
 		$(".errorText").html("");
 	});
 

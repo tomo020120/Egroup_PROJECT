@@ -10,7 +10,7 @@ body{
 /* アニメーションページエリア */
 .animFormArea{
 	display:none; /* デフォルトは非表示に */
-	top:20%; /* top,leftで位置指定 */
+	top:18%; /* top,leftで位置指定 */
 	left:30%;
 	background-color:lightgreen;
 	border:1px solid #000000; /*枠線*/
@@ -18,7 +18,8 @@ body{
 	z-index:2; /* 多重度設定 */
 	position:fixed; /*スクロールしても位置を固定 */
 	width:600px;
-	height:600px;
+	height:460px;
+	border-radius: 20px;
 }
 
 /* 横並びにしたい要素を持つ親要素 */
@@ -51,6 +52,7 @@ textarea{
 
 h2{
 	text-align:center;
+	margin-top:4%;
 }
 h1{
 	 font-size: 30px;
@@ -88,7 +90,7 @@ input[type="tel"]:focus {
 
 
 .pos{
-margin:50px 0px 10px 50px;
+margin:50px 0px 10px 90px;
 font-size: 20px;
 }
 #canselButton{
@@ -203,4 +205,11 @@ color: #000000;
 	left:50%;
 	font-weight:bold;
 	margin-top:0;
+}
+.openDeleteComfirmButton{
+		margin-left:5px;
+
+}
+.crepo{
+	margin:30px 0px 10px 60px;
 }

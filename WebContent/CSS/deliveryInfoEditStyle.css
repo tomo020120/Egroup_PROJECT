@@ -16,7 +16,7 @@ h3{
 .animFormArea{
 	display:none; /* デフォルトは非表示に */
 	width:600px;
-	height:700px;
+	height:610px;
 	top:14%; /* top,leftで位置指定 */
 	left:30%;
 	right:10%;
@@ -25,6 +25,7 @@ h3{
 	margin-right:auto; /* 余白指定 */
 	z-index:2; /* 多重度設定 */
 	position:fixed; /*スクロールしても位置を固定 */
+	border-radius: 20px;
 
 }
 
@@ -215,4 +216,9 @@ a.btn--orange:hover {
 	left:50%;
 	font-weight:bold;
 	margin-top:0;
+}
+
+.openDeleteComfirmButton{
+		margin-left:5px;
+
 }

@@ -16,7 +16,7 @@
 
 <h1>クレジットカード</h1>
 <hr>
-<p>${message}</p>
+<p class="message">${message}</p>
 
 	<div class="creditCardInfo">
 		<c:forEach var="creditCardInfo" items="${result}">
@@ -166,7 +166,7 @@
 			</div>
 		</div>
 		<button id="executeAddButton">完了</button>
-		<p class="error">${message}</p>
+
 </div>
 </body>
 </html>

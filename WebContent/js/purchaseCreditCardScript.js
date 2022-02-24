@@ -179,14 +179,36 @@ $(function(){
 
 		$("body").css('background-color','#ffffff');
 
-		$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",false); /*ボタンの有効化*/
-		$("body").find(".decisionButton").css("background","linear-gradient(#f7dfa5,#f0c14b)");
+		$("body").find("#executeAddButton,.decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",false); /*ボタンの有効化*/
+		$("body").find("#executeAddButton,.decisionButton").css("background","linear-gradient(#f7dfa5,#f0c14b)");
 		$("body").find("#canselButton,.openUpdateFormButton , .openDeleteComfirmButton").css("background-color", "#e7e9ec");
 		$("body").find("#canselButton,.openUpdateFormButton , .openDeleteComfirmButton").css("border-color", "#adb1b8");
 		$("body").find("#executeAddButton,.decisionButton").css("border-color","#a88734");
-		$("body").find("#executeAddButton").css("background-color", "#000");
-		$("body").find("#executeAddButton").css("border-color", "#000");
 		$("body").find("#canselButton, #executeAddButton,.decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").css("pointer-events","auto");
+		$("body").find("#canselButton,.openUpdateFormButton , .openDeleteComfirmButton").hover(function() {
+
+		    //マウスを乗せたら色が変わる
+		    $(this).css('background', '#c0c0c0');
+
+		  //ここにはマウスを離したときの動作を記述
+		  }, function() {
+
+		    //色指定を空欄にすれば元の色に戻る
+		    $(this).css('background', '');
+
+		  });
+		$("body").find("#executeAddButton,.decisionButton").hover(function() {
+
+		    //マウスを乗せたら色が変わる
+		    $(this).css('background', '#f1c85a');
+
+		  //ここにはマウスを離したときの動作を記述
+		  }, function() {
+
+		    //色指定を空欄にすれば元の色に戻る
+		    $(this).css('background', '');
+
+		  });
 		$(".errorText").html("");
 	});
 
@@ -231,14 +253,36 @@ $(function(){
 
 		$("body").css('background-color','#ffffff');
 
-		$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",false); /*ボタンの有効化*/
-		$("body").find(".decisionButton").css("background","linear-gradient(#f7dfa5,#f0c14b)");
+		$("body").find("#executeAddButton,.decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",false); /*ボタンの有効化*/
+		$("body").find("#executeAddButton,.decisionButton").css("background","linear-gradient(#f7dfa5,#f0c14b)");
 		$("body").find("#canselButton,.openUpdateFormButton , .openDeleteComfirmButton").css("background-color", "#e7e9ec");
 		$("body").find("#canselButton,.openUpdateFormButton , .openDeleteComfirmButton").css("border-color", "#adb1b8");
-		$("body").find(".decisionButton").css("border-color","#a88734");
-		$("body").find("#executeAddButton").css("background-color", "#000");
-		$("body").find("#executeAddButton").css("border-color", "#000");
+		$("body").find("#executeAddButton,.decisionButton").css("border-color","#a88734");
 		$("body").find("#canselButton, #executeAddButton,.decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").css("pointer-events","auto");
+		$("body").find("#canselButton,.openUpdateFormButton , .openDeleteComfirmButton").hover(function() {
+
+		    //マウスを乗せたら色が変わる
+		    $(this).css('background', '#c0c0c0');
+
+		  //ここにはマウスを離したときの動作を記述
+		  }, function() {
+
+		    //色指定を空欄にすれば元の色に戻る
+		    $(this).css('background', '');
+
+		  });
+		$("body").find("#executeAddButton,.decisionButton").hover(function() {
+
+		    //マウスを乗せたら色が変わる
+		    $(this).css('background', '#f1c85a');
+
+		  //ここにはマウスを離したときの動作を記述
+		  }, function() {
+
+		    //色指定を空欄にすれば元の色に戻る
+		    $(this).css('background', '');
+
+		  });
 		$(".errorText").html("");
 	});
 });

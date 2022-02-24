@@ -9,14 +9,21 @@ left: 3%
 .shopbtn{
 	width:300px;
   font-size:20px;
-  color:#fff;
+  color:#000;
   text-align:center;
   display:block;
   padding:10px 14px 10px;
-  background:#3e40b3;
-  border-radius: 10px;
-   border: 1px solid #0000a0;
+  background: linear-gradient(#f7dfa5,#f0c14b);
+  border-radius: 2px;
+   border: 1px solid;
+   border-color: #a88734;
 }
+
+.shopbtn:hover {
+  color: #000000;
+  background: #f1c85a;
+}
+
 
 .box {
 	border:1px solid;
@@ -47,7 +54,7 @@ left: 3%
 	width        : 50%;
 	 position: relative;
 	top: 20%; left: 0%;
-	border: 1px solid #c0c0c0;
+
 
 }
 .pic2{

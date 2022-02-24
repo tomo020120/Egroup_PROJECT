@@ -101,7 +101,7 @@
 
 	<div id="updateCardFormArea" class="animFormArea">
 		<h2>クレジットカードを編集</h2>
-		<div>
+		<div class="crepo">
 			<form id="updateCreditCardInfoForm" method="post" action="updateCreditCardInfo">
 				カード番号(下四桁)<br><input id="lastFourDisitsCreditCardNo" type="text" name="creditCardNo" readOnly><br>
 				<div id="cardCompany"></div>

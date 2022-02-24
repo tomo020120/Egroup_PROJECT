@@ -40,26 +40,39 @@ margin-left:35%;
 #guestCreditCardInfoFormJumpBtn{
 width:390px;
   font-size:20px;
-  color:#fff;
   text-align:center;
   display:block;
-  padding:10px 14px 10px;
+  padding:8px 14px 8px;
   background:#000000;
-  border-radius: 10px;
-   border: 1px solid #0000a0;
+  border-radius: 2px;
+   border: 1px solid;
+   border-color: #a88734;
    margin-top:10px;
+   background: linear-gradient(#f7dfa5,#f0c14b);
 }
+#guestCreditCardInfoFormJumpBtn:hover {
+  color: #000000;
+  background: #f1c85a;
+}
+
 #guestPurchaseConfirmPageJumpBtn{
-	width:390px;
+
+
+width:390px;
   font-size:20px;
-  color:#fff;
   text-align:center;
   display:block;
-  padding:10px 14px 10px;
+  padding:8px 14px 8px;
   background:#000000;
-  border-radius: 10px;
-   border: 1px solid #0000a0;
+  border-radius: 2px;
+   border: 1px solid;
+   border-color: #a88734;
    margin-top:10px;
+   background: linear-gradient(#f7dfa5,#f0c14b);
+}
+#guestPurchaseConfirmPageJumpBtn:hover {
+  color: #000000;
+  background: #f1c85a;
 }
 
 

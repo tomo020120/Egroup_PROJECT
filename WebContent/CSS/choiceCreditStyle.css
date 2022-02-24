@@ -19,6 +19,7 @@ body{
 	position:fixed; /*スクロールしても位置を固定 */
 	width:600px;
 	height:500px;
+	border-radius: 20px;
 }
 
 /* 横並びにしたい要素を持つ親要素 */
@@ -55,8 +56,13 @@ h2{
 }
 h1{
 	 font-size: 30px;
-	 margin:0 0 0 10px;
+	 margin:0px 0 0 10px;
 }
+.message{
+	font-size: 15px;
+	 margin:10px 0 0 10px;
+}
+
 h3{
 
 	text-align:center;
@@ -110,14 +116,20 @@ color: #000000;
 
 width:390px;
   font-size:20px;
-  color:#fff;
+  color:#000;
   text-align:center;
   display:block;
-  padding:10px 14px 10px;
-  background:#000000;
-  border-radius: 10px;
-   border: 1px solid #0000a0;
+  padding:5px 14px 5px;
+   background: linear-gradient(#f7dfa5,#f0c14b);
+  border-radius: 2px;
+   border: 1px solid;
+      border-color: #a88734;
    margin-left:3%;
+}
+
+#executeAddButton:hover {
+  color: #000000;
+  background: #f1c85a;
 }
 
 .creditCardInfo{
@@ -151,7 +163,7 @@ color: #000000;
 }
 #updateCansel:hover {
   color: #000000;
-  background: #808080;
+  background: #c0c0c0;
 }
 #deleteCansel{
 	color: #000000;
@@ -165,7 +177,7 @@ color: #000000;
 }
 #deleteCansel:hover {
   color: #000000;
-  background: #808080;
+  background: #c0c0c0;
 }
 #executeDeleteButton{
 	color: #000000;
@@ -199,7 +211,7 @@ color: #000000;
 }
 h1{
 	 font-size: 25px;
-	 margin:0 0 0 10px;
+	 margin:10px 0 0 10px;
 }
 .error{
 	color: red;
@@ -255,7 +267,7 @@ margin:0 30%;
   border:1px solid;
 	border-radius: 2px; /* 半径が8pxの角丸 */
 	border-color: #a88734;
-	padding:3px 120px;
+	padding:3px 123px;
 	margin:10px 0px 0 0px
 }
 .decisionButton:hover {

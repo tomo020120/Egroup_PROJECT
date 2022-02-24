@@ -16,7 +16,7 @@ h3{
 .animFormArea{
 	display:none; /* デフォルトは非表示に */
 	width:600px;
-	height:700px;
+	height:610px;
 	top:14%; /* top,leftで位置指定 */
 	left:30%;
 	right:10%;
@@ -25,6 +25,7 @@ h3{
 	margin-right:auto; /* 余白指定 */
 	z-index:2; /* 多重度設定 */
 	position:fixed; /*スクロールしても位置を固定 */
+	border-radius: 20px;
 
 }
 
@@ -85,7 +86,7 @@ color: #000000;
 }
 #updateCansel{
 	color: #000000;
-  background: c0c0c0;
+  background: adb1b8;
 
   border:1px solid;
 	border-radius: 2px; /* 半径が8pxの角丸 */
@@ -95,12 +96,12 @@ color: #000000;
 }
 #updateCansel:hover {
   color: #000000;
-  background: #808080;
+  background: #c0c0c0;
 }
 
 #deleteCansel{
 	color: #000000;
-  background: c0c0c0;
+
 
   border:1px solid;
 	border-radius: 2px; /* 半径が8pxの角丸 */
@@ -110,7 +111,7 @@ color: #000000;
 }
 #deleteCansel:hover {
   color: #000000;
-  background: #808080;
+  background: #c0c0c0;
 }
 #executeUpdateButton{
 color: #000000;
@@ -228,14 +229,21 @@ margin-left:35%;
 #newCreditBtn{
 width:390px;
   font-size:20px;
-  color:#fff;
+  color:#000;
   text-align:center;
   display:block;
-  padding:10px 14px 10px;
-  background:#000000;
-  border-radius: 10px;
-   border: 1px solid #0000a0;
+  padding:5px 14px 5px;
+  background: linear-gradient(#f7dfa5,#f0c14b);
+  border-radius: 2px;
+   border: 1px solid;
+   border-color: #a88734;
+
    margin-top:10px;
+}
+
+#newCreditBtn:hover {
+  color: #000000;
+  background: #f1c85a;
 }
 #deliveryInfoList{
 	 display: flex;
