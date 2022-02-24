@@ -97,6 +97,7 @@
 </form>
 
 <h1>商品一覧</h1>
+<div class="pos1">
 <table border="1">
  <tr><th id="actionText">編集</th><th>商品名</th><th>画像</th><th>価格</th></tr>
  <c:forEach var="product" items="${result}">
@@ -110,6 +111,8 @@
   </tr>
  </c:forEach>
  </table>
+</div>
+
 
 <!-- 選択された商品確認画面 -->
  <div id="selectItemList">
@@ -120,6 +123,7 @@
 	 	<button id="deleteBtn">消去</button>
  	</div>
  </div>
+
 
 <div class="pos">
 <button id="previousPageBtn">前のページ</button>

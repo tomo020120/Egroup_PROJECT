@@ -50,3 +50,10 @@ h1{
 .linkpos{
 	 float: right;
 }
+.pos{
+	text-align:center;
+}
+.pos1{
+	position: relative;
+	 left: 25%;
+}
