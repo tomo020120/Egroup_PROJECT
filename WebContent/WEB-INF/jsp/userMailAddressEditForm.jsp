@@ -16,7 +16,6 @@
 		<div class="errorText" id="mailError"></div>
 		<input id="submitBtn" class="updateBtn" type="button" value="変更を保存">
 	</form></div>
-	<div class="button"><a href="accountInfoEdit">戻る</a></div>
 	<p>${message}</p>
 <script type="text/javascript">
 	var mailTextPattern = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}.[A-Za-z0-9]{1,}$/; // メアドの正規表現

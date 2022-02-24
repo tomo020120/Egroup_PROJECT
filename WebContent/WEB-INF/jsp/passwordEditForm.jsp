@@ -32,7 +32,6 @@
 		<input id="correctPassword" type="hidden" value="${sessionInfo.userPassword}">
 	</form>
 	</div>
-	<div class="button"><a href="accountInfoEdit">戻る</a></div>
 
 	<script type="text/javascript">
 	var mailTextPattern = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}.[A-Za-z0-9]{1,}$/; // メアドの正規表現
