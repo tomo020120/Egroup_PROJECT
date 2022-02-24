@@ -16,7 +16,7 @@ h3{
 .animFormArea{
 	display:none; /* デフォルトは非表示に */
 	width:600px;
-	height:610px;
+	height:630px;
 	top:14%; /* top,leftで位置指定 */
 	left:30%;
 	right:10%;
