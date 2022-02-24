@@ -84,10 +84,6 @@
    		<dispatcher>FORWARD</dispatcher>
    	</filter-mapping>
 
-    <listener>
-    	<listener-class>event.ServerStartedEvent</listener-class>
-    </listener>
-
     <welcome-file-list>
         <welcome-file>/WEB-INF/jsp/topPage.jsp</welcome-file>
     </welcome-file-list>
