@@ -10,7 +10,6 @@ public class ProductBean implements Serializable{
 	private String orderCount;
 	private String categoryId;
 	private String colorId;
-	private String shapeId;
 	private String artistId;
 
 
@@ -61,11 +60,5 @@ public class ProductBean implements Serializable{
 	}
 	public void setColorId(String colorId) {
 		this.colorId = colorId;
-	}
-	public String getShapeId() {
-		return shapeId;
-	}
-	public void setShapeId(String shapeId) {
-		this.shapeId = shapeId;
 	}
 }
