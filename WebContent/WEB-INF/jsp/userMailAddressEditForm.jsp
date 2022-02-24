@@ -10,11 +10,12 @@
 </head>
 <body>
 	<h1>メールアドレス変更</h1>
+	<div class="Box">
 	<form id="upadateMailForm" method="post" action="judgeCorrectUserMailAddress" class="formBox">
 		新しいメールアドレス<br><input id="newMailAddress" type="text" name="newUserMailAddress" maxLength="256">
 		<div class="errorText" id="mailError"></div>
-		<input id="submitBtn" type="button" value="変更を保存">
-	</form>
+		<input id="submitBtn" class="updateBtn" type="button" value="変更を保存">
+	</form></div>
 	<div class="button"><a href="accountInfoEdit">戻る</a></div>
 	<p>${message}</p>
 <script type="text/javascript">
