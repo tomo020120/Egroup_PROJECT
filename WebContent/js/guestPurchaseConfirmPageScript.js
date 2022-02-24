@@ -12,14 +12,14 @@ $(function(){
 		var count = (index + 6);
 
 		if((count >= 6) && (count <= 9)){
-			$("#guestDeliveryInfoList").append(purchaseInfoArray[count]+"<br>");
+			$("#guestDeliveryInfoList").append("<div>" + purchaseInfoArray[count]+"</div>");
 		}
 		else if((count >= 10) && (count <= 13)){
 			if(count == 10){ // カード番号
-				$("#guestCreditCardInfoList").append( purchaseInfoArray[count]+"(カード下四桁)"+"<br>");
+				$("#guestCreditCardInfoList").append( "<div>" + purchaseInfoArray[count]+"(カード下四桁)</div>");
 			}
 			else{
-				$("#guestCreditCardInfoList").append( purchaseInfoArray[count]+"<br>");
+				$("#guestCreditCardInfoList").append("<div>" + purchaseInfoArray[count]+"</div>");
 			}
 		}
 	});
@@ -34,20 +34,11 @@ $(function(){
 	$("#BillingAmount").html(billingAmount);
 
 
-	var sendMailDescriptionInfoArray = new Array();
+	var sendMailDescriptionInfoArray = purchaseInfoArray;
 
 	$("#guestPurchaseDetermineBtn").on('click',function(){
-		$("body").find("#guestDeliveryInfoList p,#guestCreditCardInfoList p,#BillingAmount ").each(function(index,element){
-			sendMailDescriptionInfoArray[index] = $(element).html();
-		});
-
-		var length = sendMailDescriptionInfoArray.length;
-
-		sendMailDescriptionInfoArray[length] = purchaseInfoArray[4];
-		sendMailDescriptionInfoArray[length + 1] = purchaseInfoArray[5];
-
-		console.log(sendMailDescriptionInfoArray)
-
+		sendMailDescriptionInfoArray[0] = billingAmount;
+		console.log(sendMailDescriptionInfoArray);
 		window.location.href="guestPurchaseDetermine?sendMailDescription=" + sendMailDescriptionInfoArray.toString();
 	});
 

@@ -35,7 +35,7 @@ public class WebRequestContext implements RequestContext{
 
     public String getRequestPath() {
     	String url = new String(request.getRequestURL());
-    	url.substring(0,url.indexOf("Egroup_PROJECT"));
+    	url = url.substring(0,url.indexOf("Egroup_PROJECT"));
 
     	return url;
     }

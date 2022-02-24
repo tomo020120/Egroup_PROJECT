@@ -20,8 +20,8 @@ public class GuestPurchaseDetermineCommand extends AbstractCommand {
 		String sendMailDescription = reqContext.getParameter("sendMailDescription")[0];
 		String[] sendMailDescriptionArray = sendMailDescription.split(",");
 
-		String userName = sendMailDescriptionArray[9];
-		String mailAddress = sendMailDescriptionArray[10];
+		String userName = sendMailDescriptionArray[4];
+		String mailAddress = sendMailDescriptionArray[5];
 
 		String url = reqContext.getRequestPath();
 
@@ -56,14 +56,14 @@ public class GuestPurchaseDetermineCommand extends AbstractCommand {
 		String deliveryScheduled = (fastestDay + " - " + latestDay);
 
 		// 各お届け先情報取得
-		String deliveryName = descriptionArray[0];
-		String postalCode = descriptionArray[2];
-		String address = descriptionArray[3];
+		String deliveryName = descriptionArray[6];
+		String postalCode = descriptionArray[8];
+		String address = descriptionArray[9];
 
-		String cardNo = descriptionArray[4];
-		String cardCompany = descriptionArray[5];
+		String cardNo = descriptionArray[10];
+		String cardCompany = descriptionArray[11];
 
-		String totalAmount = descriptionArray[8];
+		String totalAmount = descriptionArray[0];
 
 		content.append("<div style=\"display:flex;width:700px;border-width:10px;border-style:double;border-color:#333333;padding-top:5px;padding-bottom:5px;padding-right:5px;padding-left:5px;margin-top:0px;margin-bottom:10px;margin-right:0px;margin-left:0px;\">");
 
