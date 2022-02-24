@@ -33,6 +33,13 @@ public class WebRequestContext implements RequestContext{
         return request;
     }
 
+    public String getRequestPath() {
+    	String url = new String(request.getRequestURL());
+    	url.substring(0,url.indexOf("Egroup_PROJECT"));
+
+    	return url;
+    }
+
     public String getCommandKey(){
         String servletPath = request.getServletPath();
         String key = servletPath.substring(1);

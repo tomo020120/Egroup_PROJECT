@@ -51,7 +51,9 @@ public class IsRegistJudgeCommand extends AbstractCommand {
 
 
 		if(tempRegist.addTempUserLoginInfo(tempUserBean)) {
-			SendMail.send(mailAddress,"http://localhost:8080/Egroup_PROJECT/registResult?UUID=" + tempUserBean.getUUID(),"新規会員登録");
+			String url = reqContext.getRequestPath();
+
+			SendMail.send(mailAddress,url + "Egroup_PROJECT/registResult?UUID=" + tempUserBean.getUUID(),"新規会員登録");
 			resContext.setTargetPath("sendComplete");
 		}else {
 			ConnectionManager.getInstance().rollback();

@@ -116,7 +116,7 @@
 
 <!-- 選択された商品確認画面 -->
  <div id="selectItemList">
- 	<p>消去した場合元に戻すことはできません<br>選択された商品(ID:商品名)</p>
+ 	<p style="color:red">消去した場合元に戻すことはできません<br>選択された商品(ID:商品名)</p>
  	<div id="itemList"></div>
  	<div id="choiseBtn">
 	 	<button id="canselBtn">選択を続ける</button>

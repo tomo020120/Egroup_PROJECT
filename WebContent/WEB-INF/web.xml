@@ -54,7 +54,7 @@
    		<dispatcher>FORWARD</dispatcher>
    	</filter-mapping>
 
-  <!--  	<filter>
+  	<filter>
    		<filter-name>AdminCheckFilter</filter-name>
    		<filter-class>filter.AdminCheckFilter</filter-class>
    	</filter>
@@ -68,7 +68,7 @@
    		<url-pattern>/deleteProducts</url-pattern>
    		<dispatcher>REQUEST</dispatcher>
    		<dispatcher>FORWARD</dispatcher>
-   	</filter-mapping> -->
+   	</filter-mapping>
 
    	<filter>
    		<filter-name>GuestUserFilter</filter-name>

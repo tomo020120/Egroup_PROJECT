@@ -23,7 +23,9 @@ public class GuestPurchaseDetermineCommand extends AbstractCommand {
 		String userName = sendMailDescriptionArray[9];
 		String mailAddress = sendMailDescriptionArray[10];
 
-		String htmlText = creataPurchaseCompleteMessageBody(userName, sendMailDescriptionArray);
+		String url = reqContext.getRequestPath();
+
+		String htmlText = creataPurchaseCompleteMessageBody(userName, sendMailDescriptionArray,url);
 
 		SendMail.send(mailAddress,htmlText);
 
@@ -32,15 +34,18 @@ public class GuestPurchaseDetermineCommand extends AbstractCommand {
 		return resContext;
 	}
 
-	private String creataPurchaseCompleteMessageBody(String userName,String[] descriptionArray) { // 購入完了メール文の生成
+	private String creataPurchaseCompleteMessageBody(String userName,String[] descriptionArray,String url) { // 購入完了メール文の生成
 		StringBuilder content = new StringBuilder();
 
 		content.append("<h1 style=\"font-size:25px;\">ご注文の確認</h1>");
 		content.append("<h2 style=\"font-size:18px;\">" + userName + "様</h2>");
 
-		String sentence1 = ("<a href=\"http://localhost:8080/Egroup_PROJECT/\">Ibanez</a>をご利用いただき、ありがとうございます。<a href=\"http://localhost:8080/Egroup_PROJECT/\">Ibanez</a>"
+		String topUrl = (url + "Egroup_PROJECT/");
+		String purchaseHistoryUrl = (url + "Egroup_PROJECT/purchaseHistory");
+
+		String sentence1 = ("<a href=" + topUrl + ">Ibanez</a>をご利用いただき、ありがとうございます。<a href=\"http://localhost:8080/Egroup_PROJECT/\">Ibanez</a>"
 				+ "がお客様のご注文を承ったことをお知らせいたします。<br>"
-				+ "詳細は<a href=\"http://localhost:8080/Egroup_PROJECT/purchaseHistory\">注文履歴</a>からご確認ください。<br>"
+				+ "詳細は<a href=" + purchaseHistoryUrl +">注文履歴</a>からご確認ください。<br>"
 				+ "商品が発送されましたら、Eメールにてお知らせいたします。");
 
 		content.append("<p>" + sentence1 + "</p>");

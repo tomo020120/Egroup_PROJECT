@@ -46,8 +46,9 @@ public class TransferPurchaseCompletedCommand extends AbstractCommand{
     	if(dao.PurchaseCompleted(ItemId,OrderCount,subTotal,cartId,totalAmount,userId)) {
     		AddressBean addressBean = dao.getTargetAddressInfo(deliveryInfoId);
     		CreditCardBean creditCardBean = dao.getTargetCreditCardInfo(cardId);
+    		String url = reqContext.getRequestPath();
 
-			String htmlText = creataPurchaseCompleteMessageBody(userAndCartBean.getUserName(), totalAmount, addressBean, creditCardBean);
+			String htmlText = creataPurchaseCompleteMessageBody(userAndCartBean.getUserName(), totalAmount, addressBean, creditCardBean,url);
 
 			SendMail.send(userAndCartBean.getMailAddress(),htmlText);
 
@@ -62,15 +63,18 @@ public class TransferPurchaseCompletedCommand extends AbstractCommand{
 		return resc;
 	}
 
-	private String creataPurchaseCompleteMessageBody(String userName,int totalAmount,AddressBean addressBean,CreditCardBean creditCardBean) { // 購入完了メール文の生成
+	private String creataPurchaseCompleteMessageBody(String userName,int totalAmount,AddressBean addressBean,CreditCardBean creditCardBean,String url) { // 購入完了メール文の生成
 		StringBuilder content = new StringBuilder();
 
 		content.append("<h1 style=\"font-size:25px;\">ご注文の確認</h1>");
 		content.append("<h2 style=\"font-size:18px;\">" + userName + "様</h2>");
 
-		String sentence1 = ("<a href=\"http://localhost:8080/Egroup_PROJECT/\">Ibanez</a>をご利用いただき、ありがとうございます。<a href=\"http://localhost:8080/Egroup_PROJECT/\">Ibanez</a>"
+		String topUrl = (url + "Egroup_PROJECT/");
+		String purchaseHistoryUrl = (url + "Egroup_PROJECT/purchaseHistory");
+
+		String sentence1 = ("<a href=" + topUrl + ">Ibanez</a>をご利用いただき、ありがとうございます。<a href=\"http://localhost:8080/Egroup_PROJECT/\">Ibanez</a>"
 				+ "がお客様のご注文を承ったことをお知らせいたします。<br>"
-				+ "詳細は<a href=\"http://localhost:8080/Egroup_PROJECT/purchaseHistory\">注文履歴</a>からご確認ください。<br>"
+				+ "詳細は<a href=" + purchaseHistoryUrl + ">注文履歴</a>からご確認ください。<br>"
 				+ "商品が発送されましたら、Eメールにてお知らせいたします。");
 
 		content.append("<p>" + sentence1 + "</p>");

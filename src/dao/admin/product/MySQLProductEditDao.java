@@ -128,7 +128,7 @@ public class MySQLProductEditDao implements ProductEditDao {
 		try {
 			cn = ConnectionManager.getInstance().getConnection();
 
-			String sql = "update product_table join item_pict_table using(itemId) set name=?,price=?,categoryId=?,colorId=?,artistId=?,pictPath=? where itemId = ?"; //二つのテーブルの結合をしてから一括更新
+			String sql = "update product_table join item_pict_table using(itemId) set name=?,price=?,categoryId=?,colorId=?,artistId=NULL,pictPath=? where itemId = ?"; //二つのテーブルの結合をしてから一括更新
 
 			st = cn.prepareStatement(sql);
 
@@ -136,9 +136,8 @@ public class MySQLProductEditDao implements ProductEditDao {
 			st.setString(2, all.getPrice());
 			st.setString(3, all.getCategoryId());
 			st.setString(4, all.getColorId());
-			st.setString(5, all.getArtistId());
-			st.setString(6, all.getPictPath());
-			st.setString(7, all.getItemId());
+			st.setString(5, all.getPictPath());
+			st.setString(6, all.getItemId());
 
 			int result = st.executeUpdate();
 
