@@ -3,6 +3,7 @@ package cmd.mail;
 import java.util.Properties;
 
 import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
@@ -18,14 +19,18 @@ public abstract class SendMail{
 	private static MimeMessage mimeMessage = null;
 
 	static { // 一度だけ初期化
+		System.out.println("メールプロパティ初期化開始");
 		property = new Properties();
 		property.put("mail.smtp.host", "smtp.gmail.com");
 		property.put("mail.smtp.auth", "true");
 		property.put("mail.smtp.starttls.enable", "true");
-		property.put("mail.smtp.host", "smtp.gmail.com");
 		property.put("mail.smtp.port", "587");
 		property.put("mail.smtp.debug", "true");
-		session = null;
+		session = Session.getInstance(property, new javax.mail.Authenticator() { // sessionに設定情報とSMTP認証を行う
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(ORNER_MAILADDRESS, ORNER_MAILADDRESS_PASS);
+			}
+		});
 		mimeMessage = new MimeMessage(session);
 	}
 
