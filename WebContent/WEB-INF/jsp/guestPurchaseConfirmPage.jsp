@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <title>購入内容確認</title>
 <link rel="stylesheet" href="CSS/guestPurchaseConfirmPage.css">
+<link rel="stylesheet" href="CSS/orderConfirmationt.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="js/guestPurchaseConfirmPageScript.js"></script>
 <script>
@@ -34,7 +35,8 @@ window.onload = function(){
 </head>
 <body>
 
-	<h1>最終確認</h1>
+	<h1 class="title">最終確認</h1>
+
 <h1>お届け先住所</h1>
 	<div id="guestDeliveryInfoList"></div>
 
@@ -44,24 +46,24 @@ window.onload = function(){
 </div>
 <h1>お届け日</h1>
 
-<p><span id="deliveryDate"></span></p>
+<p class="p7"><span id="deliveryDate"></span></p>
 
-<h1>購入商品</h1>
-<table border="1">
-	<tr>
-		<th>商品名</th>
-		<th>購入個数</th>
-		<th>値段</th>
-		<th>商品写真</th>
-	</tr>
-	<tr id="guestPurchaseItemInfo">
-	</tr>
-</table>
+<h1 class="title">購入商品</h1>
+<div id="itemPic"></div>
+<div id="itemName"></div>
+<div id="itemCount"class="pic2"></div>
+<div id="itemPrice"></div>
+
+
+
+
 <div class="purchase">
+<button id="guestPurchaseDetermineBtn" class="btn btn--orange">購入を確定する</button>
+<p>注文内容</p>
 		商品の小計:\ <span id="subTotal"></span><br>
 		配送料・手数料:\500<br>
 		ご請求額:\ <span id="BillingAmount"></span>円<br>
-<button id="guestPurchaseDetermineBtn">購入を確定する</button>
+
 </div>
 </body>
 </html>

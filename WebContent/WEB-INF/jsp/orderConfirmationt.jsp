@@ -33,7 +33,7 @@ window.onload = function(){
 
 <body>
 
-	<h1 class="title">注文内容を確認・変更する</h1>
+	<h1 class="title">注文内容を確認</h1>
 <div class="abc">
 <div class="box2">
 <h1>お届け先住所</h1>
@@ -51,7 +51,7 @@ window.onload = function(){
 	<c:forEach var="con" items="${result}" varStatus="i">
 		<c:if test="${i.first}" >
 				${con.cardOwnerName}<br>
-				${con.cardNo}<br>
+				${con.cardNo}(カード下四桁)<br>
 				${con.cardCompany}<br>
 				${con.expirationDate}<br>
 

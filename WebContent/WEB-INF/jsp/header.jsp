@@ -20,17 +20,20 @@
       <label id="h-menu_black" class="h-menuCheckbox" for="h-menu_checkbox"></label>
       <div id="h-menu_content">
         <ul>
-          <li><a href="news">ニュース</a>
-          <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
-<a style="cursor:pointer;">商品一覧</a>
+          <li><a href="news">ニュース</a></li>
+          <li><div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
+<a style="cursor:pointer;">商品一覧</a><hr>
 </div>
           <div id="open" style="display:none;clear:both;">
+
           <ul>
            <li><a href="products?categoryId=1">エレキギター</a></li>
            <li><a href="products?categoryId=2">アコースティックギター</a></li>
            <li><a href="products?categoryId=3">ベース</a></li>
           </ul>
+
           </div>
+
           <li><a href="artist">アーティスト</a></li>
          </ul>
       </div>

@@ -4,27 +4,26 @@ $(function(){
 	console.log(purchaseInfoArray);
 
 	// 購入商品詳細は表示が他と変わるためループ外で処理
-	$("#guestPurchaseItemInfo").append("<td>" + purchaseInfoArray[1] + "</td>");
-	$("#guestPurchaseItemInfo").append("<td>" + purchaseInfoArray[0] + "</td>");
-	$("#guestPurchaseItemInfo").append("<td>" + purchaseInfoArray[2] + "</td>");
-	$("#guestPurchaseItemInfo").append("<td><img src=" + purchaseInfoArray[3] + "></td>");
-
+	$("#itemName").text(purchaseInfoArray[1]);
+	$("#itemCount").text("個数"+purchaseInfoArray[0]);
+	$("#itemPrice").text(purchaseInfoArray[2]);
+	$("#itemPic").append("<img src=" +purchaseInfoArray[3]+">");
 	$.each(purchaseInfoArray,function(index,element){
 		var count = (index + 6);
 
 		if((count >= 6) && (count <= 9)){
-			$("#guestDeliveryInfoList").append("<p>" + purchaseInfoArray[count] + "</p>");
+			$("#guestDeliveryInfoList").append(purchaseInfoArray[count]+"<br>");
 		}
 		else if((count >= 10) && (count <= 13)){
 			if(count == 10){ // カード番号
-				$("#guestCreditCardInfoList").append("<p>下四桁:" + purchaseInfoArray[count] + "</p>");
+				$("#guestCreditCardInfoList").append("下四桁:" + purchaseInfoArray[count]+"<br>");
 			}
 			else{
-				$("#guestCreditCardInfoList").append("<p>" + purchaseInfoArray[count] + "</p>");
+				$("#guestCreditCardInfoList").append( purchaseInfoArray[count]+"<br>");
 			}
 		}
 	});
-	var price = parseInt(purchaseInfoArray[2].slice(0,-1));
+	var price = parseInt(purchaseInfoArray[2]);
 	var itemCount = parseInt(purchaseInfoArray[0]);
 
 	var subTotal = (price * itemCount);
