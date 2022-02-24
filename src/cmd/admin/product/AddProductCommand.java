@@ -33,7 +33,6 @@ public class AddProductCommand extends AbstractCommand {
 		String price = reqContext.getParameter("price")[0];
 		String categoryId = reqContext.getParameter("categoryId")[0];
 		String colorId = reqContext.getParameter("colorId")[0];
-		String shapeId = reqContext.getParameter("shapeId")[0];
 		String artistId = reqContext.getParameter("artistId")[0];
 
 		AllProductDetailBean all = new AllProductDetailBean();
@@ -42,7 +41,6 @@ public class AddProductCommand extends AbstractCommand {
 		all.setPrice(price);
 		all.setCategoryId(categoryId);
 		all.setColorId(colorId);
-		all.setShapeId(shapeId);
 		all.setArtistId(artistId);
 		all.setPictPath(pictPath);
 

@@ -19,7 +19,6 @@
 	価格<br><input type="text" name="price"><br>
 	カテゴリー番号<br><input type="text" name="categoryId"><br>
 	カラー番号<br><input type="text" name="colorId"><br>
-	形状番号<br><input type="text" name="shapeId"><br>
 	【任意】アーティスト番号<br><input type="text" name="artistId"><br>
 	製品写真:<input type="file" name="productPict" id="productPict" accept="image/*"><br>
 	<img id="thumbnail" src="" width="400px"><br>

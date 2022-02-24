@@ -18,7 +18,6 @@
 	価格<br><input type="text" name="price" value="${result.price}"><br>
 	カテゴリー番号<br><input type="text" name="categoryId" value="${result.categoryId}"><br>
 	カラー番号<br><input type="text" name="colorId" value="${result.colorId}"><br>
-	形状番号<br><input type="text" name="shapeId" value="${result.shapeId}"><br>
 	【任意】アーティスト番号<br><input type="text" name="artistId" value="${result.artistId}"><br>
 	<input type="hidden" name="exitPictPath" value="${result.pictPath}" >
 	<input type="hidden" name="itemId" value="${result.itemId}" >

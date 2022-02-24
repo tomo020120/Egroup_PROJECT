@@ -81,7 +81,7 @@ public class MySQLProductEditDao implements ProductEditDao {
 			try {
 				cn = ConnectionManager.getInstance().getConnection();
 
-				String sql = "call add_product(?,?,?,?,?,?,?)"; // 同一商品名、各IDの有無をすべてチェックし正しいデータの場合product_table、item_pict_tableにinsertするプロシージャ実行
+				String sql = "call add_product(?,?,?,?,?,?)"; // 同一商品名、各IDの有無をすべてチェックし正しいデータの場合product_table、item_pict_tableにinsertするプロシージャ実行
 
 				cst = cn.prepareCall(sql);
 
@@ -89,9 +89,8 @@ public class MySQLProductEditDao implements ProductEditDao {
 				cst.setInt(2, Integer.parseInt(all.getPrice()));
 				cst.setString(3, all.getCategoryId());
 				cst.setString(4, all.getColorId());
-				cst.setString(5, all.getShapeId());
-				cst.setString(6, all.getArtistId());
-				cst.setString(7, all.getPictPath());
+				cst.setString(5, all.getArtistId());
+				cst.setString(6, all.getPictPath());
 
 				int result = cst.executeUpdate();
 
@@ -129,7 +128,7 @@ public class MySQLProductEditDao implements ProductEditDao {
 		try {
 			cn = ConnectionManager.getInstance().getConnection();
 
-			String sql = "update product_table join item_pict_table using(itemId) set name=?,price=?,categoryId=?,colorId=?,shapeId=?,artistId=?,pictPath=? where itemId = ?"; //二つのテーブルの結合をしてから一括更新
+			String sql = "update product_table join item_pict_table using(itemId) set name=?,price=?,categoryId=?,colorId=?,artistId=?,pictPath=? where itemId = ?"; //二つのテーブルの結合をしてから一括更新
 
 			st = cn.prepareStatement(sql);
 
@@ -137,10 +136,9 @@ public class MySQLProductEditDao implements ProductEditDao {
 			st.setString(2, all.getPrice());
 			st.setString(3, all.getCategoryId());
 			st.setString(4, all.getColorId());
-			st.setString(5, all.getShapeId());
-			st.setString(6, all.getArtistId());
-			st.setString(7, all.getPictPath());
-			st.setString(8, all.getItemId());
+			st.setString(5, all.getArtistId());
+			st.setString(6, all.getPictPath());
+			st.setString(7, all.getItemId());
 
 			int result = st.executeUpdate();
 
