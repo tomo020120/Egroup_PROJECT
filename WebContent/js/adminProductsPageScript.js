@@ -34,6 +34,8 @@ $(function(){
 
 			$(".productEditBtn").show();
 			$("#selectProductBtn").show();
+
+			$("th:eq(0)").text("編集");
 		}
 	});
 
@@ -94,6 +96,9 @@ $(function(){
 	var checkBoxs = [];
 	var checkBoxSplit = null;
 
+	var hostname = $(location).attr('host');
+	var protocol = $(location).attr('protocol');
+	console.log("プロトコルは→"+protocol+"ホストネームは→"+hostname);
 	var pageNo = 1;
 
 	console.log(sessionStorage.getItem('sessionPageNo'));
@@ -175,7 +180,7 @@ $(function(){
 
 
 		//checkBoxsの中を繰り返し処理で書き出しでカンマうち処理
-		window.location.href="http://localhost:8080/Egroup_PROJECT/searchByAdmin?productName="+searchs[0]+"&categoryId="+searchs[1]+"&sort="+searchs[2]+"&color="+checkBoxSplit+"&pageNo="+sessionStorage.getItem('sessionPageNo');
+		window.location.href=protocol+"//"+hostname+"/Egroup_PROJECT/searchByAdmin?productName="+searchs[0]+"&categoryId="+searchs[1]+"&sort="+searchs[2]+"&color="+checkBoxSplit+"&pageNo="+sessionStorage.getItem('sessionPageNo');
 	});
 
 	$("#previousPageBtn").on('click',function(){
@@ -217,6 +222,6 @@ $(function(){
 
 
 		//checkBoxsの中を繰り返し処理で書き出しでカンマうち処理
-		window.location.href="http://localhost:8080/Egroup_PROJECT/searchByAdmin?productName="+searchs[0]+"&categoryId="+searchs[1]+"&sort="+searchs[2]+"&color="+checkBoxSplit+"&pageNo="+sessionStorage.getItem('sessionPageNo');
+		window.location.href=protocol+"//"+hostname+"/Egroup_PROJECT/searchByAdmin?productName="+searchs[0]+"&categoryId="+searchs[1]+"&sort="+searchs[2]+"&color="+checkBoxSplit+"&pageNo="+sessionStorage.getItem('sessionPageNo');
 	});
 });
