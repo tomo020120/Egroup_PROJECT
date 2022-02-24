@@ -3,7 +3,6 @@ package cmd.mail;
 import java.util.Properties;
 
 import javax.mail.Message;
-import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
@@ -26,11 +25,7 @@ public abstract class SendMail{
 		property.put("mail.smtp.host", "smtp.gmail.com");
 		property.put("mail.smtp.port", "587");
 		property.put("mail.smtp.debug", "true");
-		session = Session.getDefaultInstance(property, new javax.mail.Authenticator() { // sessionに設定情報とSMTP認証を行う
-			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication(ORNER_MAILADDRESS, ORNER_MAILADDRESS_PASS);
-			}
-		});
+		session = null;
 		mimeMessage = new MimeMessage(session);
 	}
 
