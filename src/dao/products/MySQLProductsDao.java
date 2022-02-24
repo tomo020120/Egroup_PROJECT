@@ -23,11 +23,10 @@ public class MySQLProductsDao implements ProductsDao{
 			cn = ConnectionManager.getInstance().getConnection();
 
 			//itemIdが一致する商品詳の詳細を取ってくる
-			String sql = "SELECT  a.itemId,name,price,CAST(`releaseDate` AS DATE),pictPath,categoryName,shapeName,colorName,artistName,a.categoryId,a.colorId,a.shapeId,a.artistId\n" +
+			String sql = "SELECT  a.itemId,name,price,CAST(`releaseDate` AS DATE),pictPath,categoryName,colorName,artistName,a.categoryId,a.colorId,a.artistId\n" +
 					"FROM Ibanezdb.product_table AS a LEFT OUTER JOIN Ibanezdb.item_pict_table AS b ON a.itemId = b.itemId\n" +
 					"LEFT OUTER JOIN Ibanezdb.category_table AS c ON a.categoryId=c.categoryId\n" +
 					"LEFT OUTER JOIN Ibanezdb.color_table AS d ON a.colorId=d.colorId\n" +
-					"LEFT OUTER JOIN Ibanezdb.shape_table AS e ON a.shapeId=e.shapeId\n" +
 					"LEFT OUTER JOIN Ibanezdb.artist_table AS f ON a.artistId=f.artistId WHERE a.itemId = ?";
 
 
@@ -45,10 +44,9 @@ public class MySQLProductsDao implements ProductsDao{
 				all.setPictPath(rs.getString(5));
 
 				all.setCategoryName(rs.getString(6));
-				all.setShapeName(rs.getString(7));
-				all.setColorName(rs.getString(8));
-				all.setArtistName(rs.getString(9));
-				all.setCategoryId(rs.getString(10));
+				all.setColorName(rs.getString(7));
+				all.setArtistName(rs.getString(8));
+				all.setCategoryId(rs.getString(9));
 
 			}
 		}catch(SQLException e) {
@@ -79,7 +77,7 @@ public class MySQLProductsDao implements ProductsDao{
 		try {
 			cn = ConnectionManager.getInstance().getConnection();
 
-			String sql=  "SELECT a.itemId,name,price,releaseDate,orderCount,categoryId,colorId,shapeId,artistId,pictId,pictPath FROM Ibanezdb.item_pict_table AS a JOIN Ibanezdb.product_table AS b ON a.itemId = b.itemId where categoryId=? and name LIKE '%%' order by a.itemId ASC LIMIT 30 OFFSET 0";
+			String sql=  "SELECT a.itemId,name,price,releaseDate,orderCount,categoryId,colorId,artistId,pictId,pictPath FROM Ibanezdb.item_pict_table AS a JOIN Ibanezdb.product_table AS b ON a.itemId = b.itemId where categoryId=? and name LIKE '%%' order by a.itemId ASC LIMIT 30 OFFSET 0";
 
 			st=cn.prepareStatement(sql);
 
@@ -97,11 +95,10 @@ public class MySQLProductsDao implements ProductsDao{
 				p.setOrderCount(rs.getString(5));
 				p.setCategoryId(rs.getString(6));
 				p.setColorId(rs.getString(7));
-				p.setShapeId(rs.getString(8));
-				p.setArtistId(rs.getString(9));
+				p.setArtistId(rs.getString(8));
 
-				p.setPictId(rs.getString(10));
-				p.setPictPath(rs.getString(11));
+				p.setPictId(rs.getString(9));
+				p.setPictPath(rs.getString(10));
 
 				products.add(p);
 			}
@@ -134,7 +131,7 @@ public class MySQLProductsDao implements ProductsDao{
 			cn = ConnectionManager.getInstance().getConnection();
 			int length = colorsNo.length-1;
 			int questionCount=0;
-			String sql = "SELECT a.itemId,name,price,releaseDate,orderCount,categoryId,colorId,shapeId,artistId,pictId,pictPath FROM Ibanezdb.item_pict_table AS a JOIN Ibanezdb.product_table AS b ON a.itemId = b.itemId where name LIKE ?";
+			String sql = "SELECT a.itemId,name,price,releaseDate,orderCount,categoryId,colorId,artistId,pictId,pictPath FROM Ibanezdb.item_pict_table AS a JOIN Ibanezdb.product_table AS b ON a.itemId = b.itemId where name LIKE ?";
 
 			//まずsqlを完成させる
 
@@ -195,11 +192,10 @@ public class MySQLProductsDao implements ProductsDao{
 				p.setOrderCount(rs.getString(5));
 				p.setCategoryId(rs.getString(6));
 				p.setColorId(rs.getString(7));
-				p.setShapeId(rs.getString(8));
-				p.setArtistId(rs.getString(9));
+				p.setArtistId(rs.getString(8));
 
-				p.setPictId(rs.getString(10));
-				p.setPictPath(rs.getString(11));
+				p.setPictId(rs.getString(9));
+				p.setPictPath(rs.getString(10));
 
 				products.add(p);
 			}
