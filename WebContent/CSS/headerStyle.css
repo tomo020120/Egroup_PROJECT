@@ -169,5 +169,8 @@ a{
   -moz-border-radius: 4px;
   border-radius: 4px;
  }
+ hr{
+  margin-bottom: -1px;
+ }
 
 

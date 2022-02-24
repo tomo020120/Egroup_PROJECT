@@ -22,7 +22,7 @@
         <ul>
           <li><a href="news">ニュース</a></li>
           <li><div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
-<a style="cursor:pointer;">商品一覧</a><hr>
+<a style="cursor:pointer;">商品一覧</a><hr size="2">
 </div>
           <div id="open" style="display:none;clear:both;">
 
