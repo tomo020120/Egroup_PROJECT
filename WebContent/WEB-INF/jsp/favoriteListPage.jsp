@@ -19,7 +19,7 @@ pageEncoding="UTF-8"%>
 			<img src="${con.pictPath}"width="400px"class="pic">
 				<p class="p2">${con.name}</p>
 				<p class="p2">${con.price}</p>
-				<a href="deleteFavoriteForFavPage?itemId=${con.itemId}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="favoriteBtn" onclick="favoriteClick(this);" value="${result.get(0).itemId}" style="border: 4px solid #0F0; background-color: #ffc0cb">❤︎</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+				<a href="deleteFavoriteForFavPage?itemId=${con.itemId}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="favoriteBtn" onclick="favoriteClick(this);" value="${result.get(0).itemId}" style="border: 2px solid #000; background-color: #ffc0cb">❤︎</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
 
 
 </div>

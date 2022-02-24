@@ -16,7 +16,7 @@ function delay(){
 <div class="error">
 	<h1>メール送信ができませんでした。</h1>
 	<p>10秒後に自動的にトップページへ戻ります</p>
-	<img src="images/error.png"width="500px">
+	<img src="images/error.png"width="400px">
 </div>
 </body>
 </html>

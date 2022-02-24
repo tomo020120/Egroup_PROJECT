@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="CSS/error.css">
 <title>最後</title>
 <script>
 function delay(){
@@ -14,7 +15,9 @@ function delay(){
 </script>
 </head>
 <body onload="delay();">
+<div class="error">
 	<h1>購入完了しました。</h1>
 	<p>5秒後に自動的にトップページへ戻ります</p>
+</div>
 </body>
 </html>

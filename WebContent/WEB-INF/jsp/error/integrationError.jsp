@@ -16,7 +16,7 @@ function delay(){
 <div class="error">
 	<h1>予期せぬ事態が起き実行できませんでした。</h1>
 	<p>10秒後にトップページに戻ります。</p>
-	<img src="images/error.png"width="500px">
+	<img src="images/error.png"width="400px">
 </div>
 </body>
 </html>

@@ -11,7 +11,7 @@
 </head>
 
 <body>
-	最新の閲覧履歴  <div class="pos2"><a href="productHistory">閲覧履歴編集へ</a></div>
+	　最新の閲覧履歴  <div class="pos2"><a href="productHistory">閲覧履歴編集へ</a></div>
 
 
 
