@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>ゲスト処理エラー</title>
+<link rel="stylesheet" href="CSS/error.css">
 </head>
 <body onload="delay()">
 <div class="error">

@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>エラーページ</title>
+<link rel="stylesheet" href="CSS/error.css">
 <script>
 function delay(){
 	setTimeout("location.href='<%=request.getContextPath()%>'",10000);
@@ -15,6 +16,7 @@ function delay(){
 <div class="error">
 	<h1>予期せぬ事態が起き実行できませんでした。</h1>
 	<p>10秒後にトップページに戻ります。</p>
+	<img src="images/error.png"width="500px">
 </div>
 </body>
 </html>
