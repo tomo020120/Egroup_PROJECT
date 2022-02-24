@@ -50,7 +50,15 @@ $(function(){
 		var result4 = check_securityCode(code,securityCodeError);
 
 		if(result1 && result2 && result3 && result4){
-			$("#addCreditCardForm").submit();
+			var cardCmp = $("#cardCompany").html();
+
+			var form = $("#addCreditCardForm");
+
+			form.attr('action','addCreditCardInfo?cardCompany=' + cardCmp);
+
+			console.log(cardCmp);
+
+			form.submit();
 		}
 	});
 

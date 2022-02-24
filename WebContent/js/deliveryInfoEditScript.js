@@ -86,13 +86,15 @@ $(function(){
 				var input_address = $("#address").val();
 				var input_houseNumber = $("#houseNumber").val();
 
-				result = check_name(input_name,deliveryNameError);
-				result = check_tel(tel,telError);
-				result = check_postalCode(input_pos,postalCodeError);
-				result = check_address(input_address,addressError);
-				result = check_houseNumber(input_houseNumber,houseNumberError);
+				var result1 = check_name(input_name,deliveryNameError);
+				var result2 = check_tel(tel,telError);
+				var result3 = check_postalCode(input_pos,postalCodeError);
+				var result4 = check_address(input_address,addressError);
+				var result5 = check_houseNumber(input_houseNumber,houseNumberError);
 
-				if(result){
+				console.log("編集ボタン押された");
+
+				if(result1 && result2 && result3 && result4 && result5){
 					var url = "updateDeliveryInfo?deliveryInfoId=" + deliveryInfoId;
 					console.log(url);
 					updateForm.attr('action',url);

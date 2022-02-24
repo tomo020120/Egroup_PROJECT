@@ -80,6 +80,7 @@ $(function(){
 	});
 
 	$("#deleteBtn").on('click',function(){ // 消去ボタンクリック時の処理
+		console.log(itemIdList);
 		window.location.href="deleteProducts?itemIdList=" + itemIdList;
 	})
 

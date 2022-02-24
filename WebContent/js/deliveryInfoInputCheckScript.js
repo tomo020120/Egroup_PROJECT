@@ -115,7 +115,7 @@ $(function(){
 		check_houseNumber(input_houseNumber,houseNumberError);
 	});
 
-	$("#executeUpdateButton").on('click',function(){
+/*	$("#executeUpdateButton").on('click',function(){
 		var result;
 		var input_name = $("#deliveryName").val();
 		var first = $("#firstTelNo").val();
@@ -133,9 +133,9 @@ $(function(){
 		var result5 = check_houseNumber(input_houseNumber,houseNumberError);
 
 		if(result1 && result2 && result3 && result4 && result5){
-			updateForm.submit();
+
 		}
-	});
+	});*/
 
 });
 

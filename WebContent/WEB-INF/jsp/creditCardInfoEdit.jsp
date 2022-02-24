@@ -32,7 +32,7 @@
 	<div id="addCreditCardFormArea" class="animFormArea">
 		<h2>クレジットカードを追加</h2>
 		<div id="flexContent">
-			<form id="addCreditCardForm" method="post" action="addCreditCardInfo" autocomplete="off">
+			<form id="addCreditCardForm" method="post" action="" autocomplete="off">
 				カード番号<br><input id="creditCardNo" type="text" name="creditCardNo" maxLength="16"><br>
 				<div class="errorText cardNoError"></div>
 

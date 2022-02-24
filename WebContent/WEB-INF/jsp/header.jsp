@@ -64,7 +64,6 @@
     </c:otherwise>
 </c:choose>
 </div>
-
 </header>
 <div class=kara>　　
 　　

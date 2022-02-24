@@ -22,9 +22,11 @@ public class DeleteProductsCommand extends AbstractCommand {
 
 		ConnectionManager.getInstance().beginTransaction();
 
-		String commandPath = reqContext.getOneBeforeLocation() + "&message="; // 消す前にいた場所
+		String commandPath = "adminProductsPage?message="; // 消す前にいた場所
 
 		if(edit.deleteProduct(itemIdArray)) {
+			System.out.println("消去完了");
+
 			commandPath += "消去完了";
 
 			resContext.setTargetCommandPath(commandPath);

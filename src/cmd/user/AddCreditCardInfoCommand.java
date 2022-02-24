@@ -16,6 +16,8 @@ public class AddCreditCardInfoCommand extends AbstractCommand {
 	public ResponseContext execute(ResponseContext resContext) {
 		RequestContext reqContext = getRequestContext();
 
+		System.out.println("カード追加コマンド実行開始");
+
 		String cardOwnerName = reqContext.getParameter("cardOwnerName")[0];
 		String cardNo = reqContext.getParameter("creditCardNo")[0];
 		String cardCompany = reqContext.getParameter("cardCompany")[0];
