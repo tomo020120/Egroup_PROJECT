@@ -11,11 +11,13 @@
 <body>
 
 	<h1>ユーザー名変更</h1>
+	<div class="Box">
 	<form id="updateUserNameForm" method="post" action="updateUserName" class="formBox">
-		新しい名前<br><input id="userName" type="text" name="newUserName" maxLength="50">
+		新しい名前<br><input id="userName" class="textBox" type="text" name="newUserName" maxLength="70">
 		<div class="errorText" id="newUserNameError"></div>
-		<input id="submitBtn" type="button" value="変更を保存">
+		<input id="submitBtn" class="updateBtn" type="button" value="変更を保存">
 	</form>
+	</div>
 	<div class="button"><a href="accountInfoEdit">戻る</a></div>
 <script type="text/javascript">
 	var emptyPattern = /^[ 　\r\n\t]*$/; // スペースなども空白と判定するための正規表現

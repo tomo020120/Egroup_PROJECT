@@ -10,7 +10,7 @@
 </head>
 <body>
 
-	<h1>パスワード編集画面</h1>
+	<h1>パスワード編集画面</h1><div class="Box">
 	<form id="updatePasswordForm" method="post" action="updatePassword" class="formBox">
 		現在のパスワード<br><input id="currentPass" type="password" name="currentPassword" maxLength="20" class="field js-password2"><br>
 		<div id="currentPassError" class="errorText"></div>
@@ -27,11 +27,11 @@
     				パスワードを表示する
  		</div>
 
-		<input id="updateButton" type="button" value="変更を保存">
+		<input id="updateButton" class="updateBtn" type="button" value="変更を保存">
 
 		<input id="correctPassword" type="hidden" value="${sessionInfo.userPassword}">
 	</form>
-
+	</div>
 	<div class="button"><a href="accountInfoEdit">戻る</a></div>
 
 	<script type="text/javascript">
