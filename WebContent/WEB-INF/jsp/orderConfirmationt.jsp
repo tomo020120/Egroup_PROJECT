@@ -40,9 +40,10 @@ window.onload = function(){
 	<c:forEach var="con" items="${result}" varStatus="i">
 		<c:if test="${i.first}" >
 				${con.deliveryName}<br>
+				電話番号:${con.tel}
 				${con.postalCode}<br>
 				${con.address}<br>
-				電話番号:${con.tel}
+
 		</c:if>
 	</c:forEach>
 </div>
@@ -50,9 +51,9 @@ window.onload = function(){
 <h1>支払情報</h1>
 	<c:forEach var="con" items="${result}" varStatus="i">
 		<c:if test="${i.first}" >
-				${con.cardOwnerName}<br>
 				${con.cardNo}(カード下四桁)<br>
 				${con.cardCompany}<br>
+				${con.cardOwnerName}<br>
 				${con.expirationDate}<br>
 
 		</c:if>

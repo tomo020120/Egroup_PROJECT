@@ -7,7 +7,7 @@ $(function(){
 	$("#itemName").text(purchaseInfoArray[1]);
 	$("#itemCount").text("個数"+purchaseInfoArray[0]);
 	$("#itemPrice").text(purchaseInfoArray[2]);
-	$("#itemPic").append("<img src=" +purchaseInfoArray[3]+">");
+	$("#itemPic").append("<img src=" +purchaseInfoArray[3]+" width=500px>");
 	$.each(purchaseInfoArray,function(index,element){
 		var count = (index + 6);
 
@@ -16,7 +16,7 @@ $(function(){
 		}
 		else if((count >= 10) && (count <= 13)){
 			if(count == 10){ // カード番号
-				$("#guestCreditCardInfoList").append("下四桁:" + purchaseInfoArray[count]+"<br>");
+				$("#guestCreditCardInfoList").append( purchaseInfoArray[count]+"(カード下四桁)"+"<br>");
 			}
 			else{
 				$("#guestCreditCardInfoList").append( purchaseInfoArray[count]+"<br>");
@@ -30,7 +30,7 @@ $(function(){
 
 	var billingAmount = (subTotal + 500); // 一度末尾の「円」を取り除いて500円を足してから「円」をもう一度つける
 
-	$("#subTotal").html(subTotal);
+	$("#subTotal").html("\\" + subTotal);
 	$("#BillingAmount").html(billingAmount);
 
 

@@ -26,7 +26,7 @@ public class MySQLProductEditDao implements ProductEditDao {
 		try {
 			cn = ConnectionManager.getInstance().getConnection();
 
-			String sql = "select name,price,categoryId,colorId,shapeId,artistId,pictPath from product_table join item_pict_table using(itemId) where itemId = ?";
+			String sql = "select name,price,categoryId,colorId,artistId,pictPath from product_table join item_pict_table using(itemId) where itemId = ?";
 
 			st = cn.prepareStatement(sql);
 
@@ -39,15 +39,14 @@ public class MySQLProductEditDao implements ProductEditDao {
 				String price = rs.getString(2);
 				String categoryId = rs.getString(3);
 				String colorId = rs.getString(4);
-				String shapeId = rs.getString(5);
-				String artistId = rs.getString(6);
-				String pictPath = rs.getString(7);
+
+				String artistId = rs.getString(5);
+				String pictPath = rs.getString(6);
 
 				all.setName(name);
 				all.setPrice(price);
 				all.setCategoryId(categoryId);
 				all.setColorId(colorId);
-				all.setShapeId(shapeId);
 				all.setArtistId(artistId);
 				all.setPictPath(pictPath);
 				all.setItemId(itemId);

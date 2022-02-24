@@ -106,18 +106,20 @@ color: #000000;
   color: #000000;
   background: #808080;
 }
-#executeAddButton{
-
-color: #000000;
-  background: linear-gradient(#f7dfa5,#f0c14b);
-  border:1px solid;
-	border-radius: 2px; /* 半径が8pxの角丸 */
-	border-color: #a88734;
-	padding:6px 150px;
-	margin:-10px 0px 15px 20px
+#executeAddBut{
+width:390px;
+  font-size:20px;
+  color:#fff;
+  text-align:center;
+  display:block;
+  padding:10px 14px 10px;
+  background:#000000;
+  border-radius: 10px;
+   border: 1px solid #0000a0;
+   margin-top:10px;
 }
 
-#executeAddButton:hover {
+#executeAddBut:hover {
   color: #000000;
   background: #f1c85a;
 }

@@ -35,35 +35,48 @@ window.onload = function(){
 </head>
 <body>
 
-	<h1 class="title">最終確認</h1>
-
+	<h1 class="title">購入内容を確認</h1>
+	<div class="abc">
+<div class="box2">
 <h1>お届け先住所</h1>
 	<div id="guestDeliveryInfoList"></div>
+</div>
 
-<div class="cardInfo">
+<div class="box2">
+
 <h1>支払情報</h1>
 	<div id="guestCreditCardInfoList"></div>
+
 </div>
+<div class="box2">
+
+<button id="guestPurchaseDetermineBtn" class="btn btn--orang">購入を確定</button>
+<p>注文内容</p>
+		商品の小計: <span id="subTotal" class="p4"></span><br>
+		配送料・手数料:<p class="p4">\500</p>
+
+		<p class="p5">ご請求額:</p><p class="p6" id="BillingAmount"></p>
+
+
+
 <h1>お届け日</h1>
 
 <p class="p7"><span id="deliveryDate"></span></p>
-
-<h1 class="title">購入商品</h1>
-<div id="itemPic"></div>
-<div id="itemName"></div>
-<div id="itemCount"class="pic2"></div>
-<div id="itemPrice"></div>
-
-
-
-
-<div class="purchase">
-<button id="guestPurchaseDetermineBtn" class="btn btn--orange">購入を確定する</button>
-<p>注文内容</p>
-		商品の小計:\ <span id="subTotal"></span><br>
-		配送料・手数料:\500<br>
-		ご請求額:\ <span id="BillingAmount"></span>円<br>
-
 </div>
+</div>
+<div>
+<h1 class="title">購入商品</h1>
+<div class="box">
+
+<div id="itemName" class="p1"></div>
+<div id="itemCount" class="p2"></div>
+<div id="itemPrice" class="p2"></div>
+<div id="itemPic" class="pic2" ></div>
+</div>
+</div>
+
+
+
+
 </body>
 </html>

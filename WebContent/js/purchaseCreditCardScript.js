@@ -180,10 +180,12 @@ $(function(){
 		$("body").css('background-color','#ffffff');
 
 		$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",false); /*ボタンの有効化*/
-		$("body").find("#executeAddButton,.decisionButton").css("background","linear-gradient(#f7dfa5,#f0c14b)");
+		$("body").find(".decisionButton").css("background","linear-gradient(#f7dfa5,#f0c14b)");
 		$("body").find("#canselButton,.openUpdateFormButton , .openDeleteComfirmButton").css("background-color", "#e7e9ec");
 		$("body").find("#canselButton,.openUpdateFormButton , .openDeleteComfirmButton").css("border-color", "#adb1b8");
 		$("body").find("#executeAddButton,.decisionButton").css("border-color","#a88734");
+		$("body").find("#executeAddButton").css("background-color", "#000");
+		$("body").find("#executeAddButton").css("border-color", "#000");
 		$("body").find("#canselButton, #executeAddButton,.decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").css("pointer-events","auto");
 		$(".errorText").html("");
 	});
@@ -230,10 +232,12 @@ $(function(){
 		$("body").css('background-color','#ffffff');
 
 		$("body").find(".decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").attr("disabled",false); /*ボタンの有効化*/
-		$("body").find("#executeAddButton,.decisionButton").css("background","linear-gradient(#f7dfa5,#f0c14b)");
+		$("body").find(".decisionButton").css("background","linear-gradient(#f7dfa5,#f0c14b)");
 		$("body").find("#canselButton,.openUpdateFormButton , .openDeleteComfirmButton").css("background-color", "#e7e9ec");
 		$("body").find("#canselButton,.openUpdateFormButton , .openDeleteComfirmButton").css("border-color", "#adb1b8");
-		$("body").find("#executeAddButton,.decisionButton").css("border-color","#a88734");
+		$("body").find(".decisionButton").css("border-color","#a88734");
+		$("body").find("#executeAddButton").css("background-color", "#000");
+		$("body").find("#executeAddButton").css("border-color", "#000");
 		$("body").find("#canselButton, #executeAddButton,.decisionButton , .openUpdateFormButton , .openDeleteComfirmButton").css("pointer-events","auto");
 		$(".errorText").html("");
 	});

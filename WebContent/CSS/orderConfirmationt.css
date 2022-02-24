@@ -61,6 +61,7 @@ a.btn--orange:hover {
 	font-weight: bold;
 	border-top: 1px solid #c0c0c0;    /* 上側の1本線 */
    border-bottom: 1px solid #c0c0c0; /* 下側の1本線 */
+   width: 280px;
 padding:3px 0px;
 }
 .p1{
@@ -107,4 +108,25 @@ padding:3px 0px;
 	font-size:1vw;
 }
 
-
+#itemPic{
+	display: inline-block;
+	margin:40px 0px 0px 10px;
+	font-size:20px;
+	position: relative;
+	top: -60%; left: 0%;
+}
+.btn--orang,
+a.btn--orang {
+  color: #000000;
+  background: linear-gradient(#f7dfa5,#f0c14b);
+  border:1px solid;
+	border-radius: 2px; /* 半径が8pxの角丸 */
+	border-color: #a88734;
+	padding:3px 28%;
+	margin:0 0 0px -4px;
+}
+.btn--orang:hover,
+a.btn--orang:hover {
+  color: #000000;
+  background: #f1c85a;
+}

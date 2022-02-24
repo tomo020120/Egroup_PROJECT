@@ -8,10 +8,10 @@
 <meta charset="UTF-8">
 <title>商品詳細</title>
 <link rel="stylesheet" href="CSS/artistDetailStyle.css">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-	
+
 
 
 <div class="allPosition">
@@ -32,11 +32,26 @@
 	</div>
 		<div class="productsPosition">
 		<h2>SIGNATURE MODEL</h2>
-		<a href="productsDetails?itemId=${detail.itemId}"><img src="${detail.pictPath}" width="500" height="200"></a><br>
+		<a id="itemPict" href="productsDetails?itemId=${detail.itemId}"><img src="${detail.pictPath}" width="500" height="200"></a><br>
+		<div id="dummy"></div>
 		<p>　${detail.name}</p>
 		</div>
+	<input id="itemId" type="hidden" value="${detail.pictPath}">
 	</c:forEach>
 
 
+	<script>
+		$(function(){
+			console.log($("#itemId").val());
+
+			if($("#itemId").val() === ''){
+				$("#itemPict").hide();
+				$("#dummy").html("<img src='images/null.png' width='500px' height='200px';>");
+			}else{
+				$("#itemPict").show();
+				$("#dummy").html("");
+			}
+		});
+	</script>
 </body>
 
