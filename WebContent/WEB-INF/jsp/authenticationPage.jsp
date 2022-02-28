@@ -13,6 +13,6 @@
 	<input type="submit" value="OK">
 </form>
 <button onclick="history.back();">戻る</button>
-<p>${message}</p>
+
 </body>
 </html>

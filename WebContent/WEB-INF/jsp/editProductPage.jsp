@@ -26,6 +26,6 @@
 	<button type="submit" id="submitBtn">編集完了</button>
 </form>
 </div>
-${message}
+
 </body>
 </html>

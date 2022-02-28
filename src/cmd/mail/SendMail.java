@@ -14,8 +14,8 @@ import ex.MailSendException;
 public abstract class SendMail{
 	private static Properties property = null;
 	private static final String ORNER_MAILADDRESS = "ibanezttc@gmail.com"; // 運営メールアドレス
-	//private static final String ORNER_MAILADDRESS_PASS = "jtendrxjqcxenjgt"; // AWSバージョン
-	private static final String ORNER_MAILADDRESS_PASS = "ibanezdb"; // ローカルバージョン
+	private static final String ORNER_MAILADDRESS_PASS = "jtendrxjqcxenjgt"; // AWSバージョン
+	//private static final String ORNER_MAILADDRESS_PASS = "ibanez0120"; // ローカルバージョン
 	private static Session session = null;
 	private static MimeMessage mimeMessage = null;
 

@@ -12,6 +12,7 @@ h3{
 	text-align:center;
 	margin:90px 15px 15px 0px;
 }
+
 /* アニメーションページエリア */
 .animFormArea{
 	display:none; /* デフォルトは非表示に */
@@ -20,7 +21,7 @@ h3{
 	top:14%; /* top,leftで位置指定 */
 	left:30%;
 	right:10%;
-	background-color:lightgreen;
+	background-color:#b2bec8e0;
 	border:1px solid #000000; /*枠線*/
 	margin-right:auto; /* 余白指定 */
 	z-index:2; /* 多重度設定 */

@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	<p>${message}</p>
+
 	<div class="box">
 		<div class="content">ユーザー名:
 		${sessionInfo.userName}

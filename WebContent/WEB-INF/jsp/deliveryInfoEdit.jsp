@@ -13,7 +13,6 @@
 <script src="js/deliveryInfoInputCheckScript.js"></script>
 </head>
 <body>
-
 	<h1>配送先情報編集</h1>
 
 	<div id="deliveryInfoList" class="deliveryInfoList">
@@ -89,6 +88,6 @@
 		</div>
 	</div>
 
-	<p>${message}</p>
+
 </body>
 </html>

@@ -16,7 +16,7 @@
 
 <h1>クレジットカード</h1>
 <hr>
-<p class="message">${message}</p>
+
 
 	<div class="creditCardInfo">
 		<c:forEach var="creditCardInfo" items="${result}">

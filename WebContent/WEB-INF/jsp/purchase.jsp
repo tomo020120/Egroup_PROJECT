@@ -93,6 +93,6 @@
 		</form>
 	</div>
 </div>
-	<p class="error">${message}</p>
+
 </body>
 </html>

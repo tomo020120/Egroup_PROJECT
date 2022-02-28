@@ -14,7 +14,7 @@
 <body>
 
 <h1>クレジットカード情報編集</h1>
-<p class="error">${message}</p>
+
 <div class="creditCardInfo">
 	<button id="addCreditCardButton">新しいクレジットカードを追加</button>
 

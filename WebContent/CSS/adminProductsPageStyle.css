@@ -22,7 +22,9 @@
     flex-wrap: wrap;
 	overflow:hidden; /* 枠を超えないように */
 }
-
+#itemList>p{
+	color:black;
+}
 #itemList>div {
         flex: 1 1 80px;
  }

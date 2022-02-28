@@ -17,7 +17,7 @@
 </form>
 
 メールが届かない場合:<a href="sendAdminAuthenticationMailAgain">再度メール送信</a>
-<p>${message}</p>
+
 </div>
 </body>
 </html>

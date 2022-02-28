@@ -14,7 +14,7 @@
 </head>
 <body>
 <h1>商品編集画面</h1>
-<p>${message}</p>
+
 <div id="adminActionTool">
 	<button id="addProductBtn" class="actionBtn">商品を追加する</button>
 	<button id="selectProductBtn" class="actionBtn">商品を選択する</button>

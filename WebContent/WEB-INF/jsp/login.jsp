@@ -50,6 +50,8 @@
 	var emptyPattern = /^[ 　\r\n\t]*$/; // スペースなども空白と判定するための正規表現
 
 	$(function(){
+		$(".animTarget").hide();
+
 		$("#mailCheck").bind("blur", function() {
 			var input_mail = $(this).val();
 			check_mail(input_mail);

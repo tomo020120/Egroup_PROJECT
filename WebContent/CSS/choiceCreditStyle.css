@@ -12,7 +12,7 @@ body{
 	display:none; /* デフォルトは非表示に */
 	top:20%; /* top,leftで位置指定 */
 	left:30%;
-	background-color:lightgreen;
+	background-color:#b2bec8e0;
 	border:1px solid #000000; /*枠線*/
 	margin-right:auto; /* 余白指定 */
 	z-index:2; /* 多重度設定 */

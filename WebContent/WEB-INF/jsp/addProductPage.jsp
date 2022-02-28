@@ -25,7 +25,7 @@
 	<button id="submitBtn" type="button">追加</button>
 </form>
 </div>
-<p>${message}</p>
+
 <div class="linkpos"><a href="adminProductsPage">商品一覧へ戻る</a></div>
 </body>
 </html>

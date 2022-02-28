@@ -11,9 +11,48 @@ header {
     display: flex; /* 中の要素を横並びにする */
     align-items: center; /* 中の要素を上下中央に並べる */
     border-bottom: thin solid #a9a9a9; /*下線*/
-    z-index: 9999;//headerを最上位
+	z-index: 70;
 
 }
+.fade-in{
+  font-size:40px;
+  opacity:0;
+  animation-name:sample01;
+  animation-duration:5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  z-index: 99;
+
+
+   	border:1px solid;
+	border-radius: 8px; /* 半径が8pxの角丸 */
+	border-color: #c0c0c0;
+	margin       : auto;
+	width        : 900px;
+	height:90px;
+	background   :#c0c0c0;
+}
+.message{
+	text-align:center;
+	 position: relative;
+	 top: -23px;
+
+
+}
+@keyframes sample01 {
+0% {
+ opacity: 1;
+ transform: translateY(-300px);
+}
+ 50%{
+  opacity: 1;
+     transform: translateY(0px);
+  }
+ 100% {
+ opacity:1;
+ transform: translateY(-300px);
+ }
+ }
 
 .logo{
 

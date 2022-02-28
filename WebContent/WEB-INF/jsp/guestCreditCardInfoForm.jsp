@@ -68,7 +68,7 @@
 				<div class="errorText securityCodeError"></div>
 	</form>
 		<button type="button" id="guestPurchaseConfirmPageJumpBtn">次へ</button>
-	<p>${message}</p>
+
 </div>
 </div>
 </body>

@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="CSS/headerStyle.css">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="icon" href="images/favicon.ico" type="image/vnd.microsoft.icon">
 <link rel="icon" href="images/favicon.ico">
 </head>
@@ -14,6 +14,10 @@
 
 
 <header>
+
+<div class="animTarget">
+<p class="message">${message}</p>
+</div>
   <div class="h-menu">
       <input id="h-menu_checkbox" class="h-menuCheckbox" type="checkbox">
       <label class="h-menu_icon" for="h-menu_checkbox"><span class="hamburger-icon"></span></label>
@@ -69,5 +73,20 @@
 　　
 　　
 　　</div>
+
+<script>
+	$(function(){
+		var message = $(".message").html();
+
+		if(message == ''){
+			$(".animTarget").hide();
+			$(".animTarget").removeClass("fade-in");
+		}else{
+			$(".animTarget").show();
+			$(".animTarget").addClass("fade-in");
+		}
+	})
+</script>
+
 </body>
 </html>
