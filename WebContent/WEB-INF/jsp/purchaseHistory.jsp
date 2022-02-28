@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>注文履歴</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet" href="CSS/purchaseHistory.css">
 
 
@@ -29,10 +30,10 @@
 
 </c:choose>
 <div class="box">
-<img src="${result.pictPath}" width="500px"class="pic2">
+<a href="productsDetails?itemId=${result.itemId}"><img src="${result.pictPath}" width="500px"class="pic2"></a>
 		<p class="p1">${result.name}</p>
 		<p class="p1">${result.orderCount}個</p>
-		<p class="p1">\ ${result.subTotal}</p>
+		<p class="p1 price">\ ${result.subTotal}</p>
 
 		<!-- <p class="p1">${result.price}円<br></p> -->
 </div>
@@ -40,6 +41,20 @@
 		<c:set var="num" value="${result.date}" />
 	</c:forEach>
 
+<script>
+	$(function(){
+		var price = $(".price");
+		var priceText = price.html();
+		priceText = (priceText.replace('\\','').trim());
+
+		var convertPrice = getConvertPrice(priceText);
+		price.html('\\ ' + convertPrice);
+	});
+
+	function getConvertPrice(num){
+		return Number(num).toLocaleString();
+	}
+</script>
 
 </body>
 </html>

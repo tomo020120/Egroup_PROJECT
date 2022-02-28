@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>カート追加完了</title>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet" href="CSS/addCartComplete.css">
 </head>
 <body>
@@ -29,7 +29,7 @@
 <div class="item">
 <div class=box2>
 <c:forEach var="con" items="${result}">
-<p>カート内の小計:${con.totalAmount}</p>
+<p class="price">カート内の小計:\ ${con.totalAmount}</p>
 <a href="cart" class="cartbtn">カートに進む</a><br>
 <a href="purchase"class="regibtn">レジに進む</a><br>
 <a href="products?categoryId=${con.categoryId}" class="shopbtn">買い物を続ける</a><br>
@@ -37,5 +37,21 @@
 </div>
 </div>
 </div>
+
+<script>
+	$(function(){
+		var price = $(".price");
+		var priceText = price.html();
+		priceText = (priceText.replace('カート内の小計:\\','').trim());
+
+		var convertPrice = getConvertPrice(priceText);
+		price.html('カート内の小計:\\ ' + convertPrice);
+	});
+
+	function getConvertPrice(num){
+		return Number(num).toLocaleString();
+	}
+</script>
+
 </body>
 </html>

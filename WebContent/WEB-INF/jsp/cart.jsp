@@ -25,7 +25,7 @@
 		<div class="pos">
 		<p class="p1">${cart.name}</p>
 		<p class="p2">数量:${cart.orderCount}</p>
-		<p class="p2">\ ${cart.subTotal}</p>
+		<p class="p2 price">\ ${cart.subTotal}</p>
 		<p class="p3"><a href="deleteCartProduct?itemId=${cart.itemId}"><img src="images/batu.png" class="pic2"></a></p>
 		</div>
 	</div>
@@ -37,10 +37,10 @@
 <div class=box2>
 <h1>注文内容</h1>
 <hr>
-小計:<p class="p4">\<c:choose><c:when test="${result.size() != 0 }">${result.get(0).total}</c:when><c:otherwise>0</c:otherwise></c:choose></p>
+小計:<p class="p4 price">\<c:choose><c:when test="${result.size() != 0 }">${result.get(0).total}</c:when><c:otherwise>0</c:otherwise></c:choose></p>
 <br>配送料：<p class="p4">\500</p>
 <hr>
-<br>合計:<p class="p4">\<c:choose><c:when test="${result.size() != 0 }">${result.get(0).total+500}</c:when><c:otherwise>0</c:otherwise></c:choose></p>
+<br>合計:<p class="p4 price">\<c:choose><c:when test="${result.size() != 0 }">${result.get(0).total+500}</c:when><c:otherwise>0</c:otherwise></c:choose></p>
 	<div>
 		<p><a href="purchase" class="shopbtn">レジへ進む</a></p>
 	</div>
@@ -50,6 +50,14 @@
 
 <script>
 	$(function(){
+		var price = $(".price"); // 値段をカンマ区切りにする
+
+		var priceText = price.html();
+		priceText = (priceText.replace('\\','').trim());
+
+		var convertPrice = getConvertPrice(priceText);
+		price.html('\\ ' + convertPrice);
+
 		var itemId = $("#itemId").val();
 
 		if(itemId == undefined){
@@ -60,6 +68,11 @@
 			("#empty").html("");
 		}
 	});
+
+	function getConvertPrice(num){
+		return Number(num).toLocaleString();
+	}
+
 </script>
 
 </body>

@@ -1,4 +1,13 @@
 $(function(){
+	var price = $(".price");
+	var priceText = price.html();
+	priceText = (priceText.replace('カート内の小計:\\','').trim());
+
+	var convertPrice = getConvertPrice(priceText);
+	price.html(convertPrice + "円");
+
+
+
 	var itemIdList; // 消去したい商品IDをカンマ区切りで格納
 	var count = 0; // ループカウント
 
@@ -226,3 +235,7 @@ $(function(){
 		window.location.href=protocol+"//"+hostname+"/Egroup_PROJECT/searchByAdmin?productName="+searchs[0]+"&categoryId="+searchs[1]+"&sort="+searchs[2]+"&color="+checkBoxSplit+"&pageNo="+sessionStorage.getItem('sessionPageNo');
 	});
 });
+
+function getConvertPrice(num){
+	return Number(num).toLocaleString();
+}

@@ -107,7 +107,7 @@
   	<td><a href="productsDetails?itemId=${product.itemId}" class="itemLink">${product.name}</a></td>
   	<td><a href="productsDetails?itemId=${product.itemId}" class="itemLink"><img src="${product.pictPath}" width="500px"></a></td>
 
-  	<td>${product.price}円</td>
+  	<td class="price">${product.price}円</td>
   </tr>
  </c:forEach>
  </table>

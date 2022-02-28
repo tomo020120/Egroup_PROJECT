@@ -101,7 +101,9 @@ public class TransferPurchaseCompletedCommand extends AbstractCommand{
 		content.append("<li>" + postalCode + "</li>");
 		content.append("<li>" + address + "</li>");
 
-		content.append("<li>注文合計:" + totalAmount + "円</li>");
+		String convertTotalAmount = String.format("%,d",totalAmount);
+
+		content.append("<li>注文合計:" + convertTotalAmount + "円</li>");
 
 		content.append("<li>支払い方法:クレジットカード</li>");
 		content.append("<li>末尾" + cardNo + "(" + cardCompany + ")</li>");

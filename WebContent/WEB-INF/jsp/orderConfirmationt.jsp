@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>購入内容確認</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet" href="CSS/orderConfirmationt.css">
 <script>
 window.onload = function(){
@@ -64,9 +65,9 @@ window.onload = function(){
 <p>注文内容</p>
 	<c:forEach var="con" items="${result}" varStatus="i">
 		<c:if test="${i.first}" >
-				商品の小計:<p class="p4">\ ${con.total}</p><br>
+				商品の小計:<p class="p4 price">\ ${con.total}</p><br>
 				配送料・手数料:<p class="p4">\500</p>
-				<p class="p5">ご請求額:</p><p class="p6">\ ${con.total+500}</p>
+				<p class="p5">ご請求額:</p><p class="p6 price">\ ${con.total+500}</p>
 		</c:if>
 	</c:forEach>
 	<h1>お届け日</h1>
@@ -81,11 +82,28 @@ window.onload = function(){
 <div class="box">
 			<p class="p1">${con.name}</p>
 			<p class="p2">個数:${con.orderCount}</p>
-			<p class="p2">\ ${con.subTotal}</p>
+			<p class="p2 price">\ ${con.subTotal}</p>
 			<p class="p3"><img src="${con.pictPath}"class="pic2"></p>
 			</div>
 	</c:forEach>
 
 </div>
+
+<script>
+	$(function(){
+		var price = $(".price"); // 値段をカンマ区切りにする
+
+		var priceText = price.html();
+		priceText = (priceText.replace('\\','').trim());
+
+		var convertPrice = getConvertPrice(priceText);
+		price.html('\\ ' + convertPrice);
+	});
+
+	function getConvertPrice(num){
+		return Number(num).toLocaleString();
+	}
+</script>
+
 </body>
 </html>

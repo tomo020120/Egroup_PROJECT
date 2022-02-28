@@ -8,6 +8,10 @@ function favoriteClick(obj){
 	}
 }
 
+function getConvertPrice(num){
+	return Number(num).toLocaleString();
+}
+
 $(function(){
 	var token = $("#token").val();
 
@@ -17,6 +21,14 @@ $(function(){
 	}else{
 		$("#nologinPurchaseBtn").show();
 	}
+
+	var price = $(".price"); // 値段をカンマ区切りにする
+
+	var priceText = price.html();
+	priceText = (priceText.replace('\\','').trim());
+
+	var convertPrice = getConvertPrice(priceText);
+	price.html('\\ ' + convertPrice);
 
 
 	var favoriteFlag = $("body").data("favorite");
