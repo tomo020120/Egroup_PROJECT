@@ -11,7 +11,7 @@ header {
     display: flex; /* 中の要素を横並びにする */
     align-items: center; /* 中の要素を上下中央に並べる */
     border-bottom: thin solid #a9a9a9; /*下線*/
-	z-index: 70;
+	z-index: 10;
 
 }
 .fade-in{
@@ -21,7 +21,7 @@ header {
   animation-duration:5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  z-index: 99;
+  z-index: 50;
 
 
    	border:1px solid;
@@ -88,6 +88,7 @@ position: absolute;
     width: 30px;
     height: 30px;
     vertical-align: middle;
+    z-index: 15;
 }
 
 /*3本線*/
@@ -95,7 +96,7 @@ position: absolute;
     content: '';
     display: block;
     position: absolute;
-    z-index: 100;
+    z-index: 880;
     top:6px;
     bottom:0;
     width: 32px;

@@ -14,10 +14,6 @@
 
 
 <header>
-
-<div class="animTarget">
-<p class="message">${message}</p>
-</div>
   <div class="h-menu">
       <input id="h-menu_checkbox" class="h-menuCheckbox" type="checkbox">
       <label class="h-menu_icon" for="h-menu_checkbox"><span class="hamburger-icon"></span></label>
@@ -45,6 +41,10 @@
       <div class=logo>
       	<a href="topPage"><img src="images/logo.png" alt="ロゴ" width="180" ></a>
       </div>
+
+<div class="animTarget">
+<p class="message">${message}</p>
+</div>
 
 
 	 <div class=position>
