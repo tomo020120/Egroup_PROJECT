@@ -127,10 +127,11 @@
 
 <div class="pos">
 <button id="previousPageBtn">前のページ</button>
-${sessionScope.holdPageNo}/${sessionScope.maxPageNo}
+${sessionScope.holdAdminPageNo}/${sessionScope.maxAdminPageNo}
 <button id="nextPageBtn">次のページ</button>
 </div>
- <input type="hidden" name="maxPage" value="${sessionScope.maxPageNo}" class ="info2">
+<input type="hidden" name="nowPage" value="${sessionScope.holdAdminPageNo}" class ="info00">
+ <input type="hidden" name="maxPage" value="${sessionScope.maxAdminPageNo}" class ="info2">
 
 <div id = "productHistoryFooter">
 </div>

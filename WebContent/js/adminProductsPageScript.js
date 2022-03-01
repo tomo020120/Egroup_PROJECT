@@ -111,12 +111,16 @@ $(function(){
 	console.log("プロトコルは→"+protocol+"ホストネームは→"+hostname);
 	var pageNo = 1;
 
-	console.log(sessionStorage.getItem('sessionPageNo'));
+	console.log(sessionStorage.getItem('sessionAdminPageNo'));
 
 
+	$("body").find(".info00").each(function(index,element){
+		console.log($(element).val());
+		sessionStorage.setItem('sessionAdminPageNo',$(element).val());
+	});
 	$("body").find(".info2").each(function(index,element){
 		console.log($(element).val());
-		sessionStorage.setItem('sessionMaxPage',$(element).val());
+		sessionStorage.setItem('sessionAdminMaxPage',$(element).val());
 	});
 
 
@@ -124,10 +128,10 @@ $(function(){
 
 	//前のページに戻るボタンロック処理
 	// チェックが入っていたら有効化
-	if (sessionStorage.getItem('sessionPageNo')==1){
+	if (sessionStorage.getItem('sessionAdminPageNo')==1){
 	    // ボタンを無効化
 	    $('#previousPageBtn').prop('disabled', true);
-	}else if(sessionStorage.getItem('sessionPageNo')==null){
+	}else if(sessionStorage.getItem('sessionAdminPageNo')==null){
 		$('#previousPageBtn').prop('disabled', true);
 	}else {
 	    // ボタンを有効化
@@ -139,7 +143,7 @@ $(function(){
 
 
 	//後のページに行くボタンロック処理
-	if (sessionStorage.getItem('sessionPageNo')==sessionStorage.getItem('sessionMaxPage')){
+	if (sessionStorage.getItem('sessionAdminPageNo')==sessionStorage.getItem('sessionAdminMaxPage')){
 	    // ボタンを無効化
 	    $('#nextPageBtn').prop('disabled', true);
 	}else {
@@ -152,18 +156,18 @@ $(function(){
 
 
 	$("#nextPageBtn").on('click',function(){
-		if(sessionStorage.getItem('sessionPageNo')==null){
-			console.log("sessionPageNoがnullでした");
+		if(sessionStorage.getItem('sessionAdminPageNo')==null){
+			console.log("sessionAdminPageNoがnullでした");
 			pageNo = 1; //current
 		}else{
-			pageNo = sessionStorage.getItem('sessionPageNo');//current
+			pageNo = sessionStorage.getItem('sessionAdminPageNo');//current
 		}
 
 		pageNo=Number(pageNo)+1;//after
 		console.log(pageNo);
-		console.log(sessionStorage.getItem('sessionPageNo'));
+		console.log(sessionStorage.getItem('sessionAdminPageNo'));
 
-		sessionStorage.setItem('sessionPageNo',pageNo);
+		sessionStorage.setItem('sessionAdminPageNo',pageNo);
 
 
 		//ボタンを押されたら検索用語、ソート番号、カラーを取得
@@ -190,22 +194,22 @@ $(function(){
 
 
 		//checkBoxsの中を繰り返し処理で書き出しでカンマうち処理
-		window.location.href=protocol+"//"+hostname+"/Egroup_PROJECT/searchByAdmin?productName="+searchs[0]+"&categoryId="+searchs[1]+"&sort="+searchs[2]+"&color="+checkBoxSplit+"&pageNo="+sessionStorage.getItem('sessionPageNo');
+		window.location.href=protocol+"//"+hostname+"/Egroup_PROJECT/searchByAdmin?productName="+searchs[0]+"&categoryId="+searchs[1]+"&sort="+searchs[2]+"&color="+checkBoxSplit+"&pageNo="+sessionStorage.getItem('sessionAdminPageNo');
 	});
 
 	$("#previousPageBtn").on('click',function(){
-		if(sessionStorage.getItem('sessionPageNo'==null)){
-			console.log("sessionPageNoがnullでした");
+		if(sessionStorage.getItem('sessionAdminPageNo'==null)){
+			console.log("sessionAdminPageNoがnullでした");
 			pageNo = 1; //current
 		}else{
-			pageNo = sessionStorage.getItem('sessionPageNo');//current
+			pageNo = sessionStorage.getItem('sessionAdminPageNo');//current
 		}
 
 		pageNo=Number(pageNo)-1;//after
 		console.log(pageNo);
-		console.log(sessionStorage.getItem('sessionPageNo'));
+		console.log(sessionStorage.getItem('sessionAdminPageNo'));
 
-		sessionStorage.setItem('sessionPageNo',pageNo);
+		sessionStorage.setItem('sessionAdminPageNo',pageNo);
 
 
 		//ボタンを押されたら検索用語、ソート番号、カラーを取得
@@ -232,7 +236,7 @@ $(function(){
 
 
 		//checkBoxsの中を繰り返し処理で書き出しでカンマうち処理
-		window.location.href=protocol+"//"+hostname+"/Egroup_PROJECT/searchByAdmin?productName="+searchs[0]+"&categoryId="+searchs[1]+"&sort="+searchs[2]+"&color="+checkBoxSplit+"&pageNo="+sessionStorage.getItem('sessionPageNo');
+		window.location.href=protocol+"//"+hostname+"/Egroup_PROJECT/searchByAdmin?productName="+searchs[0]+"&categoryId="+searchs[1]+"&sort="+searchs[2]+"&color="+checkBoxSplit+"&pageNo="+sessionStorage.getItem('sessionAdminPageNo');
 	});
 });
 

@@ -75,7 +75,8 @@ public class ProductsSearchCommand extends AbstractCommand{
 				String message = reqc.getParameter("message")[0];
 				resc.setMessage(message);
 			}catch(NullPointerException e) {}
-
+			reqc.setSessionAttribute("holdAdminPageNo",pageNo);
+			reqc.setSessionAttribute("maxAdminPageNo",dao.getProductsSearchResultCount(productName, colorsNo,categoryId));
 			resc.setTargetPath("adminProductsPage");
 		}else {
 			resc.setTargetPath("products");

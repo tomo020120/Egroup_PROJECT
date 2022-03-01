@@ -21,6 +21,12 @@ public class TransferAdminProductsPageCommand extends AbstractCommand {
 		AbstractDaoFactory factory = AbstractDaoFactory.getDaoFactory();
 		ProductsDao dao = factory.getProductsDao();
 
+
+		String productName="";
+		String[] colorsNo= {"0"};
+		reqContext.setSessionAttribute("holdAdminPageNo",1);
+		reqContext.setSessionAttribute("maxAdminPageNo", dao.getProductsSearchResultCount(productName, colorsNo,"1"));
+
 		ConnectionManager.getInstance().beginTransaction();
 
 
