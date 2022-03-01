@@ -43,12 +43,22 @@
 
 <script>
 	$(function(){
-		var price = $(".price");
-		var priceText = price.html();
-		priceText = (priceText.replace('\\','').trim());
+		console.log("hello");
 
-		var convertPrice = getConvertPrice(priceText);
-		price.html('\\ ' + convertPrice);
+		var price = $(".price");
+
+		price.each(function(index,element){
+			var priceText = $(element).text();
+
+			console.log(priceText);
+
+			priceText = (priceText.replace('\\','').trim());
+
+			console.log(priceText);
+
+			var convertPrice = getConvertPrice(priceText);
+			$(element).text('\\ ' + convertPrice);
+		});
 	});
 
 	function getConvertPrice(num){
