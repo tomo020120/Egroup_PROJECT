@@ -1,10 +1,14 @@
 $(function(){
 	var price = $(".price");
-	var priceText = price.html();
-	priceText = (priceText.replace('カート内の小計:\\','').trim());
 
-	var convertPrice = getConvertPrice(priceText);
-	price.html(convertPrice + "円");
+	price.each(function(index,element){
+		var priceText = $(element).text();
+		priceText = (priceText.replace('円','').trim());
+
+		var convertPrice = getConvertPrice(priceText);
+		$(element).html(convertPrice + "円");
+
+	});
 
 
 
