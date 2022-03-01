@@ -14,7 +14,10 @@
 	position:fixed; /*スクロールしても位置を固定 */
 
 }
-
+.targetItemCheck{
+	transform: scale(2.0);
+	text-align:center;
+}
 #itemList{
 	display:flex;
 	height: 494px;

@@ -103,7 +103,7 @@
  <c:forEach var="product" items="${result}">
   <tr>
 
- 	<td class="adminAction"><button class="productEditBtn" onclick="location.href='editProductPage?itemId=${product.itemId}'">編集する</button><input type="checkbox" id="${product.name}" class="targetItemCheck actionBtn" name="deleteTargetItem" value="${product.itemId}"></td>
+ 	<td style="text-align:center;" class="adminAction"><button class="productEditBtn" onclick="location.href='editProductPage?itemId=${product.itemId}'">編集する</button><input type="checkbox" id="${product.name}" class="targetItemCheck actionBtn" name="deleteTargetItem" value="${product.itemId}"></td>
   	<td><a href="productsDetails?itemId=${product.itemId}" class="itemLink">${product.name}</a></td>
   	<td><a href="productsDetails?itemId=${product.itemId}" class="itemLink"><img src="${product.pictPath}" width="500px"></a></td>
 

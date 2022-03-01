@@ -13,5 +13,7 @@
 
 	}@charset "UTF-8";
 .pic3{
-	width        : 600px;
+	width        : 700px;
+	position: relative;
+	top: -13%; left: -52%;
 }

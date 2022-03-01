@@ -52,11 +52,13 @@
 	$(function(){
 		var price = $(".price"); // 値段をカンマ区切りにする
 
-		var priceText = price.html();
-		priceText = (priceText.replace('\\','').trim());
+		price.each(function(index,element){
+			var priceText = $(element).text();
+			priceText = (priceText.replace('\\','').trim());
 
-		var convertPrice = getConvertPrice(priceText);
-		price.html('\\ ' + convertPrice);
+			var convertPrice = getConvertPrice(priceText);
+			$(element).text('\\ ' + convertPrice);
+		});
 
 		var itemId = $("#itemId").val();
 

@@ -22,15 +22,11 @@ public class TransferPurchraseAddressCommand extends AbstractCommand{
 
 	    	resc.setResult(edit.getDeliveryInfo(userId));
 
-	    	Object flag = reqContext.getSessionAttribute("errorFlag");
-	    	if(flag != null) {
-	    		boolean errorFlag = (boolean)flag;
-	    		if(errorFlag) {
-	    			resc.setMessage("入力された住所は登録済みです。");
-	    			reqContext.removeSessionAttribute("errorFlag");
-	    		}
+	    	try {
+	    		String message = reqContext.getParameter("message")[0];
+	    		resc.setMessage(message);
+	    	}catch(NullPointerException e) {}
 
-	    	}
 			ConnectionManager.getInstance().commit();
 			ConnectionManager.getInstance().closeTransaction();
 

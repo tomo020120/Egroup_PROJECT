@@ -19,7 +19,7 @@ header {
   opacity:0;
   animation-name:sample01;
   animation-duration:5s;
-  animation-iteration-count: 1;
+  animation-iteration-count:1;
   animation-fill-mode: forwards;
   z-index: 50;
 
