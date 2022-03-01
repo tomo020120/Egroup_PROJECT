@@ -15,6 +15,11 @@ $(function(){
 	console.log(sessionStorage.getItem('sessionPageNo'));
 
 
+
+	$("body").find(".info00").each(function(index,element){
+		console.log($(element).val());
+		sessionStorage.setItem('sessionPageNo',$(element).val());
+	});
 	$("body").find(".info2").each(function(index,element){
 		console.log($(element).val());
 		sessionStorage.setItem('sessionMaxPage',$(element).val());
