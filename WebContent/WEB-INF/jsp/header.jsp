@@ -14,10 +14,6 @@
 
 
 <header>
-
-<div class="animTarget">
-<p class="message">${message}</p>
-</div>
   <div class="h-menu">
       <input id="h-menu_checkbox" class="h-menuCheckbox" type="checkbox">
       <label class="h-menu_icon" for="h-menu_checkbox"><span class="hamburger-icon"></span></label>
@@ -46,6 +42,10 @@
       	<a href="topPage"><img src="images/logo.png" alt="ロゴ" width="180" ></a>
       </div>
 
+<div class="animTarget">
+<p class="message">${message}</p>
+</div>
+
 
 	 <div class=position>
 	 <a href="productHistory" class=""><img src="images/history-removebg-preview.png" alt="カート" width="40" class="white"></a>
@@ -64,7 +64,7 @@
         <a href="userInfo"><img src="images/people-removebg-preview.png" alt="ログイン" width="40" ></a>
     </c:when>
     <c:otherwise>
-         <a href="login"><img src="images/people-removebg-preview.png" alt="ログイン" width="30" ></a>
+         <a href="login"><img src="images/people-removebg-preview.png" alt="ログイン" width="34" ></a>
     </c:otherwise>
 </c:choose>
 </div>
