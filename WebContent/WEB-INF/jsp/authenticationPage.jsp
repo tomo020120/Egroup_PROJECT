@@ -6,8 +6,7 @@
 <meta charset="UTF-8">
 <title>認証コード入力</title>
 </head>
-<body>
-
+<body style="text-align:center;">
 <form method="post" action="updateUserMailAddress">
 	認証コード:<input type="text" name="authenticaionCode" maxLength="6">
 	<input type="submit" value="OK">

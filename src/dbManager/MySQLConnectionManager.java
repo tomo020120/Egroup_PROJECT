@@ -18,7 +18,7 @@ public class MySQLConnectionManager extends ConnectionManager{
 			System.out.println("新規接続");
 			try {
 
-				cn = DriverManager.getConnection(AWSCONNECTURL,"customer","cpass");
+				cn = DriverManager.getConnection(LOCALCONNECTURL,"customer","cpass");
 				//localhostを変えてませう→tcg-aws-web.cyqqb9vezruo.ap-northeast-1.rds.amazonaws.com
 				cn.setAutoCommit(false);
 				cn.setCatalog("Ibanezdb");
