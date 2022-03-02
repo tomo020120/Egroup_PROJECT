@@ -21,7 +21,7 @@
 		<div id="creditCardList">
 
 		<a href="productsDetails?itemId=${history.itemId}"><img src="${history.pictPath}"width="400px"class="pic2"></a>
-		<p class="p1"><a href="productsDetails?itemId=${history.itemId}">${history.name}</a></p>
+		<p class="p1"><a href="productsDetails?itemId=${history.itemId}"><c:out value="${history.name}"/></a></p>
 		<!-- ${history.price}円-->
 
 		<!-- ページ遷移せずに消去したい -->

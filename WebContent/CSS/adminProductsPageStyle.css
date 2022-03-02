@@ -62,3 +62,10 @@ h1{
 margin:0px 4% 0px 19%;
 padding: 0% 4% 0% 3%;
 }
+.errorText{
+	color:red;
+	font-size:13px;
+	left:50%;
+	font-weight:bold;
+	margin-top:0;
+}

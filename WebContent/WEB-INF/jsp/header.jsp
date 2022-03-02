@@ -56,7 +56,7 @@
 
 
 	  <div class=names>
-	 	 <p>${sessionInfo.userName}</p>
+	 	 <p><c:out value="${sessionInfo.userName}" /></p>
 	 </div>
 
 	 <c:choose>

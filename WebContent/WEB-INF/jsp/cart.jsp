@@ -23,7 +23,7 @@
 	 <div class="box">
 		<img src="${cart.pictPath}" class="pic">
 		<div class="pos">
-		<p class="p1">${cart.name}</p>
+		<p class="p1"><c:out value="${cart.name}"/></p>
 		<p class="p2">数量:${cart.orderCount}</p>
 		<p class="p2 price">\ ${cart.subTotal}</p>
 		<p class="p3"><a href="deleteCartProduct?itemId=${cart.itemId}"><img src="images/batu.png" class="pic2"></a></p>

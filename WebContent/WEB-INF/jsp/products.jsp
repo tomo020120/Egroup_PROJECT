@@ -96,7 +96,7 @@
  	<div id="creditCardList">
 
   	<a href="productsDetails?itemId=${product.itemId}"><img src="${product.pictPath}"width="400px"></a>
-  	<a href="productsDetails?itemId=${product.itemId}">${product.name}</a>
+  	<a href="productsDetails?itemId=${product.itemId}"><c:out value="${product.name}"/></a>
   	</div>
  </c:forEach>
 </div>

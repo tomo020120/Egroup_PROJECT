@@ -40,10 +40,10 @@ window.onload = function(){
 <h1>お届け先住所</h1>
 	<c:forEach var="con" items="${result}" varStatus="i">
 		<c:if test="${i.first}" >
-				${con.deliveryName}<br>
+				<c:out value="${con.deliveryName}"/><br>
 				電話番号:${con.tel}<br>
 				${con.postalCode}<br>
-				${con.address}<br>
+				<c:out value="${con.address}"/><br>
 
 		</c:if>
 	</c:forEach>
@@ -54,7 +54,7 @@ window.onload = function(){
 		<c:if test="${i.first}" >
 				${con.cardNo}(カード下四桁)<br>
 				${con.cardCompany}<br>
-				${con.cardOwnerName}<br>
+				<c:out value="${con.cardOwnerName}"/><br>
 				${con.expirationDate}<br>
 
 		</c:if>
@@ -80,7 +80,7 @@ window.onload = function(){
 <h1 class="title">購入商品</h1>
 	<c:forEach var="con" items="${result}">
 <div class="box">
-			<p class="p1">${con.name}</p>
+			<p class="p1"><c:out value="${con.name}"/></p>
 			<p class="p2">個数:${con.orderCount}</p>
 			<p class="p2 price">\ ${con.subTotal}</p>
 			<p class="p3"><img src="${con.pictPath}"class="pic2"></p>

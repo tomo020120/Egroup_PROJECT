@@ -19,10 +19,10 @@
 	<button id="addDeliveryInfoButton" class="addDeliveryInfoButton">新しい住所を追加</button>
 		<c:forEach var="deliveryInfo" items="${result}">
 			<div class="deliveryInfo">
-				<p>宛名:<span class="deliveryName">${deliveryInfo.deliveryName}</span></p>
-				<p>電話番号:<span class="tel">${deliveryInfo.tel}</span></p>
-				<p>郵便番号:<span class="postalCode">${deliveryInfo.postalCode}</span></p>
-				<p>住所:<span class="address">${deliveryInfo.address}</span></p>
+				<p>宛名:<span class="deliveryName"><c:out value="${deliveryInfo.deliveryName}" /></span></p>
+				<p>電話番号:<span class="tel"><c:out value="${deliveryInfo.tel}"/></span></p>
+				<p>郵便番号:<span class="postalCode"><c:out value="${deliveryInfo.postalCode}" /></span></p>
+				<p>住所:<span class="address"><c:out value="${deliveryInfo.address}" /></span></p>
 				<button type="button" class="openUpdateFormButton" value="${deliveryInfo.deliveryInfoId}">編集</button><button type="button" class="openDeleteComfirmButton" value="${deliveryInfo.deliveryInfoId}">消去</button>
 			</div>
 		</c:forEach>

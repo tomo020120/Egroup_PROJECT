@@ -24,7 +24,7 @@ public class AddProductCommand extends AbstractCommand {
 			pictPath = "images/" + fileName;
 		}
 		else { // アップロードファイルが既に存在していた時の処理
-			resContext.setMessage("その写真はすでにアップロードされているか予期せぬ事態が起き追加できませんでした");
+			resContext.setMessage("予期せぬ事態が起き追加できませんでした");
 			resContext.setTargetPath("addProductPage");
 			return resContext;
 		}

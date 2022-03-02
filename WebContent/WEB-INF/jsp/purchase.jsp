@@ -20,10 +20,10 @@
 	<div id="deliveryInfoList">
 		<c:forEach var="deliveryInfo" items="${result}">
 			<div class="deliveryInfo">
-				<p class="p1"><span class="deliveryName">${deliveryInfo.deliveryName}</span></p>
+				<p class="p1"><span class="deliveryName"><c:out value="${deliveryInfo.deliveryName}"/></span></p>
 				<p><span class="tel">${deliveryInfo.tel}</span></p>
 				<p><span class="postalCode">${deliveryInfo.postalCode}</span></p>
-				<p><span class="address">${deliveryInfo.address}</span></p>
+				<p><span class="address"><c:out value="${deliveryInfo.address}"/></span></p>
 				<button class="decisionButton" type="button" onclick="location.href='choiceCredit?deliveryInfoId=${deliveryInfo.deliveryInfoId}'">この住所に届ける</button>
 				<button type="button" class="openUpdateFormButton" value="${deliveryInfo.deliveryInfoId}">編集</button>
 				<button type="button" class="openDeleteComfirmButton" value="${deliveryInfo.deliveryInfoId}">消去</button>

@@ -11,7 +11,7 @@
 <script type="text/javascript" src="js/productsDetailsScript.js"></script>
 </head>
 <body data-favorite="${result.get(1)}">
-<h1>${result.get(0).name}</h1>
+<h1><c:out value="${result.get(0).name}"/></h1>
 <div class="container">
 <div class="item">
 <div class="box">
@@ -21,7 +21,7 @@
 
 
 		<img id="itemPict" src="${result.get(0).pictPath}" class="pic"><br>
-		<p class="p1 targetInfo price">\ ${result.get(0).price}</p>
+		<p class="p1 targetInfo price"><c:out value="\ ${result.get(0).price}"/></p>
 
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="favoriteBtn" onclick="favoriteClick(this);" value="${result.get(0).itemId}" style="border: 2px solid #000;">❤︎</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -31,8 +31,8 @@
 <div class="item">
 <div class=box2>
 <br>
-	<form method="post" action="addCartProduct?itemId=${result.get(0).itemId}&price=${result.get(0).price} ">
-		${result.get(0).name}　　　　　　数量:<select id="orderCount" name="orderCount">
+	<form method="post" action="addCartProduct?itemId=${result.get(0).itemId}&price=<c:out value='${result.get(0).price}'/>">
+		<c:out value="${result.get(0).name}"/>　　　　　　数量:<select id="orderCount" name="orderCount">
 			<option value="1">1</option>
 			<option value="2">2</option>
 			<option value="3">3</option>

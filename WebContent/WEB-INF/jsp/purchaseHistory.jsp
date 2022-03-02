@@ -31,9 +31,9 @@
 </c:choose>
 <div class="box">
 <a href="productsDetails?itemId=${result.itemId}"><img src="${result.pictPath}" width="500px"class="pic2"></a>
-		<p class="p1">${result.name}</p>
+		<p class="p1"><c:out value="${result.name}"/></p>
 		<p class="p1">${result.orderCount}個</p>
-		<p class="p1 price">\ ${result.subTotal}</p>
+		<p class="p1 price"><c:out value="\ ${result.subTotal}"/></p>
 
 		<!-- <p class="p1">${result.price}円<br></p> -->
 </div>

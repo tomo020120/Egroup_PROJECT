@@ -95,9 +95,9 @@ function check_cardNo(str,eObj){
 		eObj.html("");
 		_result = true;
 	}else if(_textbox.match(americanPattern)){
-		$("#cardCompany").text("American Express");
-		eObj.html("");
-		_result = true;
+		eObj.html("American Expressはご利用なれません");
+		$("#cardCompany").text("");
+		_result = false;
 	}else if(_textbox.match(dinersPattern)){
 		$("#cardCompany").text("Diners Club");
 		eObj.html("");
@@ -108,6 +108,7 @@ function check_cardNo(str,eObj){
 		_result = true;
 	}else{
 		eObj.html("カード番号が正しくありません");
+		$("#cardCompany").text("");
 		result = false;
 	}
 	return _result;

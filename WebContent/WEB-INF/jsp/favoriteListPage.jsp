@@ -18,8 +18,8 @@ pageEncoding="UTF-8"%>
 <c:forEach var="con" items="${result}">
 <div class="box">
 			<a href="productsDetails?itemId=${con.itemId}"><img src="${con.pictPath}"width="400px"class="pic"></a>
-				<p class="p2">${con.name}</p>
-				<p class="p2 price">\ ${con.price}</p>
+				<p class="p2"><c:out value="${con.name}" /></p>
+				<p class="p2 price"><c:out value="\ ${con.price}" /></p>
 				<a href="deleteFavoriteForFavPage?itemId=${con.itemId}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="favoriteBtn" onclick="favoriteClick(this);" value="${result.get(0).itemId}" style="border: 2px solid #000; background-color: #ffc0cb">❤︎</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
 <input id="itemId" type="hidden" value="${con.itemId}">
 </div>

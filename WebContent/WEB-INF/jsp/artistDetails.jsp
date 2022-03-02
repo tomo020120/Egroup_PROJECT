@@ -34,7 +34,7 @@
 		<h2>SIGNATURE MODEL</h2>
 		<a id="itemPict" href="productsDetails?itemId=${detail.itemId}"><img src="${detail.pictPath}" width="500" height="200"></a><br>
 		<div id="dummy"></div>
-		<p class="p1">　${detail.name}</p>
+		<p class="p1">　<c:out value="${detail.name}"/></p>
 		</div>
 	<input id="itemId" type="hidden" value="${detail.pictPath}">
 	</c:forEach>

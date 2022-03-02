@@ -19,7 +19,7 @@
    <div class="d-demo__wrap">
        <ul class="d-demo__list d-demo__list--left">
   <c:forEach var="history" items="${result}">
-    <li><a href="productsDetails?itemId=${history.itemId}"><img src="${history.pictPath}"width="400px">${history.name}</a></li>
+    <li><a href="productsDetails?itemId=${history.itemId}"><img src="${history.pictPath}"width="400px"><c:out value="${history.name}"/></a></li>
    </c:forEach>
   </ul>
 </div>

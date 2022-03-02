@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,11 +13,11 @@
 
 	<div class="box">
 		<div class="content">ユーザー名:
-		${sessionInfo.userName}
+		<c:out value="${sessionInfo.userName}" />
 		<div class="button"><button onclick="location.href='editUserNameForm'" class="btn btn--white">編集</button></div>
 		</div>
    		<div class="content">メールアドレス:
-   		${sessionInfo.mailAddress}
+   		<c:out value="${sessionInfo.mailAddress}"/>
    		<div class="button"><button onclick="location.href='editUserMailAddressForm'" class="btn btn--white">編集</button></div>
    		</div>
    		<div class="content">現在のパスワード:

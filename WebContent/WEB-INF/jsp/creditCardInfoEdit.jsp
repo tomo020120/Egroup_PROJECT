@@ -22,7 +22,7 @@
 			<div id="creditCardList">
 				カード番号(下四桁):<span class="lastFourDisits">${creditCardInfo.cardNo}</span><br>
 				種類:<span class="cardCompany">${creditCardInfo.cardCompany}</span><br>
-				クレジットカード名義人:<span class="cardOwnerName">${creditCardInfo.cardOwnerName}</span><br>
+				クレジットカード名義人:<span class="cardOwnerName"><c:out value="${creditCardInfo.cardOwnerName}" /></span><br>
 				有効期限:<span class="expirationDate">${creditCardInfo.expirationDate}</span><br>
 				<button class="openUpdateFormButton" type="button" value="${creditCardInfo.cardId}">編集</button><button class="openDeleteComfirmButton" type="button" value="${creditCardInfo.cardId}">消去</button>
 			</div>
@@ -91,7 +91,6 @@
 				<p>VISA</p>
 				<p>JCB</p>
 				<p>MasterCard</p>
-				<p>American Express</p>
 				<p>Diners Club</p>
 			</div>
 		</div>

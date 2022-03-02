@@ -42,7 +42,7 @@ public class AddDeliveryInfoCommand extends AbstractCommand {
 		ConnectionManager.getInstance().beginTransaction();
 
 		if(edit.getSameAddressQuantity(fullAddress, userId) != 0) {
-			url += "入力された住所はすでに登録されているため登録できません。";
+			url += "入力された住所はすでに登録されています。";
 			resContext.setTargetCommandPath(url);
 
 			ConnectionManager.getInstance().closeTransaction();
